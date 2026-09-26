@@ -15,6 +15,7 @@ type Stage =
   | { kind: "question"; question: Question; picked?: number; text: string; feedback?: { correct: boolean; note?: string } }
   | { kind: "grading"; question: Question }
   | { kind: "graded"; question: Question; score: number; rationale: string; next: QuizState }
+  | { kind: "selfcheck"; question: Question; text: string }
   | { kind: "result"; result: QuizResult };
 
 const TRACKS: { id: Track; name: string; blurb: string; about?: string }[] = [
@@ -101,7 +102,8 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
   };
 
   const begin = () => {
-    state.current = start(track, pool, { seed: Date.now(), lightMode: llm === false });
+    // Written tasks stay in even without a grader: the taker checks them against the rubric.
+    state.current = start(track, pool, { seed: Date.now() });
     advance(state.current);
   };
 
@@ -116,6 +118,10 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
   };
 
   const submitText = async (q: Question, text: string) => {
+    if (llm === false || !q.rubric) {
+      setStage({ kind: "selfcheck", question: q, text });
+      return;
+    }
     setStage({ kind: "grading", question: q });
     const session = sessionId();
     const cross = crossCriteria.current.get(q.id);
@@ -147,8 +153,12 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
       // Show how the answer did, and what a strong one covers, before moving on.
       setStage({ kind: "graded", question: q, score: g.score, rationale: String(g.rationale ?? ""), next: s });
     } catch {
-      state.current = skip(state.current!, q);
-      advance(state.current);
+      // Grader unavailable or over budget: fall back to a self-check against the rubric.
+      if (q.rubric) setStage({ kind: "selfcheck", question: q, text });
+      else {
+        state.current = skip(state.current!, q);
+        advance(state.current);
+      }
     }
   };
 
@@ -232,7 +242,7 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
               </div>
               {llm === false && (
                 <p className="mt-4 text-[12.5px] text-paper-muted">
-                  Written answers are offline right now, so this run uses auto-graded questions only (light mode).
+                  No grader is connected right now, so you&apos;ll check your written answers yourself against the same checklist the grader uses.
                 </p>
               )}
               <button
@@ -256,6 +266,7 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
               onPick={(i) => submitChoice(stage.question, i)}
               onContinue={() => continueAfterChoice(stage.question, stage.picked!)}
               onSubmitText={(t) => submitText(stage.question, t)}
+              graderOn={llm !== false}
             />
           )}
 
@@ -266,6 +277,17 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
               <div className="h-2 w-1/2 animate-pulse rounded-full bg-white/10" />
               <p className="text-[12.5px] text-paper-faint">Graded twice against a fixed rubric so scores stay consistent.</p>
             </div>
+          )}
+
+          {stage.kind === "selfcheck" && (
+            <SelfCheckView
+              key={stage.question.id}
+              stage={stage}
+              onDone={(score) => {
+                state.current = answer(state.current!, stage.question, score);
+                advance(state.current);
+              }}
+            />
           )}
 
           {stage.kind === "graded" && <GradedView stage={stage} onContinue={() => advance(stage.next)} />}
@@ -282,7 +304,9 @@ function QuestionView({
   onPick,
   onContinue,
   onSubmitText,
+  graderOn,
 }: {
+  graderOn: boolean;
   stage: Extract<Stage, { kind: "question" }>;
   onPick: (i: number) => void;
   onContinue: () => void;
@@ -387,7 +411,9 @@ function QuestionView({
                   : "Be specific; generic answers score low."
             }
           />
-          <p className="mt-2 text-[11.5px] text-paper-faint">Graded by an open-weight model against a fixed rubric. Not stored.</p>
+          <p className="mt-2 text-[11.5px] text-paper-faint">
+            {graderOn ? "Graded by an open-weight model against a fixed rubric. Not stored." : "Next, you'll check it against the rubric yourself. Not stored."}
+          </p>
           <button type="submit" disabled={text.trim().length < 10} className="mt-4 inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2 text-sm font-medium text-ink active:scale-[0.98] disabled:opacity-40">
             Submit <ArrowRight weight="light" size={14} />
           </button>
@@ -444,6 +470,52 @@ function GradedView({ stage, onContinue }: { stage: Extract<Stage, { kind: "grad
       )}
       <button type="button" onClick={onContinue} className="mt-6 inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2 text-sm font-medium text-ink active:scale-[0.98]">
         Next <ArrowRight weight="light" size={14} />
+      </button>
+    </div>
+  );
+}
+
+/** Without a grader: the taker ticks which rubric points their answer covers. */
+function SelfCheckView({ stage, onDone }: { stage: Extract<Stage, { kind: "selfcheck" }>; onDone: (score: number) => void }) {
+  const q = stage.question;
+  const criteria = q.rubric?.criteria ?? [];
+  const [ticked, setTicked] = useState<boolean[]>(() => criteria.map(() => false));
+  const count = ticked.filter(Boolean).length;
+  return (
+    <div className="mt-4">
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-paper-faint">Check your answer</p>
+      <h2 id="quiz-title" className="mt-2 font-serif text-[1.6rem] leading-snug text-paper">Tick each point your answer actually covers.</h2>
+      <details className="mt-3 rounded-2xl border border-hairline p-3 text-[13px] text-paper-muted">
+        <summary className="cursor-pointer">Your answer</summary>
+        <p className="mt-2 whitespace-pre-wrap font-mono text-[12.5px] leading-relaxed">{stage.text}</p>
+      </details>
+      <ul className="mt-4 space-y-2">
+        {criteria.map((c, i) => (
+          <li key={c}>
+            <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-hairline p-3 text-[14px] leading-snug text-paper has-[:checked]:border-[#1f9d63] has-[:checked]:bg-[#1f9d63]/10">
+              <input
+                type="checkbox"
+                checked={ticked[i]}
+                onChange={() => setTicked((t) => t.map((v, k) => (k === i ? !v : v)))}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-[#1f9d63]"
+              />
+              {c}
+            </label>
+          </li>
+        ))}
+      </ul>
+      {q.explanation && (
+        <div className="mt-5 rounded-2xl border border-hairline p-4">
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-paper-faint">What a strong answer covers</p>
+          <p className="mt-2 text-[14px] leading-relaxed text-paper">{q.explanation}</p>
+        </div>
+      )}
+      <button
+        type="button"
+        onClick={() => onDone(criteria.length ? count / criteria.length : 0)}
+        className="mt-6 inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2 text-sm font-medium text-ink active:scale-[0.98]"
+      >
+        {count}/{criteria.length} covered · Next <ArrowRight weight="light" size={14} />
       </button>
     </div>
   );

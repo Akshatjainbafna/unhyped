@@ -181,6 +181,24 @@ describe("question bank", () => {
     }
   });
 
+  it("gives nothing away by option length", () => {
+    const mc = QUESTION_BANK.filter((q) => q.options && q.options.length >= 3 && typeof q.answer === "number");
+    let longest = 0;
+    let shortest = 0;
+    for (const q of mc) {
+      const len = q.options!.map((o) => o.length);
+      const right = len[q.answer as number];
+      const others = len.filter((_, i) => i !== q.answer);
+      // Options sit within a similar length band…
+      expect(Math.max(...len) / Math.min(...len), q.id).toBeLessThanOrEqual(2);
+      if (right > Math.max(...others)) longest++;
+      if (right < Math.min(...others)) shortest++;
+    }
+    // …and the right answer is the longest (or shortest) about as often as chance would give.
+    expect(longest / mc.length).toBeLessThanOrEqual(0.3);
+    expect(shortest / mc.length).toBeLessThanOrEqual(0.3);
+  });
+
   it("has unique ids", () => {
     expect(new Set(QUESTION_BANK.map((q) => q.id)).size).toBe(QUESTION_BANK.length);
   });
