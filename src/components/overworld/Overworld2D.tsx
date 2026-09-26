@@ -14,7 +14,8 @@ import { SCENARIOS } from "@/lib/taxonomy";
 const DESKTOP = { width: 1200, cols: 4, sceneHeight: 480 };
 const MOBILE = { width: 440, cols: 1, sceneHeight: 330, radius: 40 };
 const FUTURES_H = 420;
-const FUTURES_GROUND = "#8fd67a";
+const FUTURES_MIST = "#f4faff";
+const CAMPFIRE_MIST = "#f3c58e";
 const CAMPFIRE_H = 520;
 
 function stageFor(year: number): 0 | 1 | 2 | 3 | 4 {
@@ -128,19 +129,27 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
     // mapTop reads layout at call time; ow/scale capture the geometry.
   }, [ow, scale, width]);
 
-  // Era zones: each panorama's ground carries on until the next era begins.
+  // Era zones: each era's atmosphere fills its stretch of road and blends
+  // into the next over a long crossfade, so the world flows instead of stacking.
   const zones = useMemo(() => {
     const scenes = ow.blocks.filter((b): b is Extract<typeof b, { kind: "scene" }> => b.kind === "scene");
-    return scenes.map((b, i) => ({
-      block: b,
-      pano: PANORAMAS.find((p) => p.id === b.id)!,
-      prev: i ? PANORAMAS.find((p) => p.id === scenes[i - 1].id)!.ground : FUTURES_GROUND,
-      end: scenes[i + 1]?.y ?? total,
-    }));
-  }, [ow, total]);
+    return scenes.map((b, i) => ({ block: b, pano: PANORAMAS.find((p) => p.id === b.id)!, start: b.y, end: scenes[i + 1]?.y ?? ow.height }));
+  }, [ow]);
+  const atmosphere = useMemo(() => {
+    const pct = (y: number) => `${((y / total) * 100).toFixed(3)}%`;
+    const stops = [`${FUTURES_MIST} 0%`, `${FUTURES_MIST} ${pct(FUTURES_H * 0.5)}`];
+    for (const z of zones) {
+      const h = z.end - z.start;
+      // Night is a moment, not a year: it holds briefly, then dawn returns.
+      const plateauEnd = z.pano.night ? z.start + h * 0.4 : z.end - Math.min(260, h * 0.3);
+      stops.push(`${z.pano.mist} ${pct(z.start + Math.min(260, h * 0.3))}`, `${z.pano.mist} ${pct(plateauEnd)}`);
+    }
+    stops.push(`${CAMPFIRE_MIST} ${pct(ow.height + 160)}`, `${CAMPFIRE_MIST} 100%`);
+    return `linear-gradient(180deg, ${stops.join(", ")})`;
+  }, [zones, total, ow.height]);
 
   return (
-    <div className="min-h-[100dvh] bg-[#7fd36b]">
+    <div className="min-h-[100dvh]" style={{ background: FUTURES_MIST }}>
       <h1 className="sr-only">Unhyped: every AI launch as a stop on a map, from today back to the first campfire</h1>
 
       {/* HUD: where the traveller is */}
@@ -163,13 +172,8 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
           <div className="relative origin-top-left" style={{ width: ow.width, height: total, transform: `scale(${scale})`, marginBottom: total * (scale - 1), marginLeft: (width - ow.width * scale) / 2 }}>
             {/* Full-bleed era worlds behind everything */}
             <div aria-hidden="true" className="absolute top-0" style={{ left: -4000, width: ow.width + 8000, height: total }}>
-              <div className="absolute inset-x-0 top-0" style={{ height: FUTURES_H + 40, background: `linear-gradient(#f4faff, ${FUTURES_GROUND})` }} />
-              {zones.map(({ block, pano, prev, end }) => (
-                <div key={pano.id} className="absolute inset-x-0" style={{ top: block.y - 60, height: end - block.y + 60, background: pano.ground }}>
-                  <div className="absolute inset-x-0 top-0" style={{ height: 60 + ((mobile ? ow.width : ow.width - 350) * 330) / 1200, background: `linear-gradient(${prev}, ${pano.sky[0]} 60px, ${pano.sky[1]})` }} />
-                </div>
-              ))}
-              <div className="absolute inset-x-0" style={{ top: ow.height - 20, height: CAMPFIRE_H + 20, background: `linear-gradient(${zones.at(-1)?.pano.ground ?? FUTURES_GROUND}, #d9a86c 180px)` }} />
+              <div className="absolute inset-0" style={{ background: atmosphere }} />
+              <Ambient zones={zones} total={total} />
             </div>
             {/* Futures: three roads into the clouds */}
             <Futures width={ow.width} startX={ow.segs[0]?.kind === "line" ? ow.segs[0].x0 : 120} mobile={mobile} dataset={dataset} />
@@ -248,9 +252,23 @@ function PanoramaView({ pano, top, width, mobile }: { pano: Panorama; top: numbe
   return (
     <section aria-label={`${pano.title}, ${pano.when}: ${pano.line}`} className="absolute left-0" style={{ top, width }}>
       <svg viewBox="0 0 1200 380" width={artW} height={artH} className="mx-auto block overflow-visible" aria-hidden="true">
+        <defs>
+          <linearGradient id={`hill-${pano.id}`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stopColor={pano.hill} />
+            <stop offset="0.55" stopColor={pano.hill} stopOpacity="0.85" />
+            <stop offset="1" stopColor={pano.hill} stopOpacity="0" />
+          </linearGradient>
+          <radialGradient id={`land-${pano.id}`} cx="0.5" cy="0.2" r="0.7">
+            <stop offset="0.55" stopColor="#fff" />
+            <stop offset="1" stopColor="#fff" stopOpacity="0" />
+          </radialGradient>
+          <mask id={`fade-${pano.id}`}>
+            <rect x={-200} y={-40} width={1600} height={520} fill={`url(#land-${pano.id})`} />
+          </mask>
+        </defs>
+        {/* Rolling land that melts into the era's air on every side */}
+        <path d="M-200 342 C 80 300, 260 318, 420 330 S 760 312, 900 326 S 1180 306, 1400 338 L1400 470 L-200 470 Z" fill={`url(#hill-${pano.id})`} mask={`url(#fade-${pano.id})`} />
         <Art />
-        <path d="M-4000 330 H5200 V380 H-4000 Z" fill={pano.ground} />
-        <path d="M-4000 330 H5200" stroke={C.ink} strokeWidth={3} />
       </svg>
       <div className={`relative z-[1] mx-auto flex items-start gap-3 ${mobile ? "-mt-2 flex-col px-3" : "mt-2 w-[860px] justify-between"}`}>
         <div className={`rounded-2xl border-[3px] border-[#26283b] bg-white px-4 py-2 shadow-[0_4px_0_#26283b] ${mobile ? "w-full" : "max-w-[300px]"}`}>
@@ -271,6 +289,42 @@ function PanoramaView({ pano, top, width, mobile }: { pano: Panorama; top: numbe
         </ul>
       </div>
     </section>
+  );
+}
+
+/**
+ * Weather that drifts across era boundaries: clouds by day, stars around
+ * launch night, snow through the AI winters. Each patch fades in and out.
+ */
+function Ambient({ zones, total }: { zones: { pano: Panorama; start: number; end: number }[]; total: number }) {
+  const bits: React.ReactNode[] = [];
+  zones.forEach(({ pano, start, end }, zi) => {
+    const kind = pano.night ? "star" : pano.id === "learning-labs" || pano.id === "expert-offices" ? "snow" : "cloud";
+    const count = Math.max(4, Math.round((end - start) / (kind === "cloud" ? 260 : 70)));
+    for (let i = 0; i < count; i++) {
+      const r = ((i + 1) * 9301 + zi * 49297) % 233280;
+      const x = (r / 233280) * 100;
+      const y = start - 120 + ((i + 0.5) / count) * (end - start + 240);
+      const stop = kind === "star" ? start + (end - start) * 0.5 : end;
+      if (y > stop + 120) continue;
+      const edge = Math.min(1, Math.min(y - (start - 120), stop + 120 - y) / 240);
+      const style = { left: `${x}%`, top: y, opacity: Math.max(0, edge) * (kind === "cloud" ? 0.9 : 1) } as const;
+      if (kind === "cloud")
+        bits.push(
+          <svg key={`${zi}-${i}`} className="absolute animate-[drift_40s_ease-in-out_infinite_alternate]" style={{ ...style, animationDelay: `${-i * 7}s` }} width={130} height={46} viewBox="0 0 90 32">
+            <path d="M4 30 q0-14 14-14 q4-12 20-12 q14 0 20 12 q14 0 14 14 z" fill="#fff" stroke={C.ink} strokeWidth={2.5} strokeLinejoin="round" />
+          </svg>,
+        );
+      else if (kind === "star")
+        bits.push(<span key={`${zi}-${i}`} className="absolute h-1.5 w-1.5 animate-pulse rounded-full bg-white" style={{ ...style, animationDelay: `${(i % 7) * 0.4}s` }} />);
+      else
+        bits.push(<span key={`${zi}-${i}`} className="absolute h-2.5 w-2.5 animate-[fall_9s_linear_infinite] rounded-full border border-[#26283b]/40 bg-white" style={{ ...style, animationDelay: `${-(i % 9)}s` }} />);
+    }
+  });
+  return (
+    <div className="absolute inset-0 overflow-hidden" style={{ height: total }}>
+      {bits}
+    </div>
   );
 }
 

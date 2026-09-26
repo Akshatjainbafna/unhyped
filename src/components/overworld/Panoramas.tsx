@@ -15,6 +15,8 @@ export type Panorama = {
   line: string; // what AI could demonstrably do here
   sky: [string, string]; // top, horizon
   ground: string;
+  mist: string; // the era's atmosphere; blends continuously into the next era's
+  hill: string; // soft land the landmarks stand on, fading into the mist
   night?: boolean;
   stage: 0 | 1 | 2 | 3 | 4;
   answers: [Answer, Answer, Answer]; // Draw a cat · Translate this sentence · Book my flight
@@ -556,30 +558,30 @@ const m = (text: string): Answer => ({ text, ok: "meh" });
 const n = (text: string): Answer => ({ text, ok: "no" });
 
 export const PANORAMAS: Panorama[] = [
-  { id: "agent-city", at: 2026.8, title: "Agent city", when: "2026", line: "Agents act across media: they file, book, write, film and compose.", sky: ["#7fcdfb", "#c9ecff"], ground: "#7fd36b", stage: 4, Art: AgentCityArt,
+  { id: "agent-city", at: 2026.8, title: "Agent city", when: "2026", line: "Agents act across media: they file, book, write, film and compose.", sky: ["#7fcdfb", "#c9ecff"], ground: "#7fd36b", mist: "#d4efff", hill: "#b6e1f7", stage: 4, Art: AgentCityArt,
     answers: [y("A 10-second cat video, with sound."), y("Live, spoken, in your own voice."), y("Booked. Receipt filed.")] },
-  { id: "reasoning-quarter", at: 2026, title: "The reasoning quarter", when: "2025", line: "Models think before answering: olympiad maths, and agents that code for hours.", sky: ["#8fd3ff", "#d6f0ff"], ground: "#86d47a", stage: 4, Art: ReasoningArt,
+  { id: "reasoning-quarter", at: 2026, title: "The reasoning quarter", when: "2025", line: "Models think before answering: olympiad maths, and agents that code for hours.", sky: ["#8fd3ff", "#d6f0ff"], ground: "#86d47a", mist: "#e0f1ff", hill: "#c4e2fa", stage: 4, Art: ReasoningArt,
     answers: [y("Photoreal images, short clips."), y("Near-human quality in most languages."), m("A browser agent books it; you confirm.")] },
-  { id: "media-studios", at: 2025, title: "Media studios", when: "2024", line: "Video, music and images from a sentence. Early clips still bend physics.", sky: ["#ffc9dc", "#ffeef4"], ground: "#94d680", stage: 3, Art: MediaStudiosArt,
+  { id: "media-studios", at: 2025, title: "Media studios", when: "2024", line: "Video, music and images from a sentence. Early clips still bend physics.", sky: ["#ffc9dc", "#ffeef4"], ground: "#94d680", mist: "#ffe6ee", hill: "#f8cddc", stage: 3, Art: MediaStudiosArt,
     answers: [y("A short video clip. Check the physics."), y("Real-time voice translation demos."), m("Plans the trip; you still click Buy.")] },
-  { id: "chatbot-towers", at: 2024, title: "Chatbot towers", when: "2023", line: "A chat assistant in every window, plus retrieval, plugins and confident mistakes.", sky: ["#a9dcff", "#e1f3ff"], ground: "#7cc96e", stage: 3, Art: ChatbotTowersArt,
+  { id: "chatbot-towers", at: 2024, title: "Chatbot towers", when: "2023", line: "A chat assistant in every window, plus retrieval, plugins and confident mistakes.", sky: ["#a9dcff", "#e1f3ff"], ground: "#7cc96e", mist: "#e2f1ff", hill: "#c7e2fa", stage: 3, Art: ChatbotTowersArt,
     answers: [y("Good images; watch the hands."), y("Fluent text translation."), m("Suggests flights via plugins; you book.")] },
-  { id: "launch-night", at: 2022.92, title: "Launch night", when: "Nov 30, 2022", line: "One chat window, text only, and a queue around the block.", sky: ["#172649", "#2b4a86"], ground: "#3f7d4f", night: true, stage: 3, Art: LaunchNightArt,
+  { id: "launch-night", at: 2022.92, title: "Launch night", when: "Nov 30, 2022", line: "One chat window, text only, and a queue around the block.", sky: ["#172649", "#2b4a86"], ground: "#3f7d4f", mist: "#253d73", hill: "#314f8c", night: true, stage: 3, Art: LaunchNightArt,
     answers: [m("Text only. It types /\\_/\\ ( o.o )."), y("Fluent, and it explains the grammar."), n("“I can't browse the internet.”")] },
-  { id: "language-factory", at: 2022, title: "The language factory", when: "2017–2021", line: "The Transformer arrives: models write a paragraph, then whole pages.", sky: ["#bfe2ff", "#eaf6ff"], ground: "#8fcf74", stage: 3, Art: LanguageFactoryArt,
+  { id: "language-factory", at: 2022, title: "The language factory", when: "2017–2021", line: "The Transformer arrives: models write a paragraph, then whole pages.", sky: ["#bfe2ff", "#eaf6ff"], ground: "#8fcf74", mist: "#eaf3ff", hill: "#cfe3fa", stage: 3, Art: LanguageFactoryArt,
     answers: [m("DALL·E (2021): small, cartoonish cats."), y("Neural translation, a big quality jump."), n("Assistants set reminders, not bookings.")] },
-  { id: "seeing-machines", at: 2017, title: "The seeing machines", when: "2012–2016", line: "Networks learn to see and hear: ImageNet, speech recognition, AlphaGo.", sky: ["#b8dcff", "#e6f2ff"], ground: "#86c96a", stage: 2, Art: SeeingMachinesArt,
+  { id: "seeing-machines", at: 2017, title: "The seeing machines", when: "2012–2016", line: "Networks learn to see and hear: ImageNet, speech recognition, AlphaGo.", sky: ["#b8dcff", "#e6f2ff"], ground: "#86c96a", mist: "#e4f0ff", hill: "#cadffa", stage: 2, Art: SeeingMachinesArt,
     answers: [m("It can spot a cat in a photo, not draw one."), m("Google Translate turns neural in 2016."), n("“Here are some search results.”")] },
-  { id: "chess-hall", at: 2010, title: "The chess hall", when: "1997–2011", line: "Deep Blue wins by searching 200 million positions a second, not by learning.", sky: ["#f5d7b0", "#fbead2"], ground: "#a9c77e", stage: 2, Art: ChessHallArt,
+  { id: "chess-hall", at: 2010, title: "The chess hall", when: "1997–2011", line: "Deep Blue wins by searching 200 million positions a second, not by learning.", sky: ["#f5d7b0", "#fbead2"], ground: "#a9c77e", mist: "#fbe8cd", hill: "#f0d2a8", stage: 2, Art: ChessHallArt,
     answers: [n("No. It can only play chess."), m("Rule-based, then statistical, often clumsy."), n("Call the airline. Press 1.")] },
-  { id: "learning-labs", at: 1990, title: "Learning labs", when: "1986–1996", line: "Backpropagation and small networks read handwritten digits on bank cheques.", sky: ["#dfe9f2", "#f2f6fa"], ground: "#b7d3a2", stage: 2, Art: LearningLabsArt,
+  { id: "learning-labs", at: 1990, title: "Learning labs", when: "1986–1996", line: "Backpropagation and small networks read handwritten digits on bank cheques.", sky: ["#dfe9f2", "#f2f6fa"], ground: "#b7d3a2", mist: "#e9eff5", hill: "#d2dde9", stage: 2, Art: LearningLabsArt,
     answers: [n("No. It can read handwritten digits."), m("Statistical translation research begins."), n("A human travel agent books it.")] },
-  { id: "expert-offices", at: 1980, title: "Expert-system offices", when: "1966–1985", line: "Hand-written rules on green terminals, then an AI winter.", sky: ["#dbe7ee", "#f1f5f8"], ground: "#c6dccb", stage: 2, Art: ExpertOfficesArt,
+  { id: "expert-offices", at: 1980, title: "Expert-system offices", when: "1966–1985", line: "Hand-written rules on green terminals, then an AI winter.", sky: ["#dbe7ee", "#f1f5f8"], ground: "#c6dccb", mist: "#e6edf1", hill: "#d0dce4", stage: 2, Art: ExpertOfficesArt,
     answers: [n("No."), m("Rules for narrow domains only."), n("A human travel agent books it.")] },
-  { id: "dawn", at: 1960, title: "Dawn", when: "1943–1965", line: "The first programs that reason: logic, checkers, and the perceptron.", sky: ["#ffe2b8", "#fff3dd"], ground: "#c9c58a", stage: 2, Art: DawnArt,
+  { id: "dawn", at: 1960, title: "Dawn", when: "1943–1965", line: "The first programs that reason: logic, checkers, and the perceptron.", sky: ["#ffe2b8", "#fff3dd"], ground: "#c9c58a", mist: "#fff1d9", hill: "#f5d9ae", stage: 2, Art: DawnArt,
     answers: [n("No. The perceptron sorts simple shapes."), m("Georgetown–IBM: 60 Russian sentences (1954)."), n("Phone the airline.")] },
-  { id: "mechanical-age", at: 1940, title: "The mechanical age", when: "1800s", line: "Machines that compute tables, a loom run by punched cards, and Lovelace's notes.", sky: ["#f3d9b5", "#fbeedd"], ground: "#d2b77f", stage: 1, Art: MechanicalArt,
+  { id: "mechanical-age", at: 1940, title: "The mechanical age", when: "1800s", line: "Machines that compute tables, a loom run by punched cards, and Lovelace's notes.", sky: ["#f3d9b5", "#fbeedd"], ground: "#d2b77f", mist: "#f7e5c9", hill: "#eacca1", stage: 1, Art: MechanicalArt,
     answers: [n("No. Machines compute tables of numbers."), n("A human translator."), n("No airlines until 1914.")] },
-  { id: "antiquity", at: 1800, title: "Antiquity", when: "Before 1800", line: "Tools that hold knowledge: writing, the abacus, the Antikythera mechanism.", sky: ["#ffd9a8", "#fff0da"], ground: "#e0c08a", stage: 0, Art: AntiquityArt,
+  { id: "antiquity", at: 1800, title: "Antiquity", when: "Before 1800", line: "Tools that hold knowledge: writing, the abacus, the Antikythera mechanism.", sky: ["#ffd9a8", "#fff0da"], ground: "#e0c08a", mist: "#ffe8c6", hill: "#f3cf9c", stage: 0, Art: AntiquityArt,
     answers: [n("A human draws it."), n("A human interpreter."), n("No flights. Walk.")] },
 ];
