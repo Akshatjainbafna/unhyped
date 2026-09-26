@@ -8,11 +8,12 @@ import type { Dataset } from "@/lib/dataset";
 import type { HeroMoment } from "@/lib/road/director";
 import { layoutRoad } from "@/lib/road/layout";
 import { focusYear, hudPosition, roadPosition, travel } from "@/lib/store";
-import { Backdrop } from "./scene/Backdrop";
 import { CameraRig } from "./scene/CameraRig";
 import { LabelProjector, Labels } from "./scene/Labels";
 import { Road } from "./scene/Road";
-import { Campfire, DeadEnds, FutureForks, Nodes } from "./scene/RoadFeatures";
+import { Campfire, DeadEnds, FutureForks, Lanes } from "./scene/RoadFeatures";
+import { Scenery } from "./scene/Scenery";
+import { PANORAMAS } from "./overworld/Panoramas";
 import { Minimap } from "./ui/Minimap";
 import { RoadMarkers } from "./ui/RoadMarkers";
 
@@ -49,6 +50,8 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
     [road, dataset],
   );
   const weightsRef = useRef<number[]>(new Array(9).fill(0));
+  // Where each era landscape takes over the horizon (road distance, newest first).
+  const boundaries = useMemo(() => PANORAMAS.map((p) => road.sAt(p.at)), [road]);
   const total = road.futureLength + road.length;
 
   // Scroll → road distance. The page starts scrolled to "Today"; up is the future.
@@ -92,6 +95,7 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
 
   return (
     <>
+      <Scenery />
       <div
         className="fixed inset-0"
         aria-hidden="true"
@@ -99,17 +103,16 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
         <Canvas
           dpr={mobile ? 1 : [1, 1.75]}
           camera={{ fov: 45, near: 0.5, far: 600, position: [0, 18, 4] }}
-          gl={{ antialias: !mobile, powerPreference: "high-performance" }}
+          gl={{ antialias: !mobile, powerPreference: "high-performance", alpha: true }}
           onCreated={({ scene }) => {
             scene.fog = new THREE.Fog("#eaf3ff", 60, 260);
           }}
         >
-          <Backdrop weightsRef={weightsRef} detail={mobile ? 0.6 : 1} />
-          <CameraRig road={road} heroes={heroes} reducedMotion={reducedMotion} weightsRef={weightsRef} />
+          <CameraRig road={road} heroes={heroes} reducedMotion={reducedMotion} weightsRef={weightsRef} boundaries={boundaries} />
           <Road road={road} />
           <DeadEnds road={road} />
           <FutureForks road={road} />
-          <Nodes road={road} dataset={dataset} />
+          <Lanes road={road} />
           <Campfire road={road} />
           <LabelProjector />
         </Canvas>

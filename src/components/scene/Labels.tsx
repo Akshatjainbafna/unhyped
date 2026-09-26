@@ -5,6 +5,7 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { renderableAsQuote, type Dataset } from "@/lib/dataset";
 import { entriesForSegments } from "@/lib/graph";
+import { SEGMENTS } from "@/lib/taxonomy";
 import { SEGMENT_COLOR } from "@/lib/overworld/style";
 import type { RoadGeometry } from "@/lib/road/layout";
 import { hoveredEntry, hudPosition, openEntry, selectedSegments, useStore } from "@/lib/store";
@@ -81,8 +82,31 @@ export function Labels({ road, dataset, logos }: { road: RoadGeometry; dataset: 
 
   const visible = road.nodes.filter((n) => n.s > s - BEHIND && n.s < s + AHEAD).slice(0, MAX);
 
+  // Name chips for the lanes running through the stretch ahead.
+  const laneAt = 45;
+  const chips = road.lanes.flatMap((lane) => {
+    const target = s + laneAt;
+    const pts = lane.points;
+    if (target < pts[0].s || target > pts[pts.length - 1].s) return [];
+    const i = pts.findIndex((p) => p.s >= target);
+    const a = pts[Math.max(0, i - 1)];
+    const b = pts[i];
+    const t = b.s === a.s ? 0 : (target - a.s) / (b.s - a.s);
+    return [{ segment: lane.segment, x: a.x + (b.x - a.x) * t, s: target }];
+  });
+
   return (
     <div className="pointer-events-none fixed inset-0 z-10 overflow-hidden">
+      {chips.map((c) => (
+        <Anchor key={`lane:${c.segment}`} id={`lane:${c.segment}`} position={[c.x, 0.1, -c.s]}>
+          <span
+            className={`flex items-center gap-1.5 whitespace-nowrap rounded-full border-2 border-[#26283b] bg-white/90 px-2 py-0.5 font-game text-[11px] font-bold text-[#26283b] transition-opacity ${selected.length && !selected.includes(c.segment) ? "opacity-20" : ""}`}
+          >
+            <span className="h-2.5 w-2.5 rounded-full border border-[#26283b]" style={{ background: SEGMENT_COLOR[c.segment] }} />
+            {SEGMENTS[c.segment]}
+          </span>
+        </Anchor>
+      ))}
       {visible.map((n) => {
         const e = dataset.byId.get(n.id)!;
         const dim = !match.has(n.id);
@@ -91,7 +115,7 @@ export function Labels({ road, dataset, logos }: { road: RoadGeometry; dataset: 
         const side = n.x < 0 ? -1 : 1;
         return (
           <div key={n.id}>
-            <Anchor id={`label:${n.id}`} position={[n.x, 2.6, -n.s]}>
+            <Anchor id={`label:${n.id}`} position={[n.x, 0.5, -n.s]}>
               <button
                 type="button"
                 tabIndex={-1}

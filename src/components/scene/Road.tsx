@@ -131,7 +131,7 @@ export function Road({ road }: { road: RoadGeometry }) {
       glow: scalar(s, (i) => ERA_EMISSIVE[i]),
       frozen: isFrozen(s) ? 1 : 0,
     }));
-    const ground = ribbon(points, () => 420, (s) => ({ color: color(s, (w) => w.ground) }), -0.05);
+    const ground = ribbon(points, () => 2400, (s) => ({ color: color(s, (w) => w.ground) }), -0.05);
     return { geometry, ground };
   }, [road]);
 

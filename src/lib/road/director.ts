@@ -23,10 +23,10 @@ export type DirectOptions = {
   heroWindow?: number;
 };
 
-// Camera rig: low over the road, tilted down it so the horizon sits in the
-// upper third — travelling, not reading a map.
-const HEIGHT = 7.5;
-const PITCH = (11 * Math.PI) / 180;
+// Camera rig: low over the road and nearly level, so the era landscapes stand
+// on a horizon ~40% down the screen — travelling, not reading a map.
+const HEIGHT = 6.5;
+export const PITCH = (5 * Math.PI) / 180;
 const LOOK_AHEAD = HEIGHT / Math.tan(PITCH);
 const BEHIND = 14;
 

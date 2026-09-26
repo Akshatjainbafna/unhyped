@@ -1,17 +1,38 @@
 "use client";
 
-import { useFrame, type ThreeEvent } from "@react-three/fiber";
-import { useEffect, useMemo, useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import { useMemo, useRef } from "react";
 import * as THREE from "three";
-import type { Dataset } from "@/lib/dataset";
-import { entriesForSegments } from "@/lib/graph";
-import type { RoadGeometry, RoadNode } from "@/lib/road/layout";
-import { hoveredEntry, openEntry, personalRoad, selectedSegments, useStore } from "@/lib/store";
-import type { EntryType, SegmentId } from "@/lib/taxonomy";
 import { SEGMENT_COLOR } from "@/lib/overworld/style";
+import type { RoadGeometry } from "@/lib/road/layout";
+import { hexToRgb } from "@/lib/road/palette";
+import { selectedSegments, useStore } from "@/lib/store";
 import { ribbon } from "./Road";
 
-const DIM = 0.18;
+/** Segment lanes in the map's colours: they merge around the Transformer and branch out after. */
+export function Lanes({ road }: { road: RoadGeometry }) {
+  const selected = useStore(selectedSegments);
+  const lanes = useMemo(
+    () =>
+      road.lanes.map((lane) => ({
+        segment: lane.segment,
+        geometry: ribbon(lane.points, () => 0.7, () => ({ color: hexToRgb(SEGMENT_COLOR[lane.segment]) }), 0.03),
+      })),
+    [road],
+  );
+  return (
+    <group>
+      {lanes.map(({ segment, geometry }) => {
+        const active = !selected.length || selected.includes(segment);
+        return (
+          <mesh key={segment} geometry={geometry}>
+            <meshBasicMaterial vertexColors transparent opacity={active ? (selected.length ? 1 : 0.85) : 0.12} />
+          </mesh>
+        );
+      })}
+    </group>
+  );
+}
 
 /** Abandoned approaches peel off the road and stop at a barrier. */
 export function DeadEnds({ road }: { road: RoadGeometry }) {
@@ -66,129 +87,6 @@ export function FutureForks({ road }: { road: RoadGeometry }) {
         </mesh>
       ))}
     </group>
-  );
-}
-
-// Same language as the 2D map: colour = segment, shape = type.
-type ShapeKind = "product" | "model" | "paper" | "oss" | "event";
-const SHAPE_OF: Record<EntryType, ShapeKind> = {
-  product: "product",
-  "major-update": "product",
-  person: "product",
-  model: "model",
-  org: "model",
-  paper: "paper",
-  "oss-repo": "oss",
-  event: "event",
-};
-const GEOMETRY: Record<ShapeKind, () => THREE.BufferGeometry> = {
-  product: () => new THREE.SphereGeometry(0.55, 18, 12),
-  model: () => new THREE.BoxGeometry(0.9, 0.9, 0.9),
-  paper: () => new THREE.BoxGeometry(0.95, 1.15, 0.12),
-  oss: () => new THREE.CylinderGeometry(0.55, 0.55, 0.5, 6).rotateX(Math.PI / 2),
-  event: () => new THREE.OctahedronGeometry(0.62, 0),
-};
-
-/** Entry markers: a thin post with a coloured cap, instanced per shape. */
-export function Nodes({ road, dataset }: { road: RoadGeometry; dataset: Dataset }) {
-  const posts = useRef<THREE.InstancedMesh>(null);
-  const selected = useStore(selectedSegments);
-  const personal = useStore(personalRoad);
-  const nodes = road.nodes;
-  const groups = useMemo(() => {
-    const g: Record<ShapeKind, RoadNode[]> = { product: [], model: [], paper: [], oss: [], event: [] };
-    for (const n of nodes) g[SHAPE_OF[dataset.byId.get(n.id)!.type]].push(n);
-    return g;
-  }, [nodes, dataset]);
-
-  useEffect(() => {
-    const m = new THREE.Matrix4();
-    nodes.forEach((n, i) => {
-      m.makeTranslation(n.x, 0.8, -n.s);
-      posts.current?.setMatrixAt(i, m);
-    });
-    if (posts.current) posts.current.instanceMatrix.needsUpdate = true;
-  }, [nodes]);
-
-  return (
-    <group>
-      <instancedMesh ref={posts} args={[undefined, undefined, nodes.length]}>
-        <cylinderGeometry args={[0.05, 0.05, 1.6, 6]} />
-        <meshBasicMaterial color="#6f6a62" />
-      </instancedMesh>
-      {(Object.keys(groups) as ShapeKind[]).map((k) =>
-        groups[k].length ? <ShapeCaps key={k} kind={k} nodes={groups[k]} dataset={dataset} selected={selected} personal={personal} /> : null,
-      )}
-    </group>
-  );
-}
-
-function ShapeCaps({
-  kind,
-  nodes,
-  dataset,
-  selected,
-  personal,
-}: {
-  kind: ShapeKind;
-  nodes: RoadNode[];
-  dataset: Dataset;
-  selected: SegmentId[];
-  personal: { known: string[]; missed: string[] } | null;
-}) {
-  const ref = useRef<THREE.InstancedMesh>(null);
-  const geometry = useMemo(() => GEOMETRY[kind](), [kind]);
-
-  useEffect(() => {
-    const m = new THREE.Matrix4();
-    nodes.forEach((n, i) => {
-      m.makeTranslation(n.x, 1.7, -n.s);
-      ref.current?.setMatrixAt(i, m);
-    });
-    if (ref.current) ref.current.instanceMatrix.needsUpdate = true;
-  }, [nodes]);
-
-  useEffect(() => {
-    const match = entriesForSegments(dataset, selected);
-    const known = new Set(personal?.known ?? []);
-    const missed = new Set(personal?.missed ?? []);
-    const c = new THREE.Color();
-    nodes.forEach((n, i) => {
-      const e = dataset.byId.get(n.id)!;
-      c.set(missed.has(n.id) ? "#ff6b5b" : known.has(n.id) ? "#ffc21a" : SEGMENT_COLOR[e.primarySegment]);
-      if (!match.has(n.id)) c.multiplyScalar(DIM);
-      ref.current?.setColorAt(i, c);
-    });
-    if (ref.current?.instanceColor) ref.current.instanceColor.needsUpdate = true;
-  }, [nodes, dataset, selected, personal]);
-
-  const idAt = (e: ThreeEvent<PointerEvent | MouseEvent>) => (e.instanceId !== undefined ? nodes[e.instanceId]?.id : undefined);
-  return (
-    <instancedMesh
-      ref={ref}
-      args={[geometry, undefined, nodes.length]}
-      onPointerOver={(e) => {
-        e.stopPropagation();
-        const id = idAt(e);
-        if (id) hoveredEntry.set({ id, x: e.nativeEvent.clientX, y: e.nativeEvent.clientY });
-        document.body.style.cursor = "pointer";
-      }}
-      onPointerMove={(e) => {
-        const id = idAt(e);
-        if (id) hoveredEntry.set({ id, x: e.nativeEvent.clientX, y: e.nativeEvent.clientY });
-      }}
-      onPointerOut={() => {
-        hoveredEntry.set(null);
-        document.body.style.cursor = "";
-      }}
-      onClick={(e) => {
-        e.stopPropagation();
-        const id = idAt(e);
-        if (id) openEntry.set(id);
-      }}
-    >
-      <meshBasicMaterial toneMapped={false} />
-    </instancedMesh>
   );
 }
 

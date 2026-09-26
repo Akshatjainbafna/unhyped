@@ -5,9 +5,9 @@ import { useRef } from "react";
 import * as THREE from "three";
 import { direct, type HeroMoment } from "@/lib/road/director";
 import type { RoadGeometry } from "@/lib/road/layout";
-import { ERA_WORLDS } from "@/lib/road/palette";
 import { roadPosition } from "@/lib/store";
 import { fogUniforms } from "./fog";
+import { cameraFrame, eraFog } from "./Scenery";
 
 /**
  * Reads the road position every frame, eases toward it, and drives the camera,
@@ -18,17 +18,17 @@ export function CameraRig({
   heroes,
   reducedMotion,
   weightsRef,
+  boundaries,
 }: {
   road: RoadGeometry;
   heroes: HeroMoment[];
   reducedMotion: boolean;
   weightsRef: React.RefObject<number[]>;
+  boundaries: number[];
 }) {
   const eased = useRef(roadPosition.get());
   const target = useRef(new THREE.Vector3());
   const fog = useRef(new THREE.Color());
-  const tmp = useRef(new THREE.Color());
-  const white = useRef(new THREE.Color("#ffffff"));
 
   useFrame(({ camera, scene }, dt) => {
     const goal = roadPosition.get();
@@ -47,12 +47,10 @@ export function CameraRig({
     }
 
     weightsRef.current = d.eraWeights;
-    fog.current.setRGB(0, 0, 0);
-    d.eraWeights.forEach((w, i) => {
-      if (!w) return;
-      // Match the sky's pale horizon band so the ground dissolves into it.
-      fog.current.add(tmp.current.set(ERA_WORLDS[i].sky).lerp(white.current, 0.45).multiplyScalar(w));
-    });
+    // The fog matches the era landscape's air on the horizon (see Scenery).
+    cameraFrame.s = eased.current;
+    cameraFrame.boundaries = boundaries;
+    fog.current.set(eraFog(eased.current, boundaries));
     fogUniforms.uFogColor.value.copy(fog.current);
     if (scene.fog instanceof THREE.Fog) scene.fog.color.copy(fog.current);
   });
