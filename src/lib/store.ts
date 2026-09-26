@@ -42,5 +42,11 @@ export function useStore<T>(store: { get: () => T; subscribe: (l: () => void) =>
   return useSyncExternalStore(store.subscribe, store.get, store.get);
 }
 
-/** Scroll the page so the camera lands on road distance `s`. Set by the Experience. */
-export const travel: { to: (s: number) => void } = { to: () => {} };
+/** The year you are looking at, shared so switching 2D ↔ 3D keeps your place. */
+export const focusYear = createStore<number | null>(null);
+
+/**
+ * Navigation implemented by whichever view is mounted: `to` moves along the 3D
+ * road (distance s), `toEntry` brings an entry into view in either view.
+ */
+export const travel: { to: (s: number) => void; toEntry: (id: string) => void } = { to: () => {}, toEntry: () => {} };

@@ -4,31 +4,24 @@ import { Canvas } from "@react-three/fiber";
 import Lenis from "lenis";
 import { useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import * as THREE from "three";
-import { buildDataset } from "@/lib/dataset";
+import type { Dataset } from "@/lib/dataset";
 import type { HeroMoment } from "@/lib/road/director";
 import { layoutRoad } from "@/lib/road/layout";
-import type { RawDataset } from "@/lib/schema";
-import { hudPosition, roadPosition, travel } from "@/lib/store";
+import { focusYear, hudPosition, roadPosition, travel } from "@/lib/store";
 import { Backdrop } from "./scene/Backdrop";
 import { CameraRig } from "./scene/CameraRig";
 import { LabelProjector, Labels } from "./scene/Labels";
 import { Road } from "./scene/Road";
 import { Campfire, DeadEnds, FutureForks, Lanes, Nodes } from "./scene/RoadFeatures";
-import { DetailPanel } from "./ui/DetailPanel";
-import { FilterBar } from "./ui/FilterBar";
-import { HoverCard } from "./ui/HoverCard";
 import { Minimap } from "./ui/Minimap";
-import { Navbar } from "./ui/Navbar";
-import { QuizModal } from "./quiz/QuizModal";
 import { RoadMarkers } from "./ui/RoadMarkers";
-import { SearchPalette } from "./ui/SearchPalette";
 
 /** Page pixels per road unit: how far you scroll to travel one unit of road. */
 const PX_PER_UNIT = 5;
 /** Extra scroll above the futures so they never show on arrival, even on tall phones. */
 const FUTURE_PAD = 900;
 
-function useMediaQuery(query: string) {
+export function useMediaQuery(query: string) {
   return useSyncExternalStore(
     (on) => {
       const m = window.matchMedia(query);
@@ -40,8 +33,8 @@ function useMediaQuery(query: string) {
   );
 }
 
-export function Experience({ raw }: { raw: RawDataset }) {
-  const dataset = useMemo(() => buildDataset(raw), [raw]);
+/** The 3D cinematic road. Shared chrome (nav, search, panels, quiz) lives in App. */
+export function Experience({ dataset }: { dataset: Dataset }) {
   const mobile = useMediaQuery("(max-width: 767px)");
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const road = useMemo(
@@ -63,10 +56,18 @@ export function Experience({ raw }: { raw: RawDataset }) {
     const toS = (y: number) => Math.max(0, y - FUTURE_PAD) / PX_PER_UNIT - road.futureLength;
     const toY = (s: number) => (s + road.futureLength) * PX_PER_UNIT + FUTURE_PAD;
     const lenis = reducedMotion ? null : new Lenis({ lerp: 0.09, wheelMultiplier: 0.9 });
-    window.scrollTo({ top: toY(0), behavior: "instant" as ScrollBehavior });
+    // Arrive where the 2D view left off, or at Today.
+    const start = focusYear.get();
+    window.scrollTo({ top: toY(start === null ? 0 : Math.max(0, road.sAt(start) - 18)), behavior: "instant" as ScrollBehavior });
     travel.to = (s: number) => {
       if (lenis) lenis.scrollTo(toY(s), { duration: 2.2 });
       else window.scrollTo({ top: toY(s) });
+    };
+    const sById = new Map(road.nodes.map((n) => [n.id, n.s]));
+    travel.toEntry = (id: string) => {
+      // Major updates live on their parent's line, so travel to the parent.
+      const s = sById.get(id) ?? sById.get(dataset.byId.get(id)?.parentId ?? "");
+      if (s !== undefined) travel.to(Math.max(-road.futureLength, s - 18));
     };
     const onScroll = () => roadPosition.set(toS(window.scrollY));
     onScroll();
@@ -77,14 +78,17 @@ export function Experience({ raw }: { raw: RawDataset }) {
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
-    const hud = window.setInterval(() => hudPosition.set(Math.round(roadPosition.get() * 2) / 2), 100);
+    const hud = window.setInterval(() => {
+      hudPosition.set(Math.round(roadPosition.get() * 2) / 2);
+      focusYear.set(Math.round(road.yearAt(roadPosition.get()) * 100) / 100);
+    }, 100);
     return () => {
       window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(raf);
       clearInterval(hud);
       lenis?.destroy();
     };
-  }, [road, reducedMotion]);
+  }, [road, reducedMotion, dataset]);
 
   return (
     <>
@@ -119,13 +123,7 @@ export function Experience({ raw }: { raw: RawDataset }) {
         <RoadMarkers road={road} dataset={dataset} pxPerUnit={PX_PER_UNIT} pad={FUTURE_PAD} />
       </main>
 
-      <Navbar />
       <Minimap road={road} />
-      <FilterBar />
-      <SearchPalette dataset={dataset} road={road} />
-      <HoverCard dataset={dataset} />
-      <DetailPanel dataset={dataset} />
-      <QuizModal dataset={dataset} />
     </>
   );
 }

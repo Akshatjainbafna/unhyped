@@ -18,6 +18,28 @@
   --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
+/*
+ * Game theme (2D overworld): light, crisp, one ink outline. Swapping the same
+ * tokens turns every shared panel light without touching its markup.
+ */
+html[data-theme="game"] {
+  --ink: #fff8ea;
+  --ink-raised: #ffffff;
+  --paper: #26283b;
+  --paper-muted: #55597a;
+  --paper-faint: #7d819c;
+  --hairline: rgb(38 40 59 / 0.2);
+  --hairline-strong: rgb(38 40 59 / 0.45);
+  --accent: #d98a00;
+  --wrong: #e0503a;
+  --font-instrument-serif: var(--font-fredoka);
+  --font-geist-sans: var(--font-nunito);
+  color-scheme: light;
+}
+html[data-theme="game"] .grain::after {
+  display: none;
+}
+
 @theme inline {
   --color-ink: var(--ink);
   --color-ink-raised: var(--ink-raised);
@@ -31,6 +53,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-instrument-serif);
+  --font-game: var(--font-fredoka);
   --ease-out-soft: var(--ease-out);
   --ease-spring: var(--ease-spring);
 }

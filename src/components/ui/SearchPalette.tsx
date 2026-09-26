@@ -5,7 +5,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { formatYear } from "../scene/Labels";
 import { typeLabel } from "./HoverCard";
 import type { Dataset } from "@/lib/dataset";
-import type { RoadGeometry } from "@/lib/road/layout";
 import type { Entry } from "@/lib/schema";
 import { openEntry, searchOpen, travel, useStore } from "@/lib/store";
 import { SEGMENTS } from "@/lib/taxonomy";
@@ -36,13 +35,12 @@ export function rank(entries: Entry[], query: string, limit = 8): Entry[] {
 }
 
 /** Search any tool, paper or person and travel to it on the road (⌘K or /). */
-export function SearchPalette({ dataset, road }: { dataset: Dataset; road: RoadGeometry }) {
+export function SearchPalette({ dataset }: { dataset: Dataset }) {
   const open = useStore(searchOpen);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
   const input = useRef<HTMLInputElement>(null);
   const results = useMemo(() => rank(dataset.entries, query), [dataset, query]);
-  const sById = useMemo(() => new Map(road.nodes.map((n) => [n.id, n.s])), [road]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -63,9 +61,7 @@ export function SearchPalette({ dataset, road }: { dataset: Dataset; road: RoadG
   if (!open) return null;
 
   const go = (e: Entry) => {
-    // Major updates live on their parent's line, so travel to the parent.
-    const s = sById.get(e.id) ?? (e.parentId ? sById.get(e.parentId) : undefined);
-    if (s !== undefined) travel.to(Math.max(-road.futureLength, s - 18));
+    travel.toEntry(e.id);
     searchOpen.set(false);
     setTimeout(() => openEntry.set(e.id), 0);
     setQuery("");
