@@ -21,6 +21,7 @@ import { Minimap } from "./ui/Minimap";
 import { Navbar } from "./ui/Navbar";
 import { QuizModal } from "./quiz/QuizModal";
 import { RoadMarkers } from "./ui/RoadMarkers";
+import { SearchPalette } from "./ui/SearchPalette";
 
 /** Page pixels per road unit: how far you scroll to travel one unit of road. */
 const PX_PER_UNIT = 5;
@@ -121,6 +122,7 @@ export function Experience({ raw }: { raw: RawDataset }) {
       <Navbar />
       <Minimap road={road} />
       <FilterBar />
+      <SearchPalette dataset={dataset} road={road} />
       <HoverCard dataset={dataset} />
       <DetailPanel dataset={dataset} />
       <QuizModal dataset={dataset} />

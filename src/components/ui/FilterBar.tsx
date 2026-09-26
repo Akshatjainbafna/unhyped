@@ -23,10 +23,28 @@ export function FilterBar() {
     window.history.replaceState(null, "", url);
   }, [selected]);
 
+  // Close like the other modals: Escape or a click anywhere outside the panel.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && filterOpen.set(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   const toggle = (id: SegmentId) =>
     selectedSegments.set(selected.includes(id) ? selected.filter((s) => s !== id) : [...selected, id]);
 
   return (
+    <>
+    {open && (
+      <button
+        type="button"
+        aria-label="Close Map of AI"
+        tabIndex={-1}
+        onClick={() => filterOpen.set(false)}
+        className="fixed inset-0 z-[35] cursor-default bg-ink/20"
+      />
+    )}
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-40 flex justify-center px-4 pb-4 md:pb-6">
       <div className="pointer-events-auto w-full max-w-4xl">
         {open && (
@@ -93,5 +111,6 @@ export function FilterBar() {
         </div>
       </div>
     </div>
+    </>
   );
 }

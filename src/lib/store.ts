@@ -34,6 +34,7 @@ export const hoveredEntry = createStore<{ id: string; x: number; y: number } | n
 export const openEntry = createStore<string | null>(null);
 export const quizOpen = createStore(false);
 export const filterOpen = createStore(false);
+export const searchOpen = createStore(false);
 /** Personalised road: entry ids the quiz shows the user knows / missed. */
 export const personalRoad = createStore<{ known: string[]; missed: string[] } | null>(null);
 

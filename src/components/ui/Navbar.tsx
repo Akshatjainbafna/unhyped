@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowUpRight, SquaresFour } from "@phosphor-icons/react";
-import { filterOpen, quizOpen, travel } from "@/lib/store";
+import { ArrowUpRight, MagnifyingGlass, SquaresFour } from "@phosphor-icons/react";
+import { filterOpen, quizOpen, searchOpen, travel } from "@/lib/store";
 
 /** Floating island nav: wordmark, Map of AI, Method, and the Quiz CTA. */
 export function Navbar() {
@@ -18,6 +18,16 @@ export function Navbar() {
           aria-label="Unhyped, back to Today"
         >
           Unhyped
+        </button>
+        <button
+          type="button"
+          onClick={() => searchOpen.set(true)}
+          aria-label="Search the road"
+          className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-[13px] text-paper-muted transition-colors duration-300 hover:text-paper sm:px-4"
+        >
+          <MagnifyingGlass weight="light" size={16} />
+          <span className="hidden sm:inline">Search</span>
+          <kbd className="hidden rounded border border-hairline px-1 font-mono text-[10px] text-paper-faint lg:inline">⌘K</kbd>
         </button>
         <button
           type="button"
