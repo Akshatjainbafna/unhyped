@@ -1,11 +1,13 @@
 "use client";
 
 import { useFrame } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
+import { useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { SEGMENT_COLOR } from "@/lib/overworld/style";
 import type { RoadGeometry } from "@/lib/road/layout";
 import { hexToRgb } from "@/lib/road/palette";
+import type { Dataset } from "@/lib/dataset";
+import { entriesForSegments } from "@/lib/graph";
 import { selectedSegments, useStore } from "@/lib/store";
 import { ribbon } from "./Road";
 
@@ -199,14 +201,28 @@ export function Roadside({ road }: { road: RoadGeometry }) {
 
 
 /** A small disc on the lane under each label: where the entry sits on the road. */
-export function PathMarkers({ road }: { road: RoadGeometry }) {
+export function PathMarkers({ road, dataset }: { road: RoadGeometry; dataset: Dataset }) {
+  const selected = useStore(selectedSegments);
+  // Same rule as the labels: an entry matches if any of its segments is selected.
+  const match = useMemo(() => entriesForSegments(dataset, selected), [dataset, selected]);
+  const on = road.nodes.filter((n) => match.has(n.id));
+  const off = road.nodes.filter((n) => !match.has(n.id));
+  return (
+    <group>
+      {/* Keyed by count: an instanced mesh's size is fixed when it is created. */}
+      <Discs key={`on-${on.length}`} nodes={on} opacity={1} />
+      {off.length > 0 && <Discs key={`off-${off.length}`} nodes={off} opacity={0.18} />}
+    </group>
+  );
+}
+
+function Discs({ nodes, opacity }: { nodes: RoadGeometry["nodes"]; opacity: number }) {
   const rim = useRef<THREE.InstancedMesh>(null);
   const dot = useRef<THREE.InstancedMesh>(null);
-  const selected = useStore(selectedSegments);
-  const nodes = road.nodes;
-  const flat = useMemo(() => new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0)), []);
+  const faded = opacity < 1;
 
-  const draw = () => {
+  useLayoutEffect(() => {
+    const flat = new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0));
     const m = new THREE.Matrix4();
     const c = new THREE.Color();
     const one = new THREE.Vector3(1, 1, 1);
@@ -215,10 +231,7 @@ export function PathMarkers({ road }: { road: RoadGeometry }) {
       rim.current?.setMatrixAt(i, m);
       m.compose(new THREE.Vector3(n.x, 0.06, -n.s), flat, one);
       dot.current?.setMatrixAt(i, m);
-      const on = !selected.length || selected.includes(n.lane);
-      c.set(SEGMENT_COLOR[n.lane]);
-      if (!on) c.lerp(new THREE.Color("#524c47"), 0.8);
-      dot.current?.setColorAt(i, c);
+      dot.current?.setColorAt(i, c.set(SEGMENT_COLOR[n.lane]));
     });
     for (const r of [rim, dot]) {
       if (r.current) {
@@ -226,17 +239,18 @@ export function PathMarkers({ road }: { road: RoadGeometry }) {
         if (r.current.instanceColor) r.current.instanceColor.needsUpdate = true;
       }
     }
-  };
+  }, [nodes]);
 
+  if (!nodes.length) return null;
   return (
-    <group ref={() => draw()}>
+    <group>
       <instancedMesh ref={rim} args={[undefined, undefined, nodes.length]}>
         <circleGeometry args={[0.85, 20]} />
-        <meshBasicMaterial color="#f7f3e8" />
+        <meshBasicMaterial color="#f7f3e8" transparent={faded} opacity={opacity} depthWrite={!faded} />
       </instancedMesh>
       <instancedMesh ref={dot} args={[undefined, undefined, nodes.length]}>
         <circleGeometry args={[0.6, 20]} />
-        <meshBasicMaterial />
+        <meshBasicMaterial transparent={faded} opacity={opacity} depthWrite={!faded} />
       </instancedMesh>
     </group>
   );

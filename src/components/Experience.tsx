@@ -117,7 +117,7 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
         >
           <CameraRig road={road} heroes={heroes} reducedMotion={reducedMotion} weightsRef={weightsRef} boundaries={boundaries} />
           <Road road={road} />
-          <PathMarkers road={road} />
+          <PathMarkers road={road} dataset={dataset} />
           <Roadside road={road} />
           <hemisphereLight args={["#ffffff", "#6b5f52", 1.6]} />
           <directionalLight position={[40, 60, 20]} intensity={1.4} />
