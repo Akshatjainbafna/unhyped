@@ -5,6 +5,7 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { renderableAsQuote, type Dataset } from "@/lib/dataset";
 import { entriesForSegments } from "@/lib/graph";
+import { SEGMENT_COLOR } from "@/lib/overworld/style";
 import type { RoadGeometry } from "@/lib/road/layout";
 import { hoveredEntry, hudPosition, openEntry, selectedSegments, useStore } from "@/lib/store";
 
@@ -66,7 +67,7 @@ function Anchor({ id, position, children }: { id: string; position: [number, num
  * Entry labels and Claim vs. Reality signposts for the stretch of road ahead,
  * as real HTML (crisp, selectable, focusable) positioned by LabelProjector.
  */
-export function Labels({ road, dataset }: { road: RoadGeometry; dataset: Dataset }) {
+export function Labels({ road, dataset, logos }: { road: RoadGeometry; dataset: Dataset; logos: Record<string, string> }) {
   const s = useStore(hudPosition);
   const selected = useStore(selectedSegments);
   const match = useMemo(() => entriesForSegments(dataset, selected), [dataset, selected]);
@@ -99,8 +100,18 @@ export function Labels({ road, dataset }: { road: RoadGeometry; dataset: Dataset
                 onPointerLeave={() => hoveredEntry.set(null)}
                 onClick={() => openEntry.set(n.id)}
               >
-                <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-paper-faint tabular">{formatYear(e.date)}</span>
-                <span className="block text-[13px] text-paper">{e.title}</span>
+                <span className="flex items-center gap-2">
+                  {logos[n.id] && (
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white" style={{ boxShadow: `inset 0 0 0 2px ${SEGMENT_COLOR[e.primarySegment]}` }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={logos[n.id]} alt="" width={16} height={16} loading="lazy" className="h-4 w-4 object-contain" />
+                    </span>
+                  )}
+                  <span>
+                    <span className="block font-mono text-[10px] uppercase tracking-[0.14em] text-paper-faint tabular">{formatYear(e.date)}</span>
+                    <span className="block text-[13px] text-paper">{e.title}</span>
+                  </span>
+                </span>
               </button>
             </Anchor>
             {claim && (

@@ -12,7 +12,7 @@ import { Backdrop } from "./scene/Backdrop";
 import { CameraRig } from "./scene/CameraRig";
 import { LabelProjector, Labels } from "./scene/Labels";
 import { Road } from "./scene/Road";
-import { Campfire, DeadEnds, FutureForks, Lanes, Nodes } from "./scene/RoadFeatures";
+import { Campfire, DeadEnds, FutureForks, Nodes } from "./scene/RoadFeatures";
 import { Minimap } from "./ui/Minimap";
 import { RoadMarkers } from "./ui/RoadMarkers";
 
@@ -34,7 +34,7 @@ export function useMediaQuery(query: string) {
 }
 
 /** The 3D cinematic road. Shared chrome (nav, search, panels, quiz) lives in App. */
-export function Experience({ dataset }: { dataset: Dataset }) {
+export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record<string, string> }) {
   const mobile = useMediaQuery("(max-width: 767px)");
   const reducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const road = useMemo(
@@ -107,7 +107,6 @@ export function Experience({ dataset }: { dataset: Dataset }) {
           <Backdrop weightsRef={weightsRef} detail={mobile ? 0.6 : 1} />
           <CameraRig road={road} heroes={heroes} reducedMotion={reducedMotion} weightsRef={weightsRef} />
           <Road road={road} />
-          <Lanes road={road} />
           <DeadEnds road={road} />
           <FutureForks road={road} />
           <Nodes road={road} dataset={dataset} />
@@ -115,7 +114,7 @@ export function Experience({ dataset }: { dataset: Dataset }) {
           <LabelProjector />
         </Canvas>
       </div>
-      <Labels road={road} dataset={dataset} />
+      <Labels road={road} dataset={dataset} logos={logos} />
 
       {/* The scroll track: its height is the length of the journey. */}
       <main id="main" className="pointer-events-none relative z-20 [&_a]:pointer-events-auto [&_button]:pointer-events-auto" style={{ height: `calc(${Math.round(total * PX_PER_UNIT + FUTURE_PAD)}px + 100dvh)` }}>

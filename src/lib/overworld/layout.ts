@@ -191,3 +191,27 @@ export function pointAt(ow: Overworld, len: number): { x: number; y: number; dx:
   }
   return { x: 0, y: 0, dx: 1 };
 }
+
+/** Distance along the road of a point on one of the row segments (e.g. a stop). */
+export function lengthAtPoint(ow: Overworld, x: number, y: number): number {
+  let acc = 0;
+  for (const s of ow.segs) {
+    if (s.kind === "line" && s.y0 === s.y1 && Math.abs(s.y0 - y) < 0.5 && x >= Math.min(s.x0, s.x1) - 0.5 && x <= Math.max(s.x0, s.x1) + 0.5) {
+      return acc + Math.abs(x - s.x0);
+    }
+    acc += s.len;
+  }
+  return 0;
+}
+
+/** Inverse of lengthAt: the focus y at which the traveller reaches `len`. */
+export function yAtLength(ow: Overworld, len: number): number {
+  const k = ow.keyframes;
+  for (let i = 1; i < k.length; i++) {
+    if (len <= k[i].len) {
+      const t = (len - k[i - 1].len) / (k[i].len - k[i - 1].len || 1);
+      return k[i - 1].y + t * (k[i].y - k[i - 1].y);
+    }
+  }
+  return k[k.length - 1].y;
+}

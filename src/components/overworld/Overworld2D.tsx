@@ -2,19 +2,19 @@
 
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { C, S, Traveller } from "../concepts/kit";
-import { SceneArt, STORYBOARD } from "./SceneArt";
+import { PANORAMAS, type Panorama } from "./Panoramas";
 import { Token } from "./Token";
 import type { Dataset } from "@/lib/dataset";
 import { entriesForSegments } from "@/lib/graph";
-import { layoutOverworld, lengthAt, pointAt, type Overworld } from "@/lib/overworld/layout";
-import { buildStops, groupOf, type Stop } from "@/lib/overworld/stops";
-import { FAMILY_COLORS } from "@/lib/overworld/style";
+import { layoutOverworld, lengthAt, lengthAtPoint, pointAt, yAtLength, type Overworld } from "@/lib/overworld/layout";
+import { buildStops, type Stop } from "@/lib/overworld/stops";
 import { focusYear, personalRoad, quizOpen, selectedSegments, travel, useStore } from "@/lib/store";
 import { SCENARIOS } from "@/lib/taxonomy";
 
-const DESKTOP = { width: 1200, cols: 4, sceneHeight: 400 };
-const MOBILE = { width: 440, cols: 1, sceneHeight: 250, radius: 40, laneGap: 9 };
+const DESKTOP = { width: 1200, cols: 4, sceneHeight: 480 };
+const MOBILE = { width: 440, cols: 1, sceneHeight: 330, radius: 40 };
 const FUTURES_H = 420;
+const FUTURES_GROUND = "#8fd67a";
 const CAMPFIRE_H = 520;
 
 function stageFor(year: number): 0 | 1 | 2 | 3 | 4 {
@@ -45,14 +45,13 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
   const mobile = width > 0 && width < 720;
   const stops = useMemo(() => buildStops(dataset), [dataset]);
   const ow: Overworld = useMemo(
-    () => layoutOverworld(stops, STORYBOARD, { ...(mobile ? MOBILE : DESKTOP), top: FUTURES_H }),
+    () => layoutOverworld(stops, PANORAMAS, { ...(mobile ? MOBILE : DESKTOP), top: FUTURES_H }),
     [stops, mobile],
   );
   const scale = width ? Math.min(1.15, width / ow.width) : 1;
   const selected = useStore(selectedSegments);
   const personal = useStore(personalRoad);
   const match = useMemo(() => entriesForSegments(dataset, selected), [dataset, selected]);
-  const families = useMemo(() => new Set(selected.map(groupOf)), [selected]);
   const known = useMemo(() => new Set(personal?.known ?? []), [personal]);
   const missed = useMemo(() => new Set(personal?.missed ?? []), [personal]);
   const [here, setHere] = useState<Stop | null>(stops[0] ?? null);
@@ -66,7 +65,11 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
     if (!width) return;
     const y = focusYear.get();
     const target = y === null ? ow.stops[0] : ow.stops.find((s) => s.stop.from <= y) ?? ow.stops[0];
-    if (target) window.scrollTo({ top: mapTop() + target.y * scale - window.innerHeight * 0.45, behavior: "instant" as ScrollBehavior });
+    // Put the traveller exactly on the target stop (focus sits at 55% of the viewport).
+    if (target) {
+      const focus = yAtLength(ow, lengthAtPoint(ow, target.x, target.y));
+      window.scrollTo({ top: mapTop() + focus * scale - window.innerHeight * 0.55, behavior: "instant" as ScrollBehavior });
+    }
     travel.toEntry = (id: string) => {
       const parent = dataset.byId.get(id)?.parentId;
       const el =
@@ -125,7 +128,16 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
     // mapTop reads layout at call time; ow/scale capture the geometry.
   }, [ow, scale, width]);
 
-  const laneOpacity = (k: number) => (!selected.length ? 0.95 : families.has(k) ? 1 : 0.2);
+  // Era zones: each panorama's ground carries on until the next era begins.
+  const zones = useMemo(() => {
+    const scenes = ow.blocks.filter((b): b is Extract<typeof b, { kind: "scene" }> => b.kind === "scene");
+    return scenes.map((b, i) => ({
+      block: b,
+      pano: PANORAMAS.find((p) => p.id === b.id)!,
+      prev: i ? PANORAMAS.find((p) => p.id === scenes[i - 1].id)!.ground : FUTURES_GROUND,
+      end: scenes[i + 1]?.y ?? total,
+    }));
+  }, [ow, total]);
 
   return (
     <div className="min-h-[100dvh] bg-[#7fd36b]">
@@ -146,9 +158,19 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
         </div>
       )}
 
-      <div ref={wrap} className="relative mx-auto w-full max-w-[1380px] overflow-hidden">
+      <div ref={wrap} className="relative w-full overflow-hidden">
         {width > 0 && (
-          <div className="relative origin-top-left" style={{ width: ow.width, height: total, transform: `scale(${scale})`, marginBottom: total * (scale - 1) }}>
+          <div className="relative origin-top-left" style={{ width: ow.width, height: total, transform: `scale(${scale})`, marginBottom: total * (scale - 1), marginLeft: (width - ow.width * scale) / 2 }}>
+            {/* Full-bleed era worlds behind everything */}
+            <div aria-hidden="true" className="absolute top-0" style={{ left: -4000, width: ow.width + 8000, height: total }}>
+              <div className="absolute inset-x-0 top-0" style={{ height: FUTURES_H + 40, background: `linear-gradient(#f4faff, ${FUTURES_GROUND})` }} />
+              {zones.map(({ block, pano, prev, end }) => (
+                <div key={pano.id} className="absolute inset-x-0" style={{ top: block.y - 60, height: end - block.y + 60, background: pano.ground }}>
+                  <div className="absolute inset-x-0 top-0" style={{ height: 60 + ((mobile ? ow.width : ow.width - 350) * 330) / 1200, background: `linear-gradient(${prev}, ${pano.sky[0]} 60px, ${pano.sky[1]})` }} />
+                </div>
+              ))}
+              <div className="absolute inset-x-0" style={{ top: ow.height - 20, height: CAMPFIRE_H + 20, background: `linear-gradient(${zones.at(-1)?.pano.ground ?? FUTURES_GROUND}, #d9a86c 180px)` }} />
+            </div>
             {/* Futures: three roads into the clouds */}
             <Futures width={ow.width} startX={ow.segs[0]?.kind === "line" ? ow.segs[0].x0 : 120} mobile={mobile} dataset={dataset} />
 
@@ -157,23 +179,13 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
               <path d={ow.road} fill="none" stroke={C.ink} strokeWidth={mobile ? 50 : 70} strokeLinejoin="round" strokeLinecap="round" />
               <path d={ow.road} fill="none" stroke={C.roadEdge} strokeWidth={mobile ? 44 : 64} strokeLinejoin="round" strokeLinecap="round" />
               <path d={ow.road} fill="none" stroke={C.road} strokeWidth={mobile ? 36 : 54} strokeLinejoin="round" strokeLinecap="round" />
-              {ow.lanes.map((d, k) => (
-                <path key={k} d={d} fill="none" stroke={FAMILY_COLORS[k]} strokeWidth={mobile ? 4 : 5} strokeLinejoin="round" strokeLinecap="round" opacity={laneOpacity(k)} style={{ transition: "opacity 300ms" }} />
-              ))}
+              <path d={ow.road} fill="none" stroke="#ffffff" strokeWidth={mobile ? 3 : 4} strokeDasharray={mobile ? "12 12" : "18 16"} strokeLinejoin="round" />
             </svg>
 
-            {/* Scenes where eras change */}
-            {ow.blocks.map((b) =>
-              b.kind === "scene" ? (
-                <div
-                  key={b.id}
-                  className="absolute"
-                  style={mobile ? { left: 14, width: ow.width - 28, top: b.y } : { left: 210, width: ow.width - 420, top: b.y }}
-                >
-                  <SceneArt id={b.id} />
-                </div>
-              ) : null,
-            )}
+            {/* Era panoramas where the road enters a new world */}
+            {zones.map(({ block, pano }) => (
+              <PanoramaView key={pano.id} pano={pano} top={block.y} width={ow.width} mobile={mobile} />
+            ))}
 
             {/* Stops: level dot, plaque, and the month's launches as logo tokens */}
             {ow.stops.map(({ stop, x, y }) => {
@@ -220,6 +232,45 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
         )}
       </div>
     </div>
+  );
+}
+
+const TONE = { yes: "#2ec4b6", meh: "#ff9f43", no: "#ff6b5b" } as const;
+const ASKS = ["Draw a cat", "Translate this sentence", "Book my flight"];
+
+/** A full-width era landscape with its title and the three recurring requests. */
+function PanoramaView({ pano, top, width, mobile }: { pano: Panorama; top: number; width: number; mobile: boolean }) {
+  const { Art } = pano;
+  // Desktop keeps landmarks inside the road's loop; the sky and ground run full-bleed.
+  const inset = mobile ? 0 : 175;
+  const artW = width - inset * 2;
+  const artH = (artW * 380) / 1200;
+  return (
+    <section aria-label={`${pano.title}, ${pano.when}: ${pano.line}`} className="absolute left-0" style={{ top, width }}>
+      <svg viewBox="0 0 1200 380" width={artW} height={artH} className="mx-auto block overflow-visible" aria-hidden="true">
+        <Art />
+        <path d="M-4000 330 H5200 V380 H-4000 Z" fill={pano.ground} />
+        <path d="M-4000 330 H5200" stroke={C.ink} strokeWidth={3} />
+      </svg>
+      <div className={`relative z-[1] mx-auto flex items-start gap-3 ${mobile ? "-mt-2 flex-col px-3" : "mt-2 w-[860px] justify-between"}`}>
+        <div className={`rounded-2xl border-[3px] border-[#26283b] bg-white px-4 py-2 shadow-[0_4px_0_#26283b] ${mobile ? "w-full" : "max-w-[300px]"}`}>
+          <p className="font-game text-[11px] font-semibold uppercase tracking-[0.14em] text-[#7d819c]">{pano.when}</p>
+          <h2 className="font-game text-xl font-bold leading-tight text-[#26283b]">{pano.title}</h2>
+          <p className="text-[13px] font-semibold leading-snug text-[#55597a]">{pano.line}</p>
+        </div>
+        <ul className={`grid gap-2 ${mobile ? "w-full grid-cols-1" : "grid-cols-3"}`} aria-label="The same three requests in this era">
+          {pano.answers.map((a, i) => (
+            <li key={ASKS[i]} className={`rounded-xl border-[3px] border-[#26283b] bg-white px-3 py-1.5 shadow-[0_3px_0_#26283b] ${mobile ? "" : "w-[172px]"}`}>
+              <p className="flex items-center justify-between gap-2 font-game text-[12px] font-semibold text-[#7d819c]">
+                “{ASKS[i]}”
+                <span className="h-3 w-3 shrink-0 rounded-full border-2 border-[#26283b]" style={{ background: TONE[a.ok] }} aria-label={a.ok === "yes" ? "can do" : a.ok === "meh" ? "partly" : "cannot"} />
+              </p>
+              <p className="text-[12.5px] font-bold leading-snug text-[#26283b]">{a.text}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
 

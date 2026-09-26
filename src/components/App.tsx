@@ -8,6 +8,7 @@ import { QuizModal } from "./quiz/QuizModal";
 import { DetailPanel } from "./ui/DetailPanel";
 import { FilterBar } from "./ui/FilterBar";
 import { HoverCard } from "./ui/HoverCard";
+import { Legend } from "./ui/Legend";
 import { Navbar } from "./ui/Navbar";
 import { SearchPalette } from "./ui/SearchPalette";
 import { buildDataset } from "@/lib/dataset";
@@ -48,13 +49,14 @@ export function App({ raw, logos }: { raw: RawDataset; logos: Record<string, str
 
   return (
     <>
-      {view === "2d" ? <Overworld2D dataset={dataset} logos={logos} /> : <Experience dataset={dataset} />}
+      {view === "2d" ? <Overworld2D dataset={dataset} logos={logos} /> : <Experience dataset={dataset} logos={logos} />}
       <Navbar />
       <FilterBar />
       <SearchPalette dataset={dataset} />
       <HoverCard dataset={dataset} />
       <DetailPanel dataset={dataset} />
       <QuizModal dataset={dataset} />
+      <Legend view={view} />
       <ViewToggle view={view} onChange={setView} />
     </>
   );
@@ -66,7 +68,7 @@ function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => voi
     { id: "3d", label: "3D road", Icon: Cube },
   ];
   return (
-    <div role="radiogroup" aria-label="View" className="fixed bottom-20 right-3 z-40 flex gap-1 rounded-2xl border-[3px] border-[#26283b] bg-white p-1 shadow-[0_4px_0_#26283b] md:bottom-6 md:right-6">
+    <div role="radiogroup" aria-label="View" className="fixed bottom-20 right-3 z-40 flex gap-1 rounded-2xl md:bottom-6 md:right-6 border-[3px] border-[#26283b] bg-white p-1 shadow-[0_4px_0_#26283b] md:bottom-6 md:right-6">
       {opts.map(({ id, label, Icon }) => {
         const on = view === id;
         return (

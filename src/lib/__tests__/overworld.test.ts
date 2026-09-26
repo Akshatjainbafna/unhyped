@@ -104,3 +104,28 @@ describe("overworld layout", () => {
     expect(Math.max(...l.stops.map((p) => p.tokenRows))).toBe(4);
   });
 });
+
+describe("storyboard placement", () => {
+  it("starts each era's scene exactly at its boundary stop", async () => {
+    const { PANORAMAS } = await import("../../components/overworld/Panoramas");
+    const real = buildStops(ds);
+    const ow = layoutOverworld(real, PANORAMAS);
+    const order = ow.blocks.map((b) => (b.kind === "scene" ? `#${b.id}` : b.stops.map((p) => p.stop.key).join(",")));
+    const firstAfter = (id: string) => order[order.indexOf(`#${id}`) + 1]?.split(",")[0];
+    expect(firstAfter("reasoning-quarter")).toBe("2025-12");
+    expect(firstAfter("launch-night")).toBe("2022-11");
+    expect(firstAfter("seeing-machines")).toBe("2016");
+    expect(firstAfter("expert-offices")).toBe("1970s");
+  });
+});
+
+describe("arrival at a stop", () => {
+  it("scrolls so the traveller stands on the chosen stop", async () => {
+    const { lengthAtPoint, yAtLength } = await import("../overworld/layout");
+    const ow = layoutOverworld(buildStops(ds), []);
+    for (const p of [ow.stops[0], ow.stops[5], ow.stops[20]]) {
+      const at = pointAt(ow, lengthAt(ow, yAtLength(ow, lengthAtPoint(ow, p.x, p.y))));
+      expect(Math.hypot(at.x - p.x, at.y - p.y)).toBeLessThan(1);
+    }
+  });
+});
