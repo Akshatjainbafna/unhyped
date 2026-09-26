@@ -2253,6 +2253,12 @@
         "title": "Donated to AAIF",
         "summary": "MCP became a founding project of the Agentic AI Foundation with goose and AGENTS.md.",
         "source": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"
+      },
+      {
+        "date": "2025-12-09",
+        "title": "Donated to the Agentic AI Foundation",
+        "summary": "Anthropic moved MCP to Linux Foundation governance; about 97M monthly SDK downloads reported at the time (self-reported).",
+        "source": "https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/"
       }
     ],
     "edges": [

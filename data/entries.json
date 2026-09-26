@@ -4913,6 +4913,12 @@
         "title": "Donated to AAIF",
         "summary": "MCP became a founding project of the Agentic AI Foundation with goose and AGENTS.md.",
         "source": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"
+      },
+      {
+        "date": "2025-12-09",
+        "title": "Donated to the Agentic AI Foundation",
+        "summary": "Anthropic moved MCP to Linux Foundation governance; about 97M monthly SDK downloads reported at the time (self-reported).",
+        "source": "https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/"
       }
     ],
     "edges": [
@@ -10299,6 +10305,650 @@
         "title": "NVIDIA-NeMo/labs-OO-Agents on GitHub"
       }
     ]
+  },
+  {
+    "id": "letta",
+    "title": "Letta (formerly MemGPT)",
+    "date": "2024-09-23",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Letta (Charles Packer, Sarah Wooders et al.)"
+    ],
+    "description": "The MemGPT research project became Letta, a framework and company for stateful agents that manage their own long-term memory.",
+    "capabilityNote": "'MemGPT' now names the original memory-management design from the paper; Letta is the framework built on it. Active development has since moved to a new codebase.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "langgraph"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://www.letta.com/blog/memgpt-and-letta",
+        "title": "MemGPT is now part of Letta (Sep 2024)"
+      },
+      {
+        "url": "https://github.com/letta-ai/letta",
+        "title": "letta-ai/letta on GitHub"
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/letta-ai/letta",
+      "stars": 24896,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "openai-swarm",
+    "title": "OpenAI Swarm",
+    "date": "2024-10",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "An experimental, educational library from OpenAI for lightweight multi-agent handoffs.",
+    "capabilityNote": "Explicitly not for production. OpenAI replaced it five months later with the Agents SDK and tells users to migrate; it drew attention far beyond its intended use.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "langgraph"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://github.com/openai/swarm",
+        "title": "openai/swarm README: replaced by the OpenAI Agents SDK"
+      }
+    ],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/openai/swarm",
+      "stars": 22010,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "pydantic-ai",
+    "title": "Pydantic AI",
+    "date": "2024-12-02",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Pydantic"
+    ],
+    "description": "A type-safe Python agent framework from the team behind Pydantic: agents are defined with typed tools, dependencies and structured outputs across model providers.",
+    "capabilityNote": "Brings ordinary Python typing and validation to agent code rather than a new abstraction; popular with teams already using Pydantic and FastAPI.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "langgraph"
+      },
+      {
+        "type": "competes-with",
+        "target": "openai-agents-sdk"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://simonwillison.net/2024/Dec/2/pydanticai/",
+        "title": "Simon Willison on PydanticAI (Dec 2024)"
+      },
+      {
+        "url": "https://ai.pydantic.dev/",
+        "title": "Pydantic AI documentation"
+      },
+      {
+        "url": "https://github.com/pydantic/pydantic-ai",
+        "title": "pydantic/pydantic-ai on GitHub"
+      }
+    ],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/pydantic/pydantic-ai",
+      "stars": 20195,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "smolagents",
+    "title": "smolagents (Hugging Face)",
+    "date": "2024-12-31",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Hugging Face (Aymeric Roucher, merve, Thomas Wolf)"
+    ],
+    "description": "A deliberately small agent library whose main agent writes its actions as Python code instead of JSON tool calls.",
+    "capabilityNote": "Code-as-action lets an agent loop, branch and combine tools in one step; it runs generated code, so it needs a sandbox for anything real.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "langgraph"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://huggingface.co/blog/smolagents",
+        "title": "Introducing smolagents (Hugging Face, Dec 31 2024)"
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/huggingface/smolagents",
+      "stars": 29503,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "agno",
+    "title": "Agno (formerly phidata)",
+    "date": "2025-01-29",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Agno (Ashpreet Bedi)"
+    ],
+    "description": "Phidata relaunched as Agno: a Python framework and runtime for building multimodal agents, running them as services and managing them from a web UI.",
+    "capabilityNote": "Pitched on speed and simplicity. Its star count is among the highest of any agent framework, but that total includes the phidata years.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "crewai"
+      },
+      {
+        "type": "competes-with",
+        "target": "langgraph"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://www.agno.com/blog/introducing-agno",
+        "title": "Introducing Agno: Phidata is now Agno (Jan 2025)"
+      },
+      {
+        "url": "https://github.com/agno-agi/agno",
+        "title": "agno-agi/agno on GitHub"
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/agno-agi/agno",
+      "stars": 42351,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "openai-agents-sdk",
+    "title": "OpenAI Agents SDK",
+    "date": "2025-03-11",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI's open-source framework for multi-agent workflows: agents, handoffs between them, guardrails and built-in tracing. Works with other providers' models too.",
+    "capabilityNote": "The production successor to Swarm. It launched in Python, with a JavaScript/TypeScript version later in 2025.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "openai-swarm"
+      },
+      {
+        "type": "uses",
+        "target": "openai-responses-api"
+      },
+      {
+        "type": "competes-with",
+        "target": "langgraph"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://openai.com/index/new-tools-for-building-agents/",
+        "title": "OpenAI: New tools for building agents (Mar 11 2025)"
+      },
+      {
+        "url": "https://github.com/openai/openai-agents-python",
+        "title": "openai/openai-agents-python on GitHub"
+      }
+    ],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/openai/openai-agents-python",
+      "stars": 29709,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "openai-responses-api",
+    "title": "OpenAI Responses API",
+    "date": "2025-03-11",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI's API for building agents: one call that combines chat with built-in tools such as web search, file search and computer use.",
+    "capabilityNote": "Replaces the Assistants API, which OpenAI is winding down. It is an API, not a framework: the Agents SDK sits on top of it.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "openai-function-calling"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://openai.com/index/new-tools-for-building-agents/",
+        "title": "OpenAI: New tools for building agents (Mar 11 2025)"
+      },
+      {
+        "url": "https://community.openai.com/t/new-tools-for-building-agents-responses-api-web-search-file-search-computer-use-and-agents-sdk/1140896",
+        "title": "OpenAI developer community announcement"
+      }
+    ]
+  },
+  {
+    "id": "google-adk",
+    "title": "Google Agent Development Kit (ADK)",
+    "date": "2025-04-09",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Google"
+    ],
+    "description": "Google's open-source framework for building agents and multi-agent systems, the same one behind agents in its Agentspace and Customer Engagement Suite.",
+    "capabilityNote": "Model-agnostic in principle, but most at home with Gemini and Google Cloud deployment.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "openai-agents-sdk"
+      },
+      {
+        "type": "uses",
+        "target": "a2a-protocol"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://developers.googleblog.com/en/agent-development-kit-easy-to-build-multi-agent-applications/",
+        "title": "Google Developers Blog: Agent Development Kit (Apr 9 2025)"
+      },
+      {
+        "url": "https://github.com/google/adk-python",
+        "title": "google/adk-python on GitHub"
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/google/adk-python",
+      "stars": 21651,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "a2a-protocol",
+    "title": "Agent2Agent (A2A) protocol",
+    "date": "2025-04-09",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "protocols",
+    "secondarySegments": [
+      "agent-frameworks"
+    ],
+    "stackLayer": "protocols",
+    "creators": [
+      "Google, then the Linux Foundation"
+    ],
+    "description": "An open protocol for AI agents built by different vendors to discover each other and hand work back and forth. MCP connects an agent to tools; A2A connects agents to agents.",
+    "capabilityNote": "Real signals: stars and official SDKs in five languages. The '150+ organisations' figure counts declared supporters, not production deployments.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "mcp"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2025-06-23",
+        "title": "Moves to the Linux Foundation",
+        "summary": "Vendor-neutral governance; founding members include AWS, Cisco, Google, Microsoft, Salesforce, SAP and ServiceNow.",
+        "source": "https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents"
+      },
+      {
+        "date": "2026-04-09",
+        "title": "150+ supporting organisations",
+        "summary": "SDKs in Python, JavaScript, Java, Go and .NET.",
+        "source": "https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents",
+        "title": "Linux Foundation launches the A2A project (Jun 23 2025)"
+      },
+      {
+        "url": "https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year",
+        "title": "A2A passes 150 organisations (Apr 2026)"
+      },
+      {
+        "url": "https://github.com/a2aproject/A2A",
+        "title": "a2aproject/A2A on GitHub"
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/a2aproject/A2A",
+      "stars": 25941,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "strands-agents",
+    "title": "AWS Strands Agents",
+    "date": "2025-05-16",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "AWS"
+    ],
+    "description": "AWS's open-source agents SDK built on a model-driven approach: give the model a prompt and tools and let it plan, rather than hand-coding the workflow.",
+    "capabilityNote": "Used inside AWS before release; runs with Bedrock and other providers. Smaller community than the OpenAI and Google SDKs.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "openai-agents-sdk"
+      },
+      {
+        "type": "uses",
+        "target": "mcp"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://aws.amazon.com/blogs/opensource/introducing-strands-agents-an-open-source-ai-agents-sdk/",
+        "title": "AWS: Introducing Strands Agents (May 16 2025)"
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/strands-agents/harness-sdk",
+      "stars": 8453,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "vercel-ai-sdk",
+    "title": "Vercel AI SDK",
+    "date": "2023-05",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Vercel"
+    ],
+    "description": "A TypeScript toolkit for building AI features and agents in web apps, with one interface across model providers and streaming UI helpers.",
+    "capabilityNote": "Started as a streaming-chat helper; AI SDK 5 (Jul 2025) added agent-loop controls and an Agent class, which Vercel notes adds convenience rather than new capability.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "mastra"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2025-07-31",
+        "title": "AI SDK 5: agent loop control",
+        "summary": "stopWhen and prepareStep for agent loops, plus an Agent class.",
+        "source": "https://vercel.com/blog/ai-sdk-5"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://vercel.com/blog/ai-sdk-5",
+        "title": "Vercel: AI SDK 5 (Jul 31 2025)"
+      },
+      {
+        "url": "https://github.com/vercel/ai",
+        "title": "vercel/ai on GitHub"
+      }
+    ],
+    "oss": {
+      "license": "See repository",
+      "repoUrl": "https://github.com/vercel/ai",
+      "stars": 26967,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "claude-agent-sdk",
+    "title": "Claude Agent SDK",
+    "date": "2025-09-29",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "The harness that runs Claude Code, opened up for building other agents. Renamed from the Claude Code SDK to reflect uses beyond coding.",
+    "capabilityNote": "Its core idea is to give the agent a computer (files, a shell, tools) so it works the way a person would, rather than wiring up a workflow by hand.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "claude-code"
+      },
+      {
+        "type": "uses",
+        "target": "mcp"
+      },
+      {
+        "type": "competes-with",
+        "target": "openai-agents-sdk"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://claude.com/blog/building-agents-with-the-claude-agent-sdk",
+        "title": "Anthropic: Building agents with the Claude Agent SDK (Sep 29 2025)"
+      },
+      {
+        "url": "https://github.com/anthropics/claude-agent-sdk-python",
+        "title": "anthropics/claude-agent-sdk-python on GitHub"
+      }
+    ],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/anthropics/claude-agent-sdk-python",
+      "stars": 8170,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "microsoft-agent-framework",
+    "title": "Microsoft Agent Framework",
+    "date": "2025-10",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Microsoft"
+    ],
+    "description": "Microsoft's open-source SDK for .NET and Python that merges Semantic Kernel's enterprise plumbing with AutoGen's multi-agent orchestration.",
+    "capabilityNote": "Replaces both; AutoGen went into maintenance when the preview shipped, and Microsoft provides migration tools from each.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "autogen-ag2"
+      },
+      {
+        "type": "competes-with",
+        "target": "openai-agents-sdk"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2026-04-03",
+        "title": "Version 1.0",
+        "summary": "Stable APIs and long-term support.",
+        "source": "https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/",
+        "title": "Microsoft Agent Framework 1.0 (Apr 3 2026)"
+      },
+      {
+        "url": "https://github.com/microsoft/agent-framework",
+        "title": "microsoft/agent-framework on GitHub"
+      }
+    ],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/microsoft/agent-framework",
+      "stars": 13814,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
+  },
+  {
+    "id": "aaif",
+    "title": "Agentic AI Foundation formed",
+    "date": "2025-12-09",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "protocols",
+    "secondarySegments": [],
+    "stackLayer": "protocols",
+    "creators": [
+      "Linux Foundation"
+    ],
+    "description": "A Linux Foundation home for open agent standards, launched with MCP (from Anthropic), goose (from Block) and AGENTS.md (from OpenAI) as founding projects.",
+    "capabilityNote": "Governance, not technology: it moves key agent plumbing out of any single company's control. Members include AWS, Anthropic, Google, Microsoft and OpenAI.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "mcp"
+      },
+      {
+        "type": "uses",
+        "target": "goose"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation",
+        "title": "Linux Foundation announces the Agentic AI Foundation (Dec 9 2025)"
+      },
+      {
+        "url": "https://blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/",
+        "title": "MCP joins the Agentic AI Foundation"
+      }
+    ]
+  },
+  {
+    "id": "mastra",
+    "title": "Mastra 1.0",
+    "date": "2026-01-20",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Mastra (Gatsby founders; YC W25)"
+    ],
+    "description": "A TypeScript-native framework for agents and workflows, from the team that built Gatsby. Public since early 2025; 1.0 marked stable APIs.",
+    "capabilityNote": "The leading TypeScript option, with real usage (300k+ weekly npm downloads at 1.0, self-reported).",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "vercel-ai-sdk"
+      },
+      {
+        "type": "competes-with",
+        "target": "langgraph"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://mastra.ai/blog/announcing-mastra-1",
+        "title": "Announcing Mastra 1.0 (Jan 20 2026)"
+      },
+      {
+        "url": "https://github.com/mastra-ai/mastra",
+        "title": "mastra-ai/mastra on GitHub"
+      }
+    ],
+    "oss": {
+      "license": "See repository (mixed licences)",
+      "repoUrl": "https://github.com/mastra-ai/mastra",
+      "stars": 28346,
+      "starsCheckedAt": "2026-09-27",
+      "archived": false
+    }
   },
   {
     "id": "cuneiform-writing",
