@@ -53,7 +53,7 @@ export function App({ raw, logos }: { raw: RawDataset; logos: Record<string, str
       <Navbar />
       <FilterBar />
       <SearchPalette dataset={dataset} />
-      <HoverCard dataset={dataset} />
+      <HoverCard dataset={dataset} logos={logos} />
       <DetailPanel dataset={dataset} />
       <QuizModal dataset={dataset} />
       <Legend view={view} />
