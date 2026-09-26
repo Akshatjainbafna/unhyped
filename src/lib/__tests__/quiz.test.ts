@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { answer, isComplete, levelFor, MAX_QUESTIONS, next, result, start, type QuizState } from "../quiz/engine";
+import { answer, isComplete, levelFor, next, result, start, type QuizState } from "../quiz/engine";
+import { QUESTION_BANK } from "../quiz/bank";
 import { generateQuestions } from "../quiz/generator";
-import { WEIGHTS, type Dimension, type Question } from "../quiz/types";
+import { PLANS, WEIGHTS, type Dimension, type Question } from "../quiz/types";
 import { fixtureDataset } from "./fixtures";
 
-const dims: Dimension[] = ["concepts", "lineage", "awareness", "prompting", "proficiency", "hype", "building"];
+const dims: Dimension[] = ["concepts", "lineage", "awareness", "prompting", "proficiency", "hype", "building", "workflow"];
 const pool: Question[] = dims.flatMap((dimension) =>
   [1, 2, 3].flatMap((difficulty) =>
     [0, 1, 2].map((k) => ({
@@ -38,16 +39,39 @@ describe("quiz engine", () => {
     expect(() => start("researcher", pool)).toThrow(/coming soon/i);
   });
 
-  it("covers every weighted dimension and stays within 12–15 questions", () => {
+  it("covers every weighted dimension and keeps to each track's length", () => {
     for (const track of ["user", "builder"] as const) {
       const { state, seen } = run(start(track, pool, { seed: 42 }), () => 1);
       const covered = new Set(seen.map((q) => q.dimension));
       for (const d of dims) if (WEIGHTS[track][d] > 0) expect(covered.has(d)).toBe(true);
       expect(covered.has("building")).toBe(track === "builder");
-      expect(seen.length).toBeGreaterThanOrEqual(12);
-      expect(seen.length).toBeLessThanOrEqual(MAX_QUESTIONS);
+      expect(seen.length).toBeGreaterThanOrEqual(PLANS[track].min);
+      expect(seen.length).toBeLessThanOrEqual(PLANS[track].max);
       expect(isComplete(state, pool)).toBe(true);
     }
+  });
+
+  it("gives the user track 20 questions with exactly 4 written, and no history or hype", () => {
+    for (const seed of [1, 2, 3, 4, 5]) {
+      const { seen } = run(start("user", pool, { seed }), () => (seed % 2 ? 1 : 0));
+      expect(seen).toHaveLength(20);
+      expect(seen.filter((q) => !q.autoGraded)).toHaveLength(4);
+      expect(seen.some((q) => ["lineage", "awareness", "hype"].includes(q.dimension))).toBe(false);
+    }
+  });
+
+  it("asks at most one question per group", () => {
+    const grouped = pool.map((q, i) => (q.dimension === "concepts" ? { ...q, group: `g${i % 2}` } : q));
+    const seen: Question[] = [];
+    let s = start("user", grouped, { seed: 11 });
+    for (;;) {
+      const r = next(s, grouped);
+      if (!r.question) break;
+      seen.push(r.question);
+      s = answer(r.state, r.question, 1);
+    }
+    const groups = seen.map((q) => q.group).filter(Boolean);
+    expect(new Set(groups).size).toBe(groups.length);
   });
 
   it("raises difficulty after correct answers and lowers it after misses", () => {
@@ -136,5 +160,41 @@ describe("question generator", () => {
       expect(typeof q.answer).toBe("number");
       expect(q.options![q.answer as number]).toBeDefined();
     }
+  });
+});
+
+describe("question bank", () => {
+  const user = QUESTION_BANK.filter((q) => q.tracks.includes("user"));
+
+  it("has enough user questions for a full run, even without the grader", () => {
+    const auto = user.filter((q) => q.autoGraded);
+    expect(auto.length).toBeGreaterThanOrEqual(PLANS.user.max + 8);
+    expect(user.filter((q) => !q.autoGraded).length).toBeGreaterThanOrEqual(PLANS.user.written! * 2);
+    for (const d of dims) if (WEIGHTS.user[d] > 0) expect(auto.some((q) => q.dimension === d)).toBe(true);
+  });
+
+  it("explains every user question, and grades every written one against a rubric", () => {
+    for (const q of user) {
+      expect(q.explanation, q.id).toBeTruthy();
+      if (!q.autoGraded) expect(q.rubric?.criteria.length, q.id).toBeGreaterThan(0);
+      if (q.autoGraded) expect(q.options?.[q.answer as number], q.id).toBeDefined();
+    }
+  });
+
+  it("has unique ids", () => {
+    expect(new Set(QUESTION_BANK.map((q) => q.id)).size).toBe(QUESTION_BANK.length);
+  });
+
+  it("completes a real 20-question user run in light mode", () => {
+    const s0 = start("user", QUESTION_BANK, { seed: 5, lightMode: true });
+    let s = s0;
+    let n = 0;
+    for (;;) {
+      const r = next(s, QUESTION_BANK);
+      if (!r.question) break;
+      n++;
+      s = answer(r.state, r.question, 1);
+    }
+    expect(n).toBe(20);
   });
 });

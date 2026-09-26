@@ -7,18 +7,29 @@ import type { Dataset } from "@/lib/dataset";
 import { DECOYS, QUESTION_BANK } from "@/lib/quiz/bank";
 import { answer, injectFollowUp, next, result, skip, start, type QuizResult, type QuizState } from "@/lib/quiz/engine";
 import { generateQuestions } from "@/lib/quiz/generator";
-import { DIMENSIONS, type Question, type Track } from "@/lib/quiz/types";
+import { DIMENSIONS, PLANS, type Question, type Track } from "@/lib/quiz/types";
 import { personalRoad, quizOpen, useStore } from "@/lib/store";
 
 type Stage =
   | { kind: "intro" }
   | { kind: "question"; question: Question; picked?: number; text: string; feedback?: { correct: boolean; note?: string } }
   | { kind: "grading"; question: Question }
+  | { kind: "graded"; question: Question; score: number; rationale: string; next: QuizState }
   | { kind: "result"; result: QuizResult };
 
-const TRACKS: { id: Track; name: string; blurb: string }[] = [
-  { id: "user", name: "AI User", blurb: "You use AI tools to get work done." },
-  { id: "builder", name: "AI Builder", blurb: "You build products, agents or pipelines on top of models." },
+const TRACKS: { id: Track; name: string; blurb: string; about?: string }[] = [
+  {
+    id: "user",
+    name: "AI User",
+    blurb: "You use AI tools to get work done.",
+    about: "20 questions, about 15–20 minutes: which tool to use and when, prompting, where AI needs a human, and planning real work. 16 quick choices and 4 written tasks.",
+  },
+  {
+    id: "builder",
+    name: "AI Builder",
+    blurb: "You build products, agents or pipelines on top of models.",
+    about: "12–15 questions, about 10–15 minutes: concepts, the stack, prompting, building and judgement, including written design tasks.",
+  },
   { id: "researcher", name: "AI Researcher", blurb: "Coming soon." },
 ];
 
@@ -133,7 +144,8 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
         }
       }
       state.current = s;
-      advance(s);
+      // Show how the answer did, and what a strong one covers, before moving on.
+      setStage({ kind: "graded", question: q, score: g.score, rationale: String(g.rationale ?? ""), next: s });
     } catch {
       state.current = skip(state.current!, q);
       advance(state.current);
@@ -177,12 +189,12 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
               aria-label="Quiz progress"
               aria-valuemin={0}
               aria-valuemax={100}
-              aria-valuenow={Math.round(Math.min(1, count / 13) * 100)}
+              aria-valuenow={Math.round(Math.min(1, count / PLANS[track].max) * 100)}
               className="mt-3 h-1.5 overflow-hidden rounded-full bg-paper/10"
             >
               <div
                 className="h-full rounded-full bg-paper transition-[width] duration-500 ease-out-soft"
-                style={{ width: `${Math.max(4, Math.min(96, (count / 13) * 100))}%` }}
+                style={{ width: `${Math.max(4, Math.min(96, (count / PLANS[track].max) * 100))}%` }}
               />
             </div>
           )}
@@ -193,7 +205,7 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
                 How much of AI do you actually know?
               </h2>
               <p className="mt-4 max-w-[56ch] text-[15px] leading-relaxed text-paper-muted">
-                8–12 minutes. Multiple choice, trick questions, writing a real prompt, and follow-ups on the tools you say you use. It adapts to you.
+                {TRACKS.find((t) => t.id === track)?.about} It adapts as you go.
               </p>
               <div role="radiogroup" aria-label="Choose a track" className="mt-7 grid gap-2 sm:grid-cols-3">
                 {TRACKS.map((t) => {
@@ -256,6 +268,8 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
             </div>
           )}
 
+          {stage.kind === "graded" && <GradedView stage={stage} onContinue={() => advance(stage.next)} />}
+
           {stage.kind === "result" && <ResultView result={stage.result} track={track} onRetake={reset} />}
         </div>
       </div>
@@ -284,6 +298,22 @@ function QuestionView({
         {q.format === "cross-question" && " · follow-up"}
       </p>
       <h2 id="quiz-title" className="mt-2 font-serif text-[1.7rem] leading-snug text-paper">{q.prompt}</h2>
+      {q.material && (
+        <blockquote className="mt-4 whitespace-pre-wrap rounded-2xl border border-hairline bg-paper/[0.04] p-4 font-mono text-[13px] leading-relaxed text-paper-muted">
+          {q.material}
+        </blockquote>
+      )}
+      {q.images && (
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {q.images.map((img) => (
+            <figure key={img.src}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={img.src} alt={img.alt} className="aspect-[4/3] w-full rounded-2xl border border-hairline object-cover" />
+              <figcaption className="mt-1.5 text-[12px] text-paper-muted">{img.label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
 
       {!free && (
         <div className="mt-6 grid gap-2">
@@ -341,7 +371,7 @@ function QuestionView({
           }}
         >
           <label htmlFor="quiz-answer" className="mb-2 block text-[12px] text-paper-muted">
-            {q.format === "prompt-write" ? "Your prompt" : "Your answer"}
+            {q.format === "prompt-write" || q.format === "prompt-improve" ? "Your prompt" : q.format === "plan" ? "Your plan" : "Your answer"}
           </label>
           <textarea
             id="quiz-answer"
@@ -349,7 +379,13 @@ function QuestionView({
             onChange={(e) => setText(e.target.value)}
             rows={7}
             className="w-full resize-y rounded-2xl border border-white/12 bg-ink/40 p-4 font-mono text-[13px] leading-relaxed text-paper outline-none placeholder:text-paper-faint focus:border-white/30"
-            placeholder={q.format === "prompt-write" ? "Write it exactly as you would send it." : "Be specific; generic answers score low."}
+            placeholder={
+              q.format === "prompt-write" || q.format === "prompt-improve"
+                ? "Write it exactly as you would send it."
+                : q.format === "plan"
+                  ? "Steps, order, tools, and where a person checks. Bullet points are fine."
+                  : "Be specific; generic answers score low."
+            }
           />
           <p className="mt-2 text-[11.5px] text-paper-faint">Graded by an open-weight model against a fixed rubric. Not stored.</p>
           <button type="submit" disabled={text.trim().length < 10} className="mt-4 inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2 text-sm font-medium text-ink active:scale-[0.98] disabled:opacity-40">
@@ -373,7 +409,9 @@ function ResultView({ result: r, track, onRetake }: { result: QuizResult; track:
         <p id="quiz-title" className="mt-2 font-serif text-7xl leading-none text-paper tabular">{r.percent}%</p>
         <p className="mt-2 font-serif text-2xl text-accent">{r.level}</p>
         <p className="mt-4 text-[13.5px] leading-relaxed text-paper-muted">
-          Your road is now lit: gold where you knew it, coral where you missed. Close the quiz and travel it to fill the gaps.
+          {track === "user"
+            ? "Your breakdown is on the right. Retake for a new mix of questions and tasks."
+            : "Your road is now lit: gold where you knew it, coral where you missed. Close the quiz and travel it to fill the gaps."}
         </p>
         <div className="mt-6 flex flex-wrap gap-2">
           <a href={share} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-2 rounded-full bg-paper py-1.5 pl-5 pr-1.5 text-sm font-medium text-ink active:scale-[0.98]">
@@ -385,6 +423,28 @@ function ResultView({ result: r, track, onRetake }: { result: QuizResult; track:
         </div>
       </div>
       <Radar dims={dims} />
+    </div>
+  );
+}
+
+/** After a written answer: how it scored, the grader's note, and what a strong answer covers. */
+function GradedView({ stage, onContinue }: { stage: Extract<Stage, { kind: "graded" }>; onContinue: () => void }) {
+  const { score, rationale, question: q } = stage;
+  const band = score >= 0.7 ? { label: "Strong answer.", tone: "text-[#1f9d63]" } : score >= 0.4 ? { label: "Partly there.", tone: "text-accent" } : { label: "Needs work.", tone: "text-wrong" };
+  return (
+    <div className="mt-4" aria-live="polite">
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-paper-faint">{DIMENSIONS[q.dimension]}</p>
+      <p className={`mt-2 font-serif text-3xl ${band.tone}`}>{band.label}</p>
+      {rationale && <p className="mt-3 max-w-[60ch] text-[14px] leading-relaxed text-paper-muted">{rationale}</p>}
+      {q.explanation && score < 0.7 && (
+        <div className="mt-5 rounded-2xl border border-hairline p-4">
+          <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-paper-faint">What a strong answer covers</p>
+          <p className="mt-2 text-[14px] leading-relaxed text-paper">{q.explanation}</p>
+        </div>
+      )}
+      <button type="button" onClick={onContinue} className="mt-6 inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2 text-sm font-medium text-ink active:scale-[0.98]">
+        Next <ArrowRight weight="light" size={14} />
+      </button>
     </div>
   );
 }

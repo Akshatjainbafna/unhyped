@@ -1,3 +1,4 @@
+import { EVERYDAY_QUESTIONS } from "./bank-everyday";
 import type { Question, Rubric } from "./types";
 
 /**
@@ -22,7 +23,7 @@ const promptRubric = (task: string): Rubric => ({
   ],
 });
 
-export const QUESTION_BANK: Question[] = [
+const CORE_QUESTIONS: Question[] = [
   // Concepts
   {
     id: "c-tokens",
@@ -87,6 +88,7 @@ export const QUESTION_BANK: Question[] = [
       "'Summarise the text I pasted'",
     ],
     answer: 0,
+    explanation: "Asking for specific citations on a niche topic without search invites plausible-looking but invented references. Tasks on text you supply are far safer.",
   },
   {
     id: "c-finetune",
@@ -107,7 +109,7 @@ export const QUESTION_BANK: Question[] = [
   },
   {
     id: "c-trick-agi",
-    tracks: ["user", "builder"],
+    tracks: ["builder"],
     dimension: "concepts",
     format: "trick",
     difficulty: 2,
@@ -120,6 +122,7 @@ export const QUESTION_BANK: Question[] = [
       "Open-weight models are more than five years behind closed ones",
     ],
     answer: 0,
+    explanation: "Tricky: every other option is a confident-sounding myth. Public ARC-AGI-3 results still show a large gap to humans.",
   },
 
   // Prompting (LLM-graded)
@@ -133,6 +136,8 @@ export const QUESTION_BANK: Question[] = [
     prompt:
       "Write the prompt you would give an AI assistant to turn a 45-minute customer interview transcript into notes your product team will actually use.",
     rubric: promptRubric("turning an interview transcript into product-team notes"),
+    explanation:
+      "Strong prompts say who the notes are for, what to pull out (problems, quotes, requests, open questions), the format, and to quote the transcript rather than invent or smooth over what was said.",
   },
   {
     id: "p-data",
@@ -144,6 +149,8 @@ export const QUESTION_BANK: Question[] = [
     prompt:
       "You have a CSV of 2,000 support tickets. Write the prompt you'd use to find the top recurring problems, without the model inventing categories that aren't in the data.",
     rubric: promptRubric("clustering support tickets faithfully"),
+    explanation:
+      "Strong prompts ask the model to derive categories from the tickets, count them, show example tickets per category, and say 'unclear' rather than force a fit, ideally by running code over the CSV instead of eyeballing it.",
   },
   {
     id: "p-agent",
@@ -155,12 +162,14 @@ export const QUESTION_BANK: Question[] = [
     prompt:
       "Write instructions for a coding agent that will work unsupervised for an hour to migrate a codebase from one date library to another. What does it need to know, and when should it stop and ask?",
     rubric: promptRubric("briefing an autonomous coding agent on a migration with stop conditions"),
+    explanation:
+      "Strong briefs give the goal and scope, how to verify (tests passing), what not to touch, when to stop and ask (ambiguous behaviour, failing tests it can't fix), and a summary of changes at the end.",
   },
 
   // Tool proficiency (self-report → cross-question)
   {
     id: "t-usage",
-    tracks: ["user", "builder"],
+    tracks: ["builder"],
     dimension: "proficiency",
     format: "tool-usage",
     difficulty: 2,
@@ -184,7 +193,7 @@ export const QUESTION_BANK: Question[] = [
   },
   {
     id: "t-verify",
-    tracks: ["user"],
+    tracks: ["user", "builder"],
     dimension: "proficiency",
     format: "mcq",
     difficulty: 2,
@@ -197,6 +206,7 @@ export const QUESTION_BANK: Question[] = [
       "Use it; modern models don't hallucinate numbers",
     ],
     answer: 0,
+    explanation: "Asking the model if it's sure, or regenerating, only samples it again. Only the source itself confirms the number.",
   },
   {
     id: "t-harness",
@@ -296,6 +306,11 @@ export const QUESTION_BANK: Question[] = [
     answer: 0,
   },
 ];
+
+/** Written tasks that need assets not yet in public/quiz; they join the pool once the files exist. */
+const PENDING_ASSETS = new Set(["u-x-slop-image"]);
+
+export const QUESTION_BANK: Question[] = [...CORE_QUESTIONS, ...EVERYDAY_QUESTIONS.filter((q) => !PENDING_ASSETS.has(q.id))];
 
 /** Plausible-sounding tools that do not exist, for "which is real?" questions. */
 export const DECOYS = [

@@ -1,7 +1,7 @@
-import { DIMENSIONS, LEVELS, WEIGHTS, type Dimension, type Question, type Track } from "./types";
+import { DIMENSIONS, LEVELS, PLANS, WEIGHTS, type Dimension, type Question, type Track } from "./types";
 
-export const MIN_QUESTIONS = 12;
-export const MAX_QUESTIONS = 15;
+export const MIN_QUESTIONS = Math.min(...Object.values(PLANS).map((p) => p.min));
+export const MAX_QUESTIONS = Math.max(...Object.values(PLANS).map((p) => p.max));
 
 export type QuizState = {
   track: Exclude<Track, "researcher">;
@@ -60,10 +60,11 @@ function dimensionOf(pool: Question[], state: QuizState, id: string): Dimension 
 
 export function isComplete(state: QuizState, pool: Question[]): boolean {
   if (state.queue.length) return false;
-  if (state.asked.length >= MAX_QUESTIONS) return true;
+  const plan = PLANS[state.track];
+  if (state.asked.length >= plan.max) return true;
   const covered = new Set(state.asked.map((id) => dimensionOf(pool, state, id)));
   const allCovered = DIMS.every((d) => state.weights[d] === 0 || covered.has(d));
-  return state.asked.length >= MIN_QUESTIONS && allCovered;
+  return state.asked.length >= plan.min && allCovered;
 }
 
 /** Picks the next question and returns the advanced state (rng moves on). */
@@ -74,13 +75,26 @@ export function next(state: QuizState, pool: Question[]): { question: Question |
   }
   if (isComplete(state, pool)) return { question: null, state };
 
-  const candidates = pool.filter(
+  const byId = new Map(pool.map((q) => [q.id, q]));
+  const askedQs = state.asked.map((id) => byId.get(id)).filter((q): q is Question => !!q);
+  const usedGroups = new Set(askedQs.map((q) => q.group).filter(Boolean));
+  let candidates = pool.filter(
     (q) =>
       q.tracks.includes(state.track) &&
       !state.asked.includes(q.id) &&
       !state.skipped.includes(q.id) &&
+      !(q.group && usedGroups.has(q.group)) &&
       (!state.lightMode || q.autoGraded),
   );
+  // A fixed number of written tasks per run: none once the quota is met, only
+  // written ones when the remaining slots are needed to meet it.
+  const plan = PLANS[state.track];
+  if (plan.written !== undefined && !state.lightMode) {
+    const writtenLeft = plan.written - askedQs.filter((q) => !q.autoGraded).length;
+    const slotsLeft = plan.max - state.asked.length;
+    const want = writtenLeft <= 0 ? candidates.filter((q) => q.autoGraded) : slotsLeft <= writtenLeft ? candidates.filter((q) => !q.autoGraded) : candidates;
+    if (want.length) candidates = want;
+  }
   const counts = new Map<Dimension, number>();
   for (const id of state.asked) {
     const d = pool.find((q) => q.id === id)?.dimension;

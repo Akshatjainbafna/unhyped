@@ -14,6 +14,8 @@ function gradePrompt(q: Question, answer: string) {
   const r = q.rubric!;
   return [
     `QUESTION:\n${q.prompt}`,
+    ...(q.material ? [`MATERIAL SHOWN TO THE CANDIDATE:\n${q.material}`] : []),
+    ...(q.images?.length ? [`IMAGES SHOWN TO THE CANDIDATE (described):\n${q.images.map((i) => `${i.label}: ${i.alt}`).join("\n")}`] : []),
     `CRITERIA:\n${r.criteria.map((c, i) => `${i + 1}. ${c}`).join("\n")}`,
     `ANCHORS:\n${r.anchors.map((a) => `${a.score}/5: ${a.answer}`).join("\n")}`,
     `CANDIDATE ANSWER (between the markers):\n<<<ANSWER\n${answer.slice(0, 4000)}\nANSWER>>>`,

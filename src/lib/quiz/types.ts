@@ -10,12 +10,23 @@ export const DIMENSIONS = {
   proficiency: "Tool proficiency",
   hype: "Hype calibration",
   building: "Building",
+  workflow: "Workflow & judgement",
 } as const;
 export type Dimension = keyof typeof DIMENSIONS;
 
 export const WEIGHTS: Record<Exclude<Track, "researcher">, Record<Dimension, number>> = {
-  user: { concepts: 15, lineage: 10, awareness: 15, prompting: 25, proficiency: 25, hype: 10, building: 0 },
-  builder: { concepts: 10, lineage: 10, awareness: 10, prompting: 15, proficiency: 20, hype: 10, building: 25 },
+  // Users need to use AI well, not know its history: no lineage, launches or hype calibration.
+  user: { concepts: 10, lineage: 0, awareness: 0, prompting: 30, proficiency: 25, hype: 0, building: 0, workflow: 35 },
+  builder: { concepts: 10, lineage: 10, awareness: 10, prompting: 15, proficiency: 15, hype: 10, building: 20, workflow: 10 },
+};
+
+/**
+ * Run length per track, and for the user track a fixed number of written
+ * (LLM-graded) tasks so a run is mostly quick choices plus a few real exercises.
+ */
+export const PLANS: Record<Exclude<Track, "researcher">, { min: number; max: number; written?: number }> = {
+  user: { min: 20, max: 20, written: 4 },
+  builder: { min: 12, max: 15 },
 };
 
 export const LEVELS = [
@@ -33,7 +44,9 @@ export type QuestionFormat =
   | "prompt-write"
   | "build-task"
   | "tool-usage"
-  | "cross-question";
+  | "cross-question"
+  | "prompt-improve"
+  | "plan";
 
 export type Rubric = {
   criteria: string[];
@@ -56,4 +69,10 @@ export type Question = {
   rubric?: Rubric;
   explanation?: string;
   reviewEntryId?: string;
+  /** Only one question per group is asked in a run (e.g. the text and image versions of a task). */
+  group?: string;
+  /** Material the task works on (a prompt to improve, a draft to fix), shown under the question and given to the grader. */
+  material?: string;
+  /** Images the task refers to; their alt text is what the grader sees. */
+  images?: { src: string; alt: string; label: string }[];
 };
