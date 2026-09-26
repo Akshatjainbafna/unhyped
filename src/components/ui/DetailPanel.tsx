@@ -6,13 +6,14 @@ import { formatYear } from "../scene/Labels";
 import { StackDiagram, typeLabel } from "./HoverCard";
 import { renderableAsQuote, type Dataset } from "@/lib/dataset";
 import { lineage, neighborhood, peopleFor, similar } from "@/lib/graph";
+import { SEGMENT_COLOR } from "@/lib/overworld/style";
 import { openEntry, travel, useStore } from "@/lib/store";
 import { SEGMENTS } from "@/lib/taxonomy";
 
 const REPO = "https://github.com/unhyped/unhyped";
 
 /** Side panel with the whole record: sources, updates, people, claims, and a way to correct it. */
-export function DetailPanel({ dataset }: { dataset: Dataset }) {
+export function DetailPanel({ dataset, logos }: { dataset: Dataset; logos: Record<string, string> }) {
   const id = useStore(openEntry);
   const entry = id ? dataset.byId.get(id) : undefined;
   const close = useRef<HTMLButtonElement>(null);
@@ -179,17 +180,31 @@ export function DetailPanel({ dataset }: { dataset: Dataset }) {
 
       {(data.related.length > 0 || data.alts.length > 0) && (
         <Section title="On the graph">
-          <ul className="flex flex-wrap gap-2">
+          <ul className="grid grid-cols-4 gap-x-2 gap-y-4">
             {[...data.related.map((r) => r.entry), ...data.alts]
               .filter((e, i, a) => a.findIndex((x) => x.id === e.id) === i)
               .slice(0, 12)
-              .map((e) => (
-                <li key={e.id}>
-                  <button type="button" onClick={() => jump(e.id)} className="rounded-full border border-hairline px-3 py-1 text-[12px] text-paper-muted hover:border-hairline-strong hover:text-paper">
-                    {e.title}
-                  </button>
-                </li>
-              ))}
+              .map((e) => {
+                const logo = logos[e.id] ?? (e.parentId ? logos[e.parentId] : undefined);
+                return (
+                  <li key={e.id}>
+                    <button type="button" onClick={() => jump(e.id)} title={e.title} className="group flex w-full flex-col items-center gap-1.5 text-center">
+                      <span
+                        className="flex h-11 w-11 items-center justify-center rounded-full bg-white transition-transform duration-300 ease-spring group-hover:-translate-y-0.5 group-active:scale-95"
+                        style={{ boxShadow: `inset 0 0 0 2px ${SEGMENT_COLOR[e.primarySegment]}` }}
+                      >
+                        {logo ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={logo} alt="" width={22} height={22} loading="lazy" className="h-[22px] w-[22px] object-contain" />
+                        ) : (
+                          <span className="text-[13px] font-semibold text-[#26283b]">{e.title.replace(/^[^A-Za-z0-9]+/, "").slice(0, 2)}</span>
+                        )}
+                      </span>
+                      <span className="line-clamp-2 text-[11.5px] leading-tight text-paper-muted group-hover:text-paper">{e.title}</span>
+                    </button>
+                  </li>
+                );
+              })}
           </ul>
         </Section>
       )}
