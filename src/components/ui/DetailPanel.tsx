@@ -42,6 +42,7 @@ export function DetailPanel({ dataset, logos }: { dataset: Dataset; logos: Recor
   if (!entry || !data) return null;
 
   const issue = `${REPO}/issues/new?template=suggest-edit.yml&title=${encodeURIComponent(`Edit: ${entry.title}`)}&entry=${entry.id}`;
+  const logo = logos[entry.id] ?? (entry.parentId ? logos[entry.parentId] : undefined);
   const jump = (target: string) => {
     openEntry.set(target);
   };
@@ -69,7 +70,15 @@ export function DetailPanel({ dataset, logos }: { dataset: Dataset; logos: Recor
         </button>
       </div>
 
-      <h2 id="detail-title" className="mt-3 font-serif text-4xl leading-[1.05] text-paper">{entry.title}</h2>
+      <div className="mt-3 flex items-center gap-4">
+        {logo && (
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white" style={{ boxShadow: `inset 0 0 0 3px ${SEGMENT_COLOR[entry.primarySegment]}` }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={logo} alt="" width={30} height={30} className="h-[30px] w-[30px] object-contain" />
+          </span>
+        )}
+        <h2 id="detail-title" className="font-serif text-4xl leading-[1.05] text-paper">{entry.title}</h2>
+      </div>
       {entry.creators.length > 0 && <p className="mt-2 text-sm text-paper-muted">{entry.creators.join(", ")}</p>}
       <p className="mt-5 text-[15px] leading-relaxed text-paper/90">{entry.description}</p>
       {entry.capabilityNote && (
