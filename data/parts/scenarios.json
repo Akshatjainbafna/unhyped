@@ -1,0 +1,206 @@
+[
+  {
+    "id": "steady",
+    "summary": "Measured trends keep compounding and general-purpose AI arrives gradually, roughly in the 2030s. Evidence for it: frontier training compute has grown about 5× a year since 2020, training cost about 3.5× a year, and pre-training algorithmic efficiency about 3× a year (Epoch AI). The price of a fixed level of LLM capability has fallen 9× to 900× a year (median about 50×). SWE-bench Verified went from about 60% to nearly 100% in one year (Stanford AI Index 2026). Forecasters are converging on a ~2029–2033 window: Hassabis moved his date sooner while Kokotajlo moved his later.",
+    "forecasts": [
+      {
+        "id": "hassabis-agi-five-to-ten-years",
+        "forecaster": "Demis Hassabis (CEO, Google DeepMind)",
+        "claim": "five to 10 years",
+        "quoteVerified": false,
+        "madeAt": "2025-03",
+        "targetDate": "2035",
+        "source": "https://www.nbcnews.com/business/business-news/ai-can-match-humans-task-will-five-10-years-google-deepmind-ceo-says-rcna196771",
+        "status": "revised",
+        "note": "Fragment only: AI matching humans at any task in five to ten years, i.e. about 2030–2035. In April 2026 he narrowed it (see next forecast)."
+      },
+      {
+        "id": "hassabis-agi-within-five-years",
+        "forecaster": "Demis Hassabis (CEO, Google DeepMind)",
+        "claim": "a very good chance of it being within the next 5 years",
+        "quoteVerified": false,
+        "madeAt": "2026-04",
+        "targetDate": "2031",
+        "source": "https://eu.36kr.com/en/p/3646186509667977",
+        "status": "pending",
+        "note": "Seen in a search-result summary of a 20VC interview; not checked against the recording. He said one or two more Transformer-scale breakthroughs are still needed."
+      },
+      {
+        "id": "kokotajlo-around-2030",
+        "forecaster": "Daniel Kokotajlo (AI Futures Project)",
+        "claim": "'around 2030, lots of uncertainty though' is what I say these days",
+        "quoteVerified": false,
+        "madeAt": "2026",
+        "targetDate": "2030",
+        "source": "https://officechai.com/ai/things-seem-to-be-going-somewhat-slower-than-the-ai-2027-scenario-daniel-kokotajlo/",
+        "status": "pending",
+        "note": "The AI 2027 author's own revision: his median moved from 2027 to 2028, then 2029, then around 2030. The exact date of this remark was not captured in the notes; madeAt is approximate."
+      },
+      {
+        "id": "karpathy-decade-of-agents",
+        "forecaster": "Andrej Karpathy",
+        "claim": "It will be \"the decade of agents\", not \"the year of agents\"; AGI is roughly a decade away. (Paraphrase of a podcast interview.)",
+        "quoteVerified": false,
+        "madeAt": "2025-10",
+        "targetDate": "2035",
+        "source": "https://futuresearch.ai/blog/ai-2027-6-months-later/",
+        "status": "pending",
+        "note": "Paraphrased from a secondary recap of the Dwarkesh podcast; not verbatim."
+      },
+      {
+        "id": "kai-fu-lee-40-percent-jobs-2034",
+        "forecaster": "Kai-Fu Lee",
+        "claim": "...all together in 15 years, that's going to displace about 40 percent of the jobs in the world.",
+        "quoteVerified": false,
+        "madeAt": "2019-01-13",
+        "targetDate": "2034",
+        "source": "https://www.cbsnews.com/video/venture-capitalist-kai-fu-lee-ai-will-displace-40-percent-of-worlds-jobs-in-as-soon-as-15-years-60-minutes/",
+        "status": "pending",
+        "note": "An open receipt. So far the BLS's 18 AI-exposed occupations fell 0.2% (May 2024–May 2025) while total employment rose 0.8%. Stanford's Digital Economy Lab finds 22–25-year-olds in the most exposed jobs are 19% below trend, with no widespread displacement."
+      }
+    ]
+  },
+  {
+    "id": "plateau",
+    "summary": "Scaling current methods hits diminishing returns, or turns out to be the wrong path to general intelligence. Evidence for it: on the interactive ARC-AGI-3 preview (Mar 2026), humans solved 100% of environments while frontier LLMs scored 0–0.37% and the best purpose-built agent 12.58%. METR says its long-horizon measurements are not reliable enough for exact extrapolation; only 5 of its 228 tasks run 16 hours or longer. Hallucination and reliability problems persist in 2025–26 flagship launches. Evidence against it: no 'wall' appeared on coding and math benchmarks (IMO gold in 2025, SWE-bench near saturation).",
+    "forecasts": [
+      {
+        "id": "marcus-hitting-a-wall",
+        "forecaster": "Gary Marcus",
+        "claim": "Deep Learning Is Hitting a Wall",
+        "quoteVerified": true,
+        "madeAt": "2022-03-10",
+        "targetDate": "2026",
+        "source": "https://nautil.us/deep-learning-is-hitting-a-wall-238440",
+        "status": "missed",
+        "note": "No stated deadline; assessed as of Sep 2026. The wall did not appear on coding and science benchmarks (IMO gold in Jul 2025). His narrower critiques, that pure scaling won't reach AGI and reliability problems will persist, are partly supported by ARC-AGI-3 results."
+      },
+      {
+        "id": "lecun-llms-dead-end",
+        "forecaster": "Yann LeCun (AMI Labs)",
+        "claim": "LLMs are a dead end for human-level AI; world models (JEPA) are required. (Paraphrase of his stated position.)",
+        "quoteVerified": false,
+        "madeAt": "2026-03",
+        "targetDate": "2030",
+        "source": "https://letsdatascience.com/blog/yann-lecun-told-meta-he-could-do-it-faster-alone-then-he-raised-1-billion",
+        "status": "pending",
+        "note": "No stated deadline; targetDate is an editorial placeholder. He left Meta and launched AMI Labs in Paris in Mar 2026 with a $1.03B seed at a $3.5B pre-money valuation, about a dozen staff and no product yet. An unresolved scientific bet."
+      },
+      {
+        "id": "chollet-arc-gap-no-agi",
+        "forecaster": "ARC Prize Foundation (co-founded by François Chollet)",
+        "claim": "As long as there is a gap between AI and human learning, we do not have AGI.",
+        "quoteVerified": true,
+        "madeAt": "2026-03-25",
+        "targetDate": "2026",
+        "source": "https://arcprize.org/arc-agi/3",
+        "status": "pending",
+        "note": "A test, not a dated forecast; targetDate marks the 2026 ARC Prize competition. In the 30-day ARC-AGI-3 preview humans solved 100% of environments and frontier LLMs (GPT-5.4, Claude Opus 4.6, Grok 4.2) scored 0–0.37% (search-snippet figures from arXiv 2603.24621)."
+      },
+      {
+        "id": "sutskever-pretraining-will-end",
+        "forecaster": "Ilya Sutskever (Safe Superintelligence Inc.)",
+        "claim": "Pre-training as we know it will unquestionably end.",
+        "quoteVerified": false,
+        "madeAt": "2024-12-13",
+        "targetDate": "2030",
+        "source": "https://neurips.cc/virtual/2024/test-of-time/105032",
+        "status": "pending",
+        "note": "No stated deadline; targetDate is an editorial placeholder. He cited the limit on training data. It supports diminishing returns to pure pre-training scale, not a plateau overall: reinforcement-learning and reasoning scaling took over."
+      }
+    ]
+  },
+  {
+    "id": "takeoff",
+    "summary": "AI systems start accelerating their own progress and transformative AI arrives around 2026–2028. Evidence for it: METR's 50% task-completion time horizon doubled about every 7 months from 2019 to 2025, and third-party analyses found about every 4 months in 2024–25; an early Claude Mythos Preview measured at least 16 hours (95% CI 8.5–55h) in May 2026, at the top of METR's measurable range. Three of the best-known fast-takeoff anchors now have target dates at or near the present, and their authors have hedged or revised.",
+    "forecasts": [
+      {
+        "id": "ai-2027-superhuman-coders",
+        "forecaster": "AI Futures Project (Kokotajlo, Lifland, Larsen, Dean, Alexander)",
+        "claim": "Superhuman coders arrive in 2027, followed by an intelligence explosion. (Summary of the published scenario.)",
+        "quoteVerified": false,
+        "madeAt": "2025-04",
+        "targetDate": "2027",
+        "source": "https://ai-2027.com/",
+        "status": "revised",
+        "note": "The authors say progress is running somewhat slower than the scenario and have moved their medians to about 2029–2030. A community tracker follows its predictions at ai2027-tracker.com."
+      },
+      {
+        "id": "amodei-powerful-ai-2026",
+        "forecaster": "Dario Amodei (CEO, Anthropic)",
+        "claim": "could come as early as 2026, though there are also ways it could take much longer.",
+        "quoteVerified": true,
+        "madeAt": "2024-10",
+        "targetDate": "2026",
+        "source": "https://www.darioamodei.com/essay/machines-of-loving-grace",
+        "status": "pending",
+        "note": "Refers to \"powerful AI\", a country of geniuses in a datacenter. The earliest target year has arrived; whether Nobel-level capability across fields exists is contested, and no compressed-biology outcomes have been demonstrated yet."
+      },
+      {
+        "id": "altman-superintelligence-few-thousand-days",
+        "forecaster": "Sam Altman (CEO, OpenAI)",
+        "claim": "It is possible that we will have superintelligence in a few thousand days (!); it may take longer, but I'm confident we'll get there.",
+        "quoteVerified": true,
+        "madeAt": "2024-09-23",
+        "targetDate": "2032",
+        "source": "https://ia.samaltman.com/",
+        "status": "pending",
+        "note": "\"A few thousand days\" from Sept 2024 falls roughly between 2030 and 2032; targetDate is an editorial reading. About 730 days have passed."
+      },
+      {
+        "id": "altman-agents-real-cognitive-work-2025",
+        "forecaster": "Sam Altman (CEO, OpenAI)",
+        "claim": "2025 has seen the arrival of agents that can do real cognitive work; writing computer code will never be the same.",
+        "quoteVerified": true,
+        "madeAt": "2025-06",
+        "targetDate": "2025",
+        "source": "https://blog.samaltman.com/the-gentle-singularity",
+        "status": "came-true",
+        "note": "Broadly borne out for coding: Claude Code, Codex and OpenClaw adoption, and SWE-bench Verified near 100%."
+      },
+      {
+        "id": "altman-novel-insights-2026",
+        "forecaster": "Sam Altman (CEO, OpenAI)",
+        "claim": "2026 will likely see the arrival of systems that can figure out novel insights.",
+        "quoteVerified": true,
+        "madeAt": "2025-06",
+        "targetDate": "2026",
+        "source": "https://blog.samaltman.com/the-gentle-singularity",
+        "status": "pending",
+        "note": "Unresolved and contested as of Sep 2026."
+      },
+      {
+        "id": "altman-real-world-robots-2027",
+        "forecaster": "Sam Altman (CEO, OpenAI)",
+        "claim": "2027 may see the arrival of robots that can do tasks in the real world.",
+        "quoteVerified": true,
+        "madeAt": "2025-06",
+        "targetDate": "2027",
+        "source": "https://blog.samaltman.com/the-gentle-singularity",
+        "status": "pending"
+      },
+      {
+        "id": "amodei-davos-swe-end-to-end",
+        "forecaster": "Dario Amodei (CEO, Anthropic)",
+        "claim": "We might be six to twelve months away from when the model is doing most, maybe all of what SWEs do end-to-end.",
+        "quoteVerified": false,
+        "madeAt": "2026-01",
+        "targetDate": "2027-01",
+        "source": "https://www.entrepreneur.com/business-news/ai-ceo-says-software-engineers-could-be-replaced-in-months/502087",
+        "status": "pending",
+        "note": "Window runs Jul 2026–Jan 2027. Claude Code passed a $2.5B run-rate in Feb 2026; METR's early-2026 study could not cleanly measure speedup because developers refused to work without AI."
+      },
+      {
+        "id": "mostaque-no-programmers-2028",
+        "forecaster": "Emad Mostaque (then CEO, Stability AI)",
+        "claim": "There will be no programmers in five years.",
+        "quoteVerified": false,
+        "madeAt": "2023-07",
+        "targetDate": "2028",
+        "source": "https://decrypt.co/147191/no-human-programmers-five-years-ai-stability-ceo",
+        "status": "pending",
+        "note": "An open receipt. Programmers still exist in large numbers, though new-grad hiring at the largest tech firms is down more than 50% versus 2019 (SignalFire 2025)."
+      }
+    ]
+  }
+]

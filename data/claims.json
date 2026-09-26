@@ -1,0 +1,979 @@
+[
+  {
+    "id": "dartmouth-summer-significant-advance",
+    "entryId": "dartmouth-1956",
+    "speaker": "John McCarthy, Marvin Minsky, Nathaniel Rochester, Claude Shannon",
+    "speakerRole": "Authors of the Dartmouth proposal",
+    "attribution": "named",
+    "quote": "We think that a significant advance can be made in one or more of these problems if a carefully selected group of scientists work on it together for a summer.",
+    "quoteVerified": false,
+    "saidAt": "1955-08-31",
+    "claimSource": "http://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html",
+    "reality": "The 1956 summer produced no new breakthrough; Newell and Simon arrived with the already-working Logic Theorist. Language use, abstraction and self-improvement, the proposal's targets, stayed largely unsolved for decades.",
+    "realitySources": [
+      "http://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "nyt-perceptron-walk-talk-conscious",
+    "entryId": "perceptron-1958",
+    "speaker": "The New York Times (reporting the U.S. Navy)",
+    "speakerRole": "Newspaper report paraphrasing the Navy; not a Rosenblatt quote",
+    "attribution": "named",
+    "quote": "The Navy revealed the embryo of an electronic computer today that it expects will be able to walk, talk, see, write, reproduce itself and be conscious of its existence.",
+    "quoteVerified": false,
+    "saidAt": "1958-07",
+    "claimSource": "https://theconversation.com/weve-been-here-before-ai-promised-humanlike-machines-in-1958-222700",
+    "reality": "The Mark I perceptron learned to separate simple visual patterns into two categories. In 1969 Minsky and Papert proved the limits of single-layer perceptrons, which could not learn functions that are not linearly separable.",
+    "realitySources": [
+      "https://theconversation.com/weve-been-here-before-ai-promised-humanlike-machines-in-1958-222700",
+      "https://mitpress.mit.edu/9780262630221/perceptrons/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "simon-newell-chess-champion-ten-years",
+    "entryId": "dartmouth-1956",
+    "speaker": "Herbert A. Simon & Allen Newell",
+    "speakerRole": "Carnegie Tech researchers",
+    "attribution": "named",
+    "quote": "within ten years a digital computer will be the world's chess champion",
+    "quoteVerified": false,
+    "saidAt": "1958-01",
+    "claimSource": "https://chessprogramming.org/Herbert_Simon",
+    "reality": "In 1967 the program Mac Hack VI was rated about 1243. IBM's Deep Blue beat the world champion on 11 May 1997, 39 years after the paper, using brute-force search rather than the humanlike reasoning the authors had in mind.",
+    "realitySources": [
+      "https://doi.org/10.1016/S0004-3702(01)00129-1"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "simon-any-work-a-man-can-do",
+    "entryId": "dartmouth-1956",
+    "speaker": "Herbert A. Simon",
+    "speakerRole": "Carnegie Tech; later Turing Award and Nobel laureate",
+    "attribution": "named",
+    "quote": "Technologically, as I have argued earlier, machines will be capable, within twenty years, of doing any work that a man can do.",
+    "quoteVerified": true,
+    "saidAt": "1960",
+    "claimSource": "https://quoteinvestigator.com/2020/11/11/ai-can-do/",
+    "reality": "By 1980 the leading commercial AI was narrow: DEC's R1/XCON expert system configured VAX computer orders with thousands of hand-written rules. Industrial robots repeated taught motions; nothing approached general human work.",
+    "realitySources": [
+      "https://quoteinvestigator.com/2020/11/11/ai-can-do/",
+      "https://doi.org/10.1016/0004-3702(82)90021-2"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "minsky-within-a-generation",
+    "entryId": "first-ai-winter",
+    "speaker": "Marvin Minsky",
+    "speakerRole": "Co-founder, MIT AI Lab",
+    "attribution": "named",
+    "quote": "Within a generation, I am convinced, few compartments of intellect will remain outside the machine's realm—the problems of creating 'artificial intelligence' will be substantially solved.",
+    "quoteVerified": true,
+    "saidAt": "1967",
+    "claimSource": "https://quoteinvestigator.com/2021/03/04/ai-solved/",
+    "reality": "By 1982 Minsky himself described AI as one of the hardest problems science had ever undertaken. A generation later, around 1992, the field was in its second AI winter.",
+    "realitySources": [
+      "https://quoteinvestigator.com/2021/03/04/ai-solved/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "turing-machines-thinking-by-2000",
+    "entryId": "dartmouth-1956",
+    "speaker": "Alan Turing",
+    "speakerRole": "Mathematician, University of Manchester",
+    "attribution": "named",
+    "quote": "I believe that at the end of the century the use of words and general educated opinion will have altered so much that one will be able to speak of machines thinking without expecting to be contradicted.",
+    "quoteVerified": false,
+    "saidAt": "1950-10",
+    "claimSource": "https://doi.org/10.1093/mind/LIX.236.433",
+    "reality": "By 2000 no system had passed an unrestricted imitation game; Loebner Prize winners from 1991 onward relied on conversational tricks. Turing's forecast was more hedged than later hype and only came close to true well after his deadline.",
+    "realitySources": [
+      "https://doi.org/10.1145/175208.175217"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "lighthill-no-major-impact",
+    "entryId": "first-ai-winter",
+    "speaker": "Sir James Lighthill",
+    "speakerRole": "Author of the UK Science Research Council review of AI",
+    "attribution": "named",
+    "quote": "In no part of the field have the discoveries made so far produced the major impact that was then promised.",
+    "quoteVerified": true,
+    "saidAt": "1973",
+    "claimSource": "https://rodsmith.nz/wp-content/uploads/Lighthill_1973_Report.pdf",
+    "reality": "The verdict was accurate for its time: the promised general capabilities had not arrived. UK AI funding was cut back to a few centres, part of the first AI winter.",
+    "realitySources": [
+      "https://en.wikipedia.org/wiki/Lighthill_report",
+      "https://royalsociety.org/blog/2025/12/brain-boxes/"
+    ],
+    "outcome": "came-true"
+  },
+  {
+    "id": "musk-complete-autonomy-two-years",
+    "entryId": "self-driving-hype",
+    "speaker": "Elon Musk",
+    "speakerRole": "CEO, Tesla",
+    "attribution": "named",
+    "quote": "We're going to end up with complete autonomy, and I think we will have complete autonomy in approximately two years.",
+    "quoteVerified": false,
+    "saidAt": "2015-12",
+    "claimSource": "https://en.wikipedia.org/wiki/List_of_predictions_for_autonomous_Tesla_vehicles_by_Elon_Musk",
+    "reality": "More than ten years later, Tesla's consumer Full Self-Driving is still sold as \"Supervised\". Musk pushed unsupervised consumer FSD to Q4 2026 at the earliest.",
+    "realitySources": [
+      "https://en.wikipedia.org/wiki/List_of_predictions_for_autonomous_Tesla_vehicles_by_Elon_Musk",
+      "https://electrek.co/2026/04/22/tesla-elon-musk-unsupervised-fsd-consumer-cars-q4-delay-again/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "musk-summon-across-country",
+    "entryId": "self-driving-hype",
+    "speaker": "Elon Musk",
+    "speakerRole": "CEO, Tesla",
+    "attribution": "named",
+    "quote": "I think that within two years, you'll be able to summon your car from across the country.",
+    "quoteVerified": false,
+    "saidAt": "2016-01",
+    "claimSource": "https://en.wikipedia.org/wiki/List_of_predictions_for_autonomous_Tesla_vehicles_by_Elon_Musk",
+    "reality": "Cross-country summoning never shipped. As of 2026, consumer FSD still requires a supervising driver.",
+    "realitySources": [
+      "https://en.wikipedia.org/wiki/List_of_predictions_for_autonomous_Tesla_vehicles_by_Elon_Musk"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "musk-autonomy-basically-solved",
+    "entryId": "self-driving-hype",
+    "speaker": "Elon Musk",
+    "speakerRole": "CEO, Tesla",
+    "attribution": "named",
+    "quote": "I consider autonomous driving to be a basically solved problem. We're less than two years away from complete autonomy.",
+    "quoteVerified": false,
+    "saidAt": "2016-06",
+    "claimSource": "https://en.wikipedia.org/wiki/List_of_predictions_for_autonomous_Tesla_vehicles_by_Elon_Musk",
+    "reality": "Ten years on, Tesla's consumer driving system is still labelled \"Supervised\". In January 2026 Musk said about 10 billion miles of data would be needed for safe unsupervised driving.",
+    "realitySources": [
+      "https://en.wikipedia.org/wiki/List_of_predictions_for_autonomous_Tesla_vehicles_by_Elon_Musk",
+      "https://electrek.co/2026/01/08/elon-musk-moves-goalpost-again-admits-tesla-needs-10-billion-miles-safe-unsupervised-fsd/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "musk-la-to-ny-no-touch-drive",
+    "entryId": "self-driving-hype",
+    "speaker": "Elon Musk",
+    "speakerRole": "CEO, Tesla",
+    "attribution": "named",
+    "quote": "...we will be able to demonstrate a [demonstration] drive of our full autonomy all the way from LA to New York... by the end of next year without the need for a single touch including the charger.",
+    "quoteVerified": false,
+    "saidAt": "2016-10-19",
+    "claimSource": "https://caselaw.findlaw.com/court/us-dis-crt-n-d-cal/117682199.html",
+    "reality": "The coast-to-coast no-touch demonstration drive never happened, in 2017 or since. As of 2026 consumer FSD is still \"Supervised\".",
+    "realitySources": [
+      "https://en.wikipedia.org/wiki/List_of_predictions_for_autonomous_Tesla_vehicles_by_Elon_Musk"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "musk-million-robotaxis",
+    "entryId": "self-driving-hype",
+    "speaker": "Elon Musk",
+    "speakerRole": "CEO, Tesla",
+    "attribution": "named",
+    "quote": "I feel very confident predicting that there will be autonomous robotaxis from Tesla next year — not in all jurisdictions because we won't have regulatory approval everywhere... next year for sure, we'll have over a million robotaxis on the road.",
+    "quoteVerified": false,
+    "saidAt": "2019-04-22",
+    "claimSource": "https://www.thedrive.com/news/38129/elon-musk-promised-1-million-tesla-robotaxis-by-the-end-of-2020-where-are-they",
+    "reality": "Tesla launched a small Austin robotaxi service in June 2025 with safety monitors on board; in June 2026 the Texas fleet was reported at 42 vehicles. For comparison, Waymo was running 500K+ paid rides a week in 14 US cities by 2026.",
+    "realitySources": [
+      "https://www.electrive.com/2026/06/02/tesla-robotaxi-fleet-in-texas-reaches-only-42-vehicles/",
+      "https://techcrunch.com/2026/03/27/waymo-skyrocketing-ridership-in-one-chart/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "musk-self-driving-this-year-2021",
+    "entryId": "self-driving-hype",
+    "speaker": "Elon Musk",
+    "speakerRole": "CEO, Tesla",
+    "attribution": "named",
+    "quote": "I'm highly confident the car will drive itself for the reliability in excess of a human this year.",
+    "quoteVerified": false,
+    "saidAt": "2021-01",
+    "claimSource": "https://en.wikipedia.org/wiki/List_of_predictions_for_autonomous_Tesla_vehicles_by_Elon_Musk",
+    "reality": "Tesla did not ship unsupervised driving in 2021. Five years later the consumer product is still \"Supervised\" and the unsupervised target has slipped to Q4 2026 at the earliest.",
+    "realitySources": [
+      "https://en.wikipedia.org/wiki/List_of_predictions_for_autonomous_Tesla_vehicles_by_Elon_Musk",
+      "https://electrek.co/2026/04/22/tesla-elon-musk-unsupervised-fsd-consumer-cars-q4-delay-again/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "musk-unsupervised-fsd-end-of-2025",
+    "entryId": "self-driving-hype",
+    "speaker": "Elon Musk",
+    "speakerRole": "CEO, Tesla",
+    "attribution": "named",
+    "quote": "I think it will be available for unsupervised personal use by the end of this year in certain geographies.",
+    "quoteVerified": false,
+    "saidAt": "2025-07",
+    "claimSource": "https://electrek.co/2026/04/22/tesla-elon-musk-unsupervised-fsd-consumer-cars-q4-delay-again/",
+    "reality": "The 2025 deadline was missed. In January 2026 Musk said about 10 billion miles would be needed for safe unsupervised driving, and on the April 2026 call he pushed consumer unsupervised FSD to Q4 2026 at the earliest.",
+    "realitySources": [
+      "https://electrek.co/2026/01/08/elon-musk-moves-goalpost-again-admits-tesla-needs-10-billion-miles-safe-unsupervised-fsd/",
+      "https://electrek.co/2026/04/22/tesla-elon-musk-unsupervised-fsd-consumer-cars-q4-delay-again/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "hinton-radiologists-coyote",
+    "entryId": "alphago",
+    "speaker": "Geoffrey Hinton",
+    "speakerRole": "Deep-learning pioneer, Google / University of Toronto",
+    "attribution": "named",
+    "quote": "If you work as a radiologist, you're like the coyote that's already over the edge of the cliff but hasn't yet looked down",
+    "quoteVerified": true,
+    "saidAt": "2016",
+    "claimSource": "https://fortune.com/article/ai-godfather-radiologists-obsolete-salaries-up-to-571k-demand-growing/",
+    "reality": "A decade later radiology is one of the hardest US specialties to staff. Average radiologist pay reached $571K in 2025 (+9% YoY), and there were 7,469 active radiology job postings in May 2026, with caseload up about 25% from 2018 to early 2025.",
+    "realitySources": [
+      "https://fortune.com/article/ai-godfather-radiologists-obsolete-salaries-up-to-571k-demand-growing/",
+      "https://www.cnn.com/2026/02/09/tech/ai-replacing-jobs-concerns-radiology"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "hinton-wrong-about-time-scale",
+    "entryId": "alphago",
+    "speaker": "Geoffrey Hinton",
+    "speakerRole": "Deep-learning pioneer; Turing Award laureate",
+    "attribution": "named",
+    "quote": "Yes, I was wrong about the time scale, but AI is already comparable with radiologists for several types of images",
+    "quoteVerified": true,
+    "saidAt": "2023-11",
+    "claimSource": "https://x.com/geoffreyhinton/status/1719451766599659591",
+    "reality": "In 2025 Hinton told the New York Times he \"spoke too broadly\" and now expects a combination of AI and a radiologist. Demand for human radiologists kept rising, with pay averaging $571K in 2025.",
+    "realitySources": [
+      "https://www.auntminnie.com/imaging-informatics/artificial-intelligence/article/15746014/hinton-acknowledges-mistake-in-predicting-ai-replacement-of-radiologists",
+      "https://fortune.com/article/ai-godfather-radiologists-obsolete-salaries-up-to-571k-demand-growing/"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "ibm-watson-eradicate-cancer",
+    "entryId": "ibm-watson-health",
+    "speaker": "IBM",
+    "speakerRole": "Company press release on MD Anderson (Oct 2013)",
+    "attribution": "named",
+    "quote": "is using the IBM Watson cognitive computing system for its mission to eradicate cancer.",
+    "quoteVerified": false,
+    "saidAt": "2013-10",
+    "claimSource": "https://venturebeat.com/2013/10/18/ibm-watson-fires-its-own-cancer-fighting-moonshot/",
+    "reality": "MD Anderson benched the project in 2017, and internal IBM documents reported by STAT in 2018 showed \"unsafe and incorrect\" treatment recommendations. After about $4B in acquisitions, IBM sold the Watson Health assets to Francisco Partners in January 2022 for a reported ~$1B.",
+    "realitySources": [
+      "https://www.statnews.com/2018/07/25/ibm-watson-recommended-unsafe-incorrect-treatments/",
+      "https://newsroom.ibm.com/2022-01-21-Francisco-Partners-to-Acquire-IBMs-Healthcare-Data-and-Analytics-Assets",
+      "https://www.fiercehealthcare.com/tech/ibm-sells-watson-health-assets-to-investment-firm-francisco-partners"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "google-duplex-real-world-tasks",
+    "entryId": "google-duplex",
+    "speaker": "Google",
+    "speakerRole": "Google AI blog post title, I/O 2018",
+    "attribution": "named",
+    "quote": "Google Duplex: An AI System for Accomplishing Real-World Tasks Over the Phone",
+    "quoteVerified": false,
+    "saidAt": "2018-05-08",
+    "claimSource": "https://www.androidpolice.com/2019/05/23/25-percent-of-google-duplex-calls-are-actually-conducted-by-humans/",
+    "reality": "In May 2019 Google told the NYT that about 25% of Duplex calls started with a human in a call center and about 15% needed human intervention. In the NYT's own test, 3 of 4 successful bookings were made by humans.",
+    "realitySources": [
+      "https://www.androidpolice.com/2019/05/23/25-percent-of-google-duplex-calls-are-actually-conducted-by-humans/",
+      "https://www.engadget.com/2019-05-22-google-duplex-is-made-of-people.html"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "openai-gpt2-too-dangerous",
+    "entryId": "gpt-2",
+    "speaker": "OpenAI",
+    "speakerRole": "Blog post \"Better Language Models and Their Implications\"",
+    "attribution": "named",
+    "quote": "Due to our concerns about malicious applications of the technology, we are not releasing the trained model.",
+    "quoteVerified": false,
+    "saidAt": "2019-02-14",
+    "claimSource": "https://naokishibuya.github.io/blog/2022-12-30-gpt-2-2019/",
+    "reality": "Headlines turned it into an AI \"too dangerous to release\", and fast.ai and others criticized the approach. The full 1.5B-parameter model was released about nine months later, in November 2019.",
+    "realitySources": [
+      "https://www.sciencealert.com/scientists-developed-an-ai-so-advanced-they-say-it-s-too-dangerous-to-release",
+      "https://www.fast.ai/posts/2019-02-15-openai-gp2.html",
+      "https://naokishibuya.github.io/blog/2022-12-30-gpt-2-2019/"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "altman-gpt3-hype-way-too-much",
+    "entryId": "gpt-3",
+    "speaker": "Sam Altman",
+    "speakerRole": "CEO, OpenAI",
+    "attribution": "named",
+    "quote": "The GPT-3 hype is way too much. It's impressive (thanks for the nice compliments!) but it still has serious weaknesses and sometimes makes very silly mistakes. AI is going to change the world, but GPT-3 is just a very early glimpse. We have a lot still to figure out.",
+    "quoteVerified": true,
+    "saidAt": "2020-07-19",
+    "claimSource": "https://twitter.com/sama/status/1284922296348454913",
+    "reality": "An insider's counter-hype that held up: GPT-3 stayed API-only and its fabrications and arithmetic errors were widely documented. The Guardian's \"robot wrote this entire article\" op-ed was edited from eight GPT-3 outputs.",
+    "realitySources": [
+      "https://www.theguardian.com/commentisfree/2020/sep/08/robot-wrote-this-article-gpt-3",
+      "https://news.ycombinator.com/item?id=23891648"
+    ],
+    "outcome": "came-true"
+  },
+  {
+    "id": "alphafold-50-year-grand-challenge",
+    "entryId": "alphafold-2",
+    "speaker": "DeepMind",
+    "speakerRole": "Blog post title",
+    "attribution": "named",
+    "quote": "AlphaFold: a solution to a 50-year-old grand challenge in biology",
+    "quoteVerified": false,
+    "saidAt": "2020-11-30",
+    "claimSource": "https://phys.org/news/2020-11-ai-solution-year-old-protein.html",
+    "reality": "AlphaFold 2 reached a median GDT of 92.4 across CASP14 targets, and Demis Hassabis and John Jumper shared the 2024 Nobel Prize in Chemistry. The caveat: it predicts static single-chain structures, not folding dynamics.",
+    "realitySources": [
+      "https://phys.org/news/2020-11-ai-solution-year-old-protein.html",
+      "https://www.nobelprize.org/prizes/chemistry/2024/hassabis/facts/"
+    ],
+    "outcome": "came-true"
+  },
+  {
+    "id": "kai-fu-lee-40-percent-jobs",
+    "entryId": "chatgpt",
+    "speaker": "Kai-Fu Lee",
+    "speakerRole": "Venture capitalist; former head of Google China",
+    "attribution": "named",
+    "quote": "...all together in 15 years, that's going to displace about 40 percent of the jobs in the world.",
+    "quoteVerified": false,
+    "saidAt": "2019-01-13",
+    "claimSource": "https://www.cbsnews.com/video/venture-capitalist-kai-fu-lee-ai-will-displace-40-percent-of-worlds-jobs-in-as-soon-as-15-years-60-minutes/",
+    "reality": "The deadline is 2034. So far, the 18 occupations the BLS flagged as AI-exposed fell 0.2% (May 2024–May 2025) while total US employment rose 0.8%.",
+    "realitySources": [
+      "https://www.inc.com/soren-kaplan/the-bureau-of-labor-statistics-just-flagged-18-jobs-ai-is-already-shrinking-is-yours-on-the-list/91346529"
+    ],
+    "outcome": "too-early"
+  },
+  {
+    "id": "marcus-deep-learning-hitting-a-wall",
+    "entryId": "chatgpt",
+    "speaker": "Gary Marcus",
+    "speakerRole": "Cognitive scientist, NYU emeritus",
+    "attribution": "named",
+    "quote": "Deep Learning Is Hitting a Wall",
+    "quoteVerified": true,
+    "saidAt": "2022-03-10",
+    "claimSource": "https://nautil.us/deep-learning-is-hitting-a-wall-238440",
+    "reality": "Capabilities kept advancing: in July 2025 Gemini Deep Think earned an officially graded IMO gold (35/42). Marcus's narrower points, that scaling alone won't reach AGI and hallucinations will persist, are partly supported by continuing reliability problems.",
+    "realitySources": [
+      "https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/",
+      "https://x.com/GaryMarcus/status/2053222231933931881"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "meta-galactica-science",
+    "entryId": "galactica",
+    "speaker": "Meta AI",
+    "speakerRole": "Company claim as quoted by MIT Technology Review",
+    "attribution": "named",
+    "quote": "summarize academic papers, solve math problems, generate Wiki articles, write scientific code, annotate molecules and proteins, and more",
+    "quoteVerified": true,
+    "saidAt": "2022-11-15",
+    "claimSource": "https://www.technologyreview.com/2022/11/18/1063487/meta-large-language-model-ai-only-survived-three-days-gpt-3-science/",
+    "reality": "The public demo was pulled after 3 days (Nov 15–17, 2022) because it produced authoritative-sounding false and offensive \"papers\".",
+    "realitySources": [
+      "https://www.technologyreview.com/2022/11/18/1063487/meta-large-language-model-ai-only-survived-three-days-gpt-3-science/",
+      "https://incidentdatabase.ai/reports/2270/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "buchheit-google-total-disruption",
+    "entryId": "chatgpt",
+    "speaker": "Paul Buchheit",
+    "speakerRole": "Creator of Gmail",
+    "attribution": "named",
+    "quote": "Google may be only a year or two away from total disruption. AI will eliminate the Search Engine Result Page, which is where they make most of their money.",
+    "quoteVerified": true,
+    "saidAt": "2022-12-01",
+    "claimSource": "https://x.com/paultoo/status/1598434161332981760",
+    "reality": "Almost four years later, Alphabet's Q2 2026 revenue was $119.8B (+24%), with Search & other up 17% YoY. Part of the point held: Google reshaped its own results page with AI Overviews and AI Mode.",
+    "realitySources": [
+      "https://www.sec.gov/Archives/edgar/data/0001652044/000165204426000066/googexhibit991q22026.htm",
+      "https://9to5google.com/2026/07/22/alphabet-q2-2026-earnings/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "karpathy-hottest-language-english",
+    "entryId": "chatgpt",
+    "speaker": "Andrej Karpathy",
+    "speakerRole": "AI researcher; former Tesla Director of AI",
+    "attribution": "named",
+    "quote": "The hottest new programming language is English",
+    "quoteVerified": true,
+    "saidAt": "2023-01-24",
+    "claimSource": "https://x.com/karpathy/status/1617979122625712128",
+    "reality": "As a paradigm it largely came true through vibe coding and agentic coding tools. As a job, \"prompt engineer\" (advertised at up to $335K in 2023) was described by the WSJ in 2025 as basically obsolete.",
+    "realitySources": [
+      "https://www.fortune.com/2025/05/07/prompt-engineering-200k-six-figure-role-now-obsolete-thanks-to-ai",
+      "https://www.salesforceben.com/prompt-engineering-jobs-are-obsolete-in-2025-heres-why/"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "bard-jwst-first-exoplanet",
+    "entryId": "bard",
+    "speaker": "Google Bard (Google launch promo)",
+    "speakerRole": "Answer shown in Google's own launch demo",
+    "attribution": "named",
+    "quote": "JWST took the very first pictures of a planet outside of our own solar system.",
+    "quoteVerified": true,
+    "saidAt": "2023-02-08",
+    "claimSource": "https://www.cnn.com/2023/02/08/tech/google-ai-bard-demo-error",
+    "reality": "The first exoplanet image was taken by ESO's VLT in 2004. Alphabet shares fell 7.7% that day, erasing about $100B in market value; the product line later recovered as Gemini, with 950M monthly users by Q2 2026.",
+    "realitySources": [
+      "https://www.npr.org/2023/02/09/1155650909/google-chatbot--error-bard-shares",
+      "https://9to5google.com/2026/07/22/alphabet-q2-2026-earnings/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "ibm-krishna-30-percent-back-office",
+    "entryId": "ibm-watson-health",
+    "speaker": "Arvind Krishna",
+    "speakerRole": "CEO, IBM",
+    "attribution": "named",
+    "quote": "could easily see 30% of that getting replaced by AI and automation over a five-year period.",
+    "quoteVerified": true,
+    "saidAt": "2023-05-01",
+    "claimSource": "https://www.aljazeera.com/economy/2023/5/3/ibm-to-freeze-hiring-as-ceo-expects-ai-to-replace-7800-jobs",
+    "reality": "The remark referred to about 26,000 non-customer-facing roles (roughly 7,800 jobs). By May 2025 IBM had replaced several hundred HR staff with AI, but total headcount grew as it hired more programmers and salespeople.",
+    "realitySources": [
+      "https://www.entrepreneur.com/business-news/ibm-ceo-ai-replaced-hundreds-of-human-resources-staff/491341"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "chegg-extraordinarily-overblown",
+    "entryId": "chatgpt",
+    "speaker": "Dan Rosensweig",
+    "speakerRole": "CEO, Chegg",
+    "attribution": "named",
+    "quote": "extraordinarily overblown",
+    "quoteVerified": true,
+    "saidAt": "2023-05-02",
+    "claimSource": "https://www.cnbc.com/2023/05/02/chegg-ceo-chatgpt-stock-plunge-was-extraordinarily-overblown.html",
+    "reality": "A dismissal of AI risk that proved wrong. Chegg cut 22% of staff in May 2025 and 45% in October 2025, blaming the \"new realities of AI\" and falling Google traffic, and its stock fell about 99% from its peak.",
+    "realitySources": [
+      "https://www.cnbc.com/2025/10/27/chegg-slashes-45percent-of-workforce-blames-new-realities-of-ai.html",
+      "https://www.forbes.com/sites/petercohan/2025/10/29/chegg-stock-down-99-learn-whether-ai-45-layoffs-make-chgg-a-buy/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "mostaque-no-programmers-five-years",
+    "entryId": "chatgpt",
+    "speaker": "Emad Mostaque",
+    "speakerRole": "Founder and CEO, Stability AI",
+    "attribution": "named",
+    "quote": "There will be no programmers in five years.",
+    "quoteVerified": false,
+    "saidAt": "2023-07",
+    "claimSource": "https://decrypt.co/147191/no-human-programmers-five-years-ai-stability-ceo",
+    "reality": "The deadline is around 2028, and programmers still exist in large numbers. Entry-level hiring is weaker: new-grad hiring at the 15 largest tech firms was down more than 50% versus 2019.",
+    "realitySources": [
+      "https://www.signalfire.com/blog/signalfire-state-of-talent-report-2025"
+    ],
+    "outcome": "not-yet"
+  },
+  {
+    "id": "altman-agi-achieved-internally",
+    "entryId": "gpt-4",
+    "speaker": "Sam Altman",
+    "speakerRole": "CEO, OpenAI (Reddit comment)",
+    "attribution": "named",
+    "quote": "AGI has been achieved internally",
+    "quoteVerified": true,
+    "saidAt": "2023-09-26",
+    "claimSource": "https://www.bigtechwire.com/2023/09/26/sam-altman-appears-to-confirm-openai-has-achieved-agi-likely-trolling/",
+    "reality": "Altman edited the comment the same day to call it a joke (\"obviously this is just memeing\"). None of OpenAI's later releases (GPT-4 Turbo, GPT-4o, o1, GPT-5) were presented as AGI.",
+    "realitySources": [
+      "https://tech.yahoo.com/ai/articles/chatgpt-boss-says-created-human-134546672.html",
+      "https://www.bigtechwire.com/2023/09/26/sam-altman-appears-to-confirm-openai-has-achieved-agi-likely-trolling/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "huang-nobody-has-to-program",
+    "entryId": "cursor",
+    "speaker": "Jensen Huang",
+    "speakerRole": "CEO, NVIDIA",
+    "attribution": "named",
+    "quote": "It is our job to create computing technology such that nobody has to program. And that the programming language is human. Everybody in the world is now a programmer.",
+    "quoteVerified": false,
+    "saidAt": "2024-02-12",
+    "claimSource": "https://www.tomshardware.com/tech-industry/artificial-intelligence/jensen-huang-advises-against-learning-to-code-leave-it-up-to-ai",
+    "reality": "Natural-language coding went mainstream and Claude Code and Cursor became multi-billion-dollar businesses, but programming as a profession did not vanish. Employment of young workers in AI-exposed occupations is down relative to trend, and new-grad hiring at big tech was down more than 50% from 2019.",
+    "realitySources": [
+      "https://digitaleconomy.stanford.edu/news/canariesaug26/",
+      "https://www.signalfire.com/blog/signalfire-state-of-talent-report-2025"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "klarna-work-of-700-agents",
+    "entryId": "klarna-ai-assistant",
+    "speaker": "Klarna",
+    "speakerRole": "Company press release (CEO Sebastian Siemiatkowski)",
+    "attribution": "named",
+    "quote": "Klarna's AI assistant does the work of 700 full-time agents",
+    "quoteVerified": true,
+    "saidAt": "2024-02-27",
+    "claimSource": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/",
+    "reality": "The assistant did handle 2.3M conversations in its first month, two-thirds of chats. In May 2025 the CEO told Bloomberg that cost had been too dominant a factor and quality suffered, and Klarna began hiring humans again for an on-call support model.",
+    "realitySources": [
+      "https://openai.com/index/klarna/",
+      "https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "devin-first-ai-software-engineer",
+    "entryId": "devin",
+    "speaker": "Cognition (Scott Wu, CEO)",
+    "speakerRole": "Launch blog post \"Introducing Devin\"",
+    "attribution": "named",
+    "quote": "Today we're excited to introduce Devin, the first AI software engineer.",
+    "quoteVerified": false,
+    "saidAt": "2024-03-12",
+    "claimSource": "https://www.answer.ai/posts/2025-01-08-devin.html",
+    "reality": "Answer.AI's month-long test found 3 successes, 14 failures and 3 inconclusive results across 20 tasks. Commercially the category became real anyway: Devin ARR grew from $1M (Sept 2024) to $73M (Jun 2025) and Cognition was valued at $10.2B in Sept 2025.",
+    "realitySources": [
+      "https://www.answer.ai/posts/2025-01-08-devin.html",
+      "https://www.cnbc.com/2025/09/08/cognition-valued-at-10point2-billion-two-months-after-windsurf-.html"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "rabbit-r1-not-android-app",
+    "entryId": "rabbit-r1",
+    "speaker": "Jesse Lyu",
+    "speakerRole": "Founder and CEO, Rabbit (statement to Android Authority)",
+    "attribution": "named",
+    "quote": "rabbit r1 is not an Android app",
+    "quoteVerified": true,
+    "saidAt": "2024-04",
+    "claimSource": "https://www.androidauthority.com/rabbit-r1-is-an-android-app-3438805/",
+    "reality": "Android Authority installed the R1 launcher APK on a Pixel 6a and the whole interface ran as a single Android app; Rabbit replied that its model runs in the cloud. More than 100K preorders did not turn into sustained use.",
+    "realitySources": [
+      "https://www.engadget.com/rabbit-denies-claims-that-its-r1-virtual-assistant-is-a-glorified-android-app-123049869.html",
+      "https://en.wikipedia.org/wiki/Rabbit_r1"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "pichai-gemini-images-we-got-it-wrong",
+    "entryId": "gemini",
+    "speaker": "Sundar Pichai",
+    "speakerRole": "CEO, Google (staff memo)",
+    "attribution": "named",
+    "quote": "I know that some of its responses have offended our users and shown bias — to be clear, that's completely unacceptable and we got it wrong.",
+    "quoteVerified": true,
+    "saidAt": "2024-02-27",
+    "claimSource": "https://www.semafor.com/article/02/27/2024/google-ceo-sundar-pichai-calls-ai-tools-responses-completely-unacceptable",
+    "reality": "An accurate admission: Google paused Gemini's generation of images of people after it produced racially diverse Nazi-era soldiers, Founding Fathers and popes.",
+    "realitySources": [
+      "https://www.npr.org/2024/02/28/1234532775/google-gemini-offended-users-images-race"
+    ],
+    "outcome": "came-true"
+  },
+  {
+    "id": "google-ai-overviews-glue-pizza",
+    "entryId": "gemini",
+    "speaker": "Liz Reid",
+    "speakerRole": "Head of Google Search",
+    "attribution": "named",
+    "quote": "We saw AI Overviews that featured sarcastic or troll-y content from discussion forums... in some cases can lead to less-than-helpful advice, like using glue to get cheese to stick to pizza.",
+    "quoteVerified": true,
+    "saidAt": "2024-05",
+    "claimSource": "https://techcrunch.com/2024/05/31/google-admits-its-ai-overviews-need-work-but-were-all-helping-it-beta-test/",
+    "reality": "Google restricted user-generated content in AI answers but kept the feature. Search revenue grew 17% YoY in Q2 2026, with management crediting AI features for query growth.",
+    "realitySources": [
+      "https://www.forbes.com/sites/roberthart/2024/05/31/google-restricts-ai-search-tool-after-nonsensical-answers-told-people-to-eat-rocks-and-put-glue-on-pizza/",
+      "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf"
+    ],
+    "outcome": "came-true"
+  },
+  {
+    "id": "mcdonalds-voice-ordering-future",
+    "entryId": "ibm-watson-health",
+    "speaker": "McDonald's",
+    "speakerRole": "Company statement on the IBM drive-thru test",
+    "attribution": "named",
+    "quote": "has given us the confidence that a voice ordering solution for drive-thru will be part of our restaurants' future",
+    "quoteVerified": true,
+    "saidAt": "2024-06-17",
+    "claimSource": "https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html",
+    "reality": "The statement came as McDonald's ended the IBM pilot in 100+ restaurants by July 26, 2024, after viral order errors such as nine sweet teas.",
+    "realitySources": [
+      "https://www.restaurantdive.com/news/mcdonalds-ibm-drive-thru-automation-voice-ordering-ai/719085/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "altman-superintelligence-few-thousand-days",
+    "entryId": "gpt-6-astra",
+    "speaker": "Sam Altman",
+    "speakerRole": "CEO, OpenAI",
+    "attribution": "named",
+    "quote": "It is possible that we will have superintelligence in a few thousand days (!); it may take longer, but I'm confident we'll get there.",
+    "quoteVerified": true,
+    "saidAt": "2024-09-23",
+    "claimSource": "https://ia.samaltman.com/",
+    "reality": "About 730 days have passed with no consensus superintelligence. GPT-6 Astra (Sept 2026) saturates several benchmarks by vendor report, but independent reviewers place it level with the field on raw intelligence.",
+    "realitySources": [
+      "https://openai.com/index/gpt-6-astra/",
+      "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra"
+    ],
+    "outcome": "too-early"
+  },
+  {
+    "id": "amodei-powerful-ai-as-early-as-2026",
+    "entryId": "claude",
+    "speaker": "Dario Amodei",
+    "speakerRole": "CEO, Anthropic (essay \"Machines of Loving Grace\")",
+    "attribution": "named",
+    "quote": "could come as early as 2026, though there are also ways it could take much longer.",
+    "quoteVerified": true,
+    "saidAt": "2024-10",
+    "claimSource": "https://www.darioamodei.com/essay/machines-of-loving-grace",
+    "reality": "The earliest target year has arrived. Coding capability grew fast (SWE-bench Verified near 100%), but whether \"powerful AI\" as Amodei defined it, Nobel-level across fields, exists is contested, and on the interactive ARC-AGI-3 preview frontier LLMs scored under 0.4% versus 100% for humans.",
+    "realitySources": [
+      "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+      "https://arxiv.org/pdf/2603.24621"
+    ],
+    "outcome": "too-early"
+  },
+  {
+    "id": "nadella-business-apps-collapse",
+    "entryId": "claude-cowork",
+    "speaker": "Satya Nadella",
+    "speakerRole": "CEO, Microsoft (BG2 podcast)",
+    "attribution": "named",
+    "quote": "The notion that business applications exist, that's probably where they'll all collapse, right in the agent era, because if you think about it, right, they are essentially CRUD databases with a bunch of business logic.",
+    "quoteVerified": false,
+    "saidAt": "2024-12",
+    "claimSource": "https://www.windowscentral.com/microsoft/hey-why-do-i-need-excel-microsoft-ceo-satya-nadella-foresees-a-disruptive-agentic-ai-era-that-could-aggressively-collapse-saas-apps",
+    "reality": "Valuations and revenues split. Claude Cowork plugins and Opus 4.6 (Feb 2026) set off a selloff that erased about $285B in software market value in ~48 hours, yet Salesforce's Q2 FY27 revenue grew 11% to $11.3B and Adobe posted a record $6.76B quarter (+13%).",
+    "realitySources": [
+      "https://fortune.com/2026/02/06/anthropic-claude-opus-4-6-stock-selloff-new-upgrade/",
+      "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings/",
+      "https://www.sec.gov/Archives/edgar/data/0000796343/000079634326000156/adbe-20260828.htm"
+    ],
+    "outcome": "too-early"
+  },
+  {
+    "id": "zuckerberg-ai-midlevel-engineer-2025",
+    "entryId": "meta-muse",
+    "speaker": "Mark Zuckerberg",
+    "speakerRole": "CEO, Meta (Joe Rogan Experience #2255)",
+    "attribution": "named",
+    "quote": "probably in 2025, we at Meta, as well as the other companies that are basically working on this, are going to have an AI that can effectively be a sort of midlevel engineer that you have at your company that can write code.",
+    "quoteVerified": false,
+    "saidAt": "2025-01-10",
+    "claimSource": "https://finance.yahoo.com/news/ai-write-code-zuckerberg-says-164519848.html",
+    "reality": "Agentic coding tools such as Claude Code, Codex and Cursor agents became widely used in 2025–26, but Meta did not publicly show an internal AI mid-level engineer. Meta Superintelligence Labs' first model, Muse Spark (Apr 2026), ranked 4th on the Artificial Analysis index.",
+    "realitySources": [
+      "https://fortune.com/2026/07/09/meta-muse-spark-1-1-release-alexandr-wang-superintelligence-labs-mark-zuckerberg/"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "altman-reflections-know-how-to-build-agi",
+    "entryId": "chatgpt",
+    "speaker": "Sam Altman",
+    "speakerRole": "CEO, OpenAI (blog post \"Reflections\")",
+    "attribution": "named",
+    "quote": "We are now confident we know how to build AGI as we have traditionally understood it. We believe that, in 2025, we may see the first AI agents 'join the workforce' and materially change the output of companies.",
+    "quoteVerified": true,
+    "saidAt": "2025-01",
+    "claimSource": "https://blog.samaltman.com/reflections",
+    "reality": "Coding agents did join the workforce in a real sense; Claude Code reached a $1B run-rate within about six months. Enterprise-wide change was weaker: an MIT NANDA report (Aug 2025, small sample, criticized methodology) found 95% of organizations saw no measurable return from genAI pilots.",
+    "realitySources": [
+      "https://www.theregister.com/2025/08/18/generative_ai_zero_return_95_percent",
+      "https://virtualizationreview.com/articles/2025/08/19/mit-report-finds-most-ai-business-investments-fail-reveals-genai-divide.aspx"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "amodei-ai-writing-90-percent-of-code",
+    "entryId": "claude-code",
+    "speaker": "Dario Amodei",
+    "speakerRole": "CEO, Anthropic (Council on Foreign Relations)",
+    "attribution": "named",
+    "quote": "I think we will be there in three to six months, where AI is writing 90% of the code. And then in 12 months, we may be in a world where AI is writing essentially all of the code.",
+    "quoteVerified": false,
+    "saidAt": "2025-03-10",
+    "claimSource": "https://futurism.com/six-months-anthropic-coding",
+    "reality": "Six months later Amodei said it was true within Anthropic and some partner companies; critics said it was not true industry-wide. By May 2026 GitHub data showed AI-generated code at about 14× the previous year's volume.",
+    "realitySources": [
+      "https://blog.redwoodresearch.org/p/is-90-of-code-at-anthropic-being",
+      "https://daringfireball.net/linked/2026/03/13/amodei-ai-code-claim-chowder"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "apple-personal-siri-take-longer",
+    "entryId": "apple-intelligence",
+    "speaker": "Apple",
+    "speakerRole": "Company statement on the personalized Siri",
+    "attribution": "named",
+    "quote": "It's going to take us longer than we thought to deliver on these features and we anticipate rolling them out in the coming year.",
+    "quoteVerified": true,
+    "saidAt": "2025-03",
+    "claimSource": "https://www.macrumors.com/2025/03/10/apple-pulls-iphone-16-ad-more-personal-siri/",
+    "reality": "Apple pulled the iPhone 16 ad promoting the feature and in January 2026 confirmed Google Gemini would power the next Siri. \"Siri AI\" shipped in iOS 27 on 2026-09-14, about 18 months after this statement and still an opt-in beta.",
+    "realitySources": [
+      "https://www.macrumors.com/2026/01/12/google-gemini-next-generation-siri/",
+      "https://www.cnbc.com/2026/09/14/apple-releases-ios-27-redesigned-siri-ai.html"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "duolingo-stop-using-contractors",
+    "entryId": "chatgpt",
+    "speaker": "Luis von Ahn",
+    "speakerRole": "CEO, Duolingo (all-hands memo)",
+    "attribution": "named",
+    "quote": "gradually stop using contractors to do work that AI can handle",
+    "quoteVerified": true,
+    "saidAt": "2025-04",
+    "claimSource": "https://www.entrepreneur.com/business-news/duolingo-ceo-clarifies-ai-stance-after-backlash-read-memo/492141",
+    "reality": "After consumer backlash von Ahn clarified that he did not see AI replacing employees and that hiring continued at the same speed. By April 2026 AI usage had been dropped as a performance-review metric; Q1 2026 DAUs rose 21% (secondary source).",
+    "realitySources": [
+      "https://www.entrepreneur.com/business-news/duolingo-ceo-clarifies-ai-stance-after-backlash-read-memo/492141",
+      "https://finance.yahoo.com/news/duolingo-went-ai-first-then-070000682.html"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "jassy-genai-reduce-corporate-workforce",
+    "entryId": "chatgpt",
+    "speaker": "Andy Jassy",
+    "speakerRole": "CEO, Amazon (staff memo)",
+    "attribution": "named",
+    "quote": "We will need fewer people doing some of the jobs that are being done today... in the next few years, we expect that this will reduce our total corporate workforce.",
+    "quoteVerified": true,
+    "saidAt": "2025-06-17",
+    "claimSource": "https://www.cnbc.com/2025/06/17/ai-amazon-workforce-jassy.html",
+    "reality": "Amazon cut 14,000 corporate jobs in October 2025 and about 16,000 more in early 2026, roughly 30,000 in total. How much of that was caused by AI is disputed.",
+    "realitySources": [
+      "https://www.pbs.org/newshour/economy/amazon-to-lay-off-14000-corporate-employees-as-spending-on-artificial-intelligence-accelerates",
+      "https://www.geekwire.com/2025/amazon-reportedly-set-to-lay-off-30000-corporate-employees-in-massive-workforce-cut/"
+    ],
+    "outcome": "came-true"
+  },
+  {
+    "id": "altman-gpt5-phd-level-expert",
+    "entryId": "gpt-5",
+    "speaker": "Sam Altman",
+    "speakerRole": "CEO, OpenAI (GPT-5 launch livestream)",
+    "attribution": "named",
+    "quote": "GPT-5 is the first time that it really feels like talking to an expert in any topic, like a PhD-level expert.",
+    "quoteVerified": false,
+    "saidAt": "2025-08-07",
+    "claimSource": "https://www.cnn.com/2025/08/14/business/chatgpt-rollout-problems",
+    "reality": "Strong on benchmarks, but the launch drew backlash: the model mislabeled maps and presidents and its router misdirected queries. OpenAI restored GPT-4o after user outcry and Altman admitted it had screwed up parts of the rollout.",
+    "realitySources": [
+      "https://www.cnn.com/2025/08/14/business/chatgpt-rollout-problems",
+      "https://fortune.com/2025/08/18/sam-altman-openai-chatgpt5-launch-data-centers-investments/"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "benioff-9000-to-5000-support",
+    "entryId": "klarna-ai-assistant",
+    "speaker": "Marc Benioff",
+    "speakerRole": "CEO, Salesforce",
+    "attribution": "named",
+    "quote": "I've reduced it from 9,000 heads to about 5,000, because I need less heads.",
+    "quoteVerified": true,
+    "saidAt": "2025-09",
+    "claimSource": "https://www.cnbc.com/2025/09/02/salesforce-ceo-confirms-4000-layoffs-because-i-need-less-heads-with-ai.html",
+    "reality": "A bold claim that happened. Salesforce says about 50% of customer interactions are handled by AI agents and support costs fell 17%, and Agentforce ARR passed $1.5B by August 2026.",
+    "realitySources": [
+      "https://fortune.com/2025/09/02/salesforce-ceo-billionaire-marc-benioff-ai-agents-jobs-layoffs-customer-service-sales/",
+      "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings/"
+    ],
+    "outcome": "came-true"
+  },
+  {
+    "id": "altman-sora-chatgpt-for-creativity",
+    "entryId": "sora",
+    "speaker": "Sam Altman",
+    "speakerRole": "CEO, OpenAI",
+    "attribution": "named",
+    "quote": "This feels to many of us like the 'ChatGPT for creativity' moment, and it feels fun and new.",
+    "quoteVerified": true,
+    "saidAt": "2025-09-30",
+    "claimSource": "https://x.com/sama/status/1973073987023352250",
+    "reality": "Users peaked at about 1M and fell below 500K while the app reportedly cost about $1M a day to run. OpenAI closed the app on 2026-04-26 and the API on 2026-09-24.",
+    "realitySources": [
+      "https://techcrunch.com/2026/03/29/why-openai-really-shut-down-sora/",
+      "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "elastic-vector-dbs-never-a-business",
+    "entryId": "langchain",
+    "speaker": "Ash Kulkarni",
+    "speakerRole": "CEO, Elastic",
+    "attribution": "named",
+    "quote": "We've always said that vector databases are a feature. They are never going to be a business in and of themselves.",
+    "quoteVerified": false,
+    "saidAt": "2025",
+    "claimSource": "https://aimmediahouse.com/market-industry/elastic-ceo-says-vector-databases-were-never-a-business-amid-pinecone-sale-talks",
+    "reality": "Pinecone explored a sale in 2025 after losing Notion as a customer, named a new CEO in September 2025 and stayed independent into 2026. Vector search became a standard feature of Postgres, Elastic, MongoDB and the cloud providers.",
+    "realitySources": [
+      "https://www.theinformation.com/articles/top-funded-ai-database-startup-pinecone-considers-sale",
+      "https://venturebeat.com/ai/from-shiny-object-to-sober-reality-the-vector-database-story-two-years-later"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "amodei-davos-swe-end-to-end",
+    "entryId": "claude-code",
+    "speaker": "Dario Amodei",
+    "speakerRole": "CEO, Anthropic (World Economic Forum, Davos)",
+    "attribution": "named",
+    "quote": "We might be six to twelve months away from when the model is doing most, maybe all of what SWEs do end-to-end.",
+    "quoteVerified": false,
+    "saidAt": "2026-01",
+    "claimSource": "https://www.entrepreneur.com/business-news/ai-ceo-says-software-engineers-could-be-replaced-in-months/502087",
+    "reality": "The window runs to January 2027. Claude Code passed a $2.5B run-rate in February 2026, but METR's early-2026 follow-up could not cleanly measure speedup because developers refused to work without AI.",
+    "realitySources": [
+      "https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/",
+      "https://metr.org/blog/2026-02-24-uplift-update/"
+    ],
+    "outcome": "too-early"
+  },
+  {
+    "id": "huang-openclaw-next-chatgpt",
+    "entryId": "openclaw",
+    "speaker": "Jensen Huang",
+    "speakerRole": "CEO, NVIDIA (GTC 2026 keynote)",
+    "attribution": "named",
+    "quote": "definitely the next ChatGPT",
+    "quoteVerified": false,
+    "saidAt": "2026-03-17",
+    "claimSource": "https://www.cnbc.com/2026/03/17/nvidia-ceo-jensen-huang-says-openclaw-is-definitely-the-next-chatgpt.html",
+    "reality": "OpenClaw went viral in early 2026 and also became the year's first major AI security crisis: nine CVEs in four days in March 2026 (one rated 9.9), about 135K exposed instances, and 1,184 malicious skills, about 20% of ClawHub.",
+    "realitySources": [
+      "https://www.securityweek.com/openclaw-security-issues-continue-as-secureclaw-open-source-tool-debuts/",
+      "https://conscia.com/blog/the-openclaw-security-crisis/"
+    ],
+    "outcome": "too-early"
+  },
+  {
+    "id": "cherny-coding-largely-solved",
+    "entryId": "claude-code",
+    "speaker": "Boris Cherny",
+    "speakerRole": "Creator and head of Claude Code, Anthropic",
+    "attribution": "named",
+    "quote": "At this point, it is safe to say that coding is largely solved.",
+    "quoteVerified": false,
+    "saidAt": "2026",
+    "claimSource": "https://www.youtube.com/watch?v=SlGRN8jh2RI",
+    "reality": "Cherny reportedly scoped the remark to the kinds of fairly simple codebases he works on. Software engineering hiring has held up better than expected overall, while entry-level hiring is weaker.",
+    "realitySources": [
+      "https://www.frontendmentor.io/articles/coding-is-solved-boris-cherny",
+      "https://www.signalfire.com/blog/signalfire-state-of-talent-report-2026"
+    ],
+    "outcome": "partially"
+  },
+  {
+    "id": "openai-gpt6-astra-most-intelligent",
+    "entryId": "gpt-6-astra",
+    "speaker": "OpenAI",
+    "speakerRole": "Launch announcement (per secondary coverage)",
+    "attribution": "named",
+    "quote": "the world's most intelligent and aligned model",
+    "quoteVerified": false,
+    "saidAt": "2026-09-03",
+    "claimSource": "https://openai.com/index/gpt-6-astra/",
+    "reality": "Altman apologized a day after launch for a messy staged rollout that left paying subscribers without access. It is OpenAI's first model rated \"Critical\" on cybersecurity, and it scored 51% versus its predecessor's 92% on Artificial Analysis's hallucination benchmark.",
+    "realitySources": [
+      "https://www.unite.ai/sam-altman-apologizes-as-gpt-6-astra-staged-launch-denies-paid-access/",
+      "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra"
+    ],
+    "outcome": "too-early"
+  },
+  {
+    "id": "stack-overflow-almost-dead",
+    "entryId": "stack-overflow",
+    "speaker": "Gergely Orosz",
+    "speakerRole": "Author, The Pragmatic Engineer (post title)",
+    "attribution": "named",
+    "quote": "Stack overflow is almost dead",
+    "quoteVerified": false,
+    "saidAt": "2025",
+    "claimSource": "https://blog.pragmaticengineer.com/stack-overflow-is-almost-dead/",
+    "reality": "For the public Q&A, largely true: monthly questions fell from around 200K at the 2014 peak to 1,072 in June 2026. The company survives in smaller form on enterprise products and AI data licensing, with about $115M revenue in the year to March 2025.",
+    "realitySources": [
+      "https://www.devclass.com/ai-ml/2026/01/05/dramatic-drop-in-stack-overflow-questions-as-devs-look-elsewhere-for-help/4079575",
+      "https://thenewstack.io/stack-overflows-plan-to-survive-the-age-of-ai/"
+    ],
+    "outcome": "came-true"
+  },
+  {
+    "id": "meme-rag-is-dead",
+    "entryId": "langchain",
+    "speaker": "Developer community sentiment",
+    "speakerRole": "Recurring meme after Gemini 1.5's 1M-token context (Feb 2024)",
+    "attribution": "community-sentiment",
+    "quote": "RAG is dead",
+    "quoteVerified": false,
+    "saidAt": "2024-02",
+    "claimSource": "https://vectorize.io/blog/rag-is-dead-long-live-rag",
+    "reality": "Retrieval changed form rather than disappearing: it moved into agentic search and tool use. Coding agents leaning on grep plus long context partly vindicated the meme for the mandatory-vector-database version of RAG.",
+    "realitySources": [
+      "https://lighton.ai/lighton-blogs/rag-is-dead-long-live-rag-retrieval-in-the-age-of-agents",
+      "https://akitaonrails.com/en/2026/04/06/rag-is-dead-long-context/"
+    ],
+    "outcome": "wrong"
+  },
+  {
+    "id": "meme-langchain-is-dead",
+    "entryId": "langchain",
+    "speaker": "Developer community sentiment",
+    "speakerRole": "Recurring community meme",
+    "attribution": "community-sentiment",
+    "quote": "LangChain is dead",
+    "quoteVerified": false,
+    "saidAt": "2026-07",
+    "claimSource": "https://www.agenticengineeringinstitute.com/blog/langchain-is-dead-what-serious-ai-agent-teams-are-actually-using-in-july-2026",
+    "reality": "LangChain raised $125M at a $1.25B valuation in October 2025. Developer mindshare did shift toward provider-native SDKs, agent harnesses and MCP.",
+    "realitySources": [
+      "https://techcrunch.com/2025/10/21/open-source-agentic-startup-langchain-hits-1-25b-valuation",
+      "https://fortune.com/2025/10/20/exclusive-early-ai-darling-langchain-is-now-a-unicorn-with-a-fresh-125-million-in-funding/"
+    ],
+    "outcome": "wrong"
+  }
+]

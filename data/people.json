@@ -1,0 +1,783 @@
+[
+  {
+    "id": "alan-turing",
+    "name": "Alan Turing",
+    "roles": [
+      "Mathematician, University of Manchester (1948–54)",
+      "Bletchley Park codebreaker (1939–45)"
+    ],
+    "knownFor": [],
+    "quote": {
+      "text": "I propose to consider the question, 'Can machines think?'",
+      "verified": false,
+      "source": "https://academic.oup.com/mind/article/LIX/236/433/986238",
+      "date": "1950-10"
+    },
+    "source": "https://en.wikipedia.org/wiki/Alan_Turing"
+  },
+  {
+    "id": "john-mccarthy",
+    "name": "John McCarthy",
+    "roles": [
+      "Dartmouth (1955–58)",
+      "MIT (1958–62)",
+      "Founder, Stanford AI Lab (1962–2011)",
+      "Turing Award 1971"
+    ],
+    "knownFor": [
+      "dartmouth-1956",
+      "lisp-1958"
+    ],
+    "quote": {
+      "text": "every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.",
+      "verified": false,
+      "source": "http://jmc.stanford.edu/articles/dartmouth/dartmouth.pdf",
+      "date": "1955-08-31"
+    },
+    "source": "https://amturing.acm.org/award_winners/mccarthy_1118322.cfm"
+  },
+  {
+    "id": "marvin-minsky",
+    "name": "Marvin Minsky",
+    "roles": [
+      "Co-founder, MIT AI Lab (1959)",
+      "Turing Award 1969"
+    ],
+    "knownFor": [
+      "dartmouth-1956",
+      "first-ai-winter"
+    ],
+    "quote": {
+      "text": "Within a generation, I am convinced, few compartments of intellect will remain outside the machine's realm—the problems of creating 'artificial intelligence' will be substantially solved.",
+      "verified": true,
+      "source": "https://quoteinvestigator.com/2021/03/04/ai-solved/",
+      "date": "1967"
+    },
+    "source": "https://amturing.acm.org/award_winners/minsky_7440781.cfm"
+  },
+  {
+    "id": "frank-rosenblatt",
+    "name": "Frank Rosenblatt",
+    "roles": [
+      "Cornell Aeronautical Laboratory / Cornell University (1957–71)"
+    ],
+    "knownFor": [
+      "perceptron-1958"
+    ],
+    "source": "https://news.cornell.edu/stories/2019/09/professors-perceptron-paved-way-ai-60-years-too-soon"
+  },
+  {
+    "id": "herbert-simon",
+    "name": "Herbert A. Simon",
+    "roles": [
+      "Carnegie Tech / CMU (1950s–90s)",
+      "Turing Award 1975 (with Allen Newell)",
+      "Nobel Prize in Economics 1978"
+    ],
+    "knownFor": [
+      "dartmouth-1956"
+    ],
+    "quote": {
+      "text": "Technologically, as I have argued earlier, machines will be capable, within twenty years, of doing any work that a man can do.",
+      "verified": true,
+      "source": "https://quoteinvestigator.com/2020/11/11/ai-can-do/",
+      "date": "1960"
+    },
+    "source": "https://amturing.acm.org/award_winners/simon_1031467.cfm"
+  },
+  {
+    "id": "allen-newell",
+    "name": "Allen Newell",
+    "roles": [
+      "Carnegie Tech / CMU (1950s–90s)",
+      "Turing Award 1975 (with Herbert Simon)"
+    ],
+    "knownFor": [
+      "dartmouth-1956"
+    ],
+    "source": "https://amturing.acm.org/award_winners/newell_3167755.cfm"
+  },
+  {
+    "id": "joseph-weizenbaum",
+    "name": "Joseph Weizenbaum",
+    "roles": [
+      "MIT professor (1963–88)",
+      "Author, Computer Power and Human Reason (1976)"
+    ],
+    "knownFor": [],
+    "source": "https://news.mit.edu/2008/obit-weizenbaum-0310"
+  },
+  {
+    "id": "edward-feigenbaum",
+    "name": "Edward Feigenbaum",
+    "roles": [
+      "Stanford (1965–)",
+      "Expert-systems pioneer",
+      "Turing Award 1994"
+    ],
+    "knownFor": [
+      "fifth-generation-1982"
+    ],
+    "source": "https://amturing.acm.org/award_winners/feigenbaum_4167235.cfm"
+  },
+  {
+    "id": "alain-colmerauer",
+    "name": "Alain Colmerauer",
+    "roles": [
+      "Université d'Aix-Marseille",
+      "Co-creator of Prolog (1972)"
+    ],
+    "knownFor": [
+      "prolog"
+    ],
+    "source": "https://www.doc.ic.ac.uk/~rak/"
+  },
+  {
+    "id": "robert-kowalski",
+    "name": "Robert Kowalski",
+    "roles": [
+      "University of Edinburgh",
+      "Imperial College London (1975–)",
+      "Logic-programming pioneer"
+    ],
+    "knownFor": [
+      "prolog",
+      "fifth-generation-1982"
+    ],
+    "quote": {
+      "text": "Algorithm = Logic + Control",
+      "verified": false,
+      "source": "https://dl.acm.org/doi/10.1145/359131.359136",
+      "date": "1979-07"
+    },
+    "source": "https://www.doc.ic.ac.uk/~rak/"
+  },
+  {
+    "id": "judea-pearl",
+    "name": "Judea Pearl",
+    "roles": [
+      "UCLA (1970–)",
+      "Turing Award 2011",
+      "Causal-inference researcher"
+    ],
+    "knownFor": [],
+    "quote": {
+      "text": "All the impressive achievements of deep learning amount to just curve fitting.",
+      "verified": false,
+      "source": "https://www.quantamagazine.org/to-build-truly-intelligent-machines-teach-them-cause-and-effect-20180515/",
+      "date": "2018-05-15"
+    },
+    "source": "https://amturing.acm.org/award_winners/pearl_2658896.cfm"
+  },
+  {
+    "id": "geoffrey-hinton",
+    "name": "Geoffrey Hinton",
+    "roles": [
+      "University of Toronto (1987–)",
+      "Google Brain (2013–23)",
+      "Turing Award 2018",
+      "Nobel Prize in Physics 2024"
+    ],
+    "knownFor": [
+      "backprop-1986",
+      "alexnet"
+    ],
+    "quote": {
+      "text": "Yes, I was wrong about the time scale, but AI is already comparable with radiologists for several types of images",
+      "verified": true,
+      "source": "https://x.com/geoffreyhinton/status/1719451766599659591",
+      "date": "2023-11"
+    },
+    "source": "https://awards.acm.org/about/2018-turing"
+  },
+  {
+    "id": "yann-lecun",
+    "name": "Yann LeCun",
+    "roles": [
+      "Bell Labs (1988–2002)",
+      "NYU (2003–)",
+      "Chief AI Scientist, Meta (2013–25)",
+      "Founder, AMI Labs (2026)",
+      "Turing Award 2018"
+    ],
+    "knownFor": [
+      "lenet5-mnist-1998"
+    ],
+    "source": "https://awards.acm.org/about/2018-turing"
+  },
+  {
+    "id": "yoshua-bengio",
+    "name": "Yoshua Bengio",
+    "roles": [
+      "Université de Montréal / Mila founder (1993–)",
+      "Turing Award 2018",
+      "Chair, International AI Safety Report (2025)"
+    ],
+    "knownFor": [],
+    "source": "https://awards.acm.org/about/2018-turing"
+  },
+  {
+    "id": "juergen-schmidhuber",
+    "name": "Jürgen Schmidhuber",
+    "roles": [
+      "IDSIA, Lugano (1995–)",
+      "KAUST AI Initiative (2021–)"
+    ],
+    "knownFor": [
+      "lstm-1997"
+    ],
+    "source": "https://people.idsia.ch/~juergen/"
+  },
+  {
+    "id": "sepp-hochreiter",
+    "name": "Sepp Hochreiter",
+    "roles": [
+      "JKU Linz (2006–)",
+      "Co-founder, NXAI (2024)"
+    ],
+    "knownFor": [
+      "lstm-1997"
+    ],
+    "source": "https://www.jku.at/en/institute-for-machine-learning/"
+  },
+  {
+    "id": "fei-fei-li",
+    "name": "Fei-Fei Li",
+    "roles": [
+      "Stanford (2009–)",
+      "Chief Scientist AI/ML, Google Cloud (2017–18)",
+      "Co-director, Stanford HAI (2019–)",
+      "Co-founder, World Labs (2024)"
+    ],
+    "knownFor": [
+      "imagenet-2009"
+    ],
+    "source": "https://profiles.stanford.edu/fei-fei-li"
+  },
+  {
+    "id": "andrew-ng",
+    "name": "Andrew Ng",
+    "roles": [
+      "Stanford (2002–)",
+      "Co-founder, Google Brain (2011)",
+      "Chief Scientist, Baidu (2014–17)",
+      "Co-founder, Coursera",
+      "Founder, DeepLearning.AI"
+    ],
+    "knownFor": [],
+    "source": "https://www.andrewng.org/"
+  },
+  {
+    "id": "ian-goodfellow",
+    "name": "Ian Goodfellow",
+    "roles": [
+      "Google Brain",
+      "OpenAI (2016)",
+      "Apple (2019–22)",
+      "Google DeepMind (2022–)"
+    ],
+    "knownFor": [],
+    "quote": {
+      "text": "We propose a new framework for estimating generative models via an adversarial process",
+      "verified": false,
+      "source": "https://arxiv.org/abs/1406.2661",
+      "date": "2014-06"
+    },
+    "source": "https://en.wikipedia.org/wiki/Ian_Goodfellow"
+  },
+  {
+    "id": "jeff-dean",
+    "name": "Jeff Dean",
+    "roles": [
+      "Google (1999–)",
+      "Google Brain lead",
+      "Chief Scientist, Google DeepMind & Google Research (2023–)"
+    ],
+    "knownFor": [
+      "gemini"
+    ],
+    "source": "https://research.google/people/jeff/"
+  },
+  {
+    "id": "soumith-chintala",
+    "name": "Soumith Chintala",
+    "roles": [
+      "Co-creator of PyTorch, Meta FAIR (2016–)"
+    ],
+    "knownFor": [
+      "pytorch"
+    ],
+    "source": "https://soumith.ch/"
+  },
+  {
+    "id": "demis-hassabis",
+    "name": "Demis Hassabis",
+    "roles": [
+      "Co-founder and CEO, DeepMind (2010–)",
+      "CEO, Google DeepMind (2023–)",
+      "Nobel Prize in Chemistry 2024"
+    ],
+    "knownFor": [
+      "alphago",
+      "alphafold-2",
+      "gemini"
+    ],
+    "quote": {
+      "text": "a very good chance of it being within the next 5 years",
+      "verified": false,
+      "source": "https://eu.36kr.com/en/p/3646186509667977",
+      "date": "2026-04"
+    },
+    "source": "https://www.nobelprize.org/prizes/chemistry/2024/hassabis/facts/"
+  },
+  {
+    "id": "david-silver",
+    "name": "David Silver",
+    "roles": [
+      "Principal research scientist, DeepMind (2013–)",
+      "Professor, UCL"
+    ],
+    "knownFor": [
+      "alphago"
+    ],
+    "source": "https://www.davidsilver.uk/"
+  },
+  {
+    "id": "mustafa-suleyman",
+    "name": "Mustafa Suleyman",
+    "roles": [
+      "Co-founder, DeepMind (2010–19)",
+      "Co-founder, Inflection AI (2022–24)",
+      "CEO, Microsoft AI (2024–)"
+    ],
+    "knownFor": [],
+    "source": "https://news.microsoft.com/source/exec/mustafa-suleyman/"
+  },
+  {
+    "id": "ilya-sutskever",
+    "name": "Ilya Sutskever",
+    "roles": [
+      "Co-author, AlexNet (2012)",
+      "Google Brain (2013–15)",
+      "Co-founder and Chief Scientist, OpenAI (2015–24)",
+      "Co-founder, Safe Superintelligence Inc. (2024–)"
+    ],
+    "knownFor": [
+      "alexnet",
+      "gpt-2",
+      "gpt-3"
+    ],
+    "quote": {
+      "text": "Pre-training as we know it will unquestionably end.",
+      "verified": false,
+      "source": "https://neurips.cc/virtual/2024/test-of-time/105032",
+      "date": "2024-12-13"
+    },
+    "source": "https://en.wikipedia.org/wiki/Ilya_Sutskever"
+  },
+  {
+    "id": "andrej-karpathy",
+    "name": "Andrej Karpathy",
+    "roles": [
+      "Founding member, OpenAI (2015–17, 2023–24)",
+      "Director of AI, Tesla (2017–22)",
+      "Founder, Eureka Labs (2024–)"
+    ],
+    "knownFor": [
+      "self-driving-hype"
+    ],
+    "quote": {
+      "text": "The hottest new programming language is English",
+      "verified": true,
+      "source": "https://x.com/karpathy/status/1617979122625712128",
+      "date": "2023-01-24"
+    },
+    "source": "https://karpathy.ai/"
+  },
+  {
+    "id": "transformer-authors",
+    "name": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan Gomez, Łukasz Kaiser, Illia Polosukhin",
+    "roles": [
+      "Google Brain / Google Research (2017)",
+      "All eight later left Google"
+    ],
+    "knownFor": [
+      "transformer"
+    ],
+    "quote": {
+      "text": "We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.",
+      "verified": false,
+      "source": "https://arxiv.org/abs/1706.03762",
+      "date": "2017-06"
+    },
+    "source": "https://arxiv.org/abs/1706.03762"
+  },
+  {
+    "id": "noam-shazeer",
+    "name": "Noam Shazeer",
+    "roles": [
+      "Google (2000–21)",
+      "Co-founder, Character.AI (2021–24)",
+      "Gemini co-lead, Google (2024–)"
+    ],
+    "knownFor": [
+      "transformer",
+      "gemini"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Noam_Shazeer"
+  },
+  {
+    "id": "sam-altman",
+    "name": "Sam Altman",
+    "roles": [
+      "President, Y Combinator (2014–19)",
+      "CEO, OpenAI (2019–; briefly removed Nov 2023)"
+    ],
+    "knownFor": [
+      "chatgpt",
+      "gpt-5",
+      "sora"
+    ],
+    "quote": {
+      "text": "We are past the event horizon; the takeoff has started.",
+      "verified": true,
+      "source": "https://blog.samaltman.com/the-gentle-singularity",
+      "date": "2025-06"
+    },
+    "source": "https://openai.com/"
+  },
+  {
+    "id": "greg-brockman",
+    "name": "Greg Brockman",
+    "roles": [
+      "CTO, Stripe (2010–15)",
+      "Co-founder and President, OpenAI"
+    ],
+    "knownFor": [],
+    "source": "https://en.wikipedia.org/wiki/Greg_Brockman"
+  },
+  {
+    "id": "mira-murati",
+    "name": "Mira Murati",
+    "roles": [
+      "CTO, OpenAI (2018–24)",
+      "Founder, Thinking Machines Lab (2025)"
+    ],
+    "knownFor": [
+      "chatgpt"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Mira_Murati"
+  },
+  {
+    "id": "dario-amodei",
+    "name": "Dario Amodei",
+    "roles": [
+      "VP Research, OpenAI (2016–20)",
+      "Co-founder and CEO, Anthropic (2021–)"
+    ],
+    "knownFor": [
+      "claude",
+      "claude-code"
+    ],
+    "quote": {
+      "text": "could come as early as 2026, though there are also ways it could take much longer.",
+      "verified": true,
+      "source": "https://www.darioamodei.com/essay/machines-of-loving-grace",
+      "date": "2024-10"
+    },
+    "source": "https://www.anthropic.com/company"
+  },
+  {
+    "id": "daniela-amodei",
+    "name": "Daniela Amodei",
+    "roles": [
+      "Stripe",
+      "VP Safety & Policy, OpenAI",
+      "Co-founder and President, Anthropic (2021–)"
+    ],
+    "knownFor": [
+      "claude"
+    ],
+    "source": "https://www.anthropic.com/company"
+  },
+  {
+    "id": "jan-leike",
+    "name": "Jan Leike",
+    "roles": [
+      "DeepMind",
+      "Superalignment co-lead, OpenAI (2021–24)",
+      "Alignment, Anthropic (2024–)"
+    ],
+    "knownFor": [],
+    "source": "https://jan.leike.name/"
+  },
+  {
+    "id": "chris-olah",
+    "name": "Chris Olah",
+    "roles": [
+      "Google Brain",
+      "OpenAI",
+      "Co-founder, Anthropic (interpretability)"
+    ],
+    "knownFor": [],
+    "source": "https://colah.github.io/"
+  },
+  {
+    "id": "boris-cherny",
+    "name": "Boris Cherny",
+    "roles": [
+      "Principal Engineer, Meta",
+      "Creator and Head of Claude Code, Anthropic (2024–)",
+      "Author, Programming TypeScript"
+    ],
+    "knownFor": [
+      "claude-code"
+    ],
+    "source": "https://newsletter.pragmaticengineer.com/p/building-claude-code-with-boris-cherny"
+  },
+  {
+    "id": "peter-steinberger",
+    "name": "Peter Steinberger",
+    "roles": [
+      "Founder and CEO, PSPDFKit",
+      "Creator, OpenClaw (Nov 2025)",
+      "OpenAI (Feb 2026–)"
+    ],
+    "knownFor": [
+      "openclaw"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Peter_Steinberger_(programmer)"
+  },
+  {
+    "id": "alexandr-wang",
+    "name": "Alexandr Wang",
+    "roles": [
+      "Co-founder and CEO, Scale AI (2016–25)",
+      "Chief AI Officer, Meta Superintelligence Labs (Jun 2025–)"
+    ],
+    "knownFor": [
+      "meta-muse"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Alexandr_Wang"
+  },
+  {
+    "id": "jensen-huang",
+    "name": "Jensen Huang",
+    "roles": [
+      "Co-founder and CEO, NVIDIA (1993–)"
+    ],
+    "knownFor": [],
+    "quote": {
+      "text": "definitely the next ChatGPT",
+      "verified": false,
+      "source": "https://www.cnbc.com/2026/03/17/nvidia-ceo-jensen-huang-says-openclaw-is-definitely-the-next-chatgpt.html",
+      "date": "2026-03-17"
+    },
+    "source": "https://www.nvidia.com/en-us/about-nvidia/board-of-directors/jensen-huang/"
+  },
+  {
+    "id": "clement-delangue",
+    "name": "Clément Delangue",
+    "roles": [
+      "Co-founder and CEO, Hugging Face (2016–)"
+    ],
+    "knownFor": [],
+    "source": "https://huggingface.co/huggingface"
+  },
+  {
+    "id": "thomas-wolf",
+    "name": "Thomas Wolf",
+    "roles": [
+      "Co-founder and Chief Science Officer, Hugging Face (2016–)"
+    ],
+    "knownFor": [],
+    "source": "https://huggingface.co/huggingface"
+  },
+  {
+    "id": "harrison-chase",
+    "name": "Harrison Chase",
+    "roles": [
+      "Creator (Oct 2022) and CEO, LangChain"
+    ],
+    "knownFor": [
+      "langchain",
+      "langgraph"
+    ],
+    "source": "https://www.langchain.com/"
+  },
+  {
+    "id": "jerry-liu",
+    "name": "Jerry Liu",
+    "roles": [
+      "Co-founder and CEO, LlamaIndex (GPT Index, Nov 2022)"
+    ],
+    "knownFor": [],
+    "source": "https://www.llamaindex.ai/"
+  },
+  {
+    "id": "georgi-gerganov",
+    "name": "Georgi Gerganov",
+    "roles": [
+      "Creator of llama.cpp (Mar 2023), whisper.cpp and ggml",
+      "Founder, ggml.ai"
+    ],
+    "knownFor": [
+      "llama-cpp"
+    ],
+    "source": "https://github.com/ggerganov"
+  },
+  {
+    "id": "jeffrey-morgan",
+    "name": "Jeffrey Morgan",
+    "roles": [
+      "Co-founder, Ollama (2023)"
+    ],
+    "knownFor": [
+      "ollama"
+    ],
+    "source": "https://ollama.com/"
+  },
+  {
+    "id": "emad-mostaque",
+    "name": "Emad Mostaque",
+    "roles": [
+      "Founder and CEO, Stability AI (2020–Mar 2024)"
+    ],
+    "knownFor": [],
+    "quote": {
+      "text": "There will be no programmers in five years.",
+      "verified": false,
+      "source": "https://decrypt.co/147191/no-human-programmers-five-years-ai-stability-ceo",
+      "date": "2023-07"
+    },
+    "source": "https://en.wikipedia.org/wiki/Emad_Mostaque"
+  },
+  {
+    "id": "robin-rombach",
+    "name": "Robin Rombach",
+    "roles": [
+      "LMU Munich / CompVis",
+      "Stability AI",
+      "Co-founder, Black Forest Labs (2024)"
+    ],
+    "knownFor": [],
+    "source": "https://bfl.ai/"
+  },
+  {
+    "id": "arthur-mensch",
+    "name": "Arthur Mensch",
+    "roles": [
+      "DeepMind (Chinchilla co-author, 2022)",
+      "Co-founder and CEO, Mistral AI (2023–)"
+    ],
+    "knownFor": [],
+    "source": "https://mistral.ai/"
+  },
+  {
+    "id": "liang-wenfeng",
+    "name": "Liang Wenfeng",
+    "roles": [
+      "Co-founder, High-Flyer quant fund",
+      "Founder and CEO, DeepSeek (2023–)"
+    ],
+    "knownFor": [
+      "deepseek-r1"
+    ],
+    "source": "https://en.wikipedia.org/wiki/Liang_Wenfeng"
+  },
+  {
+    "id": "simon-willison",
+    "name": "Simon Willison",
+    "roles": [
+      "Co-creator, Django (2005)",
+      "Creator, Datasette (2017–)",
+      "Independent blogger; coined \"prompt injection\" (2022)"
+    ],
+    "knownFor": [],
+    "source": "https://simonwillison.net/about/"
+  },
+  {
+    "id": "timnit-gebru",
+    "name": "Timnit Gebru",
+    "roles": [
+      "Co-lead, Google Ethical AI (2018–Dec 2020)",
+      "Founder, DAIR (2021)"
+    ],
+    "knownFor": [],
+    "source": "https://www.dair-institute.org/team/"
+  },
+  {
+    "id": "emily-bender",
+    "name": "Emily M. Bender",
+    "roles": [
+      "Professor of Linguistics, University of Washington (2003–)"
+    ],
+    "knownFor": [],
+    "quote": {
+      "text": "a system for haphazardly stitching together sequences of linguistic forms it has observed in its vast training data, according to probabilistic information about how they combine, but without any reference to meaning: a stochastic parrot.",
+      "verified": false,
+      "source": "https://dl.acm.org/doi/10.1145/3442188.3445922",
+      "date": "2021-03"
+    },
+    "source": "https://faculty.washington.edu/ebender/"
+  },
+  {
+    "id": "gary-marcus",
+    "name": "Gary Marcus",
+    "roles": [
+      "Professor emeritus, NYU",
+      "Founder, Geometric Intelligence (sold to Uber 2016)",
+      "Co-founder, Robust.AI"
+    ],
+    "knownFor": [],
+    "quote": {
+      "text": "Deep Learning Is Hitting a Wall",
+      "verified": true,
+      "source": "https://nautil.us/deep-learning-is-hitting-a-wall-238440",
+      "date": "2022-03-10"
+    },
+    "source": "http://garymarcus.com/"
+  },
+  {
+    "id": "melanie-mitchell",
+    "name": "Melanie Mitchell",
+    "roles": [
+      "Professor, Santa Fe Institute"
+    ],
+    "knownFor": [],
+    "quote": {
+      "text": "Why AI is Harder Than We Think",
+      "verified": false,
+      "source": "https://arxiv.org/abs/2104.12871",
+      "date": "2021-04"
+    },
+    "source": "https://www.santafe.edu/people/profile/melanie-mitchell"
+  },
+  {
+    "id": "francois-chollet",
+    "name": "François Chollet",
+    "roles": [
+      "Creator of Keras, Google (2015–Nov 2024)",
+      "Co-founder, ARC Prize (2024)",
+      "Co-founder, Ndea (2025)"
+    ],
+    "knownFor": [],
+    "quote": {
+      "text": "The intelligence of a system is a measure of its skill-acquisition efficiency over a scope of tasks, with respect to priors, experience, and generalization difficulty.",
+      "verified": false,
+      "source": "https://arxiv.org/abs/1911.01547",
+      "date": "2019-11"
+    },
+    "source": "https://fchollet.com/"
+  },
+  {
+    "id": "daniel-kokotajlo",
+    "name": "Daniel Kokotajlo",
+    "roles": [
+      "OpenAI governance (2022–24, resigned)",
+      "Executive Director, AI Futures Project"
+    ],
+    "knownFor": [],
+    "source": "https://en.wikipedia.org/wiki/Daniel_Kokotajlo_(researcher)"
+  }
+]

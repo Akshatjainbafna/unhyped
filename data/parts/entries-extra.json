@@ -1,0 +1,43 @@
+[
+  {
+    "id": "ollama",
+    "title": "Ollama",
+    "date": "2023-07-08",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "local-runtimes",
+    "secondarySegments": ["foundation-models"],
+    "stackLayer": "inference",
+    "creators": ["Jeffrey Morgan", "Michael Chiang"],
+    "description": "A local model runtime that downloads and runs open-weight models on a laptop behind a simple CLI and API, built on llama.cpp.",
+    "capabilityNote": "Runs quantised open-weight models locally; later added a desktop app (v0.10, Jul 2025) and an MLX backend on Macs.",
+    "majorUpdates": [
+      { "date": "2025-07", "title": "Desktop app (v0.10)", "summary": "A desktop app alongside the CLI." }
+    ],
+    "oss": { "license": "MIT", "repoUrl": "https://github.com/ollama/ollama", "stars": 181748, "starsCheckedAt": "2026-09-26", "archived": false },
+    "edges": [{ "type": "built-on", "target": "llama-cpp" }, { "type": "competes-with", "target": "vllm" }],
+    "sources": [
+      { "url": "https://github.com/ollama/ollama", "title": "ollama/ollama on GitHub" },
+      { "url": "https://en.wikipedia.org/wiki/Ollama", "title": "Ollama (Wikipedia)" }
+    ]
+  },
+  {
+    "id": "stack-overflow",
+    "title": "Stack Overflow's Q&A decline",
+    "date": "2023",
+    "endDate": "2026-06",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "coding-agents",
+    "secondarySegments": ["language"],
+    "stackLayer": "apps",
+    "creators": ["Stack Overflow"],
+    "description": "Public question volume on Stack Overflow fell from about 200,000 a month at its 2014 peak to 1,072 in June 2026 as developers moved to chat assistants and coding agents.",
+    "capabilityNote": "The company survives in smaller form on enterprise products and AI data-licensing deals.",
+    "edges": [{ "type": "competes-with", "target": "chatgpt" }],
+    "sources": [
+      { "url": "https://www.devclass.com/ai-ml/2026/01/05/dramatic-drop-in-stack-overflow-questions-as-devs-look-elsewhere-for-help/4079575", "title": "DevClass: dramatic drop in Stack Overflow questions" },
+      { "url": "https://thenewstack.io/stack-overflows-plan-to-survive-the-age-of-ai/", "title": "The New Stack: Stack Overflow's plan to survive" }
+    ]
+  }
+]

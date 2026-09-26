@@ -1,0 +1,240 @@
+[
+  {
+    "id": "stack-overflow",
+    "subject": "Stack Overflow",
+    "entryId": "stack-overflow",
+    "claimId": "stack-overflow-almost-dead",
+    "verdict": "declined",
+    "summary": "The community Q&A is effectively dead: monthly questions fell about 99% from the 2014 peak. The company survives in smaller form on enterprise Teams products and AI data-licensing deals with OpenAI and Google.",
+    "metrics": [
+      { "label": "Monthly questions, 2014 peak", "value": "~200,000" },
+      { "label": "Monthly questions, Dec 2025", "value": "3,312 (−81.5% YoY)" },
+      { "label": "Monthly questions, Jun 2026 (all-time low)", "value": "1,072" },
+      { "label": "Revenue, FY to Mar 2025", "value": "~$115M" }
+    ],
+    "sources": [
+      "https://www.devclass.com/ai-ml/2026/01/05/dramatic-drop-in-stack-overflow-questions-as-devs-look-elsewhere-for-help/4079575",
+      "https://www.techzine.eu/news/devops/137686/stack-overflow-in-freefall-78-percent-drop-in-number-of-questions/",
+      "https://thenewstack.io/stack-overflows-plan-to-survive-the-age-of-ai/"
+    ]
+  },
+  {
+    "id": "google-search",
+    "subject": "Google Search",
+    "claimId": "buchheit-google-total-disruption",
+    "verdict": "alive",
+    "summary": "Declared a year or two from total disruption in December 2022, Search kept growing revenue and absorbed AI into its own results page. Publisher click-through traffic is a separate question not covered here.",
+    "metrics": [
+      { "label": "Search & other revenue growth, Q2 2026", "value": "+17% YoY" },
+      { "label": "Search & other revenue growth, Q1 2026", "value": "+19% YoY" },
+      { "label": "Gemini App monthly users, Q2 2026", "value": "950M" }
+    ],
+    "sources": [
+      "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf",
+      "https://www.searchenginejournal.com/google-search-revenue-growth-eases-after-a-year-of-acceleration/583181/"
+    ]
+  },
+  {
+    "id": "junior-developers",
+    "subject": "Junior developers and entry-level white-collar work",
+    "claimId": "mostaque-no-programmers-five-years",
+    "verdict": "declined",
+    "summary": "A real, measurable decline for young workers in AI-exposed jobs, not extinction. There is no comparable gap for experienced workers, and interest rates and the post-2022 tech correction are confounds.",
+    "metrics": [
+      { "label": "Employment of 22–25-year-olds in most AI-exposed jobs vs counterfactual", "value": "−19%" },
+      { "label": "Same group, two most-exposed quintiles, Nov 2022–Jun 2026", "value": "about −11%" },
+      { "label": "New-grad hiring at 15 largest tech firms vs 2019", "value": "down more than 50%" }
+    ],
+    "sources": [
+      "https://digitaleconomy.stanford.edu/news/canariesaug26/",
+      "https://www.signalfire.com/blog/signalfire-state-of-talent-report-2025",
+      "https://digitaleconomy.stanford.edu/news/canaries-interest-rates-and-timinga-more-on-recent-drivers-of-employment-changes-for-young-workers/"
+    ]
+  },
+  {
+    "id": "adobe-photoshop",
+    "subject": "Adobe / Photoshop",
+    "verdict": "alive",
+    "summary": "Declared killed by AI design tools, most recently Claude Design in April 2026, Adobe posted record revenue and raised guidance. Market sentiment is the part that got hit: the stock fell sharply.",
+    "metrics": [
+      { "label": "Q3 FY26 revenue", "value": "$6.76B (+13%), a record" },
+      { "label": "Total ARR", "value": "$27.5B (+11.2%)" },
+      { "label": "AI-first ARR", "value": "above $650M" },
+      { "label": "Figma move on Claude Design launch day", "value": "down as much as 7.3%" }
+    ],
+    "sources": [
+      "https://www.sec.gov/Archives/edgar/data/0000796343/000079634326000156/adbe-20260828.htm",
+      "https://www.investing.com/news/company-news/adobe-q3-fy2026-slides-strong-results-ceo-transition-announced-93CH-4897031",
+      "https://sherwood.news/tech/anthropic-launches-claude-design-sending-shares-of-figma-down/"
+    ]
+  },
+  {
+    "id": "chegg",
+    "subject": "Chegg",
+    "claimId": "chegg-extraordinarily-overblown",
+    "verdict": "declined",
+    "summary": "The clearest real AI casualty in the set. Its CEO called the 2023 ChatGPT stock panic overblown; two rounds of layoffs and a ~99% stock decline followed.",
+    "metrics": [
+      { "label": "Staff cut, May 2025", "value": "22%" },
+      { "label": "Staff cut, Oct 2025", "value": "45%" },
+      { "label": "Subscribers, Q1 2025", "value": "3.2M (−31% YoY)" },
+      { "label": "Stock from peak", "value": "about −99%" }
+    ],
+    "sources": [
+      "https://www.cnbc.com/2025/10/27/chegg-slashes-45percent-of-workforce-blames-new-realities-of-ai.html",
+      "https://www.forbes.com/sites/petercohan/2025/10/29/chegg-stock-down-99-learn-whether-ai-45-layoffs-make-chgg-a-buy/",
+      "https://investor.chegg.com/Press-Releases/press-release-details/2026/Chegg-Reports-2025-Fourth-Quarter-and-Full-Year-Financial-Results/default.aspx"
+    ]
+  },
+  {
+    "id": "customer-support-jobs",
+    "subject": "Customer-support jobs",
+    "entryId": "klarna-ai-assistant",
+    "claimId": "benioff-9000-to-5000-support",
+    "verdict": "declined",
+    "summary": "Declining, not dead. US customer service employment fell for a second straight year and is projected to shrink further, but the occupation still has hundreds of thousands of openings a year, and Klarna partly reversed its all-AI approach.",
+    "metrics": [
+      { "label": "US customer service rep employment, year to May 2025", "value": "−130,180 (−4.8%)" },
+      { "label": "BLS projection, 2025–2035", "value": "−5%" },
+      { "label": "Projected openings per year", "value": "~289,500" }
+    ],
+    "sources": [
+      "https://www.bls.gov/ooh/office-and-administrative-support/customer-service-representatives.htm",
+      "https://www.detroitnews.com/story/business/2026/05/16/ai-artificial-intelligence-job-losses-customer-service-sales-secretaries/90118520007/"
+    ]
+  },
+  {
+    "id": "translators",
+    "subject": "Translators and interpreters",
+    "verdict": "declined",
+    "summary": "Under real pressure on income and freelance work, but the occupation still exists and the BLS still projects slight growth.",
+    "metrics": [
+      { "label": "BLS projection, 2025–2035", "value": "+2%" },
+      { "label": "Median wage, May 2025", "value": "$60,170" },
+      { "label": "UK translators reporting work lost to genAI (Jan 2024)", "value": "36%" },
+      { "label": "UK translators reporting lower income (Jan 2024)", "value": "43%" }
+    ],
+    "sources": [
+      "https://www.bls.gov/ooh/media-and-communication/interpreters-and-translators.htm",
+      "https://slator.com/us-bureau-of-labor-statistics-job-outlook-for-translators-interpreters-worsens/"
+    ]
+  },
+  {
+    "id": "rag",
+    "subject": "Retrieval-augmented generation (RAG)",
+    "claimId": "meme-rag-is-dead",
+    "verdict": "transformed",
+    "summary": "Declared dead after million-token context windows arrived in 2024, retrieval turned into agentic search and tool use instead. Coding agents using grep plus long context show the mandatory-vector-database version did fade.",
+    "metrics": [],
+    "sources": [
+      "https://vectorize.io/blog/rag-is-dead-long-live-rag",
+      "https://lighton.ai/lighton-blogs/rag-is-dead-long-live-rag-retrieval-in-the-age-of-agents",
+      "https://akitaonrails.com/en/2026/04/06/rag-is-dead-long-context/"
+    ]
+  },
+  {
+    "id": "langchain",
+    "subject": "LangChain",
+    "entryId": "langchain",
+    "claimId": "meme-langchain-is-dead",
+    "verdict": "alive",
+    "summary": "Alive commercially and less central technically. It became a unicorn in 2025 even as developer mindshare shifted toward provider-native SDKs, agent harnesses and MCP.",
+    "metrics": [
+      { "label": "Funding round, Oct 2025", "value": "$125M" },
+      { "label": "Valuation, Oct 2025", "value": "$1.25B" }
+    ],
+    "sources": [
+      "https://techcrunch.com/2025/10/21/open-source-agentic-startup-langchain-hits-1-25b-valuation",
+      "https://fortune.com/2025/10/20/exclusive-early-ai-darling-langchain-is-now-a-unicorn-with-a-fresh-125-million-in-funding/"
+    ]
+  },
+  {
+    "id": "vector-databases",
+    "subject": "Standalone vector databases",
+    "claimId": "elastic-vector-dbs-never-a-business",
+    "verdict": "transformed",
+    "summary": "The standalone category was squeezed while vector search became a standard feature of Postgres (pgvector), Elastic, MongoDB and the cloud providers. Pinecone explored a sale, changed CEO and stayed independent.",
+    "metrics": [],
+    "sources": [
+      "https://venturebeat.com/ai/from-shiny-object-to-sober-reality-the-vector-database-story-two-years-later",
+      "https://www.theinformation.com/articles/top-funded-ai-database-startup-pinecone-considers-sale"
+    ]
+  },
+  {
+    "id": "saas",
+    "subject": "SaaS business applications",
+    "entryId": "claude-cowork",
+    "claimId": "nadella-business-apps-collapse",
+    "verdict": "alive",
+    "summary": "Revenue is alive; seat-based valuations were repriced. The February 2026 selloff erased about $285B of software market value in ~48 hours while Salesforce and Adobe kept growing revenue and raising guidance.",
+    "metrics": [
+      { "label": "Salesforce Q2 FY27 revenue", "value": "$11.3B (+11%)" },
+      { "label": "Salesforce FY27 guidance", "value": "$46.1–46.4B" },
+      { "label": "Salesforce Agentforce + Data Cloud AI ARR", "value": "~$3.9B (+210%)" },
+      { "label": "Software market value lost in Feb 2026 selloff", "value": "~$285B in ~48 hours" }
+    ],
+    "sources": [
+      "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings/",
+      "https://fortune.com/2026/02/06/anthropic-claude-opus-4-6-stock-selloff-new-upgrade/"
+    ]
+  },
+  {
+    "id": "graphic-designers",
+    "subject": "Graphic designers",
+    "verdict": "declined",
+    "summary": "Pressured, with mixed data. The WEF lists graphic designers among the fastest-declining roles and the BLS projects a small decline, while Upwork reports demand stayed consistently strong.",
+    "metrics": [
+      { "label": "BLS projection, 2025–2035", "value": "−2%" },
+      { "label": "Projected openings per year", "value": "~16,000" }
+    ],
+    "sources": [
+      "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm",
+      "https://investors.upwork.com/news-releases/news-release-details/upworks-demand-skills-2026-demand-top-ai-skills-more-doubles-ai"
+    ]
+  },
+  {
+    "id": "coding-bootcamps",
+    "subject": "Coding bootcamps",
+    "claimId": "huang-nobody-has-to-program",
+    "verdict": "declined",
+    "summary": "A genuine contraction. It began with the 2022–23 tech hiring slump, before generative AI, and AI accelerated it: 2U wound down its university bootcamps, Turing School suspended enrollment, and several others closed or pivoted.",
+    "metrics": [
+      { "label": "2U university bootcamps", "value": "wound down, Dec 2024" },
+      { "label": "Turing School", "value": "enrollment suspended, Apr 2025" },
+      { "label": "Codeup, Kenzie, Launch Academy", "value": "closed 2023–24" }
+    ],
+    "sources": [
+      "https://www.insidehighered.com/news/tech-innovation/teaching-learning/2025/01/09/changes-boot-camp-marks-signal-shifts-workforce",
+      "https://en.wikipedia.org/wiki/Codesmith"
+    ]
+  },
+  {
+    "id": "radiologists",
+    "subject": "Radiologists",
+    "claimId": "hinton-radiologists-coyote",
+    "verdict": "alive",
+    "summary": "Alive and scarce. A decade after the advice to stop training radiologists, pay and demand are at record levels and caseloads keep rising.",
+    "metrics": [
+      { "label": "Average radiologist pay, 2025", "value": "$571K (+9% YoY)" },
+      { "label": "Active radiology job postings, May 2026", "value": "7,469" },
+      { "label": "Postings open more than 60 days", "value": "1,470" },
+      { "label": "Caseload change, 2018 to early 2025", "value": "about +25%" }
+    ],
+    "sources": [
+      "https://fortune.com/article/ai-godfather-radiologists-obsolete-salaries-up-to-571k-demand-growing/",
+      "https://www.cnn.com/2026/02/09/tech/ai-replacing-jobs-concerns-radiology"
+    ]
+  },
+  {
+    "id": "duolingo",
+    "subject": "Duolingo and language-learning apps",
+    "claimId": "duolingo-stop-using-contractors",
+    "verdict": "alive",
+    "summary": "\"AI will kill language apps\" is a common take without a named speaker. Duolingo went AI-first, walked part of it back, and kept growing (figures from a secondary source).",
+    "metrics": [
+      { "label": "Daily active users, Q1 2026", "value": "+21%" },
+      { "label": "Revenue, Q1 2026", "value": "+27%" }
+    ],
+    "sources": ["https://finance.yahoo.com/news/duolingo-went-ai-first-then-070000682.html"]
+  }
+]

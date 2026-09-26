@@ -1,0 +1,2662 @@
+[
+  {
+    "id": "google-cat-paper",
+    "title": "Google Brain \"cat\" paper",
+    "date": "2012-06",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning",
+      "compute-hardware"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Quoc V. Le",
+      "Marc'Aurelio Ranzato",
+      "Rajat Monga",
+      "Jeff Dean",
+      "Andrew Ng",
+      "Google Brain / Stanford"
+    ],
+    "description": "A 1-billion-connection network trained on 16,000 CPU cores with 10 million unlabeled YouTube frames developed neurons that responded selectively to cats and human faces.",
+    "capabilityNote": "Showed large-scale unsupervised learning could find high-level concepts, but its ImageNet-22k accuracy (~15.8%) was low in absolute terms; \"Google's brain learned to find cats\" overstated it.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1112.6209",
+        "title": "Building High-Level Features Using Large Scale Unsupervised Learning"
+      }
+    ]
+  },
+  {
+    "id": "alexnet",
+    "title": "AlexNet",
+    "date": "2012-09-30",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning",
+      "compute-hardware"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Alex Krizhevsky",
+      "Ilya Sutskever",
+      "Geoffrey Hinton",
+      "University of Toronto"
+    ],
+    "description": "An 8-layer convolutional network trained on two NVIDIA GTX 580 GPUs with ReLU and dropout. It won ILSVRC-2012 with 15.3% top-5 error against 26.2% for the runner-up.",
+    "capabilityNote": "Showed that GPUs, large labeled datasets and deep CNNs beat hand-engineered vision features by a wide margin; commonly treated as the start of the deep learning boom.",
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "lenet"
+      },
+      {
+        "type": "uses",
+        "target": "cuda"
+      },
+      {
+        "type": "uses",
+        "target": "imagenet"
+      },
+      {
+        "type": "built-on",
+        "target": "backpropagation"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html",
+        "title": "ImageNet Classification with Deep Convolutional Neural Networks (NeurIPS 2012)"
+      }
+    ],
+    "heroMoment": true
+  },
+  {
+    "id": "imagenet-2012-challenge",
+    "title": "ImageNet 2012 challenge result (ILSVRC-2012)",
+    "date": "2012-09-30",
+    "type": "event",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "data",
+    "creators": [
+      "ImageNet / ILSVRC organizers",
+      "SuperVision team (Krizhevsky, Sutskever, Hinton)"
+    ],
+    "description": "The 2012 ImageNet Large Scale Visual Recognition Challenge results showed a deep CNN at 15.3% top-5 error, about 11 points ahead of the next entry. The 2010–2011 winners had used SIFT/Fisher-vector pipelines at about 26–28%.",
+    "capabilityNote": "A benchmark result on 1,000 object classes, not general visual understanding, but the size of the gap moved the field to deep learning within about two years.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "imagenet"
+      },
+      {
+        "type": "built-on",
+        "target": "alexnet"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html",
+        "title": "ImageNet Classification with Deep Convolutional Neural Networks (NeurIPS 2012)"
+      }
+    ]
+  },
+  {
+    "id": "word2vec",
+    "title": "word2vec",
+    "date": "2013-01-16",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "classical-ml",
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Tomas Mikolov",
+      "Kai Chen",
+      "Greg Corrado",
+      "Jeff Dean",
+      "Google"
+    ],
+    "description": "Shallow neural models (CBOW and skip-gram) that learn dense word vectors cheaply from billions of words. The C code was open-sourced in 2013.",
+    "capabilityNote": "Vectors captured analogies such as king − man + woman ≈ queen and became the default NLP input layer until contextual embeddings replaced them; later work showed they also encoded social biases.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1301.3781",
+        "title": "Efficient Estimation of Word Representations in Vector Space"
+      },
+      {
+        "url": "https://arxiv.org/abs/1310.4546",
+        "title": "Distributed Representations of Words and Phrases"
+      }
+    ]
+  },
+  {
+    "id": "adversarial-examples",
+    "title": "Adversarial examples (\"Intriguing properties of neural networks\")",
+    "date": "2013-12-21",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "vision",
+      "neural-deep-learning"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Christian Szegedy",
+      "Wojciech Zaremba",
+      "Ilya Sutskever",
+      "Joan Bruna",
+      "Dumitru Erhan",
+      "Ian Goodfellow",
+      "Rob Fergus"
+    ],
+    "description": "Showed that imperceptible pixel changes can make state-of-the-art image classifiers misclassify with high confidence. Goodfellow et al.'s fast gradient sign method followed in December 2014.",
+    "capabilityNote": "The first strong reality check on \"superhuman\" vision: high benchmark accuracy did not mean human-like robustness.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "alexnet"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1312.6199",
+        "title": "Intriguing properties of neural networks"
+      },
+      {
+        "url": "https://arxiv.org/abs/1412.6572",
+        "title": "Explaining and Harnessing Adversarial Examples"
+      }
+    ]
+  },
+  {
+    "id": "dqn-atari",
+    "title": "Deep Q-Network plays Atari",
+    "date": "2013-12-19",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Volodymyr Mnih",
+      "Koray Kavukcuoglu",
+      "David Silver",
+      "DeepMind"
+    ],
+    "description": "A CNN combined with Q-learning and experience replay learned Atari 2600 games directly from pixels and score. The 2015 Nature version covered 49 games.",
+    "capabilityNote": "One architecture reached >75% of a professional tester's score on 29 of 49 games, but it failed badly on sparse-reward games like Montezuma's Revenge and needed tens of millions of frames per game.",
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "alexnet"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1312.5602",
+        "title": "Playing Atari with Deep Reinforcement Learning"
+      },
+      {
+        "url": "https://www.nature.com/articles/nature14236",
+        "title": "Human-level control through deep reinforcement learning"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2015-02-26",
+        "title": "Nature paper",
+        "summary": "Extended to 49 Atari games with one set of hyperparameters.",
+        "source": "https://www.nature.com/articles/nature14236"
+      }
+    ]
+  },
+  {
+    "id": "deepmind-acquired-by-google",
+    "title": "Google acquires DeepMind",
+    "date": "2014-01-26",
+    "type": "event",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "DeepMind (Demis Hassabis, Shane Legg, Mustafa Suleyman)",
+      "Google"
+    ],
+    "description": "Google bought London-based DeepMind; reported prices range from roughly $400M to $650M depending on the outlet.",
+    "capabilityNote": "Signalled that Big Tech was buying deep learning talent and set up the DQN, AlphaGo and AlphaFold lineage.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "dqn-atari"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://techcrunch.com/2014/01/26/google-deepmind/",
+        "title": "TechCrunch (link unverified)"
+      }
+    ]
+  },
+  {
+    "id": "gans",
+    "title": "Generative Adversarial Networks",
+    "date": "2014-06-10",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Ian Goodfellow",
+      "Jean Pouget-Abadie",
+      "Mehdi Mirza",
+      "Aaron Courville",
+      "Yoshua Bengio",
+      "Université de Montréal"
+    ],
+    "description": "A generator and a discriminator are trained against each other so the generator learns to produce realistic samples.",
+    "capabilityNote": "The 2014 samples were blurry, low-resolution digits, faces and CIFAR images; photorealistic faces took until StyleGAN (2018–19), training was notoriously unstable, and diffusion models largely replaced GANs after 2021.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "backpropagation"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1406.2661",
+        "title": "Generative Adversarial Networks"
+      }
+    ]
+  },
+  {
+    "id": "bahdanau-attention",
+    "title": "Attention for neural machine translation",
+    "date": "2014-09-01",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Dzmitry Bahdanau",
+      "Kyunghyun Cho",
+      "Yoshua Bengio"
+    ],
+    "description": "Added a learned soft alignment (\"attention\") over encoder states to RNN encoder-decoders for translation.",
+    "capabilityNote": "Removed the fixed-length bottleneck so long sentences degraded less; the direct ancestor of the Transformer.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "seq2seq"
+      },
+      {
+        "type": "built-on",
+        "target": "lstm"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1409.0473",
+        "title": "Neural Machine Translation by Jointly Learning to Align and Translate"
+      }
+    ]
+  },
+  {
+    "id": "seq2seq",
+    "title": "Sequence to Sequence Learning",
+    "date": "2014-09-10",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Ilya Sutskever",
+      "Oriol Vinyals",
+      "Quoc V. Le",
+      "Google"
+    ],
+    "description": "A deep LSTM encoder-decoder that maps an input sequence to an output sequence, reaching 34.8 BLEU on WMT'14 English→French.",
+    "capabilityNote": "Showed end-to-end neural translation could compete with phrase-based statistical MT and became the template for neural translation, summarization and chatbots.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "lstm"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1409.3215",
+        "title": "Sequence to Sequence Learning with Neural Networks"
+      }
+    ]
+  },
+  {
+    "id": "ilsvrc-2014-architectures",
+    "title": "VGGNet and GoogLeNet (ILSVRC 2014)",
+    "date": "2014-09",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Karen Simonyan",
+      "Andrew Zisserman (Oxford VGG)",
+      "Christian Szegedy et al. (Google)"
+    ],
+    "description": "Two deeper successors to AlexNet: VGG's 16–19-layer stacks of 3×3 convolutions and Google's 22-layer Inception network, which won ILSVRC-2014 classification with 6.67% top-5 error.",
+    "capabilityNote": "VGG features became standard backbones for detection and style transfer; GoogLeNet used about 12× fewer parameters than AlexNet, showing architecture efficiency mattered as well as size.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "alexnet"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1409.1556",
+        "title": "Very Deep Convolutional Networks (VGG)"
+      },
+      {
+        "url": "https://arxiv.org/abs/1409.4842",
+        "title": "Going Deeper with Convolutions (GoogLeNet)"
+      }
+    ]
+  },
+  {
+    "id": "adam-optimizer",
+    "title": "Adam optimizer",
+    "date": "2014-12-22",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "classical-ml"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Diederik P. Kingma",
+      "Jimmy Ba"
+    ],
+    "description": "An adaptive-learning-rate optimizer combining momentum with per-parameter scaling.",
+    "capabilityNote": "Became the default optimizer for most deep learning, including Transformers via the AdamW variant.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "backpropagation"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1412.6980",
+        "title": "Adam: A Method for Stochastic Optimization"
+      }
+    ]
+  },
+  {
+    "id": "prelu-surpassing-human-imagenet",
+    "title": "\"Surpassing human-level performance\" on ImageNet",
+    "date": "2015-02-06",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Kaiming He",
+      "Xiangyu Zhang",
+      "Shaoqing Ren",
+      "Jian Sun",
+      "Microsoft Research"
+    ],
+    "description": "Microsoft reported 4.94% top-5 error on ImageNet, below the ~5.1% \"human\" error estimated by a single annotator.",
+    "capabilityNote": "\"Surpasses humans\" meant one person's estimate on a 1,000-class benchmark full of fine-grained dog breeds, not general visual understanding; adversarial examples showed the same models were brittle.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "alexnet"
+      },
+      {
+        "type": "uses",
+        "target": "imagenet"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1502.01852",
+        "title": "Delving Deep into Rectifiers"
+      }
+    ]
+  },
+  {
+    "id": "keras",
+    "title": "Keras",
+    "date": "2015-03-27",
+    "type": "oss-repo",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "François Chollet"
+    ],
+    "description": "A high-level Python API for neural networks, first on Theano, that became TensorFlow's official high-level API.",
+    "capabilityNote": "A few lines of code could define and train a CNN, bringing deep learning within reach of students and non-specialists.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "pytorch"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2019-09",
+        "title": "Default API in TensorFlow 2.0",
+        "summary": "tf.keras became TensorFlow's default interface."
+      }
+    ],
+    "oss": {
+      "repoUrl": "https://github.com/keras-team/keras"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/keras-team/keras",
+        "title": "keras-team/keras"
+      }
+    ]
+  },
+  {
+    "id": "ibm-watson-health",
+    "title": "IBM Watson Health (Watson for Oncology)",
+    "date": "2015-04-13",
+    "type": "product",
+    "era": 3,
+    "primarySegment": "classical-ml",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "IBM",
+      "Memorial Sloan Kettering (training partner)",
+      "MD Anderson (partner)"
+    ],
+    "description": "IBM launched a Watson Health unit and marketed its Jeopardy-winning brand as an AI system that would recommend cancer treatments. It sold the data and analytics assets to Francisco Partners in January 2022.",
+    "capabilityNote": "STAT found only a few dozen hospitals had adopted it, and internal documents showed \"unsafe and incorrect\" recommendations traced to training on a small number of synthetic cases; MD Anderson benched its project in 2017.",
+    "edges": [],
+    "majorUpdates": [
+      {
+        "date": "2017-02",
+        "title": "MD Anderson benches Watson",
+        "summary": "The flagship oncology partnership was put on hold.",
+        "source": "https://www.forbes.com/sites/matthewherper/2017/02/19/md-anderson-benches-ibm-watson-in-setback-for-artificial-intelligence-in-medicine/"
+      },
+      {
+        "date": "2018-07-25",
+        "title": "Unsafe recommendations reported",
+        "summary": "STAT reported internal documents showing unsafe and incorrect treatment advice.",
+        "source": "https://www.statnews.com/2018/07/25/ibm-watson-recommended-unsafe-incorrect-treatments/"
+      },
+      {
+        "date": "2022-01-21",
+        "title": "Assets sold",
+        "summary": "IBM sold Watson Health data and analytics assets to Francisco Partners (later Merative).",
+        "source": "https://newsroom.ibm.com/2022-01-21-Francisco-Partners-to-Acquire-IBMs-Healthcare-Data-and-Analytics-Assets"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.statnews.com/2017/09/05/watson-ibm-cancer/",
+        "title": "STAT, Sept 2017"
+      },
+      {
+        "url": "https://spectrum.ieee.org/how-ibm-watson-overpromised-and-underdelivered-on-ai-health-care",
+        "title": "IEEE Spectrum"
+      }
+    ]
+  },
+  {
+    "id": "tensorflow",
+    "title": "TensorFlow",
+    "date": "2015-11-09",
+    "type": "oss-repo",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Google Brain (Jeff Dean, Rajat Monga et al.)"
+    ],
+    "description": "Google open-sourced its dataflow-graph ML framework under Apache 2.0; it scaled from phones to datacenters and later TPUs.",
+    "capabilityNote": "Established the open-source deep learning framework as a standard layer and dominated industry through about 2018 before PyTorch overtook it in research.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "pytorch"
+      },
+      {
+        "type": "uses",
+        "target": "cuda"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2019-09",
+        "title": "TensorFlow 2.0",
+        "summary": "Eager execution and Keras as the default high-level API."
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/tensorflow/tensorflow"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/tensorflow/tensorflow",
+        "title": "tensorflow/tensorflow"
+      },
+      {
+        "url": "https://arxiv.org/abs/1603.04467",
+        "title": "TensorFlow whitepaper"
+      }
+    ]
+  },
+  {
+    "id": "resnet",
+    "title": "ResNet (Deep Residual Learning)",
+    "date": "2015-12-10",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Kaiming He",
+      "Xiangyu Zhang",
+      "Shaoqing Ren",
+      "Jian Sun",
+      "Microsoft Research"
+    ],
+    "description": "Residual (skip) connections made networks of 152+ layers trainable, reaching 3.57% top-5 error and winning ILSVRC and COCO 2015.",
+    "capabilityNote": "The residual connection became a universal building block, including inside every Transformer.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "ilsvrc-2014-architectures"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1512.03385",
+        "title": "Deep Residual Learning for Image Recognition"
+      }
+    ]
+  },
+  {
+    "id": "openai-founded",
+    "title": "OpenAI founded",
+    "date": "2015-12-11",
+    "type": "org",
+    "era": 3,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "safety-alignment",
+      "rl-games"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Sam Altman",
+      "Elon Musk",
+      "Greg Brockman",
+      "Ilya Sutskever",
+      "Wojciech Zaremba",
+      "John Schulman"
+    ],
+    "description": "OpenAI launched as a non-profit research lab with $1B in pledged backing.",
+    "capabilityNote": "No products at founding; it changed who builds frontier AI and restructured into a capped-profit company in 2019.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-openai/",
+        "title": "Introducing OpenAI"
+      }
+    ]
+  },
+  {
+    "id": "alphago",
+    "title": "AlphaGo",
+    "date": "2016-01-27",
+    "type": "model",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "David Silver",
+      "Aja Huang",
+      "Demis Hassabis",
+      "DeepMind"
+    ],
+    "description": "Policy and value networks trained on human games plus self-play reinforcement learning, combined with Monte Carlo tree search. It had beaten European champion Fan Hui 5–0 in October 2015.",
+    "capabilityNote": "The first program to beat a professional Go player on a full board without handicap; it relied on large TPU/GPU compute and was specific to Go.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "dqn-atari"
+      },
+      {
+        "type": "uses",
+        "target": "tpu-v1"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.nature.com/articles/nature16961",
+        "title": "Mastering the game of Go with deep neural networks and tree search"
+      }
+    ]
+  },
+  {
+    "id": "alphago-lee-sedol-move-37",
+    "title": "AlphaGo vs Lee Sedol (Move 37)",
+    "date": "2016-03-09",
+    "type": "event",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "DeepMind",
+      "Lee Sedol"
+    ],
+    "description": "AlphaGo beat Lee Sedol 4–1 in Seoul. Its Move 37 in Game 2 was first judged a mistake by commentators and then called creative.",
+    "capabilityNote": "The public \"AI creativity\" moment; Lee's Move 78 in Game 4 produced AlphaGo's only loss, showing it could still be derailed by an unexpected move.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "alphago"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.wired.com/2016/03/two-moves-alphago-lee-sedol-redefined-future/",
+        "title": "Wired"
+      }
+    ]
+  },
+  {
+    "id": "tay-chatbot",
+    "title": "Microsoft Tay",
+    "date": "2016-03-23",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "safety-alignment"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Microsoft Research / Bing"
+    ],
+    "description": "A Twitter chatbot that learned from user interactions. Coordinated users got it to post racist and offensive tweets, and Microsoft pulled it within about a day.",
+    "capabilityNote": "Microsoft apologised and said it had made \"a critical oversight for this specific attack\"; an early lesson that learning from open user input is an attack surface.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://blogs.microsoft.com/blog/2016/03/25/learning-tays-introduction/",
+        "title": "Learning from Tay's introduction (Microsoft)"
+      }
+    ]
+  },
+  {
+    "id": "sophia-robot",
+    "title": "Sophia (Hanson Robotics)",
+    "date": "2016",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Hanson Robotics (David Hanson)"
+    ],
+    "description": "A humanoid animatronic presented at conferences and on TV as a conversational AI; Saudi Arabia granted it \"citizenship\" in October 2017.",
+    "capabilityNote": "Relied on scripted and operator-assisted dialogue; Yann LeCun called it a puppet and \"Potemkin AI\".",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.skynettoday.com/briefs/sophia",
+        "title": "Skynet Today brief"
+      }
+    ]
+  },
+  {
+    "id": "tpu-v1",
+    "title": "Google TPU v1",
+    "date": "2016-05-18",
+    "type": "product",
+    "era": 3,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "Norman Jouppi et al.",
+      "Google"
+    ],
+    "description": "An 8-bit inference chip with a 256×256 systolic matrix unit, announced at Google I/O after running in Google datacenters since 2015.",
+    "capabilityNote": "Google's 2017 paper reported 15–30× faster inference and 30–80× better performance per watt than contemporary CPUs and GPUs; it started the custom AI accelerator era.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "nvidia-datacenter-gpus"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1704.04760",
+        "title": "In-Datacenter Performance Analysis of a Tensor Processing Unit"
+      }
+    ]
+  },
+  {
+    "id": "wavenet",
+    "title": "WaveNet",
+    "date": "2016-09-08",
+    "type": "model",
+    "era": 4,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "generative-media"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Aäron van den Oord",
+      "Sander Dieleman",
+      "DeepMind"
+    ],
+    "description": "An autoregressive dilated-convolution model that generated raw audio waveforms one sample at a time.",
+    "capabilityNote": "Its speech was rated far more natural than earlier text-to-speech, but the original was too slow for production until Parallel WaveNet (Nov 2017).",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1609.03499",
+        "title": "WaveNet: A Generative Model for Raw Audio"
+      }
+    ]
+  },
+  {
+    "id": "gnmt",
+    "title": "Google Neural Machine Translation",
+    "date": "2016-09-26",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Yonghui Wu",
+      "Mike Schuster",
+      "Quoc Le",
+      "Google Brain / Translate"
+    ],
+    "description": "An 8-layer LSTM sequence-to-sequence model with attention replaced phrase-based statistical translation in Google Translate, starting with Chinese→English.",
+    "capabilityNote": "Google reported large error reductions in human side-by-side ratings, but translation still failed on rare words, long documents and idioms.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "seq2seq"
+      },
+      {
+        "type": "built-on",
+        "target": "bahdanau-attention"
+      },
+      {
+        "type": "uses",
+        "target": "tpu-v1"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1609.08144",
+        "title": "Google's Neural Machine Translation System"
+      },
+      {
+        "url": "https://www.nytimes.com/2016/12/14/magazine/the-great-ai-awakening.html",
+        "title": "NYT Magazine, The Great A.I. Awakening"
+      }
+    ]
+  },
+  {
+    "id": "microsoft-speech-parity",
+    "title": "Microsoft \"human parity\" in speech recognition",
+    "date": "2016-10-17",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Wayne Xiong",
+      "Xuedong Huang",
+      "Microsoft Research"
+    ],
+    "description": "Microsoft reported a 5.9% word error rate on the Switchboard telephone benchmark, matching professional transcribers on that test.",
+    "capabilityNote": "\"Parity\" held on one benchmark; real-world accents, noise and far-field audio stayed much harder.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1610.05256",
+        "title": "Achieving Human Parity in Conversational Speech Recognition"
+      }
+    ]
+  },
+  {
+    "id": "pytorch",
+    "title": "PyTorch",
+    "date": "2017-01",
+    "type": "oss-repo",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Adam Paszke",
+      "Sam Gross",
+      "Soumith Chintala",
+      "Gregory Chanan",
+      "Facebook AI Research"
+    ],
+    "description": "A Python-first, eager-execution deep learning framework descended from Lua Torch. Code dates to 2016; the widely cited public release is January 2017.",
+    "capabilityNote": "Became the dominant research framework by about 2019–2020 and the base for Hugging Face Transformers, GPT-Neo and Stable Diffusion.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "tensorflow"
+      },
+      {
+        "type": "uses",
+        "target": "cuda"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2018",
+        "title": "Caffe2 merged into PyTorch",
+        "summary": "Facebook folded its production framework into PyTorch."
+      },
+      {
+        "date": "2022-09",
+        "title": "PyTorch Foundation",
+        "summary": "Governance moved to a Linux Foundation project."
+      },
+      {
+        "date": "2023-03",
+        "title": "PyTorch 2.0",
+        "summary": "Added torch.compile, which uses Triton for generated kernels."
+      }
+    ],
+    "oss": {
+      "license": "BSD-style",
+      "repoUrl": "https://github.com/pytorch/pytorch",
+      "stars": 103341,
+      "starsCheckedAt": "2026-09-26",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/pytorch/pytorch",
+        "title": "pytorch/pytorch"
+      },
+      {
+        "url": "https://arxiv.org/abs/1912.01703",
+        "title": "PyTorch paper"
+      }
+    ]
+  },
+  {
+    "id": "self-driving-hype",
+    "title": "Self-driving car timelines (Tesla, Ford and others)",
+    "date": "2015-12",
+    "type": "event",
+    "era": 4,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Tesla (Elon Musk)",
+      "Ford",
+      "Uber ATG",
+      "Waymo",
+      "GM Cruise"
+    ],
+    "description": "From 2015 to 2021 industry leaders repeatedly promised full autonomy or robotaxi fleets within one to five years.",
+    "capabilityNote": "Musk predicted complete autonomy \"in approximately two years\" (Dec 2015) and over a million robotaxis by 2020, and Ford promised a Level-4 ride-hailing vehicle in 2021; none of these happened on schedule.",
+    "edges": [],
+    "majorUpdates": [
+      {
+        "date": "2016-08-16",
+        "title": "Ford promises Level 4 by 2021",
+        "summary": "Ford said it would have a fully autonomous ride-hailing vehicle in commercial operation in 2021.",
+        "source": "https://www.cnbc.com/2016/08/16/ford-will-have-a-fully-autonomous-vehicle-on-the-streets-in-less-than-five-years.html"
+      },
+      {
+        "date": "2019-04-22",
+        "title": "\"Over a million robotaxis\"",
+        "summary": "At Tesla Autonomy Day Musk promised over a million robotaxis the next year.",
+        "source": "https://www.cnbc.com/2019/04/22/elon-musk-says-tesla-robotaxis-will-hit-the-market-next-year.html"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/List_of_predictions_for_autonomous_Tesla_vehicles_by_Elon_Musk",
+        "title": "List of Musk's autonomy predictions"
+      },
+      {
+        "url": "https://www.thedrive.com/news/38129/elon-musk-promised-1-million-tesla-robotaxis-by-the-end-of-2020-where-are-they",
+        "title": "The Drive"
+      }
+    ]
+  },
+  {
+    "id": "nvidia-datacenter-gpus",
+    "title": "NVIDIA datacenter GPUs (V100 and A100)",
+    "date": "2017-05-10",
+    "type": "product",
+    "era": 3,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "NVIDIA"
+    ],
+    "description": "The Volta V100 was NVIDIA's first datacenter GPU with Tensor Cores for mixed-precision matrix math; the Ampere A100 followed in May 2020.",
+    "capabilityNote": "V100 clusters trained BERT, GPT-2 and GPT-3; the A100 became the standard training chip for 2021–2022 models.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "cuda"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2020-05-14",
+        "title": "NVIDIA A100 (Ampere)",
+        "summary": "Third-generation Tensor Cores, TF32/BF16 and multi-instance GPU.",
+        "source": "https://www.nvidia.com/en-us/data-center/a100/"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.nvidia.com/en-us/data-center/v100/",
+        "title": "NVIDIA V100"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/data-center/a100/",
+        "title": "NVIDIA A100"
+      }
+    ]
+  },
+  {
+    "id": "rlhf-christiano",
+    "title": "Deep RL from Human Preferences (RLHF)",
+    "date": "2017-06-12",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "rl-games"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Paul Christiano",
+      "Jan Leike",
+      "Tom Brown",
+      "Miljan Martic",
+      "Shane Legg",
+      "Dario Amodei",
+      "OpenAI + DeepMind"
+    ],
+    "description": "Trained a reward model from human pairwise comparisons of agent behaviour and optimized agents against it; for example, a simulated robot learned a backflip.",
+    "capabilityNote": "Little noticed at the time, it became the root of the preference-tuning used for InstructGPT and ChatGPT.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "ppo"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1706.03741",
+        "title": "Deep Reinforcement Learning from Human Preferences"
+      },
+      {
+        "url": "https://openai.com/index/learning-from-human-preferences/",
+        "title": "OpenAI blog"
+      }
+    ]
+  },
+  {
+    "id": "transformer",
+    "title": "Transformer (\"Attention Is All You Need\")",
+    "date": "2017-06-12",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "neural-deep-learning",
+      "foundation-models"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Ashish Vaswani",
+      "Noam Shazeer",
+      "Niki Parmar",
+      "Jakob Uszkoreit",
+      "Llion Jones",
+      "Aidan N. Gomez",
+      "Łukasz Kaiser",
+      "Illia Polosukhin",
+      "Google Brain / Google Research"
+    ],
+    "description": "A sequence model built entirely on self-attention, with no recurrence. It set a WMT'14 English→German record of 28.4 BLEU at lower training cost.",
+    "capabilityNote": "Presented in 2017 as a translation improvement; its parallelizable training made scaling practical, and it became the architecture of BERT, GPT, T5, ViT, CLIP and DALL·E.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "bahdanau-attention"
+      },
+      {
+        "type": "built-on",
+        "target": "resnet"
+      },
+      {
+        "type": "uses",
+        "target": "adam-optimizer"
+      },
+      {
+        "type": "successor-of",
+        "target": "gnmt"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1706.03762",
+        "title": "Attention Is All You Need"
+      }
+    ],
+    "heroMoment": true
+  },
+  {
+    "id": "ppo",
+    "title": "Proximal Policy Optimization",
+    "date": "2017-07-20",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "John Schulman",
+      "Filip Wolski",
+      "Prafulla Dhariwal",
+      "Alec Radford",
+      "Oleg Klimov",
+      "OpenAI"
+    ],
+    "description": "A simple, stable policy-gradient method with a clipped objective.",
+    "capabilityNote": "Became the default RL algorithm, used in OpenAI Five, Dactyl and RLHF fine-tuning of language models.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1707.06347",
+        "title": "Proximal Policy Optimization Algorithms"
+      }
+    ]
+  },
+  {
+    "id": "alphazero",
+    "title": "AlphaGo Zero and AlphaZero",
+    "date": "2017-10-18",
+    "type": "model",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "David Silver",
+      "Julian Schrittwieser",
+      "DeepMind"
+    ],
+    "description": "AlphaGo Zero learned Go purely from self-play and beat the Lee Sedol version 100–0; AlphaZero generalized the method to chess, shogi and Go from the rules alone.",
+    "capabilityNote": "Showed human data was not needed in perfectly simulable, rules-known games; the 2017 chess result was disputed because Stockfish ran under restricted conditions, and self-play needed thousands of TPUs.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "alphago"
+      },
+      {
+        "type": "uses",
+        "target": "resnet"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2017-12-05",
+        "title": "AlphaZero preprint",
+        "summary": "One algorithm mastered chess, shogi and Go.",
+        "source": "https://arxiv.org/abs/1712.01815"
+      },
+      {
+        "date": "2018-12-07",
+        "title": "AlphaZero Science paper",
+        "summary": "More matches addressed criticism of the Stockfish settings."
+      },
+      {
+        "date": "2019-11-19",
+        "title": "MuZero",
+        "summary": "Planning with a learned model, without being given the game rules.",
+        "source": "https://arxiv.org/abs/1911.08265"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.nature.com/articles/nature24270",
+        "title": "Mastering the game of Go without human knowledge"
+      },
+      {
+        "url": "https://arxiv.org/abs/1712.01815",
+        "title": "AlphaZero preprint"
+      }
+    ]
+  },
+  {
+    "id": "deepfakes",
+    "title": "Deepfakes",
+    "date": "2017-12",
+    "type": "event",
+    "era": 4,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "safety-alignment"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Anonymous Reddit user \"deepfakes\"",
+      "later FakeApp and DeepFaceLab"
+    ],
+    "description": "Autoencoder-based face-swapping was used to put celebrities' faces into pornographic videos without consent, reported by Motherboard in December 2017.",
+    "capabilityNote": "The first mass-market generative-media harm; quality was crude by later standards, but it triggered platform bans and legislation debates.",
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "gans"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.vice.com/en/article/gydydm/gal-gadot-fake-ai-porn",
+        "title": "Motherboard (link unverified)"
+      }
+    ]
+  },
+  {
+    "id": "ulmfit",
+    "title": "ULMFiT",
+    "date": "2018-01-18",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Jeremy Howard (fast.ai)",
+      "Sebastian Ruder"
+    ],
+    "description": "Pretrain an LSTM language model, then fine-tune it for classification with discriminative learning rates; released open source in fastai.",
+    "capabilityNote": "Showed transfer learning (\"ImageNet for NLP\") worked with very few labeled examples.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "lstm"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1801.06146",
+        "title": "Universal Language Model Fine-tuning for Text Classification"
+      }
+    ]
+  },
+  {
+    "id": "gender-shades",
+    "title": "Gender Shades",
+    "date": "2018-02",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Joy Buolamwini",
+      "Timnit Gebru"
+    ],
+    "description": "An audit of commercial gender classifiers from IBM, Microsoft and Face++ across skin tone and gender.",
+    "capabilityNote": "Error rates reached ~34.7% for darker-skinned women versus ≤0.8% for lighter-skinned men; aggregate accuracy hid disparate failures, and vendors changed their systems in response.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://proceedings.mlr.press/v81/buolamwini18a.html",
+        "title": "Gender Shades (PMLR vol. 81)"
+      }
+    ]
+  },
+  {
+    "id": "uber-atg-fatal-crash",
+    "title": "Uber self-driving test car kills pedestrian",
+    "date": "2018-03-18",
+    "type": "event",
+    "era": 4,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [
+      "safety-alignment"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Uber Advanced Technologies Group"
+    ],
+    "description": "An Uber test vehicle killed Elaine Herzberg in Tempe, Arizona, the first pedestrian death involving a self-driving test car. The NTSB found the system detected her but failed to classify her or predict her path, and automatic emergency braking was disabled.",
+    "capabilityNote": "A reality check on self-driving timelines; Uber sold ATG to Aurora in December 2020.",
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "self-driving-hype"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.ntsb.gov/investigations/Pages/HWY18MH010.aspx",
+        "title": "NTSB investigation (link unverified)"
+      }
+    ]
+  },
+  {
+    "id": "glue-benchmark",
+    "title": "GLUE benchmark",
+    "date": "2018-04-20",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Alex Wang",
+      "Amanpreet Singh",
+      "Julian Michael",
+      "Felix Hill",
+      "Omer Levy",
+      "Samuel Bowman"
+    ],
+    "description": "A multi-task benchmark with a public leaderboard for natural language understanding.",
+    "capabilityNote": "Models passed the \"human baseline\" within about a year, prompting SuperGLUE in 2019; an early case of benchmarks saturating faster than real understanding improved.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1804.07461",
+        "title": "GLUE"
+      }
+    ]
+  },
+  {
+    "id": "google-duplex",
+    "title": "Google Duplex",
+    "date": "2018-05-08",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "language",
+      "personal-agents"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Google (Yaniv Leviathan, Yossi Matias)"
+    ],
+    "description": "An AI phone agent, demoed at Google I/O, that booked restaurant and salon appointments with human-sounding speech including \"um\" and \"mm-hmm\".",
+    "capabilityNote": "In May 2019 Google told the NYT that about 25% of calls started with a human in a call center and about 15% needed human intervention.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "wavenet"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html",
+        "title": "Google AI blog"
+      },
+      {
+        "url": "https://www.engadget.com/2019-05-22-google-duplex-is-made-of-people.html",
+        "title": "Engadget, May 2019"
+      }
+    ]
+  },
+  {
+    "id": "gpt-1",
+    "title": "GPT-1 (Generative Pre-Training)",
+    "date": "2018-06-11",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Alec Radford",
+      "Karthik Narasimhan",
+      "Tim Salimans",
+      "Ilya Sutskever",
+      "OpenAI"
+    ],
+    "description": "A 117M-parameter Transformer decoder pretrained on BooksCorpus and then fine-tuned for each task.",
+    "capabilityNote": "Established generative pretraining plus fine-tuning, improving the state of the art on 9 of 12 tasks studied.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      },
+      {
+        "type": "inspired-by",
+        "target": "ulmfit"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf",
+        "title": "Improving Language Understanding by Generative Pre-Training"
+      }
+    ]
+  },
+  {
+    "id": "openai-five",
+    "title": "OpenAI Five (Dota 2)",
+    "date": "2018-06",
+    "type": "model",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "Five LSTM agents trained with PPO on massive self-play, about 45,000 years of gameplay by OpenAI's count. They lost to pros in August 2018 and beat world champions OG 2–0 in April 2019.",
+    "capabilityNote": "Superhuman team play in a restricted setting (17 heroes in the 2019 matches); players later found exploits in the public Arena.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "ppo"
+      },
+      {
+        "type": "built-on",
+        "target": "lstm"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2019-04-13",
+        "title": "Beats world champions OG",
+        "summary": "Won 2–0 against the reigning TI champions.",
+        "source": "https://openai.com/index/openai-five-defeats-dota-2-world-champions/"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/openai-five-defeats-dota-2-world-champions/",
+        "title": "OpenAI Five defeats Dota 2 world champions"
+      },
+      {
+        "url": "https://arxiv.org/abs/1912.06680",
+        "title": "Dota 2 with Large Scale Deep RL"
+      }
+    ]
+  },
+  {
+    "id": "bert",
+    "title": "BERT",
+    "date": "2018-10-11",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Jacob Devlin",
+      "Ming-Wei Chang",
+      "Kenton Lee",
+      "Kristina Toutanova",
+      "Google AI Language"
+    ],
+    "description": "A bidirectional Transformer encoder pretrained with masked-language modelling, released with open weights in November 2018.",
+    "capabilityNote": "Set records on 11 NLP tasks and became the default NLP backbone of 2019–2020; later probing showed it often exploited dataset artifacts rather than reasoning.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      },
+      {
+        "type": "competes-with",
+        "target": "gpt-1"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1810.04805",
+        "title": "BERT"
+      }
+    ]
+  },
+  {
+    "id": "hf-transformers",
+    "title": "Hugging Face Transformers",
+    "date": "2018-11",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Hugging Face (Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond et al.)"
+    ],
+    "description": "Began as pytorch-pretrained-BERT and grew into a unified library and model hub for pretrained Transformers in PyTorch, TensorFlow and JAX.",
+    "capabilityNote": "A state-of-the-art model loaded in about three lines of code; with the Hub it became the de facto distribution layer for open models.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "pytorch"
+      },
+      {
+        "type": "uses",
+        "target": "bert"
+      },
+      {
+        "type": "uses",
+        "target": "gpt-2"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2019-09",
+        "title": "Renamed transformers",
+        "summary": "After a July 2019 rename to pytorch-transformers, the library took its current name."
+      },
+      {
+        "date": "2022-07",
+        "title": "Diffusers",
+        "summary": "A sister library for diffusion models."
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/huggingface/transformers",
+      "stars": 166662,
+      "starsCheckedAt": "2026-09-26"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/huggingface/transformers",
+        "title": "huggingface/transformers"
+      },
+      {
+        "url": "https://arxiv.org/abs/1910.03771",
+        "title": "Transformers paper"
+      }
+    ]
+  },
+  {
+    "id": "jax",
+    "title": "JAX",
+    "date": "2018-12",
+    "type": "oss-repo",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Roy Frostig",
+      "Matthew Johnson",
+      "Chris Leary",
+      "Google"
+    ],
+    "description": "Composable function transformations (grad, jit, vmap, pmap) over NumPy, compiled with XLA.",
+    "capabilityNote": "Became the framework for TPU-scale research at Google and DeepMind and underpinned EleutherAI's GPT-J.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "pytorch"
+      },
+      {
+        "type": "competes-with",
+        "target": "tensorflow"
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/jax-ml/jax",
+      "stars": 36339,
+      "starsCheckedAt": "2026-09-26"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/jax-ml/jax",
+        "title": "jax-ml/jax"
+      }
+    ]
+  },
+  {
+    "id": "stylegan",
+    "title": "StyleGAN",
+    "date": "2018-12-12",
+    "type": "model",
+    "era": 4,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Tero Karras",
+      "Samuli Laine",
+      "Timo Aila",
+      "NVIDIA"
+    ],
+    "description": "A style-based GAN generator that produced photorealistic 1024×1024 faces; thispersondoesnotexist.com went viral in February 2019.",
+    "capabilityNote": "The first widely seen photorealistic synthetic faces, soon used for fake social media profiles; it worked well only in narrow domains such as faces, cars and cats.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gans"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1812.04948",
+        "title": "A Style-Based Generator Architecture for GANs"
+      }
+    ]
+  },
+  {
+    "id": "alphastar",
+    "title": "AlphaStar (StarCraft II)",
+    "date": "2019-01-24",
+    "type": "model",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Oriol Vinyals",
+      "DeepMind"
+    ],
+    "description": "Agents trained by imitation plus league-based multi-agent RL beat pros TLO and MaNa 10–1 in January 2019 exhibitions and reached Grandmaster on Battle.net by October.",
+    "capabilityNote": "The January matches were criticized for superhuman click bursts and whole-map vision; the Nature version added APM and camera limits and ranked above 99.8% of players.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "openai-five"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.nature.com/articles/s41586-019-1724-z",
+        "title": "Grandmaster level in StarCraft II"
+      }
+    ]
+  },
+  {
+    "id": "gpt-2",
+    "title": "GPT-2 and the staged release",
+    "date": "2019-02-14",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language",
+      "safety-alignment"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Alec Radford",
+      "Jeffrey Wu",
+      "Rewon Child",
+      "David Luan",
+      "Dario Amodei",
+      "Ilya Sutskever",
+      "OpenAI"
+    ],
+    "description": "A 1.5B-parameter Transformer language model trained on 40GB of Reddit-linked web pages that could write multi-paragraph coherent text. OpenAI withheld the full model, citing concerns about malicious use.",
+    "capabilityNote": "Coverage framed it as \"too dangerous to release\" and critics called the withholding publicity; the full model shipped nine months later, and its text lost coherence over longer passages.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gpt-1"
+      },
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2019-05",
+        "title": "355M model released",
+        "summary": "Second stage of the staged release."
+      },
+      {
+        "date": "2019-08",
+        "title": "774M model released",
+        "summary": "Third stage of the staged release."
+      },
+      {
+        "date": "2019-11-05",
+        "title": "Full 1.5B model released",
+        "summary": "OpenAI released the full model about nine months after the announcement."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
+        "title": "Language Models are Unsupervised Multitask Learners"
+      },
+      {
+        "url": "https://www.fast.ai/posts/2019-02-15-openai-gp2.html",
+        "title": "fast.ai critique"
+      }
+    ]
+  },
+  {
+    "id": "openai-lp-microsoft",
+    "title": "OpenAI LP and Microsoft's $1B investment",
+    "date": "2019-03-11",
+    "type": "org",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "compute",
+    "creators": [
+      "OpenAI",
+      "Microsoft"
+    ],
+    "description": "OpenAI created a capped-profit entity to raise capital, then in July 2019 took $1B from Microsoft with Azure as its exclusive cloud.",
+    "capabilityNote": "Tied frontier model development to hyperscaler compute; GPT-3 was trained on Azure.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "openai-founded"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2019-07-22",
+        "title": "Microsoft invests $1B",
+        "summary": "Exclusive Azure computing partnership.",
+        "source": "https://news.microsoft.com/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/openai-lp/",
+        "title": "OpenAI LP (link unverified)"
+      },
+      {
+        "url": "https://news.microsoft.com/2019/07/22/openai-forms-exclusive-computing-partnership-with-microsoft-to-build-new-azure-ai-supercomputing-technologies/",
+        "title": "Microsoft news (link unverified)"
+      }
+    ]
+  },
+  {
+    "id": "deep-learning-turing-award",
+    "title": "Turing Award to Hinton, LeCun and Bengio",
+    "date": "2019-03-27",
+    "type": "event",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Geoffrey Hinton",
+      "Yann LeCun",
+      "Yoshua Bengio"
+    ],
+    "description": "ACM gave the 2018 Turing Award to the three \"for conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing.\"",
+    "capabilityNote": "Formal recognition that deep learning had moved from the fringe to mainstream computer science.",
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "backpropagation"
+      },
+      {
+        "type": "inspired-by",
+        "target": "lenet"
+      },
+      {
+        "type": "inspired-by",
+        "target": "alexnet"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://awards.acm.org/about/2018-turing",
+        "title": "ACM 2018 Turing Award"
+      }
+    ]
+  },
+  {
+    "id": "pluribus",
+    "title": "Pluribus (six-player poker)",
+    "date": "2019-07-11",
+    "type": "model",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Noam Brown",
+      "Tuomas Sandholm",
+      "CMU / Facebook AI"
+    ],
+    "description": "Beat elite professionals at six-player no-limit Texas hold'em, following the heads-up Libratus in 2017.",
+    "capabilityNote": "The first superhuman result in a multiplayer imperfect-information game; it used search and counterfactual regret minimization rather than deep learning, on a small compute budget.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "openai-five"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.science.org/doi/10.1126/science.aay2400",
+        "title": "Superhuman AI for multiplayer poker"
+      }
+    ]
+  },
+  {
+    "id": "dactyl-rubiks-cube",
+    "title": "OpenAI Dactyl solves a Rubik's Cube",
+    "date": "2019-10-15",
+    "type": "model",
+    "era": 4,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [
+      "rl-games"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI Robotics"
+    ],
+    "description": "A Shadow robot hand trained in simulation with automatic domain randomization manipulated a Rubik's Cube one-handed.",
+    "capabilityNote": "The solution sequence came from a classical solver and the network did only the manipulation, with about 60% success overall and 20% on the hardest scrambles; OpenAI disbanded its robotics team in 2021.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "ppo"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/solving-rubiks-cube/",
+        "title": "Solving Rubik's Cube with a robot hand"
+      },
+      {
+        "url": "https://arxiv.org/abs/1910.07113",
+        "title": "Paper"
+      }
+    ]
+  },
+  {
+    "id": "t5-c4",
+    "title": "T5 and the C4 dataset",
+    "date": "2019-10-23",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "data",
+    "creators": [
+      "Colin Raffel",
+      "Noam Shazeer",
+      "Adam Roberts",
+      "Google"
+    ],
+    "description": "A text-to-text Transformer of up to 11B parameters trained on C4, about 750GB of filtered Common Crawl.",
+    "capabilityNote": "Made cleaned Common Crawl a standard pretraining source; a 2021 audit found C4's blocklist disproportionately removed text by and about minority groups.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1910.10683",
+        "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer"
+      }
+    ]
+  },
+  {
+    "id": "bert-in-google-search",
+    "title": "BERT deployed in Google Search",
+    "date": "2019-10-25",
+    "type": "major-update",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Google (Pandu Nayak)"
+    ],
+    "description": "Google began using BERT to interpret search queries, affecting about 1 in 10 US English queries at launch.",
+    "capabilityNote": "The first mass-scale production deployment of a pretrained Transformer.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "bert"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/products/search/search-language-understanding-bert/",
+        "title": "Google blog"
+      }
+    ],
+    "parentId": "bert"
+  },
+  {
+    "id": "scaling-laws-kaplan",
+    "title": "Scaling Laws for Neural Language Models",
+    "date": "2020-01-23",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Jared Kaplan",
+      "Sam McCandlish",
+      "Tom Henighan",
+      "Tom Brown",
+      "Dario Amodei",
+      "OpenAI"
+    ],
+    "description": "Language model loss falls as a smooth power law in parameters, data and compute.",
+    "capabilityNote": "Gave labs an empirical basis for betting on scale, starting with GPT-3; DeepMind's Chinchilla (2022) later showed Kaplan-era models were undertrained.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2001.08361",
+        "title": "Scaling Laws for Neural Language Models"
+      }
+    ]
+  },
+  {
+    "id": "gpt-3",
+    "title": "GPT-3",
+    "date": "2020-05-28",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Tom Brown",
+      "Benjamin Mann",
+      "Nick Ryder",
+      "Melanie Subbiah",
+      "Jared Kaplan",
+      "Dario Amodei",
+      "OpenAI"
+    ],
+    "description": "A 175B-parameter decoder Transformer trained on about 300B tokens and offered only through an API.",
+    "capabilityNote": "Could write, translate and generate simple code from a few examples in the prompt, but made confident errors and failed at arithmetic and commonsense; Sam Altman said \"The GPT-3 hype is way too much.\"",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gpt-2"
+      },
+      {
+        "type": "built-on",
+        "target": "scaling-laws-kaplan"
+      },
+      {
+        "type": "built-on",
+        "target": "transformer"
+      },
+      {
+        "type": "uses",
+        "target": "nvidia-datacenter-gpus"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2020-06-11",
+        "title": "Private-beta API",
+        "summary": "Access opened through the OpenAI API."
+      },
+      {
+        "date": "2020-09-22",
+        "title": "Microsoft exclusive license",
+        "summary": "Microsoft licensed GPT-3 exclusively."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2005.14165",
+        "title": "Language Models are Few-Shot Learners"
+      },
+      {
+        "url": "https://twitter.com/sama/status/1284922296348454913",
+        "title": "Sam Altman on GPT-3 hype"
+      }
+    ]
+  },
+  {
+    "id": "ddpm",
+    "title": "Denoising Diffusion Probabilistic Models",
+    "date": "2020-06-19",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Jonathan Ho",
+      "Ajay Jain",
+      "Pieter Abbeel",
+      "UC Berkeley"
+    ],
+    "description": "Generates images by learning to reverse a gradual noising process, building on Sohl-Dickstein et al. (2015) and score-based models.",
+    "capabilityNote": "Matched or beat GAN sample quality (FID 3.17 on CIFAR-10) with stable training; the basis of DALL·E 2, Imagen and Stable Diffusion.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "gans"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2006.11239",
+        "title": "Denoising Diffusion Probabilistic Models"
+      }
+    ]
+  },
+  {
+    "id": "eleutherai-gpt-neo",
+    "title": "EleutherAI and GPT-Neo",
+    "date": "2020-07",
+    "type": "org",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Connor Leahy",
+      "Leo Gao",
+      "Sid Black",
+      "EleutherAI"
+    ],
+    "description": "A volunteer collective formed on Discord to replicate GPT-3 openly; it released GPT-Neo 1.3B and 2.7B, trained on The Pile, in March 2021.",
+    "capabilityNote": "Showed a non-corporate group could train and release GPT-3-architecture models, though far smaller than 175B.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "the-pile"
+      },
+      {
+        "type": "competes-with",
+        "target": "gpt-3"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2021-03-21",
+        "title": "GPT-Neo 1.3B / 2.7B",
+        "summary": "First open GPT-3-style models from EleutherAI."
+      },
+      {
+        "date": "2022-02",
+        "title": "GPT-NeoX-20B",
+        "summary": "20B-parameter open model."
+      },
+      {
+        "date": "2023-04-03",
+        "title": "Pythia",
+        "summary": "16 models with 154 checkpoints each on identical data order, a standard interpretability testbed.",
+        "source": "https://arxiv.org/abs/2304.01373"
+      }
+    ],
+    "oss": {
+      "repoUrl": "https://github.com/EleutherAI/gpt-neo"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/EleutherAI/gpt-neo",
+        "title": "EleutherAI/gpt-neo"
+      }
+    ]
+  },
+  {
+    "id": "vit",
+    "title": "Vision Transformer (ViT)",
+    "date": "2020-10-22",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Alexey Dosovitskiy",
+      "Lucas Beyer",
+      "Alexander Kolesnikov",
+      "Google Brain"
+    ],
+    "description": "A pure Transformer applied to 16×16 image patches.",
+    "capabilityNote": "Matched or beat CNNs only when pretrained on very large datasets (JFT-300M); it unified architectures across vision and language.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      },
+      {
+        "type": "competes-with",
+        "target": "resnet"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2010.11929",
+        "title": "An Image is Worth 16x16 Words"
+      }
+    ]
+  },
+  {
+    "id": "alphafold-2",
+    "title": "AlphaFold 2",
+    "date": "2020-11-30",
+    "type": "model",
+    "era": 4,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "John Jumper",
+      "Demis Hassabis",
+      "DeepMind"
+    ],
+    "description": "An attention-based network that predicts 3D protein structure from sequence and alignments, reaching a median GDT of 92.4 at CASP14.",
+    "capabilityNote": "\"Solving protein folding\" meant predicting static single-chain structures, not folding dynamics or (initially) complexes, and it was weaker on disordered regions; Hassabis and Jumper shared the 2024 Chemistry Nobel.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2021-07-15",
+        "title": "Nature paper and open-source code",
+        "summary": "Methods and code published.",
+        "source": "https://www.nature.com/articles/s41586-021-03819-2"
+      },
+      {
+        "date": "2021-07-22",
+        "title": "AlphaFold Protein Structure Database",
+        "summary": "Predicted structures released with EMBL-EBI."
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.nature.com/articles/s41586-021-03819-2",
+        "title": "Highly accurate protein structure prediction with AlphaFold"
+      },
+      {
+        "url": "https://phys.org/news/2020-11-ai-solution-year-old-protein.html",
+        "title": "CASP14 coverage"
+      }
+    ]
+  },
+  {
+    "id": "stochastic-parrots",
+    "title": "\"Stochastic Parrots\" and Gebru's exit from Google",
+    "date": "2020-12-02",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Emily M. Bender",
+      "Timnit Gebru",
+      "Angelina McMillan-Major",
+      "Margaret Mitchell"
+    ],
+    "description": "A critique of ever-larger language models covering environmental cost, undocumented training data, encoded bias and the illusion of meaning; Google's handling of it led to Gebru's and Mitchell's departures.",
+    "capabilityNote": "The defining critical counter-narrative to scaling; the paper appeared at FAccT in March 2021.",
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "gpt-3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://dl.acm.org/doi/10.1145/3442188.3445922",
+        "title": "On the Dangers of Stochastic Parrots"
+      }
+    ]
+  },
+  {
+    "id": "the-pile",
+    "title": "The Pile",
+    "date": "2020-12-31",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "data",
+    "creators": [
+      "Leo Gao",
+      "Stella Biderman",
+      "EleutherAI"
+    ],
+    "description": "An 825 GiB open English text corpus built from 22 sources, including Common Crawl, PubMed, arXiv, GitHub and Books3.",
+    "capabilityNote": "The first widely used open, documented LLM pretraining dataset; its Books3 subset later sat at the centre of copyright disputes.",
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "t5-c4"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2101.00027",
+        "title": "The Pile"
+      }
+    ]
+  },
+  {
+    "id": "dall-e-1",
+    "title": "DALL·E",
+    "date": "2021-01-05",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Aditya Ramesh",
+      "Mikhail Pavlov",
+      "Gabriel Goh",
+      "Scott Gray",
+      "OpenAI"
+    ],
+    "description": "A 12B-parameter autoregressive Transformer over text and image tokens that generated images from captions such as \"an armchair in the shape of an avocado\".",
+    "capabilityNote": "Showed compositional text-to-image generation, but outputs were 256×256, cherry-picked with CLIP reranking, and the model was never publicly released.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      },
+      {
+        "type": "built-on",
+        "target": "gpt-3"
+      },
+      {
+        "type": "uses",
+        "target": "clip"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/dall-e/",
+        "title": "DALL·E blog"
+      },
+      {
+        "url": "https://arxiv.org/abs/2102.12092",
+        "title": "Zero-Shot Text-to-Image Generation"
+      }
+    ]
+  },
+  {
+    "id": "clip",
+    "title": "CLIP",
+    "date": "2021-01-05",
+    "type": "model",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "foundation-models",
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Alec Radford",
+      "Jong Wook Kim",
+      "OpenAI"
+    ],
+    "description": "Image and text encoders trained jointly on 400M web image-text pairs with a contrastive objective; weights for smaller models were released.",
+    "capabilityNote": "Zero-shot ImageNet accuracy matched a supervised ResNet-50, and CLIP became the text-image bridge for later generators; the paper documents typographic attacks and biases.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "vit"
+      },
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2103.00020",
+        "title": "Learning Transferable Visual Models From Natural Language Supervision"
+      }
+    ]
+  },
+  {
+    "id": "switch-transformer",
+    "title": "Switch Transformer",
+    "date": "2021-01-11",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "William Fedus",
+      "Barret Zoph",
+      "Noam Shazeer",
+      "Google"
+    ],
+    "description": "A sparse Mixture-of-Experts Transformer that scaled to 1.6 trillion parameters with constant compute per token.",
+    "capabilityNote": "Headline parameter counts for sparse models were not comparable to dense ones; 1.6T sparse parameters are not equivalent to GPT-3's dense 175B.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      },
+      {
+        "type": "competes-with",
+        "target": "gpt-3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2101.03961",
+        "title": "Switch Transformers"
+      }
+    ]
+  },
+  {
+    "id": "lamda",
+    "title": "LaMDA",
+    "date": "2021-05-18",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google"
+    ],
+    "description": "A dialogue-tuned Transformer language model demoed at Google I/O talking as Pluto and as a paper airplane.",
+    "capabilityNote": "Kept internal in 2021; it became notorious in 2022 when an engineer claimed it was sentient, a claim Google rejected, and it later underpinned Bard.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      },
+      {
+        "type": "competes-with",
+        "target": "gpt-3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/technology/ai/lamda/",
+        "title": "Google blog"
+      }
+    ]
+  },
+  {
+    "id": "anthropic-founded",
+    "title": "Anthropic founded",
+    "date": "2021",
+    "type": "org",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Dario Amodei",
+      "Daniela Amodei",
+      "Tom Brown",
+      "Chris Olah",
+      "Sam McCandlish",
+      "Jack Clark",
+      "Jared Kaplan"
+    ],
+    "description": "An AI safety company, founded largely by former OpenAI staff, that announced a $124M Series A in May 2021.",
+    "capabilityNote": "No products in 2021; its founders included authors of GPT-3, the scaling laws paper and RLHF.",
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "scaling-laws-kaplan"
+      },
+      {
+        "type": "inspired-by",
+        "target": "rlhf-christiano"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems",
+        "title": "Anthropic Series A"
+      }
+    ]
+  },
+  {
+    "id": "gpt-j",
+    "title": "GPT-J-6B",
+    "date": "2021-06",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "local-runtimes"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Ben Wang",
+      "Aran Komatsuzaki",
+      "EleutherAI"
+    ],
+    "description": "A 6B-parameter open GPT-3-style model trained on The Pile with JAX on TPUs.",
+    "capabilityNote": "The strongest openly downloadable GPT-3-style model of 2021, roughly on par with GPT-3 Curie (6.7B) on many zero-shot tasks by EleutherAI's evaluation.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "eleutherai-gpt-neo"
+      },
+      {
+        "type": "uses",
+        "target": "jax"
+      },
+      {
+        "type": "uses",
+        "target": "the-pile"
+      }
+    ],
+    "oss": {
+      "repoUrl": "https://github.com/kingoflolz/mesh-transformer-jax"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/kingoflolz/mesh-transformer-jax",
+        "title": "mesh-transformer-jax"
+      }
+    ]
+  },
+  {
+    "id": "lora-2021",
+    "title": "LoRA (and QLoRA, PEFT)",
+    "date": "2021-06-17",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Edward Hu",
+      "Yelong Shen",
+      "Microsoft"
+    ],
+    "description": "Low-Rank Adaptation trains small adapter matrices instead of all model weights, cutting fine-tuning memory and storage.",
+    "capabilityNote": "With QLoRA's 4-bit variant it let individuals fine-tune large models on one GPU, the biggest single enabler of the community fine-tune ecosystem (Hermes, Vicuna successors, image LoRAs).",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2023-02",
+        "title": "Hugging Face PEFT",
+        "summary": "Library packaging LoRA and other parameter-efficient methods."
+      },
+      {
+        "date": "2023-05-23",
+        "title": "QLoRA",
+        "summary": "LoRA on a 4-bit quantized base, fitting 65B fine-tuning on one 48GB GPU.",
+        "source": "https://arxiv.org/abs/2305.14314"
+      }
+    ],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/microsoft/LoRA",
+      "stars": 13816,
+      "starsCheckedAt": "2026-09-26"
+    },
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2106.09685",
+        "title": "LoRA: Low-Rank Adaptation of Large Language Models"
+      },
+      {
+        "url": "https://arxiv.org/abs/2305.14314",
+        "title": "QLoRA"
+      }
+    ]
+  },
+  {
+    "id": "github-copilot",
+    "title": "GitHub Copilot (technical preview)",
+    "date": "2021-06-29",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "GitHub",
+      "OpenAI"
+    ],
+    "description": "An AI pair programmer in VS Code that autocompleted lines and whole functions, powered by Codex.",
+    "capabilityNote": "The first mass-market LLM product for developers; a 2021 NYU study found about 40% of generated programs in security-relevant scenarios were vulnerable, and training on public code raised licensing disputes.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "codex"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://github.blog/2021-06-29-introducing-github-copilot-ai-pair-programmer/",
+        "title": "Introducing GitHub Copilot"
+      },
+      {
+        "url": "https://arxiv.org/abs/2108.09293",
+        "title": "Pearce et al., Copilot security study"
+      }
+    ]
+  },
+  {
+    "id": "codex",
+    "title": "Codex and HumanEval",
+    "date": "2021-07-07",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "foundation-models",
+      "llmops-eval"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Mark Chen",
+      "Jerry Tworek",
+      "Heewoo Jun",
+      "Wojciech Zaremba",
+      "OpenAI"
+    ],
+    "description": "GPT-3 fine-tuned on public GitHub code, introduced with the HumanEval benchmark; an API private beta followed in August 2021.",
+    "capabilityNote": "The 12B Codex solved 28.8% of HumanEval problems with one sample and 70.2% with 100 samples plus test selection; capable but unreliable on long chains of operations.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gpt-3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2107.03374",
+        "title": "Evaluating Large Language Models Trained on Code"
+      }
+    ]
+  },
+  {
+    "id": "latent-diffusion",
+    "title": "Latent Diffusion Models",
+    "date": "2021-12-20",
+    "type": "paper",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Robin Rombach",
+      "Andreas Blattmann",
+      "Dominik Lorenz",
+      "Patrick Esser",
+      "Björn Ommer",
+      "LMU Munich / Heidelberg"
+    ],
+    "description": "Runs diffusion in a compressed autoencoder latent space with cross-attention conditioning on text.",
+    "capabilityNote": "Cut the compute needed for high-resolution text-to-image generation enough to run on consumer GPUs; Stable Diffusion built directly on it.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "ddpm"
+      },
+      {
+        "type": "uses",
+        "target": "clip"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2112.10752",
+        "title": "High-Resolution Image Synthesis with Latent Diffusion Models"
+      }
+    ]
+  }
+]

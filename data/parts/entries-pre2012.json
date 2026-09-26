@@ -1,0 +1,3262 @@
+[
+  {
+    "id": "cuneiform-writing",
+    "title": "Writing (proto-cuneiform, Uruk)",
+    "date": "-3200",
+    "type": "event",
+    "era": 0,
+    "primarySegment": "language",
+    "secondarySegments": [],
+    "stackLayer": "data",
+    "creators": [
+      "Sumerian scribes of Uruk"
+    ],
+    "description": "Mesopotamian administrators began keeping accounts and records on clay tablets. This moved memory out of people's heads and into durable storage.",
+    "capabilityNote": "Persistent, transferable storage of symbols and quantities. No processing of any kind.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.metmuseum.org/toah/hd/wrtg/hd_wrtg.htm",
+        "title": "The Met, Heilbrunn Timeline of Art History: The Origins of Writing"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "antikythera-mechanism",
+    "title": "Antikythera mechanism",
+    "date": "-150",
+    "type": "product",
+    "era": 0,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "Unknown Hellenistic Greek makers"
+    ],
+    "description": "A geared bronze device that modelled solar, lunar and eclipse cycles. It is the oldest known analogue computer.",
+    "capabilityNote": "Predicted lunar phase, eclipse timing and calendar cycles from a hand crank. It performed one fixed computation and could not be reprogrammed.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.nature.com/articles/nature05357",
+        "title": "Freeth et al., Decoding the ancient Greek astronomical calculator known as the Antikythera Mechanism, Nature 444 (2006)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "llull-ars-magna",
+    "title": "Ramon Llull's Ars Magna",
+    "date": "1305",
+    "type": "paper",
+    "era": 0,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Ramon Llull"
+    ],
+    "description": "A system of rotating paper discs that combined basic concepts mechanically to produce propositions.",
+    "capabilityNote": "Enumerated combinations of concepts. It had no way to judge truth beyond the author's own rules.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://plato.stanford.edu/entries/llull/",
+        "title": "Stanford Encyclopedia of Philosophy: Ramon Llull"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "mechanical-calculators",
+    "title": "Mechanical calculators (abacus, Pascaline, Leibniz's stepped reckoner)",
+    "date": "1642",
+    "type": "product",
+    "era": 0,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "compute",
+    "creators": [
+      "Blaise Pascal",
+      "Gottfried Wilhelm Leibniz"
+    ],
+    "description": "Counting boards and the abacus let an operator do arithmetic by moving counters; Pascal's gear-driven adder (1642) and Leibniz's stepped-drum reckoner (1673) mechanised the carry and all four operations.",
+    "capabilityNote": "Pascaline: addition and subtraction with automatic carry. Stepped reckoner: multiplication and division, though unreliable. Leibniz's 'calculus of reasoning' stayed on paper.",
+    "majorUpdates": [
+      {
+        "date": "1673",
+        "title": "Leibniz's stepped reckoner",
+        "summary": "Stepped-drum design extends mechanical calculation to multiplication and division.",
+        "source": "https://plato.stanford.edu/entries/leibniz-logic-influence/"
+      },
+      {
+        "date": "1703",
+        "title": "Leibniz publishes on binary arithmetic",
+        "summary": "Leibniz writes on binary notation and proposes a calculus of reasoning."
+      }
+    ],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "llull-ars-magna"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.computerhistory.org/revolution/calculators/1/47",
+        "title": "Computer History Museum: Pascaline"
+      },
+      {
+        "url": "https://www.computerhistory.org/revolution/calculators/1",
+        "title": "Computer History Museum: Calculators"
+      },
+      {
+        "url": "https://plato.stanford.edu/entries/leibniz-logic-influence/",
+        "title": "Stanford Encyclopedia of Philosophy: Leibniz's Influence on 19th Century Logic"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "jacquard-loom",
+    "title": "Jacquard loom (punched-card control)",
+    "date": "1804",
+    "type": "product",
+    "era": 0,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "data",
+    "creators": [
+      "Joseph Marie Jacquard"
+    ],
+    "description": "A chain of punched cards controlled which warp threads the loom lifted, so a pattern could be stored and replayed as a program.",
+    "capabilityNote": "Replayed stored weaving patterns automatically. A fixed sequence with no branching.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.computerhistory.org/revolution/punched-cards/2/2",
+        "title": "Computer History Museum: Punched cards, the Jacquard loom"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "babbage-analytical-engine",
+    "title": "Babbage's Difference Engine and Analytical Engine",
+    "date": "1837",
+    "type": "product",
+    "era": 0,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "Charles Babbage"
+    ],
+    "description": "A design for a general-purpose mechanical computer with a separate store (memory) and mill (processor), programmed with punched cards. It was never completed in Babbage's lifetime.",
+    "capabilityNote": "Turing-complete on paper; nothing general-purpose was built. The Science Museum built Difference Engine No. 2 in 1991 and it worked.",
+    "majorUpdates": [
+      {
+        "date": "1822",
+        "title": "Difference Engine proposed",
+        "summary": "Babbage's earlier special-purpose design for tabulating polynomials."
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "jacquard-loom"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.computerhistory.org/babbage/",
+        "title": "Computer History Museum: The Babbage Engine"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "lovelace-note-g",
+    "title": "Ada Lovelace's Notes on the Analytical Engine (Note G)",
+    "date": "1843",
+    "type": "paper",
+    "era": 0,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Ada Lovelace"
+    ],
+    "description": "Notes to her translation of Menabrea's paper, including a procedure for computing Bernoulli numbers, often called the first published program. She also wrote that the Engine could not originate anything, only do what it was ordered to do.",
+    "capabilityNote": "A program on paper only; no machine existed to run it. Also the first published sceptical statement about machine originality.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "babbage-analytical-engine"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.fourmilab.ch/babbage/sketch.html",
+        "title": "Menabrea, Sketch of the Analytical Engine, with notes by Ada Lovelace (Fourmilab transcription)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "boole-laws-of-thought",
+    "title": "Boole, \"An Investigation of the Laws of Thought\"",
+    "date": "1854",
+    "type": "paper",
+    "era": 0,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "George Boole"
+    ],
+    "description": "Treated logic as an algebra of variables that take the values 0 and 1.",
+    "capabilityNote": "A formal basis that later made logic implementable in circuits. Theory only.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "mechanical-calculators"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://plato.stanford.edu/entries/boole/",
+        "title": "Stanford Encyclopedia of Philosophy: George Boole"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "turing-1936-computable-numbers",
+    "title": "Turing, \"On Computable Numbers\"",
+    "date": "1936",
+    "type": "paper",
+    "era": 1,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Alan Turing"
+    ],
+    "description": "Defined the Turing machine and the universal machine, and proved limits on what can be computed (the halting problem).",
+    "capabilityNote": "Theory only. It set out what any mechanical procedure can and cannot compute.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "babbage-analytical-engine"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1112/plms/s2-42.1.230",
+        "title": "Turing, On Computable Numbers, with an Application to the Entscheidungsproblem, Proc. London Math. Soc. (1936)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "shannon-1937-switching",
+    "title": "Shannon, \"A Symbolic Analysis of Relay and Switching Circuits\"",
+    "date": "1937",
+    "type": "paper",
+    "era": 1,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "compute",
+    "creators": [
+      "Claude Shannon",
+      "MIT"
+    ],
+    "description": "Shannon's master's thesis showed that Boolean algebra can describe and design relay circuits. It was published in 1938.",
+    "capabilityNote": "Made logic physically buildable; the basis of digital circuit design.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "boole-laws-of-thought"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://dspace.mit.edu/handle/1721.1/11173",
+        "title": "Shannon, A Symbolic Analysis of Relay and Switching Circuits (MIT DSpace)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "mcculloch-pitts-1943",
+    "title": "McCulloch & Pitts, \"A Logical Calculus of the Ideas Immanent in Nervous Activity\"",
+    "date": "1943",
+    "type": "paper",
+    "era": 1,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Warren McCulloch",
+      "Walter Pitts"
+    ],
+    "description": "Modelled neurons as binary threshold units and showed that networks of them can compute logical functions.",
+    "capabilityNote": "Theory only. The model had no learning rule.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "turing-1936-computable-numbers"
+      },
+      {
+        "type": "inspired-by",
+        "target": "boole-laws-of-thought"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1007/BF02478259",
+        "title": "McCulloch & Pitts, Bulletin of Mathematical Biophysics 5 (1943)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "turing-1950-computing-machinery",
+    "title": "Turing, \"Computing Machinery and Intelligence\" (the imitation game)",
+    "date": "1950-10",
+    "type": "paper",
+    "era": 1,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "language",
+      "safety-alignment"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Alan Turing"
+    ],
+    "description": "Replaced the question \"can machines think?\" with a conversational test, answered objections including \"Lady Lovelace's objection\", and proposed educating a \"child machine\".",
+    "capabilityNote": "No machine was built. It defined the first proposed evaluation for AI and made a dated forecast for the year 2000 that was only partly borne out.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "lovelace-note-g"
+      },
+      {
+        "type": "built-on",
+        "target": "turing-1936-computable-numbers"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1093/mind/LIX.236.433",
+        "title": "Turing, Computing Machinery and Intelligence, Mind 59 (1950)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "dartmouth-1956",
+    "title": "Dartmouth Summer Research Project on Artificial Intelligence",
+    "date": "1956",
+    "type": "event",
+    "era": 1,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "neural-deep-learning",
+      "language"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "John McCarthy",
+      "Marvin Minsky",
+      "Nathaniel Rochester",
+      "Claude Shannon"
+    ],
+    "description": "The August 1955 proposal coined the term \"artificial intelligence\" and asked for a two-month, ten-person study of machines that use language, form abstractions, solve problems and improve themselves.",
+    "capabilityNote": "No breakthrough came out of the summer itself; Newell and Simon brought the already-working Logic Theorist. The goals listed stayed largely unsolved for decades.",
+    "majorUpdates": [
+      {
+        "date": "1955-08-31",
+        "title": "Proposal circulated",
+        "summary": "McCarthy, Minsky, Rochester and Shannon sign the proposal that names the field.",
+        "source": "http://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html"
+      }
+    ],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "turing-1950-computing-machinery"
+      }
+    ],
+    "sources": [
+      {
+        "url": "http://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html",
+        "title": "McCarthy, Minsky, Rochester & Shannon, A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence (1955)"
+      }
+    ],
+    "heroMoment": true,
+    "status": "published"
+  },
+  {
+    "id": "logic-theorist-1956",
+    "title": "Logic Theorist",
+    "date": "1956",
+    "type": "model",
+    "era": 1,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Allen Newell",
+      "Herbert Simon",
+      "Cliff Shaw",
+      "RAND",
+      "Carnegie Tech"
+    ],
+    "description": "A program that searched heuristically for proofs of theorems in Whitehead and Russell's Principia Mathematica.",
+    "capabilityNote": "Proved 38 of the first 52 theorems in chapter 2 of Principia, one with a shorter proof than the original. The domain was narrow and formal.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "turing-1950-computing-machinery"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1109/TIT.1956.1056797",
+        "title": "Newell & Simon, The logic theory machine, IRE Transactions on Information Theory (1956)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "general-problem-solver-1957",
+    "title": "General Problem Solver (GPS)",
+    "date": "1957",
+    "type": "model",
+    "era": 1,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Allen Newell",
+      "Cliff Shaw",
+      "Herbert Simon"
+    ],
+    "description": "A program that used means-ends analysis as a proposed general method for any problem that can be stated formally.",
+    "capabilityNote": "Solved puzzles such as the Tower of Hanoi and simple logic proofs. Combinatorial explosion stopped it on real-world problems, so the \"general\" claim did not hold.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "logic-theorist-1956"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://ai.stanford.edu/~nilsson/QAI/qai.pdf",
+        "title": "Nils J. Nilsson, The Quest for Artificial Intelligence, ch. 5 (GPS; original RAND report P-1584, 1959)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "lisp-1958",
+    "title": "LISP",
+    "date": "1958",
+    "type": "paper",
+    "era": 1,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "John McCarthy",
+      "MIT"
+    ],
+    "description": "A list-processing language with recursion, garbage collection and code-as-data, described in a 1960 CACM paper. It was the dominant AI language for about 30 years.",
+    "capabilityNote": "Made symbolic programs (search, theorem proving, planners, expert systems) practical to write. It later spawned dedicated Lisp machines.",
+    "majorUpdates": [
+      {
+        "date": "1960-04",
+        "title": "CACM paper",
+        "summary": "McCarthy publishes \"Recursive Functions of Symbolic Expressions and Their Computation by Machine\".",
+        "source": "https://doi.org/10.1145/367177.367199"
+      }
+    ],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "logic-theorist-1956"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1145/367177.367199",
+        "title": "McCarthy, Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I, CACM (1960)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "a-star-1968",
+    "title": "A* search algorithm",
+    "date": "1968-07",
+    "type": "paper",
+    "era": 1,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "robotics-embodied"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Peter Hart",
+      "Nils Nilsson",
+      "Bertram Raphael",
+      "SRI"
+    ],
+    "description": "Best-first graph search with an admissible heuristic that guarantees an optimal path, developed for the Shakey robot project.",
+    "capabilityNote": "Still the standard pathfinding method in games, maps and robotics.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1109/TSSC.1968.300136",
+        "title": "Hart, Nilsson & Raphael, A Formal Basis for the Heuristic Determination of Minimum Cost Paths, IEEE TSSC (1968)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "prolog",
+    "title": "Prolog",
+    "date": "1972",
+    "type": "paper",
+    "era": 1,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Alain Colmerauer",
+      "Philippe Roussel",
+      "Robert Kowalski"
+    ],
+    "description": "A logic-programming language in which programs are Horn clauses and execution is resolution theorem proving. It grew out of a natural-language question-answering project in Marseille.",
+    "capabilityNote": "Made declarative rule-based programs and parsers concise. It became the core language of Japan's Fifth Generation project and of much European AI.",
+    "majorUpdates": [
+      {
+        "date": "1974",
+        "title": "Kowalski's procedural interpretation",
+        "summary": "Kowalski shows how Horn-clause logic can be read as a procedure, giving Prolog its theoretical footing."
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "lisp-1958"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1145/155360.155362",
+        "title": "Colmerauer & Roussel, The birth of Prolog, HOPL-II (1993)"
+      },
+      {
+        "url": "https://arxiv.org/abs/2201.10816",
+        "title": "Körner et al., Fifty Years of Prolog and Beyond, TPLP (2022)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "minsky-frames-1974",
+    "title": "Minsky, \"A Framework for Representing Knowledge\"",
+    "date": "1974-06",
+    "type": "paper",
+    "era": 2,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "vision",
+      "language"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Marvin Minsky",
+      "MIT AI Lab"
+    ],
+    "description": "Proposed \"frames\", structured stereotypes with default slots, as a way to represent knowledge.",
+    "capabilityNote": "A design idea, not a system. It shaped expert-system shells and object-oriented knowledge representation.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://dspace.mit.edu/handle/1721.1/6089",
+        "title": "Minsky, A Framework for Representing Knowledge, MIT AI Memo 306 (1974)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "snarc-1951",
+    "title": "SNARC (Stochastic Neural Analog Reinforcement Calculator)",
+    "date": "1951",
+    "type": "product",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "rl-games"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Marvin Minsky",
+      "Dean Edmonds"
+    ],
+    "description": "A learning machine built from about 40 vacuum-tube \"neurons\" that simulated a rat learning a maze through reinforcement.",
+    "capabilityNote": "Learned simple maze paths by reinforcement. Limited by its hardware and not scalable.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "mcculloch-pitts-1943"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://ai.stanford.edu/~nilsson/QAI/qai.pdf",
+        "title": "Nils J. Nilsson, The Quest for Artificial Intelligence, ch. 4"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "samuel-checkers",
+    "title": "Arthur Samuel's checkers program (and the term \"machine learning\")",
+    "date": "1952",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [
+      "classical-ml"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Arthur Samuel",
+      "IBM"
+    ],
+    "description": "A checkers program for the IBM 701 and later machines that improved by rote learning and by adjusting its evaluation function through self-play. Samuel's 1959 paper popularised the term \"machine learning\".",
+    "capabilityNote": "Reached respectable amateur play. In 1962 it won a single game against Robert Nealey, which the press reported as beating a master; it never reached world-class play.",
+    "majorUpdates": [
+      {
+        "date": "1959",
+        "title": "IBM Journal paper",
+        "summary": "\"Some Studies in Machine Learning Using the Game of Checkers\" published.",
+        "source": "https://doi.org/10.1147/rd.33.0210"
+      },
+      {
+        "date": "1962",
+        "title": "Game against Robert Nealey",
+        "summary": "The program wins one game against Nealey; press coverage overstates it as beating a master."
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "shannon-chess-1950"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1147/rd.33.0210",
+        "title": "Samuel, Some Studies in Machine Learning Using the Game of Checkers, IBM J. Res. Dev. (1959)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "perceptron-1958",
+    "title": "Rosenblatt's Perceptron (and the Mark I Perceptron)",
+    "date": "1958-07-07",
+    "type": "model",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Frank Rosenblatt",
+      "Cornell Aeronautical Laboratory",
+      "US Office of Naval Research"
+    ],
+    "description": "A single-layer trainable classifier with an error-correction learning rule, demonstrated to the US Navy in July 1958. The Mark I hardware used a 20x20 photocell \"retina\".",
+    "capabilityNote": "Learned to separate simple visual patterns into two categories. It could not learn functions that are not linearly separable. Press coverage in 1958 claimed it would walk, talk and be conscious.",
+    "majorUpdates": [
+      {
+        "date": "1958",
+        "title": "Psychological Review paper",
+        "summary": "Rosenblatt publishes the perceptron model.",
+        "source": "https://doi.org/10.1037/h0042519"
+      },
+      {
+        "date": "1960",
+        "title": "Mark I Perceptron hardware",
+        "summary": "Custom hardware with a 20x20 photocell input array."
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "mcculloch-pitts-1943"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1037/h0042519",
+        "title": "Rosenblatt, The Perceptron: A Probabilistic Model for Information Storage and Organization in the Brain, Psychological Review (1958)"
+      },
+      {
+        "url": "https://theconversation.com/weve-been-here-before-ai-promised-humanlike-machines-in-1958-222700",
+        "title": "The Conversation (2024), on the 1958 NYT perceptron coverage"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "adaline-1960",
+    "title": "ADALINE and the LMS (Widrow–Hoff) rule",
+    "date": "1960",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "speech-audio"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Bernard Widrow",
+      "Ted Hoff",
+      "Stanford"
+    ],
+    "description": "An adaptive linear neuron trained with least-mean-squares gradient descent.",
+    "capabilityNote": "Pattern classification and adaptive filtering. LMS became standard in echo cancellation and modems, one of the earliest learning algorithms in everyday deployment.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "perceptron-1958"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://ai.stanford.edu/~nilsson/QAI/qai.pdf",
+        "title": "Nils J. Nilsson, The Quest for Artificial Intelligence, ch. 4 (original: Widrow & Hoff, IRE WESCON 1960)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "nearest-neighbor-1967",
+    "title": "Cover & Hart, \"Nearest neighbor pattern classification\"",
+    "date": "1967-01",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "classical-ml",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Thomas Cover",
+      "Peter Hart"
+    ],
+    "description": "Proved error bounds for the k-nearest-neighbour classifier.",
+    "capabilityNote": "A simple non-parametric classifier that became a basic machine-learning baseline.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1109/TIT.1967.1053964",
+        "title": "Cover & Hart, Nearest neighbor pattern classification, IEEE Trans. Information Theory (1967)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "perceptrons-book-1969",
+    "title": "Minsky & Papert, \"Perceptrons\"",
+    "date": "1969",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Marvin Minsky",
+      "Seymour Papert",
+      "MIT"
+    ],
+    "description": "A mathematical analysis of what single-layer perceptrons cannot compute, such as parity and connectedness with bounded-order predicates.",
+    "capabilityNote": "The proofs were correct for single layers. The book is widely credited with deflating neural-network funding in the 1970s, though historians dispute how much it caused.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "perceptron-1958"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://mitpress.mit.edu/9780262630221/perceptrons/",
+        "title": "MIT Press: Perceptrons (Minsky & Papert)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "linnainmaa-1970",
+    "title": "Linnainmaa, reverse-mode automatic differentiation",
+    "date": "1970",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Seppo Linnainmaa",
+      "University of Helsinki"
+    ],
+    "description": "A master's thesis, published in BIT in 1976, that described reverse-mode automatic differentiation, the algorithm behind backpropagation. It was not applied to neural networks.",
+    "capabilityNote": "Efficient gradients of any composite function.",
+    "majorUpdates": [
+      {
+        "date": "1976",
+        "title": "BIT publication",
+        "summary": "The method is published as \"Taylor expansion of the accumulated rounding error\".",
+        "source": "https://doi.org/10.1007/BF01931367"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1007/BF01931367",
+        "title": "Linnainmaa, Taylor expansion of the accumulated rounding error, BIT 16 (1976)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "werbos-1974",
+    "title": "Werbos, \"Beyond Regression\" (backprop for neural nets)",
+    "date": "1974",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Paul Werbos",
+      "Harvard"
+    ],
+    "description": "A PhD thesis proposing that multilayer networks be trained by propagating derivatives backwards. It went largely unnoticed until the 1980s.",
+    "capabilityNote": "Theory. Werbos applied it to neural networks explicitly in a 1982 paper.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "linnainmaa-1970"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/1404.7828",
+        "title": "Schmidhuber, Deep Learning in Neural Networks: An Overview (sec. 5.5, history of backprop)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "hubel-wiesel-1962",
+    "title": "Hubel & Wiesel, receptive fields in cat visual cortex",
+    "date": "1962",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "David Hubel",
+      "Torsten Wiesel"
+    ],
+    "description": "Found \"simple\" and \"complex\" cells arranged in a hierarchy that respond to oriented edges.",
+    "capabilityNote": "Neuroscience, not AI. It directly inspired the Neocognitron and later convolutional networks.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1113/jphysiol.1962.sp006837",
+        "title": "Hubel & Wiesel, Receptive fields, binocular interaction and functional architecture in the cat's visual cortex, J. Physiol. (1962)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "hmm-speech-1975",
+    "title": "Statistical (HMM) speech recognition at IBM and CMU",
+    "date": "1975",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "classical-ml"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "James Baker",
+      "Janet Baker",
+      "Frederick Jelinek",
+      "IBM"
+    ],
+    "description": "Modelled speech as a hidden Markov process and trained the models from data instead of hand-written rules.",
+    "capabilityNote": "This data-driven approach came to dominate speech recognition until about 2010.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "darpa-sur-harpy-1976"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1109/PROC.1976.10159",
+        "title": "Jelinek, Continuous speech recognition by statistical methods, Proc. IEEE (1976)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "neocognitron-1980",
+    "title": "Fukushima's Neocognitron",
+    "date": "1980",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Kunihiko Fukushima",
+      "NHK"
+    ],
+    "description": "A hierarchical network of alternating feature-extracting and pooling layers modelled on Hubel and Wiesel. It is the architectural ancestor of CNNs.",
+    "capabilityNote": "Recognised handwritten characters with some tolerance to shifts in position. It was trained without backpropagation.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "hubel-wiesel-1962"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1007/BF00344251",
+        "title": "Fukushima, Neocognitron, Biological Cybernetics 36 (1980)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "georgetown-ibm-1954",
+    "title": "Georgetown–IBM machine translation demonstration",
+    "date": "1954-01-07",
+    "type": "event",
+    "era": 2,
+    "primarySegment": "language",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Léon Dostert",
+      "Cuthbert Hurd",
+      "Paul Garvin",
+      "Georgetown University",
+      "IBM"
+    ],
+    "description": "A public demonstration of Russian-to-English translation on an IBM 701.",
+    "capabilityNote": "Translated more than 60 pre-selected sentences using 6 grammar rules and a 250-word vocabulary. The staged demo fed forecasts of fully automatic translation within a few years.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://aclanthology.org/www.mt-archive.info/00/AMTA-2004-Hutchins.pdf",
+        "title": "Hutchins, The Georgetown-IBM experiment demonstrated in January 1954 (AMTA 2004)"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Georgetown%E2%80%93IBM_experiment",
+        "title": "Wikipedia: Georgetown–IBM experiment"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "dendral-1965",
+    "title": "DENDRAL",
+    "date": "1965",
+    "type": "model",
+    "era": 2,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Edward Feigenbaum",
+      "Bruce Buchanan",
+      "Joshua Lederberg",
+      "Carl Djerassi",
+      "Stanford"
+    ],
+    "description": "A program that inferred molecular structure from mass-spectrometry data by applying chemists' heuristics. It is widely called the first expert system.",
+    "capabilityNote": "Proposed candidate structures for a narrow class of organic molecules at expert level, with results published in the chemistry literature.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "lisp-1958"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://profiles.nlm.nih.gov/spotlight/bb/feature/ai",
+        "title": "NLM, Joshua Lederberg Papers: Computers, Artificial Intelligence, and Expert Systems (DENDRAL)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "eliza-1966",
+    "title": "ELIZA",
+    "date": "1966-01",
+    "type": "model",
+    "era": 2,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "personal-agents"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Joseph Weizenbaum",
+      "MIT"
+    ],
+    "description": "A keyword-and-template chatbot whose best-known script, DOCTOR, parodied a Rogerian therapist.",
+    "capabilityNote": "Reflected user input back using pattern rules, with no understanding. Users still attributed understanding to it (the \"ELIZA effect\"), which turned Weizenbaum into a critic of AI.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "lisp-1958"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1145/365153.365168",
+        "title": "Weizenbaum, ELIZA—a computer program for the study of natural language communication between man and machine, CACM (1966)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "shrdlu-1970",
+    "title": "SHRDLU",
+    "date": "1970",
+    "type": "model",
+    "era": 2,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Terry Winograd",
+      "MIT"
+    ],
+    "description": "A natural-language dialogue system for a simulated blocks world that parsed commands, planned actions and answered questions about what it had done.",
+    "capabilityNote": "Handled rich dialogue inside a closed world of a few dozen objects and did not scale beyond it. Winograd later abandoned the approach.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "lisp-1958"
+      },
+      {
+        "type": "successor-of",
+        "target": "eliza-1966"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://hci.stanford.edu/winograd/shrdlu/",
+        "title": "Terry Winograd, SHRDLU (Stanford HCI)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "mycin-1972",
+    "title": "MYCIN",
+    "date": "1972",
+    "type": "model",
+    "era": 2,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Edward Shortliffe",
+      "Bruce Buchanan",
+      "Stanford"
+    ],
+    "description": "A rule-based system of about 600 rules for choosing antibiotics for blood infections and meningitis. It used certainty factors to handle uncertainty and could explain its reasoning.",
+    "capabilityNote": "In a blinded 1979 evaluation on meningitis cases its recommendations were rated acceptable about as often as those of Stanford infectious-disease faculty. It was never used in routine clinical care because of integration, liability and data-entry burden.",
+    "majorUpdates": [
+      {
+        "date": "1979-09",
+        "title": "JAMA evaluation",
+        "summary": "Blinded comparison with infectious-disease experts on meningitis cases.",
+        "source": "https://doi.org/10.1001/jama.1979.03300120033020"
+      }
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "dendral-1965"
+      },
+      {
+        "type": "uses",
+        "target": "lisp-1958"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1001/jama.1979.03300120033020",
+        "title": "Yu et al., Antimicrobial selection by a computer, JAMA 242 (1979)"
+      },
+      {
+        "url": "https://www.shortliffe.net/Buchanan-Shortliffe-1984/MYCIN%20Book.htm",
+        "title": "Buchanan & Shortliffe, Rule-Based Expert Systems: The MYCIN Experiments (1984)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "eniac-1946",
+    "title": "ENIAC unveiled",
+    "date": "1946-02-15",
+    "type": "product",
+    "era": 1,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "J. Presper Eckert",
+      "John Mauchly",
+      "University of Pennsylvania",
+      "US Army"
+    ],
+    "description": "A general-purpose electronic digital computer, built for artillery firing tables and publicly unveiled in 1946.",
+    "capabilityNote": "About 5,000 additions per second. It was reprogrammed by rewiring panels.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "babbage-analytical-engine"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.seas.upenn.edu/about/history-heritage/eniac/",
+        "title": "Penn Engineering: ENIAC"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "transistor-1947",
+    "title": "Point-contact transistor",
+    "date": "1947-12-16",
+    "type": "product",
+    "era": 1,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "John Bardeen",
+      "Walter Brattain",
+      "William Shockley",
+      "Bell Labs"
+    ],
+    "description": "A solid-state amplifier and switch that replaced vacuum tubes.",
+    "capabilityNote": "Made reliable, dense and cheap digital logic possible; it underlies all later compute scaling.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/",
+        "title": "Computer History Museum: Invention of the point-contact transistor"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "shannon-chess-1950",
+    "title": "Shannon, \"Programming a Computer for Playing Chess\"",
+    "date": "1950-03",
+    "type": "paper",
+    "era": 1,
+    "primarySegment": "rl-games",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Claude Shannon"
+    ],
+    "description": "Set out minimax search with an evaluation function, and contrasted brute-force (Type A) with selective (Type B) strategies.",
+    "capabilityNote": "A blueprint only. The same framework, scaled up, beat the world champion in 1997.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "shannon-1937-switching"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1080/14786445008521796",
+        "title": "Shannon, Programming a Computer for Playing Chess, Philosophical Magazine (1950)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "unimate-1961",
+    "title": "Unimate industrial robot at GM",
+    "date": "1961",
+    "type": "product",
+    "era": 2,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "George Devol",
+      "Joseph Engelberger",
+      "Unimation",
+      "General Motors"
+    ],
+    "description": "A programmable hydraulic arm installed on a General Motors die-casting line.",
+    "capabilityNote": "Repeated taught motion sequences with no perception. It was industrially useful.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.computerhistory.org/timeline/ai-robotics/",
+        "title": "Computer History Museum: AI & Robotics timeline"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "shakey-1966",
+    "title": "Shakey the robot",
+    "date": "1966",
+    "type": "model",
+    "era": 2,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [
+      "symbolic-logic",
+      "vision"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Charles Rosen",
+      "Nils Nilsson",
+      "Peter Hart",
+      "Bertram Raphael",
+      "SRI International"
+    ],
+    "description": "The first mobile robot to perceive its surroundings, plan with STRIPS and act, developed at SRI from 1966 to 1972. The project also produced A* and the Hough-transform line detector.",
+    "capabilityNote": "Pushed blocks between rooms in a prepared environment of plain walls and simple objects, taking minutes to hours per action. LIFE called it the \"first electronic person\" in 1970.",
+    "majorUpdates": [
+      {
+        "date": "1979-10",
+        "title": "Stanford Cart crosses a room",
+        "summary": "Moravec's camera cart crosses a chair-filled room in about five hours, showing how hard perception and mobility remained.",
+        "source": "https://frc.ri.cmu.edu/~hpm/project.archive/robot.papers/1975.cart/1980.html.thesis/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "a-star-1968"
+      },
+      {
+        "type": "uses",
+        "target": "lisp-1958"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.sri.com/hoi/shakey-the-robot/",
+        "title": "SRI International: Shakey the Robot"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "moores-law-1965",
+    "title": "Moore, \"Cramming more components onto integrated circuits\"",
+    "date": "1965-04-19",
+    "type": "paper",
+    "era": 1,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "Gordon Moore",
+      "Fairchild"
+    ],
+    "description": "Observed that the number of components per chip was doubling about every year; Moore revised the rate to every two years in 1975.",
+    "capabilityNote": "An empirical trend that held for decades and is the compute backdrop to every later capability.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transistor-1947"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.computerhistory.org/siliconengine/moores-law-predicts-the-future-of-integrated-circuits/",
+        "title": "Computer History Museum: Moore's Law predicts the future of integrated circuits"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "alpac-1966",
+    "title": "ALPAC report, \"Language and Machines\"",
+    "date": "1966-11",
+    "type": "event",
+    "era": 2,
+    "primarySegment": "language",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Automatic Language Processing Advisory Committee",
+      "US National Academy of Sciences"
+    ],
+    "description": "Found machine translation slower, less accurate and more expensive than human translation. US funding for machine translation was cut sharply afterwards.",
+    "capabilityNote": "An evaluation event: the first formal public check on AI claims, 12 years after the Georgetown–IBM demo.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "georgetown-ibm-1954"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://nap.nationalacademies.org/catalog/9547",
+        "title": "National Academies Press: Language and Machines (ALPAC report, 1966)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "lighthill-report-1973",
+    "title": "Lighthill Report, \"Artificial Intelligence: A General Survey\"",
+    "date": "1973",
+    "type": "event",
+    "era": 2,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "robotics-embodied",
+      "language"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Sir James Lighthill",
+      "UK Science Research Council"
+    ],
+    "description": "A review for the UK Science Research Council that found AI had not delivered the impact promised and singled out combinatorial explosion. A televised BBC debate followed.",
+    "capabilityNote": "An evaluation event. The UK cut AI support to a few universities.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "alpac-1966"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://rodsmith.nz/wp-content/uploads/Lighthill_1973_Report.pdf",
+        "title": "Lighthill, Artificial Intelligence: A General Survey (1973), full text"
+      },
+      {
+        "url": "http://www.chilton-computing.org.uk/inf/literature/reports/lighthill_report/contents.htm",
+        "title": "Chilton Computing archive: Lighthill Report"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "darpa-sur-harpy-1976",
+    "title": "DARPA Speech Understanding Research programme (Harpy, Hearsay-II)",
+    "date": "1971",
+    "type": "event",
+    "era": 2,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "DARPA",
+      "CMU",
+      "Raj Reddy",
+      "Bruce Lowerre",
+      "BBN",
+      "SRI"
+    ],
+    "description": "A five-year programme (1971–1976) aimed at understanding connected speech with a 1,000-word vocabulary.",
+    "capabilityNote": "CMU's Harpy met the 1,000-word target with a constrained grammar and cooperative speakers. DARPA judged the results impractical and did not renew the programme.",
+    "majorUpdates": [
+      {
+        "date": "1976",
+        "title": "Programme ends",
+        "summary": "Harpy meets the target; DARPA declines to renew."
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://ai.stanford.edu/~nilsson/QAI/qai.pdf",
+        "title": "Nils J. Nilsson, The Quest for Artificial Intelligence, ch. 14 (Speech understanding)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "first-ai-winter",
+    "title": "First AI winter",
+    "date": "1974",
+    "type": "event",
+    "era": 2,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "language",
+      "neural-deep-learning"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "DARPA",
+      "UK Science Research Council",
+      "US National Research Council"
+    ],
+    "description": "AI funding contracted from about 1974 to 1980 after ALPAC, the Lighthill Report, the Mansfield Amendments that pushed DARPA towards mission-oriented work, and DARPA's disappointment with speech understanding.",
+    "capabilityNote": "Results in toy domains had not carried over to real-world scale. Combinatorial explosion and missing common-sense knowledge were the main technical limits.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "lighthill-report-1973"
+      },
+      {
+        "type": "successor-of",
+        "target": "alpac-1966"
+      },
+      {
+        "type": "successor-of",
+        "target": "perceptrons-book-1969"
+      },
+      {
+        "type": "successor-of",
+        "target": "darpa-sur-harpy-1976"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://ai.stanford.edu/~nilsson/QAI/qai.pdf",
+        "title": "Nils J. Nilsson, The Quest for Artificial Intelligence, on the 1970s funding contraction and speech understanding"
+      },
+      {
+        "url": "https://rodsmith.nz/wp-content/uploads/Lighthill_1973_Report.pdf",
+        "title": "Lighthill Report (1973)"
+      }
+    ],
+    "heroMoment": true,
+    "roadFeature": "frozen",
+    "status": "published"
+  },
+  {
+    "id": "xcon-r1-1980",
+    "title": "R1 / XCON at Digital Equipment Corporation",
+    "date": "1980",
+    "type": "product",
+    "era": 2,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "John McDermott",
+      "CMU",
+      "Digital Equipment Corporation"
+    ],
+    "description": "A production-rule system written in OPS5 that configured VAX computer orders, in production at DEC from 1980. It was the first commercially successful expert system.",
+    "capabilityNote": "Configured orders with high accuracy and grew to thousands of rules. Maintaining those rules became a major cost, a classic case of the knowledge-acquisition bottleneck.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "mycin-1972"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1016/0004-3702(82)90021-2",
+        "title": "McDermott, R1: A rule-based configurer of computer systems, Artificial Intelligence 19 (1982)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "symbolics-lisp-machines",
+    "title": "Lisp machines (Symbolics, LMI)",
+    "date": "1980",
+    "type": "org",
+    "era": 2,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "compute",
+    "creators": [
+      "Symbolics",
+      "Lisp Machines Inc.",
+      "MIT AI Lab",
+      "Texas Instruments",
+      "Xerox"
+    ],
+    "description": "Workstations designed specifically to run Lisp for AI development, sold by MIT AI Lab spinoffs from about 1980.",
+    "capabilityNote": "Strong development environments, but by about 1987 general-purpose workstations and PCs running Lisp matched them at a fraction of the price and the market collapsed.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "lisp-1958"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://ai.stanford.edu/~nilsson/QAI/qai.pdf",
+        "title": "Nils J. Nilsson, The Quest for Artificial Intelligence, on the AI winter and the Lisp-machine collapse"
+      }
+    ],
+    "roadFeature": "dead-end",
+    "status": "published"
+  },
+  {
+    "id": "fifth-generation-1982",
+    "title": "Japan's Fifth Generation Computer Systems project (FGCS / ICOT)",
+    "date": "1982-04",
+    "type": "org",
+    "era": 2,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "compute-hardware",
+      "language"
+    ],
+    "stackLayer": "compute",
+    "creators": [
+      "MITI",
+      "ICOT",
+      "Kazuhiro Fuchi"
+    ],
+    "description": "A ten-year Japanese national programme to build massively parallel inference machines with logic programming at the core, starting from Prolog. It ended in 1992.",
+    "capabilityNote": "Built PSI and PIM inference machines that met the target of about 150 million logical inferences per second, and about 20 demo applications ran in 1992. None were deployed commercially.",
+    "majorUpdates": [
+      {
+        "date": "1992",
+        "title": "Final conference",
+        "summary": "Project closes with applications in demonstration form only.",
+        "source": "https://arxiv.org/abs/2201.10816"
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "prolog"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2201.10816",
+        "title": "Körner et al., Fifty Years of Prolog and Beyond, TPLP (2022), FGCS section"
+      },
+      {
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/0167739X93900027",
+        "title": "FGCS project appraisal, Future Generation Computer Systems (1993)"
+      }
+    ],
+    "roadFeature": "dead-end",
+    "status": "published"
+  },
+  {
+    "id": "strategic-computing-initiative-1983",
+    "title": "DARPA Strategic Computing Initiative (and UK Alvey Programme)",
+    "date": "1983",
+    "type": "event",
+    "era": 2,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "compute-hardware",
+      "robotics-embodied"
+    ],
+    "stackLayer": "compute",
+    "creators": [
+      "DARPA",
+      "UK Alvey Directorate"
+    ],
+    "description": "About $1B over ten years for machine intelligence, including an autonomous land vehicle, a pilot's associate and battle management, partly in response to Japan's FGCS.",
+    "capabilityNote": "Funded the Autonomous Land Vehicle and Navlab work and parallel hardware such as the Connection Machine. DARPA scaled back the AI goals from about 1987.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "fifth-generation-1982"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://mitpress.mit.edu/9780262182065/strategic-computing/",
+        "title": "Roland & Shiman, Strategic Computing (MIT Press, 2002)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "cyc-1984",
+    "title": "Cyc",
+    "date": "1984",
+    "type": "model",
+    "era": 2,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "data",
+    "creators": [
+      "Douglas Lenat",
+      "MCC",
+      "Cycorp"
+    ],
+    "description": "A long-running effort, started at MCC, to hand-encode common-sense knowledge as logical assertions.",
+    "capabilityNote": "Accumulated millions of assertions over decades but never reached the broad common-sense reasoning or self-directed learning its founders aimed for.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "minsky-frames-1974"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1145/219717.219745",
+        "title": "Lenat, CYC: A large-scale investment in knowledge infrastructure, CACM (1995)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "brooks-subsumption-1986",
+    "title": "Brooks's subsumption architecture",
+    "date": "1986-03",
+    "type": "paper",
+    "era": 2,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Rodney Brooks",
+      "MIT"
+    ],
+    "description": "Layered reactive behaviours with no central world model, in contrast to Shakey-style sense-plan-act robots.",
+    "capabilityNote": "Produced robust insect-like walking and obstacle avoidance, such as the Genghis hexapod in 1989. It led to iRobot and the Roomba.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "shakey-1966"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1109/JRA.1986.1087032",
+        "title": "Brooks, A robust layered control system for a mobile robot, IEEE J. Robotics and Automation (1986)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "second-ai-winter",
+    "title": "Second AI winter",
+    "date": "1987",
+    "type": "event",
+    "era": 2,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Industry-wide"
+    ],
+    "description": "From about 1987 to 1993 the Lisp-machine market collapsed, expert systems proved brittle and costly to maintain, DARPA cut its Strategic Computing AI goals and FGCS ended without commercial take-up.",
+    "capabilityNote": "Expert systems survived in niche use under other names such as business rules. The label \"AI\" became a liability for funding.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "symbolics-lisp-machines"
+      },
+      {
+        "type": "successor-of",
+        "target": "fifth-generation-1982"
+      },
+      {
+        "type": "successor-of",
+        "target": "strategic-computing-initiative-1983"
+      },
+      {
+        "type": "successor-of",
+        "target": "xcon-r1-1980"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://ai.stanford.edu/~nilsson/QAI/qai.pdf",
+        "title": "Nils J. Nilsson, The Quest for Artificial Intelligence, Part V"
+      }
+    ],
+    "roadFeature": "frozen",
+    "status": "published"
+  },
+  {
+    "id": "hopfield-network-1982",
+    "title": "Hopfield networks",
+    "date": "1982-04",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "John Hopfield",
+      "Caltech"
+    ],
+    "description": "A recurrent network with symmetric weights and an energy function in which stored patterns become attractors, giving content-addressable memory.",
+    "capabilityNote": "Recalled stored patterns from partial or noisy cues, with capacity of about 0.14N patterns for N units. Hopfield shared the 2024 Nobel Prize in Physics with Hinton for this line of work.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "mcculloch-pitts-1943"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1073/pnas.79.8.2554",
+        "title": "Hopfield, Neural networks and physical systems with emergent collective computational abilities, PNAS 79 (1982)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "boltzmann-machine-1985",
+    "title": "Boltzmann machines",
+    "date": "1985",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "generative-media"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "David Ackley",
+      "Geoffrey Hinton",
+      "Terrence Sejnowski"
+    ],
+    "description": "A stochastic recurrent network with hidden units and a learning rule for probabilistic generative models.",
+    "capabilityNote": "Learned internal representations on small problems, but learning was very slow. The restricted variant (RBM) became practical in 2006.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "hopfield-network-1982"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1207/s15516709cog0901_7",
+        "title": "Ackley, Hinton & Sejnowski, A learning algorithm for Boltzmann machines, Cognitive Science 9 (1985)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "backprop-1986",
+    "title": "Rumelhart, Hinton & Williams, \"Learning representations by back-propagating errors\"",
+    "date": "1986-10-09",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "David Rumelhart",
+      "Geoffrey Hinton",
+      "Ronald Williams",
+      "PDP Research Group"
+    ],
+    "description": "Showed that backpropagation trains multilayer networks whose hidden units learn useful internal representations. The algorithm had earlier forms from Linnainmaa, Werbos, Parker and LeCun.",
+    "capabilityNote": "Solved problems a single-layer perceptron cannot, such as XOR and parity, and learned family-tree relations. Data and compute limited it to small networks.",
+    "majorUpdates": [
+      {
+        "date": "1986",
+        "title": "PDP volumes",
+        "summary": "Parallel Distributed Processing (MIT Press) popularises the connectionist programme."
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "linnainmaa-1970"
+      },
+      {
+        "type": "built-on",
+        "target": "werbos-1974"
+      },
+      {
+        "type": "successor-of",
+        "target": "perceptrons-book-1969"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1038/323533a0",
+        "title": "Rumelhart, Hinton & Williams, Nature 323 (1986)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "nettalk-1987",
+    "title": "NETtalk",
+    "date": "1987",
+    "type": "model",
+    "era": 3,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "neural-deep-learning",
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Terrence Sejnowski",
+      "Charles Rosenberg",
+      "Johns Hopkins"
+    ],
+    "description": "A backprop network that learned English text-to-phoneme conversion and drove a DECtalk speech synthesiser.",
+    "capabilityNote": "Learned pronunciation from examples, reaching about 90% phoneme accuracy on its training text. Widely demonstrated, including on NBC's Today show.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "backprop-1986"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.complex-systems.com/abstracts/v01_i01_a10/",
+        "title": "Sejnowski & Rosenberg, Parallel networks that learn to pronounce English text, Complex Systems 1 (1987)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "lenet-1989",
+    "title": "LeCun et al., convolutional network for zip-code digits",
+    "date": "1989",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Yann LeCun",
+      "Bernhard Boser",
+      "John Denker",
+      "AT&T Bell Labs"
+    ],
+    "description": "A convolutional network with shared weights trained end-to-end by backpropagation on US Postal Service handwritten zip codes.",
+    "capabilityNote": "About 5% test error on USPS digits. It led to commercial check-reading systems at AT&T and NCR in the 1990s.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "backprop-1986"
+      },
+      {
+        "type": "inspired-by",
+        "target": "neocognitron-1980"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1162/neco.1989.1.4.541",
+        "title": "LeCun et al., Backpropagation Applied to Handwritten Zip Code Recognition, Neural Computation 1 (1989)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "lstm-1997",
+    "title": "Long Short-Term Memory (LSTM)",
+    "date": "1997-11-15",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "speech-audio",
+      "language"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Sepp Hochreiter",
+      "Jürgen Schmidhuber",
+      "TU Munich",
+      "IDSIA"
+    ],
+    "description": "A recurrent architecture with gated memory cells that addresses the vanishing-gradient problem Hochreiter identified in 1991.",
+    "capabilityNote": "Learned dependencies over more than 1,000 time steps on synthetic tasks. By 2009 LSTM-based systems won handwriting-recognition competitions.",
+    "majorUpdates": [
+      {
+        "date": "2000",
+        "title": "Forget gates",
+        "summary": "Gers, Schmidhuber and Cummins add forget gates, the form most later systems used."
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "backprop-1986"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1162/neco.1997.9.8.1735",
+        "title": "Hochreiter & Schmidhuber, Long Short-Term Memory, Neural Computation 9 (1997)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "bengio-nplm-2003",
+    "title": "Bengio et al., \"A Neural Probabilistic Language Model\"",
+    "date": "2003-02",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "neural-deep-learning",
+      "foundation-models"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Yoshua Bengio",
+      "Réjean Ducharme",
+      "Pascal Vincent",
+      "Christian Jauvin",
+      "Université de Montréal"
+    ],
+    "description": "Learned distributed word representations (embeddings) jointly with a neural network that predicts the next word.",
+    "capabilityNote": "Beat n-gram perplexity on small corpora but was expensive to train. An ancestor of word2vec and later neural language models.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "backprop-1986"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf",
+        "title": "Bengio et al., A Neural Probabilistic Language Model, JMLR 3 (2003)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "deep-belief-nets-2006",
+    "title": "Deep belief nets and greedy layer-wise pretraining",
+    "date": "2006-07",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "generative-media"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Geoffrey Hinton",
+      "Simon Osindero",
+      "Yee-Whye Teh",
+      "Ruslan Salakhutdinov",
+      "University of Toronto"
+    ],
+    "description": "Stacked restricted Boltzmann machines trained one layer at a time and then fine-tuned, showing that deep networks could be trained. The \"deep learning\" label followed.",
+    "capabilityNote": "1.25% MNIST error without convolution, and better dimensionality reduction than PCA in the companion Science paper.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "boltzmann-machine-1985"
+      },
+      {
+        "type": "built-on",
+        "target": "backprop-1986"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1162/neco.2006.18.7.1527",
+        "title": "Hinton, Osindero & Teh, A Fast Learning Algorithm for Deep Belief Nets, Neural Computation 18 (2006)"
+      },
+      {
+        "url": "https://doi.org/10.1126/science.1127647",
+        "title": "Hinton & Salakhutdinov, Reducing the Dimensionality of Data with Neural Networks, Science 313 (2006)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "cart-decision-trees-1984",
+    "title": "Decision-tree learning (CART and ID3)",
+    "date": "1984",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "classical-ml",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Leo Breiman",
+      "Jerome Friedman",
+      "Richard Olshen",
+      "Charles Stone",
+      "J. Ross Quinlan"
+    ],
+    "description": "Methods for learning decision trees from data, so that rules were induced from examples instead of from interviews with experts.",
+    "capabilityNote": "Produced readable classifiers from tabular data, a way round the expert-system knowledge bottleneck.",
+    "majorUpdates": [
+      {
+        "date": "1986",
+        "title": "Quinlan's ID3",
+        "summary": "\"Induction of Decision Trees\" in Machine Learning 1.",
+        "source": "https://doi.org/10.1007/BF00116251"
+      },
+      {
+        "date": "1993",
+        "title": "C4.5",
+        "summary": "Quinlan's successor to ID3."
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "xcon-r1-1980"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1007/BF00116251",
+        "title": "Quinlan, Induction of Decision Trees, Machine Learning 1 (1986)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "pearl-bayesian-networks-1988",
+    "title": "Pearl, \"Probabilistic Reasoning in Intelligent Systems\" (Bayesian networks)",
+    "date": "1988",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "classical-ml",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Judea Pearl",
+      "UCLA"
+    ],
+    "description": "Graphical models for representing uncertain knowledge, with efficient inference by belief propagation.",
+    "capabilityNote": "Replaced ad hoc certainty factors with sound probability and was used in diagnosis and fault-detection tools. Pearl received the 2011 Turing Award.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "mycin-1972"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://amturing.acm.org/award_winners/pearl_2658896.cfm",
+        "title": "ACM A.M. Turing Award: Judea Pearl"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "td-learning-q-learning-1988",
+    "title": "Temporal-difference learning and Q-learning",
+    "date": "1988",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Richard Sutton",
+      "Chris Watkins",
+      "Peter Dayan"
+    ],
+    "description": "Sutton's TD learning (1988) learns predictions from the difference between successive estimates; Watkins's Q-learning (1989) learns action values off-policy.",
+    "capabilityNote": "The core reinforcement-learning algorithms behind TD-Gammon and, much later, DQN.",
+    "majorUpdates": [
+      {
+        "date": "1992",
+        "title": "Q-learning convergence proof",
+        "summary": "Watkins & Dayan publish the convergence proof.",
+        "source": "https://doi.org/10.1007/BF00992698"
+      }
+    ],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "samuel-checkers"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1007/BF00115009",
+        "title": "Sutton, Learning to predict by the methods of temporal differences, Machine Learning 3 (1988)"
+      },
+      {
+        "url": "https://doi.org/10.1007/BF00992698",
+        "title": "Watkins & Dayan, Q-learning, Machine Learning 8 (1992)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "svm-1992",
+    "title": "Support vector machines",
+    "date": "1992-07",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "classical-ml",
+    "secondarySegments": [
+      "vision",
+      "language"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Vladimir Vapnik",
+      "Bernhard Boser",
+      "Isabelle Guyon",
+      "Corinna Cortes",
+      "AT&T Bell Labs"
+    ],
+    "description": "Maximum-margin classifiers that use the kernel trick for non-linear boundaries, grounded in statistical learning theory.",
+    "capabilityNote": "State of the art for text classification and many benchmarks from the late 1990s to the late 2000s, matching or beating neural networks on MNIST in that period.",
+    "majorUpdates": [
+      {
+        "date": "1995",
+        "title": "Soft-margin SVM",
+        "summary": "Cortes & Vapnik, Support-vector networks.",
+        "source": "https://doi.org/10.1007/BF00994018"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "lenet-1989"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1145/130385.130401",
+        "title": "Boser, Guyon & Vapnik, A training algorithm for optimal margin classifiers, COLT (1992)"
+      },
+      {
+        "url": "https://doi.org/10.1007/BF00994018",
+        "title": "Cortes & Vapnik, Support-vector networks, Machine Learning 20 (1995)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "statistical-mt-ibm-1993",
+    "title": "IBM statistical machine translation",
+    "date": "1993",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "classical-ml"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Peter Brown",
+      "Stephen Della Pietra",
+      "Vincent Della Pietra",
+      "Robert Mercer",
+      "IBM"
+    ],
+    "description": "Learned translation models (IBM Models 1–5) from parallel text of Canadian parliamentary debates, without hand-written linguistic rules.",
+    "capabilityNote": "Showed that data-driven translation was competitive with rule-based systems. It led to Google Translate's statistical system in 2006.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "alpac-1966"
+      },
+      {
+        "type": "inspired-by",
+        "target": "hmm-speech-1975"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://aclanthology.org/J93-2003/",
+        "title": "Brown et al., The Mathematics of Statistical Machine Translation, Computational Linguistics 19 (1993)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "ensemble-methods",
+    "title": "Ensemble methods: AdaBoost, random forests and gradient boosting",
+    "date": "1995",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "classical-ml",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Yoav Freund",
+      "Robert Schapire",
+      "Leo Breiman",
+      "Jerome Friedman"
+    ],
+    "description": "Methods that combine many weak learners, usually decision trees, into one accurate predictor: AdaBoost (1995), random forests (2001) and gradient boosting (2001).",
+    "capabilityNote": "Strong off-the-shelf accuracy on tabular data. AdaBoost powered Viola–Jones face detection and random forests powered Kinect's body-part recognition.",
+    "majorUpdates": [
+      {
+        "date": "2001-10",
+        "title": "Random forests",
+        "summary": "Breiman's ensembles of decorrelated trees on bootstrap samples.",
+        "source": "https://doi.org/10.1023/A:1010933404324"
+      },
+      {
+        "date": "2001",
+        "title": "Gradient boosting machines",
+        "summary": "Friedman frames boosting as gradient descent in function space.",
+        "source": "https://doi.org/10.1214/aos/1013203451"
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "cart-decision-trees-1984"
+      },
+      {
+        "type": "competes-with",
+        "target": "svm-1992"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1006/jcss.1997.1504",
+        "title": "Freund & Schapire, A Decision-Theoretic Generalization of On-Line Learning and an Application to Boosting, JCSS (1997)"
+      },
+      {
+        "url": "https://doi.org/10.1023/A:1010933404324",
+        "title": "Breiman, Random Forests, Machine Learning 45 (2001)"
+      },
+      {
+        "url": "https://doi.org/10.1214/aos/1013203451",
+        "title": "Friedman, Greedy function approximation: A gradient boosting machine, Annals of Statistics (2001)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "netflix-prize-2006",
+    "title": "Netflix Prize",
+    "date": "2006-10-02",
+    "type": "event",
+    "era": 3,
+    "primarySegment": "classical-ml",
+    "secondarySegments": [
+      "llmops-eval"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Netflix",
+      "BellKor's Pragmatic Chaos"
+    ],
+    "description": "A $1M open competition to improve Netflix's rating predictions by 10% RMSE, using a public dataset of 100 million ratings.",
+    "capabilityNote": "Won in 2009 with a 10.06% improvement by a large ensemble built around matrix factorisation. Netflix later said it did not deploy the full winning ensemble because the engineering cost outweighed the gain.",
+    "majorUpdates": [
+      {
+        "date": "2009-09-21",
+        "title": "Prize awarded",
+        "summary": "BellKor's Pragmatic Chaos wins with a 10.06% improvement."
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.netflixprize.com/",
+        "title": "Netflix Prize"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "scikit-learn-2007",
+    "title": "scikit-learn",
+    "date": "2007",
+    "type": "oss-repo",
+    "era": 3,
+    "primarySegment": "classical-ml",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "David Cournapeau",
+      "INRIA",
+      "Fabian Pedregosa",
+      "Gaël Varoquaux",
+      "Alexandre Gramfort"
+    ],
+    "description": "A Python library with one consistent API for classical machine learning, begun as a 2007 Google Summer of Code project and first publicly released in 2010.",
+    "capabilityNote": "Made classical ML (SVMs, forests, boosting, clustering) routine for ordinary developers and data scientists.",
+    "majorUpdates": [
+      {
+        "date": "2010-02",
+        "title": "First public release",
+        "summary": "INRIA team ships the first public version."
+      },
+      {
+        "date": "2011",
+        "title": "JMLR paper",
+        "summary": "Pedregosa et al., Scikit-learn: Machine Learning in Python.",
+        "source": "https://jmlr.org/papers/v12/pedregosa11a.html"
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "svm-1992"
+      },
+      {
+        "type": "uses",
+        "target": "ensemble-methods"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://jmlr.org/papers/v12/pedregosa11a.html",
+        "title": "Pedregosa et al., Scikit-learn: Machine Learning in Python, JMLR 12 (2011)"
+      }
+    ],
+    "status": "published",
+    "oss": {
+      "license": "BSD-3-Clause",
+      "repoUrl": "https://github.com/scikit-learn/scikit-learn"
+    }
+  },
+  {
+    "id": "td-gammon-1992",
+    "title": "TD-Gammon",
+    "date": "1992",
+    "type": "model",
+    "era": 3,
+    "primarySegment": "rl-games",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Gerald Tesauro",
+      "IBM Research"
+    ],
+    "description": "A neural network trained by TD(λ) self-play to evaluate backgammon positions.",
+    "capabilityNote": "Played at or near the level of top human players and changed expert opening theory; humans adopted its moves.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "td-learning-q-learning-1988"
+      },
+      {
+        "type": "built-on",
+        "target": "backprop-1986"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1145/203330.203343",
+        "title": "Tesauro, Temporal difference learning and TD-Gammon, CACM 38 (1995)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "chinook-1994",
+    "title": "Chinook (checkers)",
+    "date": "1994",
+    "type": "model",
+    "era": 1,
+    "primarySegment": "rl-games",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Jonathan Schaeffer",
+      "University of Alberta"
+    ],
+    "description": "A checkers program built on alpha-beta search and endgame databases.",
+    "capabilityNote": "The first program to win a human world championship title, in 1994, after Marion Tinsley withdrew from the match through illness. In 2007 the team proved that perfect play is a draw.",
+    "majorUpdates": [
+      {
+        "date": "2007-07-19",
+        "title": "Checkers solved",
+        "summary": "Schaeffer et al. prove perfect play leads to a draw (Science).",
+        "source": "https://doi.org/10.1126/science.1144079"
+      }
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "samuel-checkers"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1126/science.1144079",
+        "title": "Schaeffer et al., Checkers Is Solved, Science 317 (2007)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "deep-blue-1997",
+    "title": "IBM Deep Blue defeats Garry Kasparov",
+    "date": "1997-05-11",
+    "type": "event",
+    "era": 1,
+    "primarySegment": "rl-games",
+    "secondarySegments": [
+      "compute-hardware",
+      "symbolic-logic"
+    ],
+    "stackLayer": "compute",
+    "creators": [
+      "Feng-hsiung Hsu",
+      "Murray Campbell",
+      "Joseph Hoane",
+      "IBM"
+    ],
+    "description": "A massively parallel alpha-beta search system with 480 custom chess chips and a hand-tuned evaluation function beat the world champion 3.5–2.5 in a six-game rematch.",
+    "capabilityNote": "Searched about 200 million positions per second and did little learning: brute-force search as Shannon's Type A had anticipated, 29 years after Simon and Newell's ten-year forecast.",
+    "majorUpdates": [
+      {
+        "date": "1996-02",
+        "title": "First match lost",
+        "summary": "Kasparov wins the first match 4–2."
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "shannon-chess-1950"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1016/S0004-3702(01)00129-1",
+        "title": "Campbell, Hoane & Hsu, Deep Blue, Artificial Intelligence 134 (2002)"
+      },
+      {
+        "url": "https://www.ibm.com/history/deep-blue",
+        "title": "IBM History: Deep Blue"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "alvinn-navlab-1989",
+    "title": "ALVINN and CMU Navlab (neural-network driving)",
+    "date": "1989",
+    "type": "model",
+    "era": 4,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [
+      "vision",
+      "neural-deep-learning"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Dean Pomerleau",
+      "Todd Jochem",
+      "Chuck Thorpe",
+      "CMU"
+    ],
+    "description": "A small backprop network that mapped camera images directly to steering commands, an early end-to-end learned driving system.",
+    "capabilityNote": "In 1995 Navlab 5 steered for about 98% of a roughly 2,800-mile trip from Pittsburgh to San Diego. Humans handled throttle and brakes and took over in hard conditions.",
+    "majorUpdates": [
+      {
+        "date": "1995-07",
+        "title": "No Hands Across America",
+        "summary": "Navlab 5 steers for about 98% of a cross-country trip.",
+        "source": "https://www.cs.cmu.edu/~tjochem/nhaa/nhaa_home_page.html"
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "backprop-1986"
+      },
+      {
+        "type": "created-by",
+        "target": "strategic-computing-initiative-1983"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cs.cmu.edu/~tjochem/nhaa/nhaa_home_page.html",
+        "title": "CMU: No Hands Across America"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "apple-newton-1993",
+    "title": "Apple Newton MessagePad (handwriting recognition)",
+    "date": "1993-08-02",
+    "type": "product",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "personal-agents"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Apple"
+    ],
+    "description": "A personal digital assistant marketed on its handwriting recognition.",
+    "capabilityNote": "The first version's recognition was widely mocked; later versions with the Rosetta recogniser improved considerably. Apple discontinued the line in 1998.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.computerhistory.org/revolution/mobile-computing/18/321",
+        "title": "Computer History Museum: Apple Newton"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "dragon-naturallyspeaking-1997",
+    "title": "Dragon NaturallySpeaking",
+    "date": "1997-06",
+    "type": "product",
+    "era": 4,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "James Baker",
+      "Janet Baker",
+      "Dragon Systems"
+    ],
+    "description": "The first consumer software for general-vocabulary continuous-speech dictation on PCs, based on hidden Markov models.",
+    "capabilityNote": "Usable dictation after speaker enrolment and training. Accuracy fell with background noise and accents.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "hmm-speech-1975"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Dragon_NaturallySpeaking",
+        "title": "Wikipedia: Dragon NaturallySpeaking"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "lenet5-mnist-1998",
+    "title": "LeNet-5 and MNIST",
+    "date": "1998-11",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Yann LeCun",
+      "Léon Bottou",
+      "Yoshua Bengio",
+      "Patrick Haffner",
+      "AT&T Labs"
+    ],
+    "description": "A seven-layer CNN combined with graph transformer networks for document reading. The paper introduced the MNIST benchmark of 60,000 training and 10,000 test digits.",
+    "capabilityNote": "About 0.8–0.95% error on MNIST. It was part of an NCR check-reading system that, by the authors' account, read a substantial share of US checks in the late 1990s.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "lenet-1989"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1109/5.726791",
+        "title": "LeCun, Bottou, Bengio & Haffner, Gradient-based learning applied to document recognition, Proc. IEEE 86 (1998)"
+      },
+      {
+        "url": "http://yann.lecun.com/exdb/mnist/",
+        "title": "The MNIST database"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "viola-jones-2001",
+    "title": "Viola–Jones real-time face detection",
+    "date": "2001-12",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "classical-ml"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Paul Viola",
+      "Michael Jones"
+    ],
+    "description": "A cascade of boosted Haar-feature classifiers computed on integral images.",
+    "capabilityNote": "Detected faces at about 15 frames per second on 2001 hardware and spread into consumer cameras for face-priority autofocus in the mid-2000s.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "ensemble-methods"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1109/CVPR.2001.990517",
+        "title": "Viola & Jones, Rapid object detection using a boosted cascade of simple features, CVPR (2001)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "kinect-2010",
+    "title": "Microsoft Kinect (depth-camera body tracking)",
+    "date": "2010-11-04",
+    "type": "product",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "classical-ml"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Microsoft Research Cambridge",
+      "Jamie Shotton",
+      "Xbox",
+      "PrimeSense"
+    ],
+    "description": "A consumer depth sensor for the Xbox 360 with real-time skeletal tracking for games.",
+    "capabilityNote": "Tracked 20 body joints at 30 fps by classifying each depth pixel into body parts with random forests. It sold millions of units within weeks and became a cheap sensor for robotics research.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "ensemble-methods"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1109/CVPR.2011.5995316",
+        "title": "Shotton et al., Real-time human pose recognition in parts from single depth images, CVPR (2011)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "deep-speech-dnn-2011",
+    "title": "Deep neural networks for speech recognition",
+    "date": "2011-08",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "George Dahl",
+      "Abdel-rahman Mohamed",
+      "Geoffrey Hinton",
+      "Dong Yu",
+      "Li Deng",
+      "Frank Seide",
+      "Microsoft Research"
+    ],
+    "description": "Context-dependent DNN–HMM hybrids replaced Gaussian mixture acoustic models, following 2009 Toronto results on TIMIT.",
+    "capabilityNote": "About 33% relative word-error reduction on the Switchboard benchmark (Seide et al. 2011). It was deployed in Android voice search in 2012.",
+    "majorUpdates": [
+      {
+        "date": "2009",
+        "title": "TIMIT results",
+        "summary": "Mohamed, Dahl and Hinton show pretrained DNNs beat GMMs on phone recognition."
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "deep-belief-nets-2006"
+      },
+      {
+        "type": "successor-of",
+        "target": "hmm-speech-1975"
+      },
+      {
+        "type": "uses",
+        "target": "cuda-2007"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1109/TASL.2011.2134090",
+        "title": "Dahl, Yu, Deng & Acero, Context-Dependent Pre-Trained Deep Neural Networks for Large-Vocabulary Speech Recognition, IEEE TASLP (2012)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "roomba-2002",
+    "title": "iRobot Roomba",
+    "date": "2002-09",
+    "type": "product",
+    "era": 2,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "iRobot",
+      "Colin Angle",
+      "Helen Greiner",
+      "Rodney Brooks"
+    ],
+    "description": "A consumer robot vacuum using behaviour-based control.",
+    "capabilityNote": "Covered floors with reactive bump-and-spiral behaviours and no map in early models. It was the first mass-market home robot, with millions sold by the late 2000s.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "brooks-subsumption-1986"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://about.irobot.com/",
+        "title": "iRobot: About"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "darpa-grand-challenges",
+    "title": "DARPA Grand Challenges (2004 desert race to 2007 Urban Challenge)",
+    "date": "2004-03-13",
+    "type": "event",
+    "era": 4,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "DARPA"
+    ],
+    "description": "A series of autonomous-vehicle prize races: a 142-mile desert course in 2004, a rerun in 2005 and a mock urban course with traffic in 2007.",
+    "capabilityNote": "No vehicle finished in 2004; the best covered about 7.4 miles. Five finished in 2005 and six finished the roughly 60-mile Urban Challenge in 2007, on a closed former air base.",
+    "majorUpdates": [
+      {
+        "date": "2005-10-08",
+        "title": "Second Grand Challenge",
+        "summary": "Stanford's Stanley wins; five vehicles finish."
+      },
+      {
+        "date": "2007-11-03",
+        "title": "Urban Challenge",
+        "summary": "CMU's Boss wins; six teams finish the course with traffic rules.",
+        "source": "https://www.darpa.mil/about-us/timeline/darpa-urban-challenge"
+      }
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "alvinn-navlab-1989"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.darpa.mil/about-us/timeline/-grand-challenge-for-autonomous-vehicles",
+        "title": "DARPA: The Grand Challenge"
+      },
+      {
+        "url": "https://www.darpa.mil/about-us/timeline/darpa-urban-challenge",
+        "title": "DARPA: Urban Challenge"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "stanley-2005",
+    "title": "Stanley wins the DARPA Grand Challenge",
+    "date": "2005-10-08",
+    "type": "model",
+    "era": 4,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [
+      "vision",
+      "classical-ml"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Sebastian Thrun",
+      "Stanford Racing Team",
+      "Volkswagen ERL"
+    ],
+    "description": "An autonomous VW Touareg that combined lidar, vision and GPS with probabilistic state estimation and learned terrain classification.",
+    "capabilityNote": "Completed the 132-mile course in 6 h 54 min. It drove a pre-surveyed desert route, not traffic.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "created-by",
+        "target": "darpa-grand-challenges"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1002/rob.20147",
+        "title": "Thrun et al., Stanley: The robot that won the DARPA Grand Challenge, J. Field Robotics (2006)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "google-self-driving-2010",
+    "title": "Google self-driving car project disclosed",
+    "date": "2010-10-09",
+    "type": "org",
+    "era": 4,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Google",
+      "Sebastian Thrun",
+      "Chris Urmson",
+      "Anthony Levandowski"
+    ],
+    "description": "Google disclosed that its test fleet, started in 2009 with DARPA challenge veterans, had driven about 140,000 miles with occasional human intervention.",
+    "capabilityNote": "Drove mapped routes with safety drivers on board. Timelines for driverless deployment given later in the 2010s slipped repeatedly.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "darpa-grand-challenges"
+      },
+      {
+        "type": "successor-of",
+        "target": "stanley-2005"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://googleblog.blogspot.com/2010/10/what-were-driving-at.html",
+        "title": "Google Official Blog: What we're driving at (2010)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "google-translate-smt-2006",
+    "title": "Google Translate switches to statistical MT",
+    "date": "2006-04-28",
+    "type": "product",
+    "era": 3,
+    "primarySegment": "language",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Franz Och",
+      "Google"
+    ],
+    "description": "A free web translation service built on phrase-based statistical translation trained on large parallel corpora.",
+    "capabilityNote": "Gist-level translation for many language pairs at no cost. Quality was uneven, especially between distant languages.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "statistical-mt-ibm-1993"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://research.google/blog/statistical-machine-translation-live/",
+        "title": "Google Research Blog: Statistical machine translation live (2006)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "mechanical-turk-2005",
+    "title": "Amazon Mechanical Turk",
+    "date": "2005-11",
+    "type": "product",
+    "era": 3,
+    "primarySegment": "classical-ml",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "data",
+    "creators": [
+      "Amazon"
+    ],
+    "description": "A crowdsourcing marketplace for small paid \"human intelligence tasks\".",
+    "capabilityNote": "Made large-scale human labelling cheap; ImageNet's images were labelled through it.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.mturk.com/",
+        "title": "Amazon Mechanical Turk"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "cuda-2007",
+    "title": "NVIDIA CUDA",
+    "date": "2007-06",
+    "type": "product",
+    "era": 3,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "NVIDIA",
+      "Ian Buck",
+      "John Nickolls"
+    ],
+    "description": "A C-like programming platform for general-purpose computing on NVIDIA GPUs, announced in November 2006 with the 1.0 SDK in June 2007.",
+    "capabilityNote": "Made GPUs programmable without graphics workarounds. Researchers then reported large training speedups for neural networks (Raina et al. 2009, Cireșan et al. 2010).",
+    "majorUpdates": [
+      {
+        "date": "2006-11",
+        "title": "CUDA announced",
+        "summary": "NVIDIA announces CUDA alongside the G80 GPU generation."
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "moores-law-1965"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://developer.nvidia.com/cuda-zone",
+        "title": "NVIDIA Developer: CUDA Zone"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "imagenet-2009",
+    "title": "ImageNet dataset",
+    "date": "2009-06",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [],
+    "stackLayer": "data",
+    "creators": [
+      "Jia Deng",
+      "Wei Dong",
+      "Richard Socher",
+      "Li-Jia Li",
+      "Kai Li",
+      "Fei-Fei Li",
+      "Princeton",
+      "Stanford"
+    ],
+    "description": "A large image database organised by WordNet nouns and labelled through Mechanical Turk, with 3.2 million images at publication and about 14 million later.",
+    "capabilityNote": "Enabled supervised training at scale and a shared benchmark. The 2010–2011 ILSVRC winners used hand-engineered feature pipelines with about 26–28% top-5 error.",
+    "majorUpdates": [
+      {
+        "date": "2010",
+        "title": "First ILSVRC",
+        "summary": "ImageNet Large Scale Visual Recognition Challenge begins."
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "mechanical-turk-2005"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1109/CVPR.2009.5206848",
+        "title": "Deng et al., ImageNet: A large-scale hierarchical image database, CVPR (2009)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "ciresan-gpu-mlp-2010",
+    "title": "Cireșan et al., \"Deep, Big, Simple Neural Nets\" on GPUs",
+    "date": "2010-12",
+    "type": "paper",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning",
+      "compute-hardware"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Dan Cireșan",
+      "Ueli Meier",
+      "Luca Gambardella",
+      "Jürgen Schmidhuber",
+      "IDSIA"
+    ],
+    "description": "Plain deep multilayer networks trained with backpropagation on a GPU, using elastically distorted training images.",
+    "capabilityNote": "0.35% MNIST error with no pretraining. GPU CNNs from the same group won several vision contests in 2011, including traffic-sign recognition at IJCNN with better-than-human accuracy.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "cuda-2007"
+      },
+      {
+        "type": "successor-of",
+        "target": "lenet5-mnist-1998"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1162/NECO_a_00052",
+        "title": "Cireșan et al., Deep, Big, Simple Neural Nets for Handwritten Digit Recognition, Neural Computation 22 (2010)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "loebner-prize-1991",
+    "title": "First Loebner Prize (restricted Turing test)",
+    "date": "1991-11-08",
+    "type": "event",
+    "era": 2,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "llmops-eval"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Hugh Loebner",
+      "Cambridge Center for Behavioral Studies"
+    ],
+    "description": "An annual chatbot contest billed as a Turing test, with conversation topics restricted in the early years.",
+    "capabilityNote": "Winning programs relied on ELIZA-style tricks such as typos and whimsy. Stuart Shieber criticised the contest for rewarding deception rather than intelligence.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "turing-1950-computing-machinery"
+      },
+      {
+        "type": "successor-of",
+        "target": "eliza-1966"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1145/175208.175217",
+        "title": "Shieber, Lessons from a restricted Turing test, CACM 37 (1994)"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "watson-jeopardy-2011",
+    "title": "IBM Watson wins Jeopardy!",
+    "date": "2011-02-14",
+    "type": "event",
+    "era": 3,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "classical-ml",
+      "compute-hardware"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "David Ferrucci",
+      "IBM Research"
+    ],
+    "description": "IBM's DeepQA, a pipeline of hundreds of search and language components with machine-learned answer scoring on about 2,880 POWER7 cores, beat Ken Jennings and Brad Rutter.",
+    "capabilityNote": "Answered clues, received as text, from locally stored documents with no internet access, winning $77,147 against $24,000 and $21,600. IBM's later commercial Watson Health products underdelivered.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "deep-blue-1997"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://doi.org/10.1609/aimag.v31i3.2303",
+        "title": "Ferrucci et al., Building Watson: An Overview of the DeepQA Project, AI Magazine 31 (2010)"
+      },
+      {
+        "url": "https://www.ibm.com/history/watson-jeopardy",
+        "title": "IBM History: Watson, Jeopardy! champion"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "siri-2011",
+    "title": "Siri launches on iPhone 4S",
+    "date": "2011-10-04",
+    "type": "product",
+    "era": 4,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "speech-audio",
+      "language"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Siri Inc.",
+      "Dag Kittlaus",
+      "Adam Cheyer",
+      "Tom Gruber",
+      "SRI International",
+      "Apple"
+    ],
+    "description": "A voice assistant, spun out of SRI's DARPA-funded CALO project and bought by Apple in 2010, that combined server-side speech recognition with task-oriented dialogue over web services. Apple launched it as a beta.",
+    "capabilityNote": "Handled scripted domains such as reminders, weather, messages and search, and was brittle outside them. It started the mainstream voice-assistant category.",
+    "majorUpdates": [
+      {
+        "date": "2010-02",
+        "title": "Siri iOS app",
+        "summary": "Siri Inc. releases a standalone app."
+      },
+      {
+        "date": "2010-04",
+        "title": "Apple acquires Siri",
+        "summary": "Apple buys Siri Inc."
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "hmm-speech-1975"
+      },
+      {
+        "type": "successor-of",
+        "target": "eliza-1966"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.apple.com/newsroom/2011/10/04Apple-Launches-iPhone-4S-iOS-5-iCloud/",
+        "title": "Apple Newsroom: Apple Launches iPhone 4S, iOS 5 & iCloud (2011)"
+      },
+      {
+        "url": "https://www.sri.com/hoi/siri/",
+        "title": "SRI International: Siri"
+      }
+    ],
+    "status": "published"
+  }
+]

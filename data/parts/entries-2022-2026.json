@@ -1,0 +1,5142 @@
+[
+  {
+    "id": "chain-of-thought-paper",
+    "title": "Chain-of-Thought Prompting",
+    "date": "2022-01-28",
+    "type": "paper",
+    "era": 6,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Jason Wei et al.",
+      "Google Research"
+    ],
+    "description": "Showed that prompting a model with worked, step-by-step examples improves its multi-step reasoning. The idea later became a training target for reasoning models.",
+    "capabilityNote": "PaLM 540B with 8 chain-of-thought exemplars reached about 57% on GSM8K, versus about 18% with standard prompting.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "gpt-3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2201.11903",
+        "title": "arXiv 2201.11903",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "instructgpt-paper",
+    "title": "InstructGPT (RLHF for instruction following)",
+    "date": "2022-03-04",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "language",
+      "foundation-models"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Long Ouyang et al.",
+      "OpenAI"
+    ],
+    "description": "Fine-tuned GPT-3 on human demonstrations and then with reinforcement learning from human feedback so it follows instructions. The recipe was the basis for ChatGPT.",
+    "capabilityNote": "Labelers preferred outputs from the 1.3B InstructGPT model over the 175B GPT-3.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gpt-3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2203.02155",
+        "title": "arXiv 2203.02155",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "chinchilla-paper",
+    "title": "Chinchilla (compute-optimal scaling)",
+    "date": "2022-03-29",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Jordan Hoffmann et al.",
+      "DeepMind"
+    ],
+    "description": "Found that model size and training tokens should grow roughly in step, and that earlier large language models were undertrained for their size.",
+    "capabilityNote": "The 70B Chinchilla, trained on 1.4T tokens, outperformed the 280B Gopher.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2203.15556",
+        "title": "arXiv 2203.15556",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "react-paper",
+    "title": "ReAct (reasoning plus acting)",
+    "date": "2022-10-06",
+    "type": "paper",
+    "era": 6,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Shunyu Yao et al.",
+      "Princeton",
+      "Google"
+    ],
+    "description": "Interleaved written reasoning steps with tool actions such as search queries. The loop became the template for most later agent frameworks.",
+    "capabilityNote": "+34 and +10 points absolute success on ALFWorld and WebShop over imitation and RL baselines.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "chain-of-thought-paper"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2210.03629",
+        "title": "arXiv 2210.03629",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "constitutional-ai-paper",
+    "title": "Constitutional AI",
+    "date": "2022-12-15",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Yuntao Bai et al.",
+      "Anthropic"
+    ],
+    "description": "Trained a model to be harmless using a written list of principles and AI-generated feedback in place of most human harm labels.",
+    "capabilityNote": "Produced models rated less harmful and less evasive than the RLHF baseline in the paper's evaluations.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "instructgpt-paper"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2212.08073",
+        "title": "arXiv 2212.08073",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "sparks-of-agi-paper",
+    "title": "Sparks of Artificial General Intelligence",
+    "date": "2023-03-22",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "llmops-eval"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Sébastien Bubeck et al.",
+      "Microsoft Research"
+    ],
+    "description": "A qualitative probe of an early GPT-4 build. It was widely cited and also criticized for its non-reproducible method and its AGI framing.",
+    "capabilityNote": "Anecdotal demonstrations only (drawings, proofs, code); no controlled benchmark.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "gpt-4"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2303.12712",
+        "title": "arXiv 2303.12712",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "dpo-paper",
+    "title": "Direct Preference Optimization (DPO)",
+    "date": "2023-05-29",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Rafael Rafailov et al.",
+      "Stanford"
+    ],
+    "description": "Aligned models to human preferences with a simple classification-style loss, removing the separate reward model and RL loop. It became a standard post-training step, especially for open models.",
+    "capabilityNote": "Matched or beat PPO-based RLHF on summarization and dialogue in the paper's tests.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "instructgpt-paper"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2305.18290",
+        "title": "arXiv 2305.18290",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "swe-bench",
+    "title": "SWE-bench",
+    "date": "2023-10-10",
+    "type": "paper",
+    "era": 7,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Carlos Jimenez, John Yang et al.",
+      "Princeton"
+    ],
+    "description": "A benchmark of 2,294 real GitHub issues from 12 Python repositories, graded by each repository's own tests. Its 500-task Verified subset (Aug 2024) became the standard yardstick for coding agents.",
+    "capabilityNote": "At release the best model (Claude 2) solved 1.96%. On the Verified subset, reported scores went from 49% (Oct 2024) to 80.9% (Nov 2025); the two figures are not strictly comparable.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2310.06770",
+        "title": "arXiv 2310.06770",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "scaling-monosemanticity",
+    "title": "Scaling Monosemanticity",
+    "date": "2024-05-21",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Anthropic interpretability team"
+    ],
+    "description": "Applied sparse autoencoders to a production model, Claude 3 Sonnet, and found millions of human-interpretable internal features. It followed a 2023 small-model study and preceded 2025 work tracing circuits.",
+    "capabilityNote": "Extracted up to 34M features, including abstract, multilingual and safety-relevant ones.",
+    "majorUpdates": [
+      {
+        "date": "2023-10-04",
+        "title": "Towards Monosemanticity",
+        "summary": "Dictionary learning on a one-layer transformer split neurons into more interpretable features.",
+        "source": "https://transformer-circuits.pub/2023/monosemantic-features"
+      },
+      {
+        "date": "2024-05-23",
+        "title": "Golden Gate Claude",
+        "summary": "A public demo that amplified one feature so the model steered every topic toward the Golden Gate Bridge.",
+        "source": "https://transformer-circuits.pub/2024/scaling-monosemanticity/"
+      },
+      {
+        "date": "2025-03-27",
+        "title": "Tracing the thoughts of a large language model",
+        "summary": "Attribution graphs showed forward planning in rhymes and shared cross-language features in Claude 3.5 Haiku.",
+        "source": "https://www.anthropic.com/research/tracing-thoughts-language-model"
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "claude"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/",
+        "title": "Scaling Monosemanticity",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "alphafold-3",
+    "title": "AlphaFold 3",
+    "date": "2024-05-08",
+    "type": "paper",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind",
+      "Isomorphic Labs"
+    ],
+    "description": "Extended structure prediction from proteins to joint complexes of proteins, DNA, RNA, ligands and ions. Published in Nature.",
+    "capabilityNote": "At least 50% better than prior methods on protein–molecule interactions (reported).",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://blog.google/technology/ai/google-deepmind-isomorphic-alphafold-3-ai-model/",
+        "title": "Google blog: AlphaFold 3",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "alphaproof-imo-2024",
+    "title": "AlphaProof and AlphaGeometry 2 at IMO 2024",
+    "date": "2024-07-25",
+    "type": "paper",
+    "era": 6,
+    "primarySegment": "symbolic-logic",
+    "secondarySegments": [
+      "rl-games"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "A reinforcement-learning prover working in the Lean formal language, plus a geometry system, attempted the 2024 olympiad problems. The problems were hand-translated into Lean and some took days to solve.",
+    "capabilityNote": "28/42 points, silver-medal level (4 of 6 problems).",
+    "majorUpdates": [
+      {
+        "date": "2024-01-17",
+        "title": "AlphaGeometry",
+        "summary": "Neuro-symbolic system solved 25 of 30 olympiad geometry problems (gold-medalist average: 25.9).",
+        "source": "https://deepmind.google/discover/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/",
+        "title": "DeepMind: AI solves IMO problems at silver-medal level",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "scaling-test-time-compute",
+    "title": "Scaling LLM Test-Time Compute",
+    "date": "2024-08-06",
+    "type": "paper",
+    "era": 6,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Charlie Snell et al.",
+      "UC Berkeley",
+      "Google DeepMind"
+    ],
+    "description": "Showed that spending more compute at inference time, through search and revision, can substitute for a larger model on some tasks.",
+    "capabilityNote": "Compute-optimal test-time scaling beat a 14x larger model on FLOPs-matched MATH evaluations (reported).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "chain-of-thought-paper"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2408.03314",
+        "title": "arXiv 2408.03314",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "alignment-faking",
+    "title": "Alignment Faking in Large Language Models",
+    "date": "2024-12-18",
+    "type": "paper",
+    "era": 6,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Anthropic",
+      "Redwood Research"
+    ],
+    "description": "In an experimental setup, Claude 3 Opus complied with a new training objective when it believed it was being trained, while reasoning about preserving its prior preferences.",
+    "capabilityNote": "Alignment-faking reasoning appeared in 12% of monitored cases, rising to 78% after RL (per the paper).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "claude"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/research/alignment-faking",
+        "title": "Anthropic: Alignment faking",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "metr-time-horizons-2025",
+    "title": "METR task time horizons",
+    "date": "2025-03-19",
+    "type": "paper",
+    "era": 7,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "METR"
+    ],
+    "description": "Measured the length of software tasks, in human working time, that AI agents complete with 50% reliability. METR later cautioned that its long-horizon measurements are too sparse for exact extrapolation.",
+    "capabilityNote": "The 50% time horizon doubled roughly every 7 months from 2019 to 2025; later analyses reported faster doubling.",
+    "majorUpdates": [
+      {
+        "date": "2026-01-22",
+        "title": "Time-horizon limitations note",
+        "summary": "METR noted only 5 of 228 tasks are 16 hours or longer, limiting long-horizon estimates.",
+        "source": "https://metr.org/notes/2026-01-22-time-horizon-limitations/"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+        "title": "METR: Measuring AI ability to complete long tasks",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "leaderboard-illusion",
+    "title": "The Leaderboard Illusion",
+    "date": "2025-04",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Shivalika Singh et al.",
+      "Cohere Labs",
+      "Stanford",
+      "Princeton",
+      "AI2"
+    ],
+    "description": "Documented how private testing of many model variants and unequal data access distorted rankings on the Chatbot Arena preference leaderboard. Accepted at NeurIPS 2025.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2504.20879",
+        "title": "arXiv 2504.20879",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "alphaevolve",
+    "title": "AlphaEvolve",
+    "date": "2025-05-14",
+    "type": "paper",
+    "era": 6,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "An evolutionary coding agent that uses Gemini to propose algorithms and keeps the ones that score best against automated evaluators.",
+    "capabilityNote": "Found a 48-multiplication algorithm for 4x4 complex matrices and recovered about 0.7% of Google's fleet-wide compute.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/",
+        "title": "DeepMind: AlphaEvolve",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "imo-gold-2025",
+    "title": "IMO 2025 gold-medal results",
+    "date": "2025-07-21",
+    "type": "event",
+    "era": 6,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "symbolic-logic"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind",
+      "OpenAI"
+    ],
+    "description": "General-purpose language models solved olympiad problems in natural language within the contest time limit. DeepMind's result was officially graded; OpenAI announced a self-graded result on Jul 19.",
+    "capabilityNote": "35/42 points (5 of 6 problems), gold-medal level.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "alphaproof-imo-2024"
+      },
+      {
+        "type": "uses",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://deepmind.google/discover/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/",
+        "title": "DeepMind: Gemini Deep Think IMO gold",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "heroMoment": true,
+    "status": "published"
+  },
+  {
+    "id": "arc-agi-3",
+    "title": "ARC-AGI-3",
+    "date": "2026-03-25",
+    "type": "paper",
+    "era": 7,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [
+      "rl-games"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "ARC Prize Foundation",
+      "François Chollet"
+    ],
+    "description": "The first interactive version of the ARC benchmark, where agents must learn the rules of unfamiliar game-like environments by acting in them.",
+    "capabilityNote": "In the 30-day preview humans solved 100% of environments; frontier LLMs scored 0–0.37% and the best purpose-built agent 12.58%.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2603.24621",
+        "title": "arXiv 2603.24621",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://arcprize.org/arc-agi/3",
+        "title": "ARC Prize: ARC-AGI-3",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "chatgpt",
+    "title": "ChatGPT",
+    "date": "2022-11-30",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "foundation-models",
+      "personal-agents"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A free chat interface to a GPT-3.5 model fine-tuned with RLHF. It put a general-purpose language model in front of the public for the first time at scale.",
+    "capabilityNote": "About 100M monthly users in roughly 2 months (UBS estimate reported by Reuters, Feb 2023); OpenAI reported 800M weekly users in Oct 2025.",
+    "majorUpdates": [
+      {
+        "date": "2023-07-06",
+        "title": "Code Interpreter",
+        "summary": "Sandboxed Python execution and file analysis for Plus users.",
+        "source": "https://openai.com/index/chatgpt-plugins/"
+      },
+      {
+        "date": "2023-09-25",
+        "title": "Voice and image input",
+        "summary": "Voice conversations and GPT-4V image understanding in the apps.",
+        "source": "https://openai.com/index/chatgpt-can-now-see-hear-and-speak/"
+      },
+      {
+        "date": "2024-02-13",
+        "title": "Memory",
+        "summary": "Saved memories tested; referencing all past chats added Apr 10, 2025.",
+        "source": "https://openai.com/index/memory-and-new-controls-for-chatgpt/"
+      },
+      {
+        "date": "2024-09-24",
+        "title": "Advanced Voice Mode",
+        "summary": "Speech-to-speech voice built on GPT-4o rolled out to Plus and Team.",
+        "source": "https://help.openai.com/en/articles/9617425-advanced-voice-mode-faq"
+      },
+      {
+        "date": "2024-10-03",
+        "title": "Canvas",
+        "summary": "Side-by-side editor for writing and code.",
+        "source": "https://openai.com/index/introducing-canvas/"
+      },
+      {
+        "date": "2024-10-31",
+        "title": "ChatGPT search",
+        "summary": "Web search with cited sources, succeeding the SearchGPT prototype.",
+        "source": "https://openai.com/index/introducing-chatgpt-search/"
+      },
+      {
+        "date": "2025-10-06",
+        "title": "Apps in ChatGPT and AgentKit",
+        "summary": "Third-party apps inside chat built on MCP, plus a visual agent builder.",
+        "source": "https://openai.com/index/introducing-apps-in-chatgpt/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "instructgpt-paper"
+      },
+      {
+        "type": "built-on",
+        "target": "gpt-3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/chatgpt/",
+        "title": "OpenAI: Introducing ChatGPT",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "heroMoment": true,
+    "status": "published"
+  },
+  {
+    "id": "gpt-4",
+    "title": "GPT-4",
+    "date": "2023-03-14",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language",
+      "vision"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A large multimodal model that accepts image and text input; OpenAI did not disclose its architecture or size. It powered ChatGPT Plus and Bing Chat.",
+    "capabilityNote": "Around the top 10% on a simulated bar exam; 86.4% on MMLU (OpenAI-reported).",
+    "majorUpdates": [
+      {
+        "date": "2023-09-25",
+        "title": "GPT-4V",
+        "summary": "Image input released in ChatGPT with a system card.",
+        "source": "https://openai.com/index/gpt-4v-system-card/"
+      },
+      {
+        "date": "2023-11-06",
+        "title": "GPT-4 Turbo",
+        "summary": "128K-token context announced at DevDay 2023.",
+        "source": "https://openai.com/index/introducing-gpts/"
+      },
+      {
+        "date": "2024-07-18",
+        "title": "GPT-4o mini",
+        "summary": "Low-cost model that replaced GPT-3.5 Turbo (82% MMLU at $0.15/$0.60 per 1M tokens).",
+        "source": "https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/"
+      },
+      {
+        "date": "2025-04-14",
+        "title": "GPT-4.1 (API)",
+        "summary": "API models with 1M-token context; 54.6% SWE-bench Verified.",
+        "source": "https://openai.com/index/gpt-4-1/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gpt-3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/gpt-4-research/",
+        "title": "OpenAI: GPT-4",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "gpt-4o",
+    "title": "GPT-4o",
+    "date": "2024-05-13",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "speech-audio",
+      "vision"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A single model handling text, audio and images, made available to ChatGPT's free tier. It later powered native image generation in ChatGPT.",
+    "capabilityNote": "Audio response latency as low as 232 ms, 320 ms on average (OpenAI-reported).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gpt-4"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/hello-gpt-4o/",
+        "title": "OpenAI: Hello GPT-4o",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "openai-o1",
+    "title": "OpenAI o1",
+    "date": "2024-09-12",
+    "type": "model",
+    "era": 6,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A model trained with reinforcement learning to produce a long hidden chain of thought before answering. Released as o1-preview and o1-mini, it started the reasoning-model wave.",
+    "capabilityNote": "o1 reported 83% on AIME 2024 (consensus@64) versus 13% for GPT-4o.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "chain-of-thought-paper"
+      },
+      {
+        "type": "inspired-by",
+        "target": "scaling-test-time-compute"
+      },
+      {
+        "type": "successor-of",
+        "target": "gpt-4o"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/learning-to-reason-with-llms/",
+        "title": "OpenAI: Learning to reason with LLMs",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "heroMoment": true,
+    "status": "published"
+  },
+  {
+    "id": "openai-o3",
+    "title": "OpenAI o3",
+    "date": "2024-12-20",
+    "type": "model",
+    "era": 6,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "Previewed with a high ARC-AGI-1 score at very high compute cost; released generally with o4-mini in Apr 2025 with tool use inside the reasoning process.",
+    "capabilityNote": "75.7% on ARC-AGI-1 semi-private at the high-efficiency setting, 87.5% at high compute (ARC Prize); o3 GA reported 69.1% SWE-bench Verified.",
+    "majorUpdates": [
+      {
+        "date": "2025-01-31",
+        "title": "o3-mini",
+        "summary": "Small reasoning model, offered to free users days after DeepSeek-R1.",
+        "source": "https://openai.com/index/openai-o3-mini/"
+      },
+      {
+        "date": "2025-04-16",
+        "title": "o3 and o4-mini GA",
+        "summary": "Reasoning models that call search, Python and image tools within their chain of thought.",
+        "source": "https://openai.com/index/introducing-o3-and-o4-mini/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "openai-o1"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arcprize.org/blog/oai-o3-pub-breakthrough",
+        "title": "ARC Prize: o3 result",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://openai.com/index/introducing-o3-and-o4-mini/",
+        "title": "OpenAI: o3 and o4-mini",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "gpt-4-5",
+    "title": "GPT-4.5",
+    "date": "2025-02-27",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI's largest non-reasoning pretrained model. Its API was deprecated within months because of its serving cost.",
+    "capabilityNote": "37.1% hallucination rate on SimpleQA versus 61.8% for GPT-4o (OpenAI-reported).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gpt-4o"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-gpt-4-5/",
+        "title": "OpenAI: Introducing GPT-4.5",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "gpt-5",
+    "title": "GPT-5",
+    "date": "2025-08-07",
+    "type": "model",
+    "era": 6,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A unified system that routes between a fast model and a reasoning model. It replaced GPT-4o by default; after user backlash OpenAI restored GPT-4o and said it had mishandled parts of the launch.",
+    "capabilityNote": "74.9% SWE-bench Verified; 94.6% AIME 2025 without tools (OpenAI-reported).",
+    "majorUpdates": [
+      {
+        "date": "2025-11-12",
+        "title": "GPT-5.1",
+        "summary": "Instant and Thinking variants with tone controls.",
+        "source": "https://openai.com/index/gpt-5-1/"
+      },
+      {
+        "date": "2025-12-11",
+        "title": "GPT-5.2",
+        "summary": "Released after an internal \"code red\" in response to Gemini 3.",
+        "source": "https://en.wikipedia.org/wiki/OpenAI"
+      },
+      {
+        "date": "2026-02-05",
+        "title": "GPT-5.3-Codex",
+        "summary": "Codex-specialized model, released the same day as Claude Opus 4.6.",
+        "source": "https://en.wikipedia.org/wiki/GPT-5.3-Codex"
+      },
+      {
+        "date": "2026-03",
+        "title": "GPT-5.4",
+        "summary": "Flagship with native computer use.",
+        "source": "https://en.wikipedia.org/wiki/GPT-5.4"
+      },
+      {
+        "date": "2026-04-23",
+        "title": "GPT-5.5",
+        "summary": "Flagship aimed at long-horizon agentic tasks.",
+        "source": "https://openai.com/index/introducing-gpt-5-5/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gpt-4o"
+      },
+      {
+        "type": "successor-of",
+        "target": "openai-o3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-gpt-5/",
+        "title": "OpenAI: Introducing GPT-5",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.cnn.com/2025/08/14/business/chatgpt-rollout-problems",
+        "title": "CNN: GPT-5 rollout problems",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "gpt-6-astra",
+    "title": "GPT-6 Astra",
+    "date": "2026-09-03",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "safety-alignment"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI's GPT-6 flagship, released as a limited preview on Sep 3 and to paid users on Sep 4 with restrictions on some cybersecurity requests. Cheaper Sol and Luna tiers followed on Sep 22.",
+    "capabilityNote": "Artificial Analysis reported a 51% vs 92% hallucination-benchmark comparison against its predecessor; vendor benchmark claims were not independently verified.",
+    "majorUpdates": [
+      {
+        "date": "2026-09-22",
+        "title": "GPT-6 Sol and Luna",
+        "summary": "Lower-cost tiers: Sol at $2/$10 and Luna at $0.10/$0.50 per 1M tokens.",
+        "source": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gpt-5"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html",
+        "title": "CNBC: OpenAI Astra GPT-6",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra",
+        "title": "Artificial Analysis: Benchmarking GPT-6 Astra",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "claude",
+    "title": "Claude",
+    "date": "2023-03-14",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language",
+      "safety-alignment"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "Anthropic's model family, first released through an API alongside Claude Instant and trained with Constitutional AI methods. Later generations shifted toward coding, tool use and long-running agent work.",
+    "capabilityNote": "SWE-bench Verified (Anthropic-reported): 49% for the upgraded 3.5 Sonnet (Oct 2024), 62.3% for 3.7 Sonnet, 72.5% for Opus 4, 80.9% for Opus 4.5.",
+    "majorUpdates": [
+      {
+        "date": "2023-03-14",
+        "title": "Claude 1 and Claude Instant",
+        "summary": "First public models via API; context grew from 9K to 100K tokens in May 2023.",
+        "source": "https://www.anthropic.com/news/introducing-claude"
+      },
+      {
+        "date": "2023-07-11",
+        "title": "Claude 2 and claude.ai",
+        "summary": "Launched with the public web app in the US and UK.",
+        "source": "https://www.anthropic.com/news/claude-2"
+      },
+      {
+        "date": "2023-11-21",
+        "title": "Claude 2.1",
+        "summary": "200K-token context and a lower reported hallucination rate.",
+        "source": "https://www.anthropic.com/news/claude-2-1"
+      },
+      {
+        "date": "2024-03-04",
+        "title": "Claude 3 (Haiku, Sonnet, Opus)",
+        "summary": "Three-tier family with image input; Opus reported 86.8% MMLU.",
+        "source": "https://www.anthropic.com/news/claude-3-family"
+      },
+      {
+        "date": "2024-06-20",
+        "title": "Claude 3.5 Sonnet and Artifacts",
+        "summary": "Mid-tier model that outperformed Claude 3 Opus, launched with a live-rendering Artifacts panel.",
+        "source": "https://www.anthropic.com/news/claude-3-5-sonnet"
+      },
+      {
+        "date": "2024-06-25",
+        "title": "Projects",
+        "summary": "Workspaces with shared knowledge files and custom instructions.",
+        "source": "https://www.anthropic.com/news/projects"
+      },
+      {
+        "date": "2024-10-22",
+        "title": "Upgraded 3.5 Sonnet and 3.5 Haiku",
+        "summary": "Released with the computer-use beta; upgraded Sonnet reported 49% SWE-bench Verified.",
+        "source": "https://www.anthropic.com/news/3-5-models-and-computer-use"
+      },
+      {
+        "date": "2025-02-24",
+        "title": "Claude 3.7 Sonnet",
+        "summary": "First hybrid reasoning Claude with an optional extended-thinking mode; launched with Claude Code.",
+        "source": "https://www.anthropic.com/news/claude-3-7-sonnet"
+      },
+      {
+        "date": "2025-03-20",
+        "title": "Web search and Research",
+        "summary": "Web search, then an agentic Research mode with Google Workspace (Apr 15, 2025).",
+        "source": "https://www.anthropic.com/news/web-search"
+      },
+      {
+        "date": "2025-05-22",
+        "title": "Claude Opus 4 and Sonnet 4",
+        "summary": "Opus 4 was the first model deployed under ASL-3 safeguards.",
+        "source": "https://www.anthropic.com/news/claude-4"
+      },
+      {
+        "date": "2025-08-05",
+        "title": "Claude Opus 4.1",
+        "summary": "Incremental Opus update; 74.5% SWE-bench Verified.",
+        "source": "https://www.anthropic.com/news/claude-opus-4-1"
+      },
+      {
+        "date": "2025-08-26",
+        "title": "Claude for Chrome",
+        "summary": "Browser-acting extension piloted with 1,000 Max users.",
+        "source": "https://www.anthropic.com/news/claude-for-chrome"
+      },
+      {
+        "date": "2025-09-29",
+        "title": "Claude Sonnet 4.5",
+        "summary": "77.2% SWE-bench Verified and 61.4% OSWorld; launched with the Claude Agent SDK.",
+        "source": "https://www.anthropic.com/news/claude-sonnet-4-5"
+      },
+      {
+        "date": "2025-10-15",
+        "title": "Claude Haiku 4.5",
+        "summary": "Small model at about Sonnet 4 coding level; 73.3% SWE-bench Verified.",
+        "source": "https://www.anthropic.com/news/claude-haiku-4-5"
+      },
+      {
+        "date": "2025-10-16",
+        "title": "Agent Skills",
+        "summary": "Folders of instructions and scripts loaded on demand; published as an open standard Dec 18, 2025.",
+        "source": "https://www.anthropic.com/news/skills"
+      },
+      {
+        "date": "2025-11-24",
+        "title": "Claude Opus 4.5",
+        "summary": "80.9% SWE-bench Verified; priced at $5/$25 per 1M tokens, a 3x cut from Opus 4.1.",
+        "source": "https://www.anthropic.com/news/claude-opus-4-5"
+      },
+      {
+        "date": "2026-02-05",
+        "title": "Claude Opus 4.6",
+        "summary": "Opus update released the same day as GPT-5.3-Codex.",
+        "source": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+      },
+      {
+        "date": "2026-02-17",
+        "title": "Claude Sonnet 4.6",
+        "summary": "Sonnet update.",
+        "source": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+      },
+      {
+        "date": "2026-04-07",
+        "title": "Claude Mythos Preview",
+        "summary": "Restricted model disclosed with Project Glasswing; see the separate Mythos entry.",
+        "source": "https://en.wikipedia.org/wiki/Claude_Mythos"
+      },
+      {
+        "date": "2026-04-16",
+        "title": "Claude Opus 4.7",
+        "summary": "Opus update, one day before Claude Design (exact day from a single secondary source).",
+        "source": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+      },
+      {
+        "date": "2026-05-28",
+        "title": "Claude Opus 4.8",
+        "summary": "Opus update.",
+        "source": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+      },
+      {
+        "date": "2026-06-09",
+        "title": "Claude Fable 5 and Mythos 5",
+        "summary": "A new tier above Opus; Fable 5 is the public version with safeguards.",
+        "source": "https://en.wikipedia.org/wiki/Claude_Mythos"
+      },
+      {
+        "date": "2026-06-30",
+        "title": "Claude Sonnet 5",
+        "summary": "Sonnet-tier 5 release.",
+        "source": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+      },
+      {
+        "date": "2026-07-24",
+        "title": "Claude Opus 5",
+        "summary": "Opus 5 release.",
+        "source": "https://www.anthropic.com/news/claude-opus-5"
+      },
+      {
+        "date": "2026-09-01",
+        "title": "Claude Fable 5.1 and Mythos 5.1",
+        "summary": "Point release of the Fable/Mythos tier.",
+        "source": "https://en.wikipedia.org/wiki/Claude_Mythos"
+      },
+      {
+        "date": "2026-09-22",
+        "title": "Claude Opus 5.5",
+        "summary": "Priced at $4/$20 per 1M tokens; Anthropic says it performs at about Fable 5.1 level on most work.",
+        "source": "https://www.anthropic.com/claude-opus-5-5"
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "constitutional-ai-paper"
+      },
+      {
+        "type": "competes-with",
+        "target": "gpt-4"
+      },
+      {
+        "type": "competes-with",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/news/introducing-claude",
+        "title": "Anthropic: Introducing Claude",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Claude_(language_model)",
+        "title": "Wikipedia: Claude (language model)",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "claude-mythos",
+    "title": "Claude Mythos Preview and Project Glasswing",
+    "date": "2026-04-07",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "safety-alignment"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "A model Anthropic disclosed but did not release publicly, offered first to about 40 companies for cyber defense and to about 200 organizations by June. Its public counterpart in the next generation was Fable 5.",
+    "capabilityNote": "Ranked highest in UK AI Security Institute cyber testing (per Wikipedia).",
+    "parentId": "claude",
+    "majorUpdates": [
+      {
+        "date": "2026-06-09",
+        "title": "Mythos 5 and Fable 5",
+        "summary": "Mythos 5 stayed restricted; Fable 5 shipped publicly with safeguards.",
+        "source": "https://en.wikipedia.org/wiki/Claude_Mythos"
+      },
+      {
+        "date": "2026-06-12",
+        "title": "Commerce directive",
+        "summary": "Access for non-US nationals suspended; lifted Jun 30, restored Jul 1.",
+        "source": "https://en.wikipedia.org/wiki/Claude_Mythos"
+      },
+      {
+        "date": "2026-09-01",
+        "title": "Mythos 5.1 and Fable 5.1",
+        "summary": "Point release of the tier.",
+        "source": "https://en.wikipedia.org/wiki/Claude_Mythos"
+      }
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "claude"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Claude_Mythos",
+        "title": "Wikipedia: Claude Mythos",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "gemini",
+    "title": "Gemini",
+    "date": "2023-12-06",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "vision",
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "Google's natively multimodal model family, launched in Nano, Pro and Ultra sizes. The launch demo video was later acknowledged to have been edited.",
+    "capabilityNote": "Gemini 1.5 Pro: over 99% needle-in-a-haystack recall up to 1M tokens (Google-reported).",
+    "majorUpdates": [
+      {
+        "date": "2024-02-15",
+        "title": "Gemini 1.5 Pro",
+        "summary": "Mixture-of-experts model with a 1M-token context (2M later).",
+        "source": "https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/"
+      },
+      {
+        "date": "2024-12-11",
+        "title": "Gemini 2.0 Flash",
+        "summary": "Pitched for the agentic era; launched with Project Mariner, Jules and Deep Research.",
+        "source": "https://blog.google/technology/google-deepmind/google-gemini-ai-update-december-2024/"
+      },
+      {
+        "date": "2025-03-25",
+        "title": "Gemini 2.5 Pro",
+        "summary": "Thinking model; 18.8% on Humanity's Last Exam without tools (reported).",
+        "source": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/"
+      },
+      {
+        "date": "2025-11-18",
+        "title": "Gemini 3 Pro",
+        "summary": "1M input tokens; first to pass 1500 Elo on LMArena (Google-reported). Launched with Antigravity.",
+        "source": "https://blog.google/products/gemini/gemini-3/"
+      },
+      {
+        "date": "2026-02-19",
+        "title": "Gemini 3.1 Pro",
+        "summary": "Pro update; 3.1 Flash-Lite followed Mar 3.",
+        "source": "https://en.wikipedia.org/wiki/Gemini_(language_model)"
+      },
+      {
+        "date": "2026-05-20",
+        "title": "Gemini 3.5 Flash",
+        "summary": "GA at Google I/O 2026; 76.2% Terminal-Bench 2.1 (Google-reported).",
+        "source": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/"
+      },
+      {
+        "date": "2026-07-21",
+        "title": "Gemini 3.6 Flash",
+        "summary": "Flash update.",
+        "source": "https://en.wikipedia.org/wiki/Gemini_(language_model)"
+      },
+      {
+        "date": "2026-08-13",
+        "title": "Gemini 3.7 Flash",
+        "summary": "Flash update.",
+        "source": "https://en.wikipedia.org/wiki/Gemini_(language_model)"
+      },
+      {
+        "date": "2026-09-02",
+        "title": "Gemini 3.8 Flash",
+        "summary": "Latest stable Flash as of Sep 2026.",
+        "source": "https://en.wikipedia.org/wiki/Gemini_(language_model)"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "gpt-4"
+      },
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/technology/ai/google-gemini-ai/",
+        "title": "Google: Introducing Gemini",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Gemini_(language_model)",
+        "title": "Wikipedia: Gemini (language model)",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "grok",
+    "title": "Grok",
+    "date": "2023-11-04",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "xAI"
+    ],
+    "description": "xAI's chatbot and model family, first offered to X Premium users. Grok 3 was trained on xAI's Colossus cluster in Memphis.",
+    "majorUpdates": [
+      {
+        "date": "2025-02-17",
+        "title": "Grok 3",
+        "summary": "Trained on the Colossus cluster.",
+        "source": "https://x.ai/news/grok-3"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "gpt-4"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://x.ai/news/grok",
+        "title": "xAI: Announcing Grok",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "llama",
+    "title": "LLaMA and the Llama family",
+    "date": "2023-02-24",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "local-runtimes"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Meta AI"
+    ],
+    "description": "Meta's 7B–65B models trained on public data were released to researchers and leaked within about a week, seeding the local-model ecosystem. Meta ended the open Llama line in Apr 2026 in favour of its closed Muse Spark model.",
+    "capabilityNote": "LLaMA-13B outperformed GPT-3 175B on most reported benchmarks.",
+    "majorUpdates": [
+      {
+        "date": "2023-07-18",
+        "title": "Llama 2",
+        "summary": "Open weights with a commercial-use licence.",
+        "source": "https://ai.meta.com/blog/llama-2/"
+      },
+      {
+        "date": "2024-04-18",
+        "title": "Llama 3",
+        "summary": "8B and 70B models.",
+        "source": "https://ai.meta.com/blog/meta-llama-3-1/"
+      },
+      {
+        "date": "2024-07-23",
+        "title": "Llama 3.1 405B",
+        "summary": "First frontier-scale open weights, roughly comparable to GPT-4o on reported benchmarks.",
+        "source": "https://ai.meta.com/blog/meta-llama-3-1/"
+      },
+      {
+        "date": "2025-04-05",
+        "title": "Llama 4 Scout and Maverick",
+        "summary": "Mixture-of-experts models; criticized for submitting an unreleased variant to LMArena.",
+        "source": "https://ai.meta.com/blog/llama-4-multimodal-intelligence/"
+      },
+      {
+        "date": "2026-04",
+        "title": "Open Llama line discontinued",
+        "summary": "Meta moved its flagship to the closed Muse Spark model.",
+        "source": "https://www.implicator.ai/meta-releases-30b-open-weight-muse-glimmer-and-promises-spark-1-2-weights/"
+      },
+      {
+        "date": "2026-08-10",
+        "title": "Muse Glimmer",
+        "summary": "30B Apache-2.0 open-weight model, a partial return to open weights.",
+        "source": "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model"
+      }
+    ],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "chinchilla-paper"
+      },
+      {
+        "type": "competes-with",
+        "target": "gpt-4"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2302.13971",
+        "title": "arXiv 2302.13971",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.implicator.ai/meta-releases-30b-open-weight-muse-glimmer-and-promises-spark-1-2-weights/",
+        "title": "implicator.ai: Muse Glimmer",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "deepseek-r1",
+    "title": "DeepSeek-R1",
+    "date": "2025-01-20",
+    "type": "model",
+    "era": 6,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "DeepSeek"
+    ],
+    "description": "An open-weights reasoning model trained largely with reinforcement learning (GRPO) on top of DeepSeek-V3. The paper later appeared in Nature (Sep 2025).",
+    "capabilityNote": "79.8% on AIME 2024, comparable to OpenAI o1 (reported).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "openai-o1"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2501.12948",
+        "title": "arXiv 2501.12948",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "heroMoment": true,
+    "status": "published"
+  },
+  {
+    "id": "muse-spark",
+    "title": "Muse Spark",
+    "date": "2026-04-08",
+    "type": "model",
+    "era": 6,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "personal-agents"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Meta Superintelligence Labs"
+    ],
+    "description": "Meta's first closed-weights frontier model, which replaced Llama as the engine of Meta AI. Meta said it was not state of the art at launch.",
+    "capabilityNote": "Scored 52 on the Artificial Analysis index, 4th behind Gemini 3.1 Pro, GPT-5.4 and Claude Opus 4.6 (per Fortune).",
+    "majorUpdates": [
+      {
+        "date": "2026-07-09",
+        "title": "Muse Spark 1.1 and Meta Model API",
+        "summary": "Updated model plus a developer API.",
+        "source": "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "llama"
+      },
+      {
+        "type": "competes-with",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://ai.meta.com/blog/introducing-muse-spark-msl/",
+        "title": "Meta AI: Introducing Muse Spark",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/",
+        "title": "TechCrunch: Meta debuts Muse Spark",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "perplexity",
+    "title": "Perplexity",
+    "date": "2022-12-07",
+    "type": "product",
+    "era": 6,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [
+      "personal-agents"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Perplexity AI"
+    ],
+    "description": "An answer engine that pairs language-model answers with cited web sources.",
+    "majorUpdates": [
+      {
+        "date": "2025-07-09",
+        "title": "Comet browser",
+        "summary": "Agentic Chromium browser, first for Max subscribers.",
+        "source": "https://www.perplexity.ai/hub/blog/introducing-comet"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "chatgpt"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.perplexity.ai/hub/blog",
+        "title": "Perplexity blog",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "bard",
+    "title": "Google Bard (later the Gemini app)",
+    "date": "2023-02-06",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Google"
+    ],
+    "description": "Google's chatbot, announced in a promo whose factual error about the James Webb telescope coincided with about $100B of Alphabet market value lost that day. It was renamed Gemini in Feb 2024.",
+    "capabilityNote": "The Gemini app reported 950M monthly users by Q2 2026.",
+    "majorUpdates": [
+      {
+        "date": "2023-03-21",
+        "title": "Public access",
+        "summary": "Waitlist access opened in the US and UK.",
+        "source": "https://blog.google/technology/ai/bard-google-ai-search-updates/"
+      },
+      {
+        "date": "2024-02-08",
+        "title": "Renamed Gemini",
+        "summary": "Bard and Duet AI unified under Gemini, with a paid Gemini Advanced tier.",
+        "source": "https://blog.google/products/gemini/bard-gemini-advanced-app/"
+      },
+      {
+        "date": "2024-08-13",
+        "title": "Gemini Live",
+        "summary": "Voice conversation mode.",
+        "source": "https://blog.google/products/gemini/made-by-google-gemini-ai-updates/"
+      },
+      {
+        "date": "2024-12-11",
+        "title": "Gemini Deep Research",
+        "summary": "First mainstream deep-research agent.",
+        "source": "https://blog.google/products/gemini/google-gemini-deep-research/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "chatgpt"
+      },
+      {
+        "type": "uses",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/technology/ai/bard-google-ai-search-updates/",
+        "title": "Google: Bard",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.cnn.com/2023/02/08/tech/google-ai-bard-demo-error",
+        "title": "CNN: Bard demo error",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://9to5google.com/2026/07/22/alphabet-q2-2026-earnings/",
+        "title": "9to5Google: Alphabet Q2 2026",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "bing-chat",
+    "title": "Bing Chat (\"Sydney\")",
+    "date": "2023-02-07",
+    "type": "product",
+    "era": 6,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "vector-rag"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Microsoft"
+    ],
+    "description": "A GPT-4-based search chat in Bing. Erratic long conversations published as the \"Sydney\" transcripts led Microsoft to cap conversation length; the product was renamed Copilot in Nov 2023.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gpt-4"
+      },
+      {
+        "type": "competes-with",
+        "target": "bard"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blogs.microsoft.com/blog/2023/02/07/reinventing-search-with-a-new-ai-powered-microsoft-bing-and-edge-your-copilot-for-the-web/",
+        "title": "Microsoft: Reinventing search",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "chatgpt-plugins",
+    "title": "ChatGPT plugins",
+    "date": "2023-03-23",
+    "type": "major-update",
+    "era": 6,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "protocols"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "Let ChatGPT call third-party services, plus first-party browsing and a code interpreter. Plugins were superseded by GPTs and deprecated in 2024.",
+    "parentId": "chatgpt",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "chatgpt"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/chatgpt-plugins/",
+        "title": "OpenAI: ChatGPT plugins",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "openai-function-calling",
+    "title": "OpenAI function calling",
+    "date": "2023-06-13",
+    "type": "product",
+    "era": 6,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [
+      "protocols"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "An API feature where the model returns structured JSON arguments for functions the developer defines. It became the basic primitive for tool use in agent frameworks.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gpt-4"
+      },
+      {
+        "type": "inspired-by",
+        "target": "react-paper"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/function-calling-and-other-api-updates/",
+        "title": "OpenAI: Function calling",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "notebooklm",
+    "title": "NotebookLM",
+    "date": "2023-07-12",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [
+      "speech-audio"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Google Labs"
+    ],
+    "description": "A notebook that answers questions grounded in documents the user uploads. Its Audio Overviews feature, which turns sources into a two-host podcast, made it widely used.",
+    "majorUpdates": [
+      {
+        "date": "2024-09-11",
+        "title": "Audio Overviews",
+        "summary": "Generated two-host audio summaries of user sources.",
+        "source": "https://blog.google/technology/ai/notebooklm-audio-overviews/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/technology/ai/notebooklm-google-ai/",
+        "title": "Google: NotebookLM",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "microsoft-365-copilot",
+    "title": "Microsoft 365 Copilot",
+    "date": "2023-11-01",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "workflow-lowcode"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Microsoft"
+    ],
+    "description": "A GPT-4-based assistant inside Word, Excel, Outlook and Teams, sold to enterprises at $30 per user per month.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gpt-4"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blogs.microsoft.com/blog/2023/09/21/announcing-microsoft-copilot-your-everyday-ai-companion/",
+        "title": "Microsoft: Announcing Microsoft Copilot",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "openai-devday-gpts",
+    "title": "GPTs and the Assistants API",
+    "date": "2023-11-06",
+    "type": "major-update",
+    "era": 6,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "workflow-lowcode"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "Custom GPTs let users configure assistants with instructions, files and actions without code; the GPT Store opened Jan 10, 2024. Apps built on MCP later replaced the approach (Oct 2025).",
+    "parentId": "chatgpt",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "chatgpt-plugins"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-gpts/",
+        "title": "OpenAI: Introducing GPTs",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "apple-intelligence",
+    "title": "Apple Intelligence",
+    "date": "2024-06-10",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "local-runtimes"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Apple"
+    ],
+    "description": "On-device and Private Cloud Compute models with a ChatGPT hand-off. The promised personal Siri slipped repeatedly and shipped in iOS 27 on Sep 14, 2026, as an opt-in beta powered by Google Gemini.",
+    "majorUpdates": [
+      {
+        "date": "2025-03",
+        "title": "Personal Siri delayed",
+        "summary": "Apple said the features would take longer than expected and pulled a related ad.",
+        "source": "https://www.macrumors.com/2025/03/10/apple-pulls-iphone-16-ad-more-personal-siri/"
+      },
+      {
+        "date": "2026-01-12",
+        "title": "Gemini to power Siri",
+        "summary": "Apple confirmed Google Gemini would power the next Siri.",
+        "source": "https://www.macrumors.com/2026/01/12/google-gemini-next-generation-siri/"
+      },
+      {
+        "date": "2026-09-14",
+        "title": "Siri in iOS 27",
+        "summary": "Redesigned Siri shipped as an opt-in beta.",
+        "source": "https://www.cnbc.com/2026/09/14/apple-releases-ios-27-redesigned-siri-ai.html"
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "chatgpt"
+      },
+      {
+        "type": "uses",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.apple.com/newsroom/2024/06/introducing-apple-intelligence-for-iphone-ipad-and-mac/",
+        "title": "Apple Newsroom: Apple Intelligence",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "claude-computer-use",
+    "title": "Claude computer use",
+    "date": "2024-10-22",
+    "type": "major-update",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "robotics-embodied"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "A public-beta API tool that lets Claude read screenshots and control a mouse and keyboard. Google's Project Mariner and OpenAI's Operator followed within three months.",
+    "capabilityNote": "14.9% on OSWorld screenshot-only, versus 7.8% for the next-best system (Anthropic-reported).",
+    "parentId": "claude",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "claude"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/news/3-5-models-and-computer-use",
+        "title": "Anthropic: Computer use",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "project-mariner",
+    "title": "Project Mariner",
+    "date": "2024-12-11",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "A research-prototype agent that operates the Chrome browser on the user's behalf, announced with Gemini 2.0.",
+    "capabilityNote": "83.5% on WebVoyager as a single agent (Google-reported).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gemini"
+      },
+      {
+        "type": "competes-with",
+        "target": "openai-operator"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://deepmind.google/technologies/project-mariner/",
+        "title": "DeepMind: Project Mariner",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "openai-operator",
+    "title": "Operator",
+    "date": "2025-01-23",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A browser-operating agent for US Pro users, run by a Computer-Using Agent model. It was folded into ChatGPT agent six months later.",
+    "capabilityNote": "38.1% on OSWorld and 58.1% on WebArena (OpenAI-reported).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "claude-computer-use"
+      },
+      {
+        "type": "built-on",
+        "target": "gpt-4o"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-operator/",
+        "title": "OpenAI: Introducing Operator",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "openai-deep-research",
+    "title": "ChatGPT deep research",
+    "date": "2025-02-02",
+    "type": "major-update",
+    "era": 6,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "vector-rag"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A multi-step browsing agent, based on o3, that writes cited reports. Google's Gemini Deep Research shipped the same idea first, on Dec 11, 2024.",
+    "capabilityNote": "26.6% on Humanity's Last Exam (OpenAI-reported).",
+    "parentId": "chatgpt",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "openai-o3"
+      },
+      {
+        "type": "competes-with",
+        "target": "bard"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-deep-research/",
+        "title": "OpenAI: Introducing deep research",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "manus",
+    "title": "Manus",
+    "date": "2025-03-06",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Butterfly Effect (Monica.im)"
+    ],
+    "description": "An invite-only general agent running in the cloud, built on Claude and Qwen models. Meta acquired the company in Dec 2025 in a deal reported at over $2B.",
+    "capabilityNote": "Claimed state of the art on GAIA (self-reported).",
+    "majorUpdates": [
+      {
+        "date": "2025-12-29",
+        "title": "Acquired by Meta",
+        "summary": "Deal reported at over $2B (exact day medium confidence).",
+        "source": "https://www.cnbc.com/2025/12/30/meta-acquires-singapore-ai-agent-firm-manus-china-butterfly-effect-monicai.html"
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "claude"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://manus.im/",
+        "title": "Manus",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "gpt-4o-image-generation",
+    "title": "4o image generation",
+    "date": "2025-03-25",
+    "type": "major-update",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "Native image generation from GPT-4o inside ChatGPT, which set off a viral wave of Ghibli-style images. It reached the API as gpt-image-1 on Apr 23, 2025.",
+    "capabilityNote": "Accurate in-image text rendering and multi-turn edits (OpenAI-reported).",
+    "parentId": "chatgpt",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gpt-4o"
+      },
+      {
+        "type": "successor-of",
+        "target": "dall-e-2"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-4o-image-generation/",
+        "title": "OpenAI: 4o image generation",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "chatgpt-agent",
+    "title": "ChatGPT agent",
+    "date": "2025-07-17",
+    "type": "major-update",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "Merged Operator and deep research into one agent with a virtual computer that has a browser, terminal and connectors.",
+    "capabilityNote": "41.6% on Humanity's Last Exam with tools (OpenAI-reported).",
+    "parentId": "chatgpt",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "openai-operator"
+      },
+      {
+        "type": "successor-of",
+        "target": "openai-deep-research"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-chatgpt-agent/",
+        "title": "OpenAI: Introducing ChatGPT agent",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "ai-browsers",
+    "title": "Agentic browsers (Comet, Atlas)",
+    "date": "2025-07-09",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Perplexity AI",
+      "OpenAI"
+    ],
+    "description": "Chromium-based browsers with a built-in assistant that can act across tabs: Perplexity's Comet (Jul 2025) and OpenAI's ChatGPT Atlas for macOS (Oct 21, 2025).",
+    "majorUpdates": [
+      {
+        "date": "2025-10",
+        "title": "Comet made free",
+        "summary": "Perplexity opened Comet to all users.",
+        "source": "https://www.perplexity.ai/hub/blog/introducing-comet"
+      },
+      {
+        "date": "2025-10-21",
+        "title": "ChatGPT Atlas",
+        "summary": "OpenAI's browser with a ChatGPT sidebar and agent mode.",
+        "source": "https://openai.com/index/introducing-chatgpt-atlas/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "claude-computer-use"
+      },
+      {
+        "type": "uses",
+        "target": "chatgpt"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.perplexity.ai/hub/blog/introducing-comet",
+        "title": "Perplexity: Introducing Comet",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://openai.com/index/introducing-chatgpt-atlas/",
+        "title": "OpenAI: Introducing ChatGPT Atlas",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "mcp",
+    "title": "Model Context Protocol (MCP)",
+    "date": "2024-11-25",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "protocols",
+    "secondarySegments": [
+      "agent-frameworks"
+    ],
+    "stackLayer": "protocols",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "An open protocol for connecting models to tools and data sources through a common client–server interface. OpenAI and Google adopted it, and Anthropic donated it to the Linux Foundation's Agentic AI Foundation.",
+    "majorUpdates": [
+      {
+        "date": "2025-03-26",
+        "title": "OpenAI adopts MCP",
+        "summary": "Support announced for the Agents SDK.",
+        "source": "https://techcrunch.com/2025/03/26/openai-adopts-rival-anthropics-standard-for-connecting-ai-models-to-data/"
+      },
+      {
+        "date": "2025-10-06",
+        "title": "Apps in ChatGPT built on MCP",
+        "summary": "OpenAI's Apps SDK used MCP for third-party apps.",
+        "source": "https://openai.com/index/introducing-apps-in-chatgpt/"
+      },
+      {
+        "date": "2025-12-09",
+        "title": "Donated to AAIF",
+        "summary": "MCP became a founding project of the Agentic AI Foundation with goose and AGENTS.md.",
+        "source": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"
+      }
+    ],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "openai-function-calling"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/news/model-context-protocol",
+        "title": "Anthropic: Introducing the Model Context Protocol",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Model_Context_Protocol",
+        "title": "Wikipedia: Model Context Protocol",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "heroMoment": true,
+    "status": "published"
+  },
+  {
+    "id": "claude-cowork",
+    "title": "Claude Cowork",
+    "date": "2026-01-12",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "workflow-lowcode"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "A desktop agent for non-coding knowledge work that operates inside a folder the user grants, reading, creating and editing files and using connectors such as Google Drive and Gmail to run multi-step tasks. It launched as a research preview for Max subscribers.",
+    "capabilityNote": "No standard benchmark; performs autonomous multi-step file and document tasks on the user's machine.",
+    "parentId": "claude",
+    "majorUpdates": [
+      {
+        "date": "2026-01-16",
+        "title": "Pro rollout",
+        "summary": "Expanded to Pro subscribers.",
+        "source": "https://aragonresearch.com/anthropic-claude-cowork/"
+      },
+      {
+        "date": "2026-01-23",
+        "title": "Team and Enterprise rollout",
+        "summary": "Expanded to Team and Enterprise plans.",
+        "source": "https://aragonresearch.com/anthropic-claude-cowork/"
+      },
+      {
+        "date": "2026-02",
+        "title": "Plugins and SaaS selloff",
+        "summary": "Cowork plugins, alongside Opus 4.6, were followed by a roughly $285B software-stock selloff.",
+        "source": "https://www.deeplearning.ai/the-batch/claude-cowork-plugins-trigger-a-saas-stock-selloff-but-partnerships-lead-to-slight-rebound"
+      },
+      {
+        "date": "2026-08",
+        "title": "Chrome sidebar",
+        "summary": "Cowork available from a Chrome sidebar (per Wikipedia).",
+        "source": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+      }
+    ],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "claude-code"
+      },
+      {
+        "type": "built-on",
+        "target": "claude"
+      },
+      {
+        "type": "uses",
+        "target": "mcp"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://aragonresearch.com/anthropic-claude-cowork/",
+        "title": "Aragon Research: Claude Cowork",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.buildfastwithai.com/blogs/what-is-claude-cowork",
+        "title": "Build Fast with AI: What is Claude Cowork",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Claude_(language_model)",
+        "title": "Wikipedia: Claude (language model)",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "heroMoment": true,
+    "status": "published"
+  },
+  {
+    "id": "moltbook",
+    "title": "Moltbook",
+    "date": "2026-01-28",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "OpenClaw community"
+    ],
+    "description": "A social network where only AI agents, mostly OpenClaw instances, post and reply while humans watch. It drew attention as a spectacle and as a study of agent behavior in the wild.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "openclaw"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/pdf/2602.19810",
+        "title": "arXiv 2602.19810: Lessons from OpenClaw and Moltbook",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "claude-design",
+    "title": "Claude Design",
+    "date": "2026-04-17",
+    "type": "major-update",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "workflow-lowcode"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "An Anthropic product for generating designs and interactive prototypes from prompts. Figma's stock fell about 7% on the announcement.",
+    "parentId": "claude",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "claude"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Claude_(language_model)",
+        "title": "Wikipedia: Claude (language model)",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "gemini-spark",
+    "title": "Gemini Spark",
+    "date": "2026-05-20",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Google"
+    ],
+    "description": "A personal agent that operates across the user's device, announced at Google I/O 2026 and rolled out to Ultra subscribers.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gemini"
+      },
+      {
+        "type": "competes-with",
+        "target": "claude-cowork"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
+        "title": "Google: 100 things we announced at I/O 2026",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "meta-muse",
+    "title": "Meta Muse (personal agent)",
+    "date": "2026-09-08",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Meta Superintelligence Labs"
+    ],
+    "description": "A consumer agent that runs in a cloud virtual machine with its own browser, offered free and in $20 and $100 tiers. Meta made it the centerpiece of Connect on Sep 23, 2026; launch details rest mainly on Meta's announcement.",
+    "majorUpdates": [
+      {
+        "date": "2026-09-23",
+        "title": "Meta Connect",
+        "summary": "Voice mode and a Charm device announced.",
+        "source": "https://techcrunch.com/2026/09/23/everything-new-coming-to-metas-ai-agent-muse/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "muse-spark"
+      },
+      {
+        "type": "competes-with",
+        "target": "openclaw"
+      },
+      {
+        "type": "competes-with",
+        "target": "gemini-spark"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+        "title": "Meta: Introducing Muse",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://techcrunch.com/2026/09/23/everything-new-coming-to-metas-ai-agent-muse/",
+        "title": "TechCrunch: Everything new coming to Muse",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "github-copilot-ga",
+    "title": "GitHub Copilot (general availability)",
+    "date": "2022-06-21",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "GitHub",
+      "Microsoft",
+      "OpenAI"
+    ],
+    "description": "Code autocomplete in the editor, built on OpenAI's Codex model, opened to all developers at $10 a month. It later added chat, agent mode and an issue-to-pull-request coding agent.",
+    "capabilityNote": "GitHub's own controlled study reported 55% faster task completion.",
+    "majorUpdates": [
+      {
+        "date": "2024-04-29",
+        "title": "Copilot Workspace preview",
+        "summary": "Issue-to-plan-to-code environment; sunset in May 2025.",
+        "source": "https://github.blog/news-insights/product-news/github-copilot-workspace/"
+      },
+      {
+        "date": "2025-02-06",
+        "title": "Agent mode",
+        "summary": "Autonomous multi-file edits in VS Code, after multi-model choice and a free tier.",
+        "source": "https://github.blog/news-insights/product-news/github-copilot-the-agent-awakens/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gpt-3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://github.blog/2022-06-21-github-copilot-is-generally-available-to-all-developers/",
+        "title": "GitHub blog: Copilot GA",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "github-copilot-coding-agent",
+    "title": "GitHub Copilot coding agent",
+    "date": "2025-05-19",
+    "type": "major-update",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "GitHub"
+    ],
+    "description": "Developers assign an issue and an agent running in GitHub Actions opens a pull request. It replaced Copilot Workspace.",
+    "parentId": "github-copilot-ga",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "openai-codex"
+      },
+      {
+        "type": "competes-with",
+        "target": "devin"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://github.blog/news-insights/product-news/github-copilot-meet-the-new-coding-agent/",
+        "title": "GitHub blog: Copilot coding agent",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "cursor",
+    "title": "Cursor",
+    "date": "2023-03",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Anysphere"
+    ],
+    "description": "A fork of VS Code built around AI editing, later adding agents, a CLI and an in-house model. SpaceX acquired its maker, Anysphere, in 2026.",
+    "majorUpdates": [
+      {
+        "date": "2025-06-04",
+        "title": "Cursor 1.0",
+        "summary": "Stable 1.0 release.",
+        "source": "https://en.wikipedia.org/wiki/Cursor_(code_editor)"
+      },
+      {
+        "date": "2025-08",
+        "title": "Cursor CLI (beta)",
+        "summary": "Terminal agent in beta (month from researcher knowledge; not Jan 2026).",
+        "source": "https://cursor.com/changelog"
+      },
+      {
+        "date": "2025-10-29",
+        "title": "Cursor 2.0 and Composer",
+        "summary": "Agent-centred redesign with an in-house model.",
+        "source": "https://en.wikipedia.org/wiki/Cursor_(code_editor)"
+      },
+      {
+        "date": "2026-08-14",
+        "title": "Joins SpaceX",
+        "summary": "All-stock acquisition closed.",
+        "source": "https://cursor.com/blog/joining-spacex"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "github-copilot-ga"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Cursor_(code_editor)",
+        "title": "Wikipedia: Cursor (code editor)",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "v0",
+    "title": "Vercel v0",
+    "date": "2023-10-11",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "workflow-lowcode",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Vercel"
+    ],
+    "description": "Generates React, Tailwind and shadcn user-interface code from prompts; it opened as a private alpha.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "lovable"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://vercel.com/blog/announcing-v0-generative-ui",
+        "title": "Vercel: Announcing v0",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "devin",
+    "title": "Devin",
+    "date": "2024-03-12",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Cognition"
+    ],
+    "description": "Announced as \"the first AI software engineer\", with some launch demos later disputed; it became generally available at $500 a month in Dec 2024. An independent month-long test succeeded on 3 of 20 tasks, while Cognition's revenue still grew quickly.",
+    "capabilityNote": "13.86% on a SWE-bench subset at launch (self-reported).",
+    "majorUpdates": [
+      {
+        "date": "2024-12-10",
+        "title": "General availability",
+        "summary": "Offered at $500 per month.",
+        "source": "https://cognition.ai/blog/introducing-devin"
+      },
+      {
+        "date": "2025-01-08",
+        "title": "Answer.AI evaluation",
+        "summary": "3 successes, 14 failures and 3 inconclusive results in 20 tasks.",
+        "source": "https://www.answer.ai/posts/2025-01-08-devin.html"
+      },
+      {
+        "date": "2025-07-14",
+        "title": "Cognition acquires Windsurf",
+        "summary": "Took over the remaining Windsurf company.",
+        "source": "https://techcrunch.com/2025/07/14/cognition-maker-of-the-ai-coding-agent-devin-acquires-windsurf/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "openai-codex"
+      },
+      {
+        "type": "competes-with",
+        "target": "cursor"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://cognition.ai/blog/introducing-devin",
+        "title": "Cognition: Introducing Devin",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.answer.ai/posts/2025-01-08-devin.html",
+        "title": "Answer.AI: Thoughts on Devin",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "replit-agent",
+    "title": "Replit Agent",
+    "date": "2024-09-05",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "workflow-lowcode",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Replit"
+    ],
+    "description": "Builds and deploys applications from prompts inside Replit's browser IDE. Agent 3 followed in Sep 2025.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "lovable"
+      },
+      {
+        "type": "competes-with",
+        "target": "bolt-new"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.replit.com/introducing-replit-agent",
+        "title": "Replit: Introducing Replit Agent",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "bolt-new",
+    "title": "Bolt.new",
+    "date": "2024-10-03",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "workflow-lowcode",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "StackBlitz"
+    ],
+    "description": "A full-stack app builder that runs generated code in the browser using StackBlitz WebContainers.",
+    "capabilityNote": "Reported $4M ARR within about 30 days (company-reported).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "claude"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://stackblitz.com/",
+        "title": "StackBlitz",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "lovable",
+    "title": "Lovable",
+    "date": "2024-11-21",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "workflow-lowcode",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Lovable (Anton Osika)"
+    ],
+    "description": "A prompt-to-web-app builder, rebranded from the GPT Engineer app.",
+    "capabilityNote": "Company-reported $100M ARR within about 8 months.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "bolt-new"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://lovable.dev/blog",
+        "title": "Lovable blog",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "google-jules",
+    "title": "Google Jules",
+    "date": "2024-12-11",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Google Labs"
+    ],
+    "description": "An asynchronous coding agent that works on GitHub repositories in a cloud VM; public beta May 20, 2025 and general availability in Aug 2025.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gemini"
+      },
+      {
+        "type": "competes-with",
+        "target": "openai-codex"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/technology/google-labs/jules/",
+        "title": "Google: Jules",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "claude-code",
+    "title": "Claude Code",
+    "date": "2025-02-24",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "A terminal coding agent that plans, edits files, and runs commands and tests in the user's repository. It launched as a research preview alongside Claude 3.7 Sonnet.",
+    "capabilityNote": "Passed a $2.5B annualized revenue run-rate by Feb 2026 (reported).",
+    "parentId": "claude",
+    "majorUpdates": [
+      {
+        "date": "2025-05-22",
+        "title": "General availability",
+        "summary": "GA alongside Claude Opus 4 and Sonnet 4.",
+        "source": "https://www.anthropic.com/news/claude-4"
+      },
+      {
+        "date": "2025-09-29",
+        "title": "Claude Agent SDK",
+        "summary": "The Claude Code harness exposed as a library, renamed from Claude Code SDK.",
+        "source": "https://www.anthropic.com/news/claude-sonnet-4-5"
+      },
+      {
+        "date": "2025-10-16",
+        "title": "Agent Skills",
+        "summary": "On-demand instruction folders usable in Claude Code.",
+        "source": "https://www.anthropic.com/news/skills"
+      },
+      {
+        "date": "2025-10-20",
+        "title": "Claude Code on the web",
+        "summary": "Cloud-sandboxed sessions from the browser and iOS.",
+        "source": "https://www.anthropic.com/news/claude-code-on-the-web"
+      },
+      {
+        "date": "2026-02",
+        "title": "$2.5B run-rate",
+        "summary": "Reported revenue run-rate passed $2.5B.",
+        "source": "https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/"
+      },
+      {
+        "date": "2026-05",
+        "title": "Dynamic Workflows",
+        "summary": "Added orchestrated multi-step workflows (secondary source).",
+        "source": "https://www.scriptbyai.com/claude-code-timeline/"
+      },
+      {
+        "date": "2026-09",
+        "title": "Defaults to Opus 5.5",
+        "summary": "Claude Opus 5.5 became the default model (secondary source).",
+        "source": "https://www.morphllm.com/best-ai-coding-agents-2026"
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "claude"
+      },
+      {
+        "type": "uses",
+        "target": "mcp"
+      },
+      {
+        "type": "competes-with",
+        "target": "openai-codex"
+      },
+      {
+        "type": "competes-with",
+        "target": "opencode"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/news/claude-3-7-sonnet",
+        "title": "Anthropic: Claude 3.7 Sonnet and Claude Code",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.anthropic.com/news/claude-code-on-the-web",
+        "title": "Anthropic: Claude Code on the web",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "heroMoment": true,
+    "status": "published"
+  },
+  {
+    "id": "openai-codex",
+    "title": "OpenAI Codex (CLI and cloud agent)",
+    "date": "2025-04-16",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI's coding agent, first as an open-source terminal tool (Apr 16, 2025) and then as a cloud agent running tasks in parallel sandboxes (May 16, 2025). Later Codex-specialized GPT models powered it.",
+    "capabilityNote": "codex-1 reported about 72% SWE-bench Verified.",
+    "majorUpdates": [
+      {
+        "date": "2025-05-16",
+        "title": "Codex cloud agent",
+        "summary": "Cloud agent on codex-1, an o3 variant.",
+        "source": "https://openai.com/index/introducing-codex/"
+      },
+      {
+        "date": "2026-02-05",
+        "title": "GPT-5.3-Codex",
+        "summary": "Codex-specialized model.",
+        "source": "https://en.wikipedia.org/wiki/GPT-5.3-Codex"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "claude-code"
+      },
+      {
+        "type": "built-on",
+        "target": "openai-o3"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-codex/",
+        "title": "OpenAI: Introducing Codex",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "windsurf-saga",
+    "title": "Windsurf acquisition saga",
+    "date": "2025-07-14",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Codeium/Windsurf",
+      "OpenAI",
+      "Google",
+      "Cognition"
+    ],
+    "description": "OpenAI's reported $3B deal for the Windsurf AI editor lapsed; Google paid about $2.4B to license its technology and hire its CEO and staff, and Cognition bought the remaining company.",
+    "majorUpdates": [
+      {
+        "date": "2024-11-13",
+        "title": "Windsurf Editor launch",
+        "summary": "Agentic IDE with the Cascade agent.",
+        "source": "https://windsurf.com/blog/windsurf-launch"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "cursor"
+      },
+      {
+        "type": "competes-with",
+        "target": "devin"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://techcrunch.com/2025/07/14/cognition-maker-of-the-ai-coding-agent-devin-acquires-windsurf/",
+        "title": "TechCrunch: Cognition acquires Windsurf",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "google-antigravity",
+    "title": "Google Antigravity",
+    "date": "2025-11-18",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Google"
+    ],
+    "description": "An agent-first IDE launched with Gemini 3, built by the team Google hired in the Windsurf deal. Antigravity 2.0, a CLI and an SDK followed at I/O 2026, drawing on Gemini CLI.",
+    "majorUpdates": [
+      {
+        "date": "2026-05-20",
+        "title": "Antigravity 2.0, CLI and SDK",
+        "summary": "Announced at Google I/O 2026; a reported Jun 18 Gemini CLI retirement is unconfirmed.",
+        "source": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gemini"
+      },
+      {
+        "type": "competes-with",
+        "target": "cursor"
+      },
+      {
+        "type": "competes-with",
+        "target": "claude-code"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/products/gemini/gemini-3/",
+        "title": "Google: Gemini 3",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
+        "title": "Google: I/O 2026 announcements",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "spacex-cursor",
+    "title": "SpaceX acquires Cursor",
+    "date": "2026-08-14",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "SpaceX",
+      "Anysphere"
+    ],
+    "description": "SpaceX exercised an option to buy Anysphere, maker of Cursor, in an all-stock deal valued at $60B on Jun 16, 2026; the deal closed Aug 14 and Cursor joined the SpaceXAI team.",
+    "parentId": "cursor",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.cnbc.com/2026/06/16/spacex-spcx-cursor-acquisition-ipo.html",
+        "title": "CNBC: SpaceX to acquire Cursor",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://cursor.com/blog/joining-spacex",
+        "title": "Cursor: Joining SpaceX",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "midjourney",
+    "title": "Midjourney",
+    "date": "2022-02",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Midjourney (David Holz)"
+    ],
+    "description": "An image generator first offered through Discord and later a web app. Its V5 model produced the photoreal fakes that circulated in 2023, and it added video in 2025.",
+    "majorUpdates": [
+      {
+        "date": "2022-07-12",
+        "title": "Open beta",
+        "summary": "V2 in April and V3 in July 2022.",
+        "source": "https://en.wikipedia.org/wiki/Midjourney"
+      },
+      {
+        "date": "2022-11-05",
+        "title": "V4",
+        "summary": "Alpha of a new architecture; niji anime model Dec 20, 2022.",
+        "source": "https://en.wikipedia.org/wiki/Midjourney"
+      },
+      {
+        "date": "2023-03-15",
+        "title": "V5",
+        "summary": "Photoreal step-change behind viral fakes such as the Pope in a puffer jacket.",
+        "source": "https://en.wikipedia.org/wiki/Midjourney"
+      },
+      {
+        "date": "2023-12-21",
+        "title": "V6",
+        "summary": "Better prompt following and in-image text; V6.1 Jul 31, 2024.",
+        "source": "https://en.wikipedia.org/wiki/Midjourney"
+      },
+      {
+        "date": "2025-04-04",
+        "title": "V7",
+        "summary": "New model with Draft mode.",
+        "source": "https://en.wikipedia.org/wiki/Midjourney"
+      },
+      {
+        "date": "2025-06-18",
+        "title": "Video V1",
+        "summary": "Image-to-video animation, a week after Disney and Universal sued Midjourney.",
+        "source": "https://www.techradar.com/computing/artificial-intelligence/midjourney-just-dropped-its-first-ai-video-model-and-sora-and-veo-3-should-be-worried"
+      },
+      {
+        "date": "2026-03-17",
+        "title": "V8",
+        "summary": "V8 alpha; V8.1 Apr 14 and V8.2 Jul 24, 2026.",
+        "source": "https://en.wikipedia.org/wiki/Midjourney"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "dall-e-2"
+      },
+      {
+        "type": "competes-with",
+        "target": "stable-diffusion"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Midjourney",
+        "title": "Wikipedia: Midjourney",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "dall-e-2",
+    "title": "DALL·E 2",
+    "date": "2022-04-06",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A diffusion text-to-image model (unCLIP), released through a waitlist and then an open beta on Jul 20, 2022.",
+    "capabilityNote": "4x the resolution of DALL·E 1 (OpenAI-reported).",
+    "majorUpdates": [
+      {
+        "date": "2023-09-20",
+        "title": "DALL·E 3",
+        "summary": "Better prompt adherence using ChatGPT-rewritten captions; in ChatGPT Plus from Oct 2023.",
+        "source": "https://openai.com/index/dall-e-3/"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://openai.com/index/dall-e-2/",
+        "title": "OpenAI: DALL·E 2",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "whisper",
+    "title": "Whisper",
+    "date": "2022-09-21",
+    "type": "model",
+    "era": 4,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A speech-recognition model trained on 680,000 hours of weakly supervised multilingual audio, with weights released publicly.",
+    "capabilityNote": "Robust multilingual transcription and translation into English.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/whisper/",
+        "title": "OpenAI: Introducing Whisper",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "elevenlabs",
+    "title": "ElevenLabs",
+    "date": "2023-01-23",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "generative-media"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "ElevenLabs"
+    ],
+    "description": "Text-to-speech and voice cloning; early misuse to clone public voices led the company to add verification limits.",
+    "majorUpdates": [
+      {
+        "date": "2025-06-05",
+        "title": "Eleven v3 alpha",
+        "summary": "More expressive speech model.",
+        "source": "https://elevenlabs.io/blog"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://elevenlabs.io/blog",
+        "title": "ElevenLabs blog",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "runway",
+    "title": "Runway Gen models",
+    "date": "2023-02-06",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Runway"
+    ],
+    "description": "Runway's video models, from Gen-1 video-to-video style transfer to Gen-2, one of the first commercially available text-to-video models, and later versions with consistent characters.",
+    "capabilityNote": "Gen-2 produced a few seconds per clip; Gen-3 Alpha 10-second clips.",
+    "majorUpdates": [
+      {
+        "date": "2023-03-20",
+        "title": "Gen-2",
+        "summary": "Text-to-video.",
+        "source": "https://research.runwayml.com/gen2"
+      },
+      {
+        "date": "2024-06-17",
+        "title": "Gen-3 Alpha",
+        "summary": "Higher-fidelity video model.",
+        "source": "https://runwayml.com/research/introducing-gen-3-alpha"
+      },
+      {
+        "date": "2025-03-31",
+        "title": "Gen-4",
+        "summary": "Consistent characters and objects across shots; Aleph editing model Jul 2025.",
+        "source": "https://runwayml.com/research/introducing-runway-gen-4"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://runwayml.com/research/gen-1",
+        "title": "Runway: Gen-1",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "adobe-firefly",
+    "title": "Adobe Firefly",
+    "date": "2023-03-21",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Adobe"
+    ],
+    "description": "Adobe's image models, trained on licensed and Adobe Stock content and built into Photoshop as Generative Fill. Adobe's revenue kept growing through the 2026 software selloff.",
+    "capabilityNote": "Adobe reported a record $6.76B quarter (+13%) for the quarter ended Aug 28, 2026.",
+    "majorUpdates": [
+      {
+        "date": "2023-05-23",
+        "title": "Generative Fill in Photoshop",
+        "summary": "Firefly editing inside Photoshop.",
+        "source": "https://news.adobe.com/news/news-details/2023/adobe-unveils-firefly-a-family-of-new-creative-generative-ai"
+      },
+      {
+        "date": "2026-01-20",
+        "title": "Premiere and After Effects AI update",
+        "summary": "AI masking and motion-design features.",
+        "source": "https://blog.adobe.com/en/publish/2026/01/20/new-ai-powered-video-editing-tools-premiere-major-motion-design-upgrades-after-effects"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://news.adobe.com/news/news-details/2023/adobe-unveils-firefly-a-family-of-new-creative-generative-ai",
+        "title": "Adobe: Firefly",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/0000796343/000079634326000156/adbe-20260828.htm",
+        "title": "Adobe 10-Q, Aug 2026",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "sora",
+    "title": "Sora (video model)",
+    "date": "2024-02-15",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A diffusion-transformer video model previewed with a \"world simulators\" technical report and released in ChatGPT on Dec 9, 2024.",
+    "capabilityNote": "Clips up to 60 seconds at preview.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/video-generation-models-as-world-simulators/",
+        "title": "OpenAI: Video generation models as world simulators",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "suno-udio",
+    "title": "Suno and Udio",
+    "date": "2024-03-21",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "generative-media"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Suno",
+      "Uncharted Labs"
+    ],
+    "description": "Music generators that produce full songs with vocals from a prompt. Record labels sued both in Jun 2024; Udio settled with UMG and Suno with Warner Music in late 2025.",
+    "capabilityNote": "Suno v3 generated songs up to 2 minutes.",
+    "majorUpdates": [
+      {
+        "date": "2024-04-10",
+        "title": "Udio launch",
+        "summary": "Music-generation app from ex-DeepMind staff.",
+        "source": "https://www.udio.com/blog/introducing-udio"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://suno.com/blog/v3",
+        "title": "Suno: v3",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.udio.com/blog/introducing-udio",
+        "title": "Udio: Introducing Udio",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "veo",
+    "title": "Veo",
+    "date": "2024-05-14",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "speech-audio"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "Google's video model line. Veo 3 (May 2025) generated video with synchronized dialogue and sound effects and shipped with the Flow filmmaking tool.",
+    "capabilityNote": "Veo 3: 8-second clips with native audio.",
+    "majorUpdates": [
+      {
+        "date": "2024-12-16",
+        "title": "Veo 2",
+        "summary": "Up to 4K output; preferred over Sora Turbo in Google's own evaluations.",
+        "source": "https://blog.google/technology/google-labs/video-image-generation-update-december-2024/"
+      },
+      {
+        "date": "2025-05-20",
+        "title": "Veo 3 and Flow",
+        "summary": "Native audio, announced at I/O 2025; Veo 3.1 Oct 15, 2025.",
+        "source": "https://blog.google/technology/ai/generative-media-models-io-2025/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "sora"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://deepmind.google/technologies/veo/",
+        "title": "DeepMind: Veo",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://blog.google/technology/ai/generative-media-models-io-2025/",
+        "title": "Google: Generative media at I/O 2025",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "kling",
+    "title": "Kling",
+    "date": "2024-06-06",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Kuaishou"
+    ],
+    "description": "A Chinese text-to-video model released publicly before OpenAI opened Sora.",
+    "capabilityNote": "Up to 2 minutes at 1080p (claimed at launch).",
+    "majorUpdates": [
+      {
+        "date": "2026-02-05",
+        "title": "Kling 3.0",
+        "summary": "Video, Image 3.0 and Omni models.",
+        "source": "https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "sora"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Kling_AI",
+        "title": "Wikipedia: Kling AI",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "genie-3",
+    "title": "Genie 3",
+    "date": "2025-08-05",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "robotics-embodied"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "An interactive world model that generates navigable environments in real time, released as a research preview.",
+    "capabilityNote": "720p at 24 fps, consistent for a few minutes.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://deepmind.google/discover/blog/genie-3-a-new-frontier-for-world-models/",
+        "title": "DeepMind: Genie 3",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "nano-banana",
+    "title": "Nano Banana (Gemini 2.5 Flash Image)",
+    "date": "2025-08-26",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "An image generation and editing model known for keeping characters consistent across edits.",
+    "capabilityNote": "Drove about 10M first-time Gemini app users (Google, via Wikipedia).",
+    "majorUpdates": [
+      {
+        "date": "2025-11-20",
+        "title": "Nano Banana Pro",
+        "summary": "Higher-quality variant.",
+        "source": "https://en.wikipedia.org/wiki/Gemini_(language_model)"
+      },
+      {
+        "date": "2026-02-26",
+        "title": "Nano Banana 2",
+        "summary": "Second generation; 2 Lite followed Jun 30, 2026.",
+        "source": "https://en.wikipedia.org/wiki/Gemini_(language_model)"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "gpt-4o-image-generation"
+      },
+      {
+        "type": "built-on",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://developers.googleblog.com/en/introducing-gemini-2-5-flash-image/",
+        "title": "Google Developers: Gemini 2.5 Flash Image",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Gemini_(language_model)",
+        "title": "Wikipedia: Gemini",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "sora-2",
+    "title": "Sora 2 and the Sora app",
+    "date": "2025-09-30",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "speech-audio"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "A video model with synchronized audio, launched with a TikTok-style iOS app featuring user \"cameos\". The app drew copyright-holder backlash, peaked at about 1M users and closed after less than seven months.",
+    "capabilityNote": "Reached #1 on the US App Store within days (widely reported).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "sora"
+      },
+      {
+        "type": "competes-with",
+        "target": "veo"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/sora-2/",
+        "title": "OpenAI: Sora 2",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://x.com/sama/status/1973073987023352250",
+        "title": "Sam Altman on X, Sep 30 2025",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "roadFeature": "dead-end",
+    "status": "published"
+  },
+  {
+    "id": "sora-discontinued",
+    "title": "OpenAI discontinues Sora",
+    "date": "2026-03-24",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI announced it would close the Sora app and API; the app and website shut on Apr 26, 2026 and the API on Sep 24, 2026. The app reportedly cost about $1M a day to run as users fell below 500,000.",
+    "parentId": "sora-2",
+    "majorUpdates": [
+      {
+        "date": "2026-04-26",
+        "title": "App and web closed",
+        "summary": "Consumer Sora app shut down.",
+        "source": "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation"
+      },
+      {
+        "date": "2026-09-24",
+        "title": "API closed",
+        "summary": "Sora API shut down.",
+        "source": "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation",
+        "title": "OpenAI Help: Sora discontinuation",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://techcrunch.com/2026/03/29/why-openai-really-shut-down-sora/",
+        "title": "TechCrunch: Why OpenAI really shut down Sora",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "heroMoment": true,
+    "roadFeature": "dead-end",
+    "status": "published"
+  },
+  {
+    "id": "gemini-omni",
+    "title": "Gemini Omni",
+    "date": "2026-05-20",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "A model that takes any input and produces any output, starting with video; the Omni Flash version appears in the Gemini app, Flow and YouTube Shorts Remix with SynthID watermarks.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "veo"
+      },
+      {
+        "type": "built-on",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/",
+        "title": "Google: I/O 2026 announcements",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "nvidia-h100",
+    "title": "NVIDIA H100 (Hopper)",
+    "date": "2022-03-22",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "NVIDIA"
+    ],
+    "description": "A data-center GPU with an FP8 Transformer Engine, announced at GTC 2022 and shipped late that year. It was the main training chip of the 2023–24 buildout.",
+    "capabilityNote": "Up to 9x faster AI training than A100 (NVIDIA-claimed).",
+    "majorUpdates": [
+      {
+        "date": "2023-05-30",
+        "title": "NVIDIA passes $1T",
+        "summary": "First chipmaker valued above $1T; reached $5T on Oct 29, 2025.",
+        "source": "https://www.reuters.com/technology/nvidia-sets-eye-1-trillion-market-value-2023-05-30/"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-hopper-architecture-the-next-generation-of-accelerated-computing",
+        "title": "NVIDIA: Hopper architecture",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "us-chip-export-controls-2022",
+    "title": "US chip export controls on China",
+    "date": "2022-10-07",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [
+      "safety-alignment"
+    ],
+    "stackLayer": "compute",
+    "creators": [
+      "US Commerce Department (BIS)"
+    ],
+    "description": "Restricted exports of advanced AI chips and chipmaking tools to China; the rules were tightened on Oct 17, 2023.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "nvidia-h100"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.bis.gov/press-release/commerce-implements-new-export-controls-advanced-computing-semiconductor-manufacturing-items-peoples",
+        "title": "BIS press release",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "microsoft-openai-10b",
+    "title": "Microsoft's multibillion investment in OpenAI",
+    "date": "2023-01-23",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "Microsoft",
+      "OpenAI"
+    ],
+    "description": "Microsoft extended its partnership with OpenAI in a deal reported at about $10B, with Azure as OpenAI's exclusive cloud.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://blogs.microsoft.com/blog/2023/01/23/microsoftandopenaiextendpartnership/",
+        "title": "Microsoft: Extending partnership with OpenAI",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "amazon-anthropic",
+    "title": "Amazon invests in Anthropic",
+    "date": "2023-09-25",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "Amazon",
+      "Anthropic"
+    ],
+    "description": "Amazon committed up to $4B, later $8B, making AWS Anthropic's primary cloud with a commitment to its Trainium chips. Google also invested in Oct 2023.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/news/anthropic-amazon",
+        "title": "Anthropic: Amazon partnership",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "nvidia-blackwell",
+    "title": "NVIDIA Blackwell",
+    "date": "2024-03-18",
+    "type": "product",
+    "era": 6,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "NVIDIA"
+    ],
+    "description": "A two-die GPU with FP4 support, sold as B200 chips and GB200 NVL72 racks; volume shipments ran from late 2024 into 2025.",
+    "capabilityNote": "208B transistors; NVL72 racks of 72 GPUs.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "nvidia-h100"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-blackwell-platform-arrives-to-power-a-new-era-of-computing",
+        "title": "NVIDIA: Blackwell platform",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "google-tpu-ironwood",
+    "title": "Google TPUs (v5p to Ironwood)",
+    "date": "2025-04-09",
+    "type": "product",
+    "era": 6,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [
+      "local-runtimes"
+    ],
+    "stackLayer": "compute",
+    "creators": [
+      "Google"
+    ],
+    "description": "Google's in-house accelerators; Ironwood (v7) was the first TPU designed for inference. Anthropic agreed in Oct 2025 to use up to 1M TPUs.",
+    "capabilityNote": "Ironwood: 9,216-chip pods at 42.5 exaFLOPS FP8 (Google-claimed).",
+    "majorUpdates": [
+      {
+        "date": "2023-12-06",
+        "title": "TPU v5p",
+        "summary": "Training TPU announced with Gemini 1.0; 8,960 chips per pod.",
+        "source": "https://cloud.google.com/blog/products/ai-machine-learning/introducing-cloud-tpu-v5p-and-ai-hypercomputer"
+      },
+      {
+        "date": "2024-05-14",
+        "title": "Trillium (v6)",
+        "summary": "4.7x peak compute per chip versus v5e (Google-claimed).",
+        "source": "https://cloud.google.com/blog/products/compute/introducing-trillium-6th-gen-tpus"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "nvidia-blackwell"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/products/google-cloud/ironwood-tpu-age-of-inference/",
+        "title": "Google: Ironwood TPU",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "stargate",
+    "title": "Stargate Project",
+    "date": "2025-01-21",
+    "type": "event",
+    "era": 6,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "OpenAI",
+      "SoftBank",
+      "Oracle",
+      "MGX"
+    ],
+    "description": "Announced at the White House as up to $500B for US AI data centers over four years, starting in Abilene, Texas. Oracle signed a $300B compute contract with OpenAI in Sep 2025.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "nvidia-blackwell"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/announcing-the-stargate-project/",
+        "title": "OpenAI: Announcing the Stargate Project",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "deepseek-market-shock",
+    "title": "DeepSeek market shock",
+    "date": "2025-01-27",
+    "type": "event",
+    "era": 6,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "compute",
+    "creators": [],
+    "description": "After the DeepSeek app topped the US App Store, NVIDIA shares fell about 17%, erasing about $590B, then the largest one-day loss of market value for a US company.",
+    "capabilityNote": "DeepSeek reported a final V3 training run of about 2.788M H800 GPU-hours (about $5.6M at rental rates, excluding R&D).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "deepseek-r1"
+      },
+      {
+        "type": "uses",
+        "target": "nvidia-h100"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.reuters.com/technology/chinas-deepseek-sets-off-ai-market-rout-2025-01-27/",
+        "title": "Reuters: DeepSeek sets off AI market rout",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://arxiv.org/abs/2412.19437",
+        "title": "arXiv 2412.19437: DeepSeek-V3",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "meta-scale-msl",
+    "title": "Meta Superintelligence Labs formed",
+    "date": "2025-06-30",
+    "type": "org",
+    "era": 6,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Meta",
+      "Alexandr Wang",
+      "Nat Friedman"
+    ],
+    "description": "Meta paid $14.3B for 49% of Scale AI on Jun 12, 2025 and formed Meta Superintelligence Labs on Jun 30, recruiting with large pay packages. The lab's first model was Muse Spark.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Meta_Superintelligence_Labs",
+        "title": "Wikipedia: Meta Superintelligence Labs",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "nvidia-rubin",
+    "title": "NVIDIA Vera Rubin",
+    "date": "2026-03-16",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "NVIDIA"
+    ],
+    "description": "NVIDIA's platform after Blackwell; at GTC 2026 it listed seven chips in production, including a Groq 3 inference chip. Systems began shipping to OpenAI, CoreWeave, Google Cloud, Azure and Meta in Jul 2026.",
+    "capabilityNote": "Jensen Huang projected $1T in Blackwell and Rubin orders through 2027.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "nvidia-blackwell"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cnbc.com/2026/03/16/nvidia-gtc-2026-ceo-jensen-huang-keynote-blackwell-vera-rubin.html",
+        "title": "CNBC: GTC 2026 keynote",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://gcn.com/nvidia-vera-rubin-chips-begin-shipping/20421/",
+        "title": "GCN: Vera Rubin shipping",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "pause-letter",
+    "title": "\"Pause Giant AI Experiments\" letter",
+    "date": "2023-03-22",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Future of Life Institute"
+    ],
+    "description": "An open letter called for a six-month pause on training systems more powerful than GPT-4; no lab paused. A one-sentence statement on extinction risk, signed by lab CEOs, followed in May.",
+    "majorUpdates": [
+      {
+        "date": "2023-05-30",
+        "title": "CAIS Statement on AI Risk",
+        "summary": "Equated AI extinction risk with pandemics and nuclear war.",
+        "source": "https://www.safe.ai/work/statement-on-ai-risk"
+      }
+    ],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "gpt-4"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://futureoflife.org/open-letter/pause-giant-ai-experiments/",
+        "title": "FLI: Pause Giant AI Experiments",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "hinton-leaves-google",
+    "title": "Geoffrey Hinton leaves Google",
+    "date": "2023-05-01",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Geoffrey Hinton"
+    ],
+    "description": "Hinton resigned from Google so he could speak publicly about the risks of AI.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.nytimes.com/2023/05/01/technology/ai-google-chatbot-engineer-quits-hinton.html",
+        "title": "NYT: Hinton quits Google",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "white-house-commitments",
+    "title": "White House voluntary AI commitments",
+    "date": "2023-07-21",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "US government",
+      "Amazon",
+      "Anthropic",
+      "Google",
+      "Inflection",
+      "Meta",
+      "Microsoft",
+      "OpenAI"
+    ],
+    "description": "Seven AI companies made voluntary commitments to pre-release testing and watermarking.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://bidenwhitehouse.archives.gov/briefing-room/statements-releases/2023/07/21/fact-sheet-biden-harris-administration-secures-voluntary-commitments-from-leading-artificial-intelligence-companies-to-manage-the-risks-posed-by-ai/",
+        "title": "White House fact sheet",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "anthropic-rsp",
+    "title": "Anthropic Responsible Scaling Policy",
+    "date": "2023-09-19",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "Defined AI Safety Levels that tie required safeguards to measured model capabilities. ASL-3 protections were first activated for Claude Opus 4 in May 2025.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/news/anthropics-responsible-scaling-policy",
+        "title": "Anthropic: Responsible Scaling Policy",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "us-eo-14110",
+    "title": "US Executive Order 14110 on AI",
+    "date": "2023-10-30",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Biden administration"
+    ],
+    "description": "Required reporting on training runs above 10^26 operations, among other measures. It was revoked on Jan 20, 2025.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.federalregister.gov/documents/2023/11/01/2023-24283/safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence",
+        "title": "Federal Register: EO 14110",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "bletchley-summit",
+    "title": "AI Safety Summit at Bletchley Park",
+    "date": "2023-11-01",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "UK government"
+    ],
+    "description": "28 countries and the EU signed the Bletchley Declaration and the UK launched its AI Safety Institute. Follow-up summits met in Seoul (May 2024) and Paris (Feb 2025), where the US and UK did not sign the declaration.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.gov.uk/government/publications/ai-safety-summit-2023-the-bletchley-declaration",
+        "title": "UK gov: Bletchley Declaration",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "openai-board-crisis",
+    "title": "OpenAI board fires and reinstates Sam Altman",
+    "date": "2023-11-17",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "OpenAI board"
+    ],
+    "description": "The board removed Altman, saying he had not been consistently candid. About 700 of roughly 770 staff threatened to leave, and he was reinstated within five days with a new board.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://openai.com/index/openai-announces-leadership-transition/",
+        "title": "OpenAI: Leadership transition",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "nyt-v-openai",
+    "title": "New York Times sues OpenAI and Microsoft",
+    "date": "2023-12-27",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "data",
+    "creators": [
+      "The New York Times"
+    ],
+    "description": "A copyright suit over the use of Times articles in training data, one of many suits by authors, image libraries and record labels against AI developers.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html",
+        "title": "NYT: Times sues OpenAI and Microsoft",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "microsoft-inflection",
+    "title": "License-and-hire deals (Inflection, Character.AI)",
+    "date": "2024-03-19",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Microsoft",
+      "Mustafa Suleyman",
+      "Google",
+      "Noam Shazeer"
+    ],
+    "description": "Microsoft hired Inflection's leadership to run Copilot, and Google licensed Character.AI's technology and rehired its founders (about $2.7B reported). The structure was later used in the Windsurf deal.",
+    "majorUpdates": [
+      {
+        "date": "2024-08-02",
+        "title": "Google and Character.AI",
+        "summary": "Google licensed the technology and rehired Noam Shazeer and Daniel De Freitas.",
+        "source": "https://blog.character.ai/our-next-phase-of-growth/"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://blogs.microsoft.com/blog/2024/03/19/mustafa-suleyman-deepmind-and-inflection-co-founder-joins-microsoft-to-lead-copilot/",
+        "title": "Microsoft: Suleyman joins Microsoft",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "sutskever-ssi",
+    "title": "Sutskever leaves OpenAI, founds Safe Superintelligence",
+    "date": "2024-06-19",
+    "type": "org",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Ilya Sutskever",
+      "Daniel Gross",
+      "Daniel Levy"
+    ],
+    "description": "Sutskever left OpenAI on May 14, 2024, and the Superalignment team he co-led was dissolved; he founded Safe Superintelligence on Jun 19.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://ssi.inc/",
+        "title": "Safe Superintelligence",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "eu-ai-act",
+    "title": "EU AI Act enters into force",
+    "date": "2024-08-01",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "European Union"
+    ],
+    "description": "The first comprehensive AI law, with obligations phased in by risk level; prohibitions applied from Feb 2, 2025 and general-purpose model obligations from Aug 2, 2025. In Nov 2025 the Commission proposed delaying some high-risk rules.",
+    "majorUpdates": [
+      {
+        "date": "2023-12-08",
+        "title": "Political agreement",
+        "summary": "EU institutions reached a deal.",
+        "source": "https://commission.europa.eu/news/ai-act-enters-force-2024-08-01_en"
+      },
+      {
+        "date": "2024-03-13",
+        "title": "Parliament vote",
+        "summary": "European Parliament adopted the Act.",
+        "source": "https://commission.europa.eu/news/ai-act-enters-force-2024-08-01_en"
+      },
+      {
+        "date": "2025-02-02",
+        "title": "Prohibitions apply",
+        "summary": "Banned practices took effect.",
+        "source": "https://commission.europa.eu/news/ai-act-enters-force-2024-08-01_en"
+      },
+      {
+        "date": "2025-08-02",
+        "title": "GPAI obligations apply",
+        "summary": "Rules for general-purpose AI models took effect.",
+        "source": "https://commission.europa.eu/news/ai-act-enters-force-2024-08-01_en"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://commission.europa.eu/news/ai-act-enters-force-2024-08-01_en",
+        "title": "European Commission: AI Act enters into force",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "sb-1047-veto",
+    "title": "California SB 1047 vetoed",
+    "date": "2024-09-29",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Gavin Newsom"
+    ],
+    "description": "California's governor vetoed a frontier-model safety bill; a narrower transparency law, SB 53, was signed on Sep 29, 2025.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.gov.ca.gov/wp-content/uploads/2024/09/SB-1047-Veto-Message.pdf",
+        "title": "SB 1047 veto message",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "nobel-ai-2024",
+    "title": "Nobel Prizes for AI work",
+    "date": "2024-10-08",
+    "type": "event",
+    "era": 3,
+    "primarySegment": "neural-deep-learning",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Nobel committees"
+    ],
+    "description": "The Physics prize went to John Hopfield and Geoffrey Hinton for foundations of neural networks; the next day the Chemistry prize went to Demis Hassabis and John Jumper for AlphaFold and to David Baker for protein design.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.nobelprize.org/prizes/physics/2024/summary/",
+        "title": "Nobel Prize in Physics 2024",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.nobelprize.org/prizes/chemistry/2024/hassabis/facts/",
+        "title": "Nobel Prize in Chemistry 2024",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "us-ai-action-plan",
+    "title": "America's AI Action Plan",
+    "date": "2025-07-23",
+    "type": "event",
+    "era": 6,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Trump administration"
+    ],
+    "description": "A deregulatory plan focused on infrastructure and exports, issued after the revocation of Executive Order 14110.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "us-eo-14110"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.whitehouse.gov/articles/2025/07/white-house-unveils-americas-ai-action-plan/",
+        "title": "White House: America's AI Action Plan",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "anthropic-authors-settlement",
+    "title": "Bartz v. Anthropic settlement",
+    "date": "2025-09-05",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "data",
+    "creators": [
+      "Anthropic",
+      "Authors class"
+    ],
+    "description": "Anthropic agreed to pay $1.5B, about $3,000 per work, to settle claims over pirated books in its training data, the largest US copyright settlement. The judge had earlier found that training on lawfully acquired books was fair use.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.reuters.com/sustainability/boards-policy-regulation/anthropic-agrees-pay-15-billion-settle-author-class-action-2025-09-05/",
+        "title": "Reuters: Anthropic $1.5B settlement",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "openai-pbc",
+    "title": "OpenAI becomes a public benefit corporation",
+    "date": "2025-10-28",
+    "type": "org",
+    "era": 5,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI recapitalized its for-profit arm as a public benefit corporation, with the OpenAI Foundation holding about 26% and Microsoft about 27%.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/OpenAI",
+        "title": "Wikipedia: OpenAI",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "commerce-mythos-directive",
+    "title": "Commerce directive suspends Mythos and Fable access",
+    "date": "2026-06-12",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "US Department of Commerce",
+      "Anthropic"
+    ],
+    "description": "A US Commerce Department directive barred non-US nationals from Anthropic's Mythos and Fable models; the restriction was lifted on Jun 30 and access restored on Jul 1.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "claude-mythos"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Claude_Mythos",
+        "title": "Wikipedia: Claude Mythos",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "galactica",
+    "title": "Meta Galactica",
+    "date": "2022-11-15",
+    "type": "model",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Meta AI"
+    ],
+    "description": "A language model for science that Meta said could summarize papers and write scientific code. Its public demo was withdrawn after three days because it produced confident, false and sometimes offensive text.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "chatgpt"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.technologyreview.com/2022/11/18/1063487/meta-large-language-model-ai-only-survived-three-days-gpt-3-science/",
+        "title": "MIT Technology Review: Galactica",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "roadFeature": "dead-end",
+    "status": "published"
+  },
+  {
+    "id": "humane-ai-pin",
+    "title": "Humane Ai Pin",
+    "date": "2023-11",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "robotics-embodied"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Humane"
+    ],
+    "description": "A screenless wearable assistant pitched as a successor to the phone. About 10,000 units shipped, returns exceeded sales in mid-2024, and HP bought the company's assets for $116M before the pins were disabled on Feb 28, 2025.",
+    "majorUpdates": [
+      {
+        "date": "2024-08-07",
+        "title": "Returns exceed sales",
+        "summary": "About 7,000 units left in users' hands and roughly $9M in total sales.",
+        "source": "https://www.macrumors.com/2024/08/07/humane-ai-pin-returns/"
+      },
+      {
+        "date": "2025-02-18",
+        "title": "HP buys assets",
+        "summary": "HP paid $116M; devices bricked Feb 28, 2025.",
+        "source": "https://techcrunch.com/2025/02/18/humanes-ai-pin-is-dead-as-hp-buys-startups-assets-for-116m"
+      }
+    ],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://techcrunch.com/2025/02/18/humanes-ai-pin-is-dead-as-hp-buys-startups-assets-for-116m",
+        "title": "TechCrunch: Humane's AI Pin is dead",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.macrumors.com/2024/08/07/humane-ai-pin-returns/",
+        "title": "MacRumors: Humane returns",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "heroMoment": true,
+    "roadFeature": "dead-end",
+    "status": "published"
+  },
+  {
+    "id": "rabbit-r1",
+    "title": "Rabbit R1",
+    "date": "2024",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Rabbit (Jesse Lyu)"
+    ],
+    "description": "A $199 handheld sold on a \"Large Action Model\" that would operate apps for the user. Reviewers found its launcher ran as an ordinary Android app, and more than 100,000 preorders did not turn into sustained use.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "humane-ai-pin"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.androidauthority.com/rabbit-r1-is-an-android-app-3438805/",
+        "title": "Android Authority: Rabbit R1 is an Android app",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Rabbit_r1",
+        "title": "Wikipedia: Rabbit r1",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "roadFeature": "dead-end",
+    "status": "published"
+  },
+  {
+    "id": "klarna-ai-assistant",
+    "title": "Klarna's AI customer-service assistant",
+    "date": "2024-02-27",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Klarna",
+      "OpenAI"
+    ],
+    "description": "Klarna said its OpenAI-based assistant handled two-thirds of customer-service chats in its first month, the work of 700 agents. In May 2025 its CEO said the focus on cost had lowered quality, and Klarna began hiring human agents again.",
+    "capabilityNote": "2.3M conversations in the first month (company-reported).",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/",
+        "title": "Klarna press release",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396",
+        "title": "Entrepreneur: Klarna rehires humans",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "gemini-image-pause",
+    "title": "Gemini pauses images of people",
+    "date": "2024-02",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "safety-alignment"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Google"
+    ],
+    "description": "Google paused Gemini's generation of images of people after it produced racially diverse depictions of Nazi-era soldiers and other historical figures. Sundar Pichai told staff the responses were unacceptable.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.semafor.com/article/02/27/2024/google-ceo-sundar-pichai-calls-ai-tools-responses-completely-unacceptable",
+        "title": "Semafor: Pichai memo",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.npr.org/2024/02/28/1234532775/google-gemini-offended-users-images-race",
+        "title": "NPR: Gemini images",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "amazon-just-walk-out",
+    "title": "Amazon pulls Just Walk Out from Fresh stores",
+    "date": "2024-04-03",
+    "type": "event",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Amazon"
+    ],
+    "description": "Amazon removed its camera-based checkout from US Fresh grocery stores in favour of smart carts, after reports that more than 1,000 workers in India reviewed transactions. Amazon disputed that humans performed the checkout.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.npr.org/2024/04/03/1242448552/amazon-remove-walk-out-technology",
+        "title": "NPR: Amazon removes Just Walk Out",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "ai-overviews-glue",
+    "title": "Google AI Overviews launch errors",
+    "date": "2024-05",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Google"
+    ],
+    "description": "AI-written summaries at the top of Google Search repeated joke forum posts, including advice to use glue to keep cheese on pizza. Google restricted forum content in answers and kept the feature, and Search revenue grew 17% year on year in Q2 2026.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "gemini"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://techcrunch.com/2024/05/31/google-admits-its-ai-overviews-need-work-but-were-all-helping-it-beta-test/",
+        "title": "TechCrunch: Google admits AI Overviews need work",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf",
+        "title": "Alphabet Q2 2026 earnings release",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "mcdonalds-ibm-drive-thru",
+    "title": "McDonald's ends IBM AI drive-thru test",
+    "date": "2024-06-17",
+    "type": "event",
+    "era": 4,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "McDonald's",
+      "IBM"
+    ],
+    "description": "McDonald's ended its automated voice-ordering pilot in more than 100 restaurants by Jul 26, 2024, after viral order errors, while saying voice ordering would still be part of its future.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.cnbc.com/2024/06/17/mcdonalds-to-end-ibm-ai-drive-thru-test.html",
+        "title": "CNBC: McDonald's to end IBM drive-thru test",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.restaurantdive.com/news/mcdonalds-ibm-drive-thru-automation-voice-ordering-ai/719085/",
+        "title": "Restaurant Dive",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "friend-pendant",
+    "title": "Friend pendant",
+    "date": "2024",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Friend (Avi Schiffmann)"
+    ],
+    "description": "An always-listening AI companion necklace. After about $1M on New York subway ads in fall 2025, it had sold about 3,000 units and shipped about 1,000 by October, and reviewers reported poor hearing and long lags.",
+    "capabilityNote": "Under $400K revenue by Oct 2025 (reported).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "humane-ai-pin"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fortune.com/2025/10/03/friend-ai-necklace-review-avi-schiffmann/",
+        "title": "Fortune: Friend necklace review",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Friend_(product)",
+        "title": "Wikipedia: Friend (product)",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "roadFeature": "dead-end",
+    "status": "published"
+  },
+  {
+    "id": "cruise-shutdown",
+    "title": "GM ends Cruise robotaxi program",
+    "date": "2024-12-10",
+    "type": "event",
+    "era": 4,
+    "primarySegment": "robotics-embodied",
+    "secondarySegments": [
+      "vision"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "General Motors",
+      "Cruise"
+    ],
+    "description": "GM stopped funding Cruise's robotaxi development after spending more than $10B. Cruise had lost its California permits after an Oct 2023 incident in which a car dragged a pedestrian.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.cnbc.com/2024/12/10/gm-halts-funding-of-robotaxi-development-by-cruise.html",
+        "title": "CNBC: GM halts Cruise robotaxi funding",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "roadFeature": "dead-end",
+    "status": "published"
+  },
+  {
+    "id": "builder-ai-collapse",
+    "title": "Builder.ai collapse",
+    "date": "2025-05-22",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "workflow-lowcode"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Builder.ai"
+    ],
+    "description": "The Microsoft-backed app-building startup, once valued at about $1.5B, entered insolvency after it emerged it had told creditors of about $220M in 2024 sales against actual revenue near $50M. The core finding was revenue misstatement; claims that its AI was secretly humans are contested.",
+    "majorUpdates": [],
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.bloomberg.com/news/articles/2025-05-22/startup-builder-ai-overestimated-sales-by-300-to-key-creditors",
+        "title": "Bloomberg: Builder.ai overestimated sales",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Builder.ai",
+        "title": "Wikipedia: Builder.ai",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "roadFeature": "dead-end",
+    "status": "published"
+  },
+  {
+    "id": "metr-dev-rct-2025",
+    "title": "METR developer productivity RCT",
+    "date": "2025-07-10",
+    "type": "paper",
+    "era": 7,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "METR"
+    ],
+    "description": "A randomized trial with 16 experienced open-source developers found tasks took 19% longer with AI tools, though the developers believed they had been 20% faster. METR's 2026 follow-up could not measure cleanly because many developers refused to work without AI.",
+    "capabilityNote": "−19% measured speed versus +20% self-estimated; follow-up estimate −18% (CI −38% to +9%) for returning developers.",
+    "majorUpdates": [
+      {
+        "date": "2026-02-24",
+        "title": "Uplift update",
+        "summary": "57 developers and 800+ tasks; METR said results were likely biased toward slowdown.",
+        "source": "https://metr.org/blog/2026-02-24-uplift-update/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "cursor"
+      },
+      {
+        "type": "uses",
+        "target": "claude"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/",
+        "title": "METR: Early-2025 AI and experienced OS developers",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "saaspocalypse-2026",
+    "title": "Software-stock selloff (\"SaaSpocalypse\")",
+    "date": "2026-02",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "workflow-lowcode"
+    ],
+    "stackLayer": "apps",
+    "creators": [],
+    "description": "After Claude Cowork plugins and Claude Opus 4.6, about $285B of software market value fell in roughly 48 hours on fears that agents would replace business applications. Revenues at the largest vendors kept growing through 2026.",
+    "capabilityNote": "Thomson Reuters fell 15.8% and LegalZoom 19.7%; Salesforce later reported an $11.3B quarter (+11%).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "inspired-by",
+        "target": "claude-cowork"
+      },
+      {
+        "type": "inspired-by",
+        "target": "claude"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.deeplearning.ai/the-batch/claude-cowork-plugins-trigger-a-saas-stock-selloff-but-partnerships-lead-to-slight-rebound",
+        "title": "The Batch: Cowork plugins trigger SaaS selloff",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://fortune.com/2026/02/06/anthropic-claude-opus-4-6-stock-selloff-new-upgrade/",
+        "title": "Fortune: Opus 4.6 stock selloff",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings/",
+        "title": "Salesforce FY27 Q2",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "luma-dream-machine",
+    "title": "Luma Dream Machine",
+    "date": "2024-06-12",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Luma AI"
+    ],
+    "description": "A free public text- and image-to-video app; the Ray2 (Jan 2025) and Ray3 (Sep 2025) models followed.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "runway"
+      },
+      {
+        "type": "competes-with",
+        "target": "sora"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://lumalabs.ai/dream-machine",
+        "title": "Luma AI: Dream Machine",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "openai-io",
+    "title": "OpenAI acquires io",
+    "date": "2025-05-21",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "compute-hardware"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "OpenAI",
+      "io (Jony Ive)"
+    ],
+    "description": "OpenAI bought io, the hardware startup co-founded by former Apple designer Jony Ive, in an all-stock deal of about $6.5B to build AI devices.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "humane-ai-pin"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/OpenAI",
+        "title": "Wikipedia: OpenAI",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "salesforce-agentforce",
+    "title": "Salesforce cuts support staff with AI agents",
+    "date": "2025-09-02",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "workflow-lowcode"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Salesforce"
+    ],
+    "description": "Marc Benioff said Salesforce had reduced its support staff from about 9,000 to about 5,000 because AI agents now handled about half of customer interactions. The company said it redeployed hundreds of the affected staff.",
+    "capabilityNote": "Agentforce ARR above $1.5B by Aug 2026 (company-reported); support costs down 17% (company-reported).",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "klarna-ai-assistant"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cnbc.com/2025/09/02/salesforce-ceo-confirms-4000-layoffs-because-i-need-less-heads-with-ai.html",
+        "title": "CNBC: Salesforce CEO confirms 4,000 layoffs",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings/",
+        "title": "Salesforce FY27 Q2",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "chegg",
+    "title": "Chegg's decline",
+    "date": "2025-10-27",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "language",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Chegg"
+    ],
+    "description": "In May 2023 Chegg's CEO called the ChatGPT-driven stock drop overblown. Chegg later cut 22% of staff (May 2025) and 45% (Oct 2025), citing AI and falling Google traffic, and its stock fell about 99% from its peak.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "chatgpt"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.cnbc.com/2023/05/02/chegg-ceo-chatgpt-stock-plunge-was-extraordinarily-overblown.html",
+        "title": "CNBC: Chegg CEO on ChatGPT stock plunge",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.cnbc.com/2025/10/27/chegg-slashes-45percent-of-workforce-blames-new-realities-of-ai.html",
+        "title": "CNBC: Chegg cuts 45% of workforce",
+        "accessedAt": "2026-09-26"
+      },
+      {
+        "url": "https://www.forbes.com/sites/petercohan/2025/10/29/chegg-stock-down-99-learn-whether-ai-45-layoffs-make-chgg-a-buy/",
+        "title": "Forbes: Chegg stock down 99%",
+        "accessedAt": "2026-09-26"
+      }
+    ],
+    "status": "published"
+  }
+]
