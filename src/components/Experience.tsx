@@ -112,7 +112,7 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
           <Road road={road} />
           <DeadEnds road={road} />
           <Roadside road={road} />
-          <hemisphereLight args={["#ffffff", "#b9c7a8", 1.6]} />
+          <hemisphereLight args={["#ffffff", "#6b5f52", 1.6]} />
           <directionalLight position={[40, 60, 20]} intensity={1.4} />
           <Lanes road={road} />
           <Campfire road={road} />

@@ -135,7 +135,7 @@ export function Road({ road }: { road: RoadGeometry }) {
     for (let s = -road.futureLength - 120; s <= road.length + 40; s += step * 2) groundPts.push({ s, x: 0 });
     const ground = ribbon(groundPts, () => 2400, (s) => ({ color: color(s, (w) => w.ground) }), -0.05);
     // The three future roads: same surface as today's road, fading into fog.
-    const forks = road.futureForks.map((f) => ribbon(f.points, () => 6.4, () => ({ color: hexToRgb("#5b6072"), glow: 0.4 }), 0.012));
+    const forks = road.futureForks.map((f) => ribbon(f.points, () => 6.4, () => ({ color: hexToRgb("#43464f"), glow: 0.4 }), 0.012));
     return { geometry, ground, forks };
   }, [road]);
 

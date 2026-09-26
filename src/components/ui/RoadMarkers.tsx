@@ -61,10 +61,13 @@ export function RoadMarkers({ road, dataset, pxPerUnit, pad }: { road: RoadGeome
       {/* Era titles, placed where each world begins. */}
       {bands.map((b) => (
         <section key={b.era} className="absolute inset-x-0 px-4 md:px-[8vw]" style={{ top: y(b.sStart) + (b.sStart === 0 ? 900 : 60) }}>
-          <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-paper-faint">
-            Era {b.era} · {ERA_WORLDS[b.era].motif}
-          </p>
-          <h2 className="mt-2 max-w-[20ch] font-serif text-3xl leading-tight text-paper/90 md:text-5xl">{ERAS[b.era].name}</h2>
+          {/* A light card keeps the title readable over the dark ground. */}
+          <div className="inline-block max-w-full rounded-2xl border border-white/10 bg-ink/80 px-5 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
+            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-paper-faint">
+              Era {b.era} · {ERA_WORLDS[b.era].motif}
+            </p>
+            <h2 className="mt-1 max-w-[20ch] font-serif text-3xl leading-tight text-paper md:text-4xl">{ERAS[b.era].name}</h2>
+          </div>
         </section>
       ))}
 
