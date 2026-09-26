@@ -8,7 +8,7 @@ import { renderableAsQuote, type Dataset } from "@/lib/dataset";
 import { lineage, neighborhood, peopleFor, similar } from "@/lib/graph";
 import { SEGMENT_COLOR } from "@/lib/overworld/style";
 import { openEntry, travel, useStore } from "@/lib/store";
-import { SEGMENTS } from "@/lib/taxonomy";
+import { SEGMENTS, STACK_LAYERS } from "@/lib/taxonomy";
 
 const REPO = "https://github.com/unhyped/unhyped";
 
@@ -89,29 +89,47 @@ export function DetailPanel({ dataset, logos }: { dataset: Dataset; logos: Recor
         </p>
       )}
 
-      <div className="mt-6 grid grid-cols-[1fr_1fr] gap-4">
-        <StackDiagram layer={entry.stackLayer} />
-        <div className="space-y-2 text-[12px]">
-          <p className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-paper-faint">Segments</p>
-          {[entry.primarySegment, ...entry.secondarySegments].map((s) => (
-            <p key={s} className="text-paper-muted">{SEGMENTS[s]}</p>
+      <Section title="Segments">
+        <ul className="flex flex-wrap gap-2">
+          {[entry.primarySegment, ...entry.secondarySegments].map((sg, i) => (
+            <li key={sg} className="inline-flex items-center gap-2 rounded-full border border-hairline px-3 py-1 text-[13px] text-paper">
+              <span className="h-2.5 w-2.5 rounded-full" style={{ background: SEGMENT_COLOR[sg] }} />
+              {SEGMENTS[sg]}
+              {i === 0 && entry.secondarySegments.length > 0 && <span className="text-[11px] text-paper-faint">main</span>}
+            </li>
           ))}
-          {entry.oss && (
-            <div className="pt-2">
-              <p className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-paper-faint">Open source</p>
-              <p className="text-paper-muted">{entry.oss.license}</p>
-              {entry.oss.stars !== undefined && (
-                <p className="text-paper-muted tabular">
-                  {entry.oss.stars.toLocaleString()} stars
-                  <span className="text-paper-faint"> · as of {entry.oss.starsCheckedAt}</span>
-                </p>
-              )}
-              {entry.oss.archived && <p className="text-wrong">Archived</p>}
-              <p className="mt-1 text-[11px] text-paper-faint">Stars show attention, not use.</p>
-            </div>
+        </ul>
+      </Section>
+
+      <Section title="Where it sits in the AI stack">
+        <p className="mb-4 text-[14px] leading-relaxed text-paper-muted">
+          {entry.stackLayer === "ops" ? (
+            <>
+              <span className="text-paper">Ops, Eval and Safety.</span> This work applies across every layer, from hardware up to apps, rather than sitting on one.
+            </>
+          ) : (
+            <>
+              <span className="text-paper">{STACK_LAYERS.find((l) => l.id === entry.stackLayer)?.name}.</span> AI is built in layers: hardware at the bottom, the apps people use at the top. Each layer builds on the ones below it.
+            </>
           )}
-        </div>
-      </div>
+        </p>
+        <StackDiagram layer={entry.stackLayer} color={SEGMENT_COLOR[entry.primarySegment]} />
+      </Section>
+
+      {entry.oss && (
+        <Section title="Open source">
+          <p className="text-[13px] text-paper-muted">
+            {entry.oss.license}
+            {entry.oss.stars !== undefined && (
+              <span className="tabular">
+                {" "}· {entry.oss.stars.toLocaleString()} stars<span className="text-paper-faint"> as of {entry.oss.starsCheckedAt}</span>
+              </span>
+            )}
+            {entry.oss.archived && <span className="text-wrong"> · Archived</span>}
+          </p>
+          <p className="mt-1 text-[11px] text-paper-faint">Stars show attention, not use.</p>
+        </Section>
+      )}
 
       {(entry.majorUpdates.length > 0 || data.children.length > 0) && (
         <Section title="Major updates">

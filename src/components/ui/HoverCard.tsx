@@ -19,29 +19,36 @@ const TYPE_LABEL: Record<Entry["type"], string> = {
 };
 export const typeLabel = (t: Entry["type"]) => TYPE_LABEL[t];
 
-/** The nine-layer stack with this entry's layer lit; Ops/Eval/Safety is a side rail. */
-export function StackDiagram({ layer }: { layer: Entry["stackLayer"] }) {
+/**
+ * The nine-layer stack, apps at the top and hardware at the bottom, with this
+ * entry's layer marked. Ops / Eval / Safety spans every layer, so it is drawn
+ * as a bracket down the side instead of a row.
+ */
+export function StackDiagram({ layer, color }: { layer: Entry["stackLayer"]; color: string }) {
   const layers = STACK_LAYERS.filter((l) => l.id !== "ops").reverse();
   const ops = layer === "ops";
   return (
-    <div className="flex gap-1.5" role="img" aria-label={`Stack layer: ${STACK_LAYERS.find((l) => l.id === layer)?.name}`}>
-      <ol className="flex flex-1 flex-col gap-[3px]">
+    <div className="flex gap-2" role="img" aria-label={`Stack layer: ${STACK_LAYERS.find((l) => l.id === layer)?.name}`}>
+      <ol className="flex flex-1 flex-col gap-1">
         {layers.map((l) => {
           const on = l.id === layer;
           return (
             <li
               key={l.id}
-              className={`rounded-[5px] px-2 py-[3px] font-mono text-[9.5px] uppercase tracking-[0.12em] transition-colors ${on ? "bg-paper text-ink" : "bg-white/[0.04] text-paper-faint"}`}
+              className={`flex items-center justify-between rounded-lg px-3 py-1.5 text-[12.5px] ${on ? "font-semibold text-[#26283b]" : "bg-paper/[0.04] text-paper-faint"}`}
+              style={on ? { background: color } : undefined}
             >
               {l.name}
+              {on && <span className="text-[11px] font-semibold">← here</span>}
             </li>
           );
         })}
       </ol>
       <div
-        className={`flex w-5 items-center justify-center rounded-[5px] font-mono text-[9px] uppercase tracking-[0.12em] [writing-mode:vertical-rl] ${ops ? "bg-paper text-ink" : "bg-white/[0.04] text-paper-faint"}`}
+        className={`flex w-7 items-center justify-center rounded-lg text-[10.5px] [writing-mode:vertical-rl] ${ops ? "font-semibold text-[#26283b]" : "border border-dashed border-hairline text-paper-faint"}`}
+        style={ops ? { background: color } : undefined}
       >
-        Ops · Eval · Safety
+        Ops · Eval · Safety {ops && "← here"}
       </div>
     </div>
   );
