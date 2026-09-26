@@ -52,7 +52,7 @@ export function App({ raw, logos }: { raw: RawDataset; logos: Record<string, str
     <>
       {view === "2d" ? <Overworld2D dataset={dataset} logos={logos} /> : <Experience dataset={dataset} logos={logos} />}
       <Navbar />
-      <FilterBar />
+      <FilterBar dataset={dataset} />
       <SearchPalette dataset={dataset} />
       <HoverCard dataset={dataset} logos={logos} />
       <DetailPanel dataset={dataset} logos={logos} />

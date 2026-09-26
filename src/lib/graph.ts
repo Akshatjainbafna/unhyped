@@ -1,6 +1,6 @@
 import { dateValue, type Dataset } from "./dataset";
 import type { Entry } from "./schema";
-import { STACK_LAYERS, type EdgeType, type SegmentId } from "./taxonomy";
+import { STACK_LAYERS, type EdgeType, type EntryType, type SegmentId, type StackLayerId } from "./taxonomy";
 
 export type Neighbor = { entry: Entry; edge: EdgeType; direction: "out" | "in"; depth: number };
 
@@ -107,12 +107,34 @@ export function updatesFor(ds: Dataset, id: string): Entry[] {
 }
 
 /** Ids matching any selected segment (primary or secondary). Empty selection matches all. */
-export function entriesForSegments(ds: Dataset, segments: SegmentId[]): Set<string> {
-  if (!segments.length) return new Set(ds.entries.map((e) => e.id));
-  const want = new Set(segments);
+export type Filters = { segments: SegmentId[]; types: EntryType[]; layers: StackLayerId[]; oss: boolean };
+export const NO_FILTERS: Filters = { segments: [], types: [], layers: [], oss: false };
+
+/** How many filter picks are active (each chip counts once; open source counts once). */
+export const filterCount = (f: Filters) => f.segments.length + f.types.length + f.layers.length + (f.oss ? 1 : 0);
+
+/**
+ * Entries matching the filters. Within a group picks widen (Model or Paper);
+ * across groups they narrow (a Model AND open source AND in Coding Agents).
+ * An empty group places no constraint. Segments match primary or secondary.
+ */
+export function matchFilters(ds: Dataset, f: Filters): Set<string> {
+  const segs = new Set(f.segments);
+  const types = new Set(f.types);
+  const layers = new Set(f.layers);
   return new Set(
     ds.entries
-      .filter((e) => want.has(e.primarySegment) || e.secondarySegments.some((s) => want.has(s)))
+      .filter(
+        (e) =>
+          (!segs.size || segs.has(e.primarySegment) || e.secondarySegments.some((s) => segs.has(s))) &&
+          (!types.size || types.has(e.type)) &&
+          (!layers.size || layers.has(e.stackLayer)) &&
+          (!f.oss || !!e.oss || e.type === "oss-repo"),
+      )
       .map((e) => e.id),
   );
+}
+
+export function entriesForSegments(ds: Dataset, segments: SegmentId[]): Set<string> {
+  return matchFilters(ds, { ...NO_FILTERS, segments });
 }

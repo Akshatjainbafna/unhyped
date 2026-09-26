@@ -6,10 +6,10 @@ import { CatDrawing } from "./Cats";
 import { PANORAMAS, type Panorama } from "./Panoramas";
 import { Token } from "./Token";
 import type { Dataset } from "@/lib/dataset";
-import { entriesForSegments } from "@/lib/graph";
 import { layoutOverworld, lengthAt, lengthAtPoint, pointAt, yAtLength, type Overworld } from "@/lib/overworld/layout";
 import { buildStops, type Stop } from "@/lib/overworld/stops";
-import { focusYear, personalRoad, quizOpen, selectedSegments, travel, useStore } from "@/lib/store";
+import { focusYear, personalRoad, quizOpen, travel, useStore } from "@/lib/store";
+import { useFilterMatch } from "@/lib/useFilters";
 import { SCENARIOS } from "@/lib/taxonomy";
 
 const DESKTOP = { width: 1200, cols: 4, sceneHeight: 480 };
@@ -51,9 +51,8 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
     [stops, mobile],
   );
   const scale = width ? Math.min(1.15, width / ow.width) : 1;
-  const selected = useStore(selectedSegments);
   const personal = useStore(personalRoad);
-  const match = useMemo(() => entriesForSegments(dataset, selected), [dataset, selected]);
+  const match = useFilterMatch(dataset);
   const known = useMemo(() => new Set(personal?.known ?? []), [personal]);
   const missed = useMemo(() => new Set(personal?.missed ?? []), [personal]);
   const [here, setHere] = useState<Stop | null>(stops[0] ?? null);

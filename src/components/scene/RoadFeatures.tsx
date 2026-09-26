@@ -7,8 +7,8 @@ import { SEGMENT_COLOR } from "@/lib/overworld/style";
 import type { RoadGeometry } from "@/lib/road/layout";
 import { hexToRgb } from "@/lib/road/palette";
 import type { Dataset } from "@/lib/dataset";
-import { entriesForSegments } from "@/lib/graph";
 import { selectedSegments, useStore } from "@/lib/store";
+import { useFilterMatch } from "@/lib/useFilters";
 import { ribbon } from "./Road";
 
 /** Segment lanes in the map's colours: they merge around the Transformer and branch out after. */
@@ -202,9 +202,8 @@ export function Roadside({ road }: { road: RoadGeometry }) {
 
 /** A small disc on the lane under each label: where the entry sits on the road. */
 export function PathMarkers({ road, dataset }: { road: RoadGeometry; dataset: Dataset }) {
-  const selected = useStore(selectedSegments);
-  // Same rule as the labels: an entry matches if any of its segments is selected.
-  const match = useMemo(() => entriesForSegments(dataset, selected), [dataset, selected]);
+  // Same rule as the labels.
+  const match = useFilterMatch(dataset);
   const on = road.nodes.filter((n) => match.has(n.id));
   const off = road.nodes.filter((n) => !match.has(n.id));
   return (

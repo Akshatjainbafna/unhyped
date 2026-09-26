@@ -4,10 +4,10 @@ import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { renderableAsQuote, type Dataset } from "@/lib/dataset";
-import { entriesForSegments } from "@/lib/graph";
 import { SEGMENT_COLOR } from "@/lib/overworld/style";
 import type { RoadGeometry } from "@/lib/road/layout";
-import { hoveredEntry, hudPosition, openClaims, openEntry, selectedSegments, useStore } from "@/lib/store";
+import { hoveredEntry, hudPosition, openClaims, openEntry, useStore } from "@/lib/store";
+import { useFilterMatch } from "@/lib/useFilters";
 
 const AHEAD = 85;
 const BEHIND = 6;
@@ -84,8 +84,7 @@ function Anchor({ id, position, children }: { id: string; position: [number, num
  */
 export function Labels({ road, dataset, logos }: { road: RoadGeometry; dataset: Dataset; logos: Record<string, string> }) {
   const s = useStore(hudPosition);
-  const selected = useStore(selectedSegments);
-  const match = useMemo(() => entriesForSegments(dataset, selected), [dataset, selected]);
+  const match = useFilterMatch(dataset);
   const claimsByEntry = useMemo(() => {
     const m = new Map<string, Dataset["claims"]>();
     for (const c of dataset.claims) m.set(c.entryId, [...(m.get(c.entryId) ?? []), c]);

@@ -1,7 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-import type { SegmentId } from "./taxonomy";
+import type { EntryType, SegmentId, StackLayerId } from "./taxonomy";
 
 /**
  * Tiny external stores. The per-frame road position lives outside React so the
@@ -30,6 +30,9 @@ export const roadPosition = createStore(0);
 /** Coarse copy of the position for HUD re-renders (updated ~10×/s). */
 export const hudPosition = createStore(0);
 export const selectedSegments = createStore<SegmentId[]>([]);
+export const selectedTypes = createStore<EntryType[]>([]);
+export const selectedLayers = createStore<StackLayerId[]>([]);
+export const ossOnly = createStore(false);
 export const hoveredEntry = createStore<{ id: string; x: number; y: number } | null>(null);
 export const openEntry = createStore<string | null>(null);
 export const quizOpen = createStore(false);
