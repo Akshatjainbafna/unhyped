@@ -23,7 +23,7 @@ const PX_PER_UNIT = 5;
 /** Extra scroll above the futures so they never show on arrival, even on tall phones. */
 const FUTURE_PAD = 900;
 /** Scroll spent at Today while the intro heading moves away, before the road starts. */
-const INTRO_PAD = 850;
+const INTRO_PAD = 420;
 
 export function useMediaQuery(query: string) {
   return useSyncExternalStore(

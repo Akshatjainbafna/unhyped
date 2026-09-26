@@ -14,8 +14,11 @@ export const cameraFrame = { s: 0, boundaries: [] as number[] };
 // Where the horizon falls on screen for the camera's pitch and 45° field of view.
 const HORIZON = 0.5 - Math.tan(CAMERA_PITCH) / Math.tan((22.5 * Math.PI) / 180) / 2;
 
+/** The 3D sky sits a little darker than the 2D map's: pull each colour toward dusk. */
+const dusk = (c: string, k = 0.24) => mixHex([c, "#22303f"], [1 - k, k]);
+
 export function eraFog(s: number, boundaries: number[]) {
-  return mixHex(PANORAMAS.map((p) => p.mist), sceneryWeights(s, boundaries));
+  return dusk(mixHex(PANORAMAS.map((p) => p.mist), sceneryWeights(s, boundaries)));
 }
 
 /**
@@ -35,8 +38,8 @@ export function Scenery() {
       if (key === last) return;
       last = key;
       if (sky.current) {
-        const top = mixHex(PANORAMAS.map((p) => p.sky[0]), w);
-        const mist = mixHex(PANORAMAS.map((p) => p.mist), w);
+        const top = dusk(mixHex(PANORAMAS.map((p) => p.sky[0]), w), 0.3);
+        const mist = dusk(mixHex(PANORAMAS.map((p) => p.mist), w));
         sky.current.style.background = `linear-gradient(180deg, ${top} 0%, ${mist} ${HORIZON * 100 + 2}%, ${mist} 100%)`;
       }
     };

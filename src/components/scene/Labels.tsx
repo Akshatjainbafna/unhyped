@@ -95,7 +95,7 @@ export function Labels({ road, dataset, logos }: { road: RoadGeometry; dataset: 
   }, [dataset]);
 
   // Nothing on the road while the intro holds at Today (or up in the futures).
-  const visible = s <= 0.25 ? [] : road.nodes.filter((n) => n.s > s - BEHIND && n.s < s + AHEAD).slice(0, MAX);
+  const visible = s <= 0.02 ? [] : road.nodes.filter((n) => n.s > s - BEHIND && n.s < s + AHEAD).slice(0, MAX);
 
   return (
     <div className="pointer-events-none fixed inset-0 z-10 overflow-hidden">

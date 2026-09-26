@@ -73,9 +73,10 @@ const roadVertex = /* glsl */ `
   varying vec2 vUv;
   varying float vGlow;
   varying float vFrozen;
+  varying vec2 vWorld;
   ${fogVertex}
   void main() {
-    vColor = color; vUv = uv; vGlow = aGlow; vFrozen = aFrozen;
+    vColor = color; vUv = uv; vGlow = aGlow; vFrozen = aFrozen; vWorld = position.xz;
     FOG_VERTEX
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
@@ -90,13 +91,41 @@ const roadFragment = /* glsl */ `
   uniform float uTime;
   uniform vec3 uLine;
   uniform float uDashed;
+  uniform float uSolid;
+  uniform float uTexture;
+  varying vec2 vWorld;
   ${fogFragment}
   float hash(vec2 p) { return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }
+  float noise(vec2 p) {
+    vec2 i = floor(p), f = fract(p);
+    vec2 u = f * f * (3.0 - 2.0 * f);
+    return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y);
+  }
   void main() {
     float edge = min(vUv.x, 1.0 - vUv.x);
     vec3 c = vColor;
-    // Centre dashes and edge lines, stronger where the road is more "built".
-    float dash = step(0.5, fract(vUv.y * 0.12)) * smoothstep(0.03, 0.0, abs(vUv.x - 0.5)) * uDashed;
+    // Surface texture in world space. Road (uTexture 1): fine asphalt grain and
+    // worn patches. Ground (uTexture 2): soil mottling, clumps and speckle.
+    // Fine detail fades with distance so it never shimmers near the horizon.
+    float near = 1.0 - smoothstep(20.0, 110.0, vViewDist);
+    if (uTexture > 1.5) {
+      float mottle = noise(vWorld * 0.045) * 0.6 + noise(vWorld * 0.13) * 0.4;
+      float clumps = noise(vWorld * 0.6);
+      float speck = smoothstep(0.72, 0.9, noise(vWorld * 2.2)) * noise(vWorld * 5.0 + 7.0);
+      c *= 0.8 + mottle * 0.34;
+      c *= 1.0 + (clumps - 0.5) * 0.16 * near;
+      c *= 1.0 - speck * 0.3 * near;
+    } else if (uTexture > 0.5) {
+      float grain = hash(floor(vWorld * 7.0));
+      float wear = noise(vWorld * vec2(0.35, 0.08));
+      float tracks = smoothstep(0.1, 0.0, abs(abs(vUv.x - 0.5) - 0.22)) * 0.5;
+      c *= 0.92 + wear * 0.12;
+      c *= 1.0 + (grain - 0.5) * 0.14 * near;
+      c *= 1.0 - tracks * 0.08;
+    }
+    // Centre line (dashed, or solid on the future roads) and edge lines.
+    float centre = smoothstep(0.03, 0.0, abs(vUv.x - 0.5));
+    float dash = mix(step(0.5, fract(vUv.y * 0.12)), 1.0, uSolid) * centre * uDashed;
     float rim = smoothstep(0.06, 0.0, edge);
     c += uLine * (dash * 0.55 + rim * 0.35) * (0.3 + vGlow);
     // A slow pulse travels along fibre roads.
@@ -140,16 +169,24 @@ export function Road({ road }: { road: RoadGeometry }) {
   }, [road]);
 
   const uniforms = useMemo(
-    () => ({ ...fogUniforms, uTime: { value: 0 }, uLine: { value: new THREE.Color("#ece8e1") }, uDashed: { value: 1 } }),
+    () => ({ ...fogUniforms, uTime: { value: 0 }, uLine: { value: new THREE.Color("#ece8e1") }, uDashed: { value: 1 }, uSolid: { value: 0 }, uTexture: { value: 1 } }),
+    [],
+  );
+  // The future roads carry a solid centre line so the three read as arrows pointing ahead.
+  const forkUniforms = useMemo(
+    () => ({ ...fogUniforms, uTime: { value: 0 }, uLine: { value: new THREE.Color("#ece8e1") }, uDashed: { value: 1 }, uSolid: { value: 1 }, uTexture: { value: 1 } }),
     [],
   );
   const groundUniforms = useMemo(
-    () => ({ ...fogUniforms, uTime: { value: 0 }, uLine: { value: new THREE.Color("#000000") }, uDashed: { value: 0 } }),
+    () => ({ ...fogUniforms, uTime: { value: 0 }, uLine: { value: new THREE.Color("#000000") }, uDashed: { value: 0 }, uSolid: { value: 0 }, uTexture: { value: 2 } }),
     [],
   );
   const roadMaterialRef = useRef<THREE.ShaderMaterial>(null);
+  const forkMaterialRef = useRef<THREE.ShaderMaterial>(null);
   useFrame(({ clock }) => {
     if (roadMaterialRef.current) roadMaterialRef.current.uniforms.uTime.value = clock.elapsedTime;
+    // The forks share one uniforms object, so the first material ticks them all.
+    if (forkMaterialRef.current) forkMaterialRef.current.uniforms.uTime.value = clock.elapsedTime;
   });
 
   return (
@@ -159,7 +196,7 @@ export function Road({ road }: { road: RoadGeometry }) {
       </mesh>
       {forks.map((g, i) => (
         <mesh key={i} geometry={g}>
-          <shaderMaterial vertexShader={roadVertex} fragmentShader={roadFragment} uniforms={uniforms} />
+          <shaderMaterial ref={i === 0 ? forkMaterialRef : undefined} vertexShader={roadVertex} fragmentShader={roadFragment} uniforms={forkUniforms} />
         </mesh>
       ))}
       <mesh geometry={geometry} position={[0, 0.01, 0]}>
