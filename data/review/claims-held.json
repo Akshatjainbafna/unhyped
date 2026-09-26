@@ -1,0 +1,22 @@
+[
+  {
+    "id": "elastic-vector-dbs-never-a-business",
+    "entryId": "vector-databases",
+    "speaker": "Ash Kulkarni",
+    "speakerRole": "CEO, Elastic",
+    "attribution": "named",
+    "quote": "We've always said that vector databases are a feature. They are never going to be a business in and of themselves.",
+    "quoteVerified": false,
+    "saidAt": "2025",
+    "claimSource": "https://aimmediahouse.com/market-industry/elastic-ceo-says-vector-databases-were-never-a-business-amid-pinecone-sale-talks",
+    "reality": "Pinecone explored a sale in 2025 after losing Notion as a customer, named a new CEO in September 2025 and stayed independent into 2026. Vector search became a standard feature of Postgres, Elastic, MongoDB and the cloud providers.",
+    "realitySources": [
+      "https://www.theinformation.com/articles/top-funded-ai-database-startup-pinecone-considers-sale",
+      "https://venturebeat.com/ai/from-shiny-object-to-sober-reality-the-vector-database-story-two-years-later"
+    ],
+    "outcome": "partially",
+    "heldReason": "not-found: No primary or reputable source found. The AIM Media House page is JS-rendered and yielded no text. The only readable copy is an Actian (competitor) blog, which quotes 'Vector databases are a feature. They are never going to be a business in and of themselves.' and cites AIM. It has no 'We've always said that' prefix, so that prefix is unsupported. Not found in the Elastic Q1 FY26 earnings-call transcript I checked. VentureBeat paraphrases the idea without quoting Kulkarni. Do not publish as a direct quote unless an original interview is located.",
+    "checkedAt": "2026-09-26",
+    "checkedSource": "https://aimmediahouse.com/market-industry/elastic-ceo-says-vector-databases-were-never-a-business-amid-pinecone-sale-talks"
+  }
+]

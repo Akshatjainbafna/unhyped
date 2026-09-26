@@ -9,7 +9,7 @@
     "knownFor": [],
     "quote": {
       "text": "I propose to consider the question, 'Can machines think?'",
-      "verified": false,
+      "verified": true,
       "source": "https://academic.oup.com/mind/article/LIX/236/433/986238",
       "date": "1950-10"
     },
@@ -29,9 +29,9 @@
       "lisp"
     ],
     "quote": {
-      "text": "every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.",
-      "verified": false,
-      "source": "http://jmc.stanford.edu/articles/dartmouth/dartmouth.pdf",
+      "text": "The study is to proceed on the basis of the conjecture that every aspect of learning or any other feature of intelligence can in principle be so precisely described that a machine can be made to simulate it.",
+      "verified": true,
+      "source": "http://www-formal.stanford.edu/jmc/history/dartmouth/dartmouth.html",
       "date": "1955-08-31"
     },
     "source": "https://amturing.acm.org/award_winners/mccarthy_1118322.cfm"
@@ -163,7 +163,7 @@
     "knownFor": [],
     "quote": {
       "text": "All the impressive achievements of deep learning amount to just curve fitting.",
-      "verified": false,
+      "verified": true,
       "source": "https://www.quantamagazine.org/to-build-truly-intelligent-machines-teach-them-cause-and-effect-20180515/",
       "date": "2018-05-15"
     },
@@ -279,9 +279,9 @@
     "knownFor": [],
     "quote": {
       "text": "We propose a new framework for estimating generative models via an adversarial process",
-      "verified": false,
+      "verified": true,
       "source": "https://arxiv.org/abs/1406.2661",
-      "date": "2014-06"
+      "date": "2014-06-10"
     },
     "source": "https://en.wikipedia.org/wiki/Ian_Goodfellow"
   },
@@ -324,9 +324,9 @@
     ],
     "quote": {
       "text": "a very good chance of it being within the next 5 years",
-      "verified": false,
-      "source": "https://eu.36kr.com/en/p/3646186509667977",
-      "date": "2026-04"
+      "verified": true,
+      "source": "https://the-decoder.com/deepmind-ceo-hassabis-says-agi-will-hit-like-ten-industrial-revolutions-compressed-into-a-single-decade/",
+      "date": "2026-04-07"
     },
     "source": "https://www.nobelprize.org/prizes/chemistry/2024/hassabis/facts/"
   },
@@ -406,9 +406,9 @@
     ],
     "quote": {
       "text": "We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.",
-      "verified": false,
+      "verified": true,
       "source": "https://arxiv.org/abs/1706.03762",
-      "date": "2017-06"
+      "date": "2017-06-12"
     },
     "source": "https://arxiv.org/abs/1706.03762"
   },
@@ -646,8 +646,8 @@
     "knownFor": [],
     "quote": {
       "text": "There will be no programmers in five years.",
-      "verified": false,
-      "source": "https://decrypt.co/147191/no-human-programmers-five-years-ai-stability-ceo",
+      "verified": true,
+      "source": "https://finance.yahoo.com/news/stability-ai-ceo-no-human-193413248.html",
       "date": "2023-07"
     },
     "source": "https://en.wikipedia.org/wiki/Emad_Mostaque"
@@ -714,9 +714,9 @@
     ],
     "knownFor": [],
     "quote": {
-      "text": "a system for haphazardly stitching together sequences of linguistic forms it has observed in its vast training data, according to probabilistic information about how they combine, but without any reference to meaning: a stochastic parrot.",
-      "verified": false,
-      "source": "https://dl.acm.org/doi/10.1145/3442188.3445922",
+      "text": "an LM is a system for haphazardly stitching together sequences of linguistic forms it has observed in its vast training data, according to probabilistic information about how they combine, but without any reference to meaning: a stochastic parrot.",
+      "verified": true,
+      "source": "https://s10251.pcdn.co/pdf/2021-bender-parrots.pdf",
       "date": "2021-03"
     },
     "source": "https://faculty.washington.edu/ebender/"
@@ -747,9 +747,9 @@
     "knownFor": [],
     "quote": {
       "text": "Why AI is Harder Than We Think",
-      "verified": false,
+      "verified": true,
       "source": "https://arxiv.org/abs/2104.12871",
-      "date": "2021-04"
+      "date": "2021-04-26"
     },
     "source": "https://www.santafe.edu/people/profile/melanie-mitchell"
   },
@@ -764,9 +764,9 @@
     "knownFor": [],
     "quote": {
       "text": "The intelligence of a system is a measure of its skill-acquisition efficiency over a scope of tasks, with respect to priors, experience, and generalization difficulty.",
-      "verified": false,
+      "verified": true,
       "source": "https://arxiv.org/abs/1911.01547",
-      "date": "2019-11"
+      "date": "2019-11-05"
     },
     "source": "https://fchollet.com/"
   },

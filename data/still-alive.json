@@ -236,7 +236,6 @@
   {
     "id": "vector-databases",
     "subject": "Standalone vector databases",
-    "claimId": "elastic-vector-dbs-never-a-business",
     "verdict": "transformed",
     "summary": "The standalone category was squeezed while vector search became a standard feature of Postgres (pgvector), Elastic, MongoDB and the cloud providers. Pinecone explored a sale, changed CEO and stayed independent.",
     "metrics": [],
