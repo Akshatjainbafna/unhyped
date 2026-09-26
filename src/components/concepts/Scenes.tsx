@@ -134,7 +134,7 @@ export function LaunchNight() {
         answers={[
           { ask: "Draw a cat", ok: "meh", answer: <text {...B} fontSize={13} fill="#fff">Text only. It can type /\_/\ ( o.o ).</text> },
           { ask: "Translate this sentence", ok: "yes", answer: <text {...B} fontSize={13} fill="#fff">Fluent, and it explains the grammar.</text> },
-          { ask: "Book my flight", ok: "no", answer: <text {...B} fontSize={13} fill="#fff">“I can't browse the internet.”</text> },
+          { ask: "Book my flight", ok: "no", answer: <text {...B} fontSize={13} fill="#fff">“I can&apos;t browse the internet.”</text> },
         ]}
       />
     </svg>
