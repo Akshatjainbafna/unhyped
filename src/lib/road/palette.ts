@@ -1,20 +1,21 @@
 import type { SegmentId } from "../taxonomy";
 
 /**
- * Each era's world: sky, horizon glow, ground and road surface. Indexed by era
- * id (0 Tools … 7 Agency, 8 Futures). Colours stay desaturated so only the
- * world, never the chrome, carries the glow.
+ * Each era's world in the 3D view: sky (the era's atmosphere, shared with the
+ * 2D map), an accent for its backdrop pattern, ground, and road surface.
+ * Indexed by era id (0 Tools … 7 Agency, 8 Futures). Light and crisp: the
+ * road darkens and roughens as you travel back, from asphalt to a dirt path.
  */
 export const ERA_WORLDS = [
-  { sky: "#0f0906", glow: "#ff8a3d", ground: "#22160e", road: "#3a2a1c", motif: "Firelight on stone" },
-  { sky: "#100d09", glow: "#f2a950", ground: "#1b1712", road: "#2d2923", motif: "Punch cards and valve glow" },
-  { sky: "#050f0b", glow: "#5fd49a", ground: "#0b1712", road: "#1a2621", motif: "Green phosphor, frost at the edges" },
-  { sky: "#070b13", glow: "#7fa8e8", ground: "#0c1320", road: "#1b2231", motif: "Wireframe" },
-  { sky: "#061018", glow: "#4ec3cf", ground: "#0a1820", road: "#1a2830", motif: "A lattice waking up" },
-  { sky: "#0d0b10", glow: "#e9e1cf", ground: "#141218", road: "#26232b", motif: "Fields of text" },
-  { sky: "#090d10", glow: "#9fdcc0", ground: "#10181a", road: "#1f2a2c", motif: "An interconnected graph" },
-  { sky: "#0c0a0d", glow: "#f0a98a", ground: "#141015", road: "#2a2226", motif: "Volumetric, every medium at once" },
-  { sky: "#101216", glow: "#d6dbe4", ground: "#15181d", road: "#2a2e35", motif: "Fog: several possible roads" },
+  { sky: "#ffe8c6", glow: "#ff8a3d", ground: "#f3cf9c", road: "#c79a62", motif: "Firelight on stone" },
+  { sky: "#fff1d9", glow: "#e98b5b", ground: "#f2dcb8", road: "#a8977b", motif: "Punch cards and valve glow" },
+  { sky: "#e6edf1", glow: "#3f9a6a", ground: "#d4dfe6", road: "#7e7c77", motif: "Green phosphor, frost at the edges" },
+  { sky: "#e9eff5", glow: "#5b7fc7", ground: "#d6e0ea", road: "#6d707b", motif: "Wireframe" },
+  { sky: "#e4f0ff", glow: "#2ea7b8", ground: "#d2e4f8", road: "#5f6474", motif: "A lattice waking up" },
+  { sky: "#eaf3ff", glow: "#ff9f43", ground: "#d6e6f8", road: "#575c6e", motif: "Fields of text" },
+  { sky: "#e0f1ff", glow: "#2ec4b6", ground: "#cfe5f8", road: "#4f5466", motif: "An interconnected graph" },
+  { sky: "#d4efff", glow: "#4d8dff", ground: "#c2e3f5", road: "#4b5063", motif: "Volumetric, every medium at once" },
+  { sky: "#f4faff", glow: "#9aa3b8", ground: "#e6eef7", road: "#8a90a2", motif: "Fog: several possible roads" },
 ] as const;
 
 export function hexToRgb(hex: string): [number, number, number] {

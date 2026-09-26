@@ -17,7 +17,7 @@ export function Minimap({ road }: { road: RoadGeometry }) {
     .filter((b) => b.sEnd > b.sStart);
 
   const yearLabel =
-    s < 0 ? "The futures" : year < 0 ? `${Math.round(-year)} BCE` : formatYear(`${Math.floor(year)}-${String(Math.floor((year % 1) * 12) + 1).padStart(2, "0")}`);
+    s < 0 ? "The futures" : year < 0 ? `${Math.round(-year)} BCE` : year < 1900 ? String(Math.floor(year)) : formatYear(`${Math.floor(year)}-${String(Math.floor((year % 1) * 12) + 1).padStart(2, "0")}`);
 
   return (
     <aside aria-label="Timeline position" className="fixed right-4 top-1/2 z-30 hidden -translate-y-1/2 items-stretch gap-3 md:flex">

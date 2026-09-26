@@ -101,7 +101,7 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
           camera={{ fov: 45, near: 0.5, far: 600, position: [0, 18, 4] }}
           gl={{ antialias: !mobile, powerPreference: "high-performance" }}
           onCreated={({ scene }) => {
-            scene.fog = new THREE.Fog("#0c0b0a", 60, 260);
+            scene.fog = new THREE.Fog("#eaf3ff", 60, 260);
           }}
         >
           <Backdrop weightsRef={weightsRef} detail={mobile ? 0.6 : 1} />

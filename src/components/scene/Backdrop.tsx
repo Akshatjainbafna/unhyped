@@ -112,13 +112,16 @@ const fragment = /* glsl */ `
     motifs[6] = uWeights[6] > 0.001 ? mGraph(uv) : 0.0;
     motifs[7] = uWeights[7] > 0.001 ? mVolume(uv) : 0.0;
     motifs[8] = uWeights[8] > 0.001 ? mFog(uv) : 0.0;
+    // Light skies: each era's pattern is tinted into its sky, never glowing.
     for (int i = 0; i < 9; i++) {
-      vec3 sky = mix(uSky[i] * 0.9, uSky[i] * 2.2 + uGlow[i] * 0.05, smoothstep(0.95, 0.0, uv.y));
-      col += uWeights[i] * (sky + uGlow[i] * motifs[i] * 0.42 * uDetail);
+      vec3 top = mix(uSky[i], uGlow[i], 0.07);
+      vec3 horizon = mix(uSky[i], vec3(1.0), 0.45);
+      vec3 sky = mix(top, horizon, smoothstep(0.95, 0.05, uv.y));
+      col += uWeights[i] * mix(sky, uGlow[i], clamp(motifs[i] * 0.32 * uDetail, 0.0, 0.5));
     }
-    // Vignette keeps the chrome legible at the edges.
-    float v = smoothstep(1.25, 0.35, length((uv - 0.5) * vec2(uAspect * 0.8, 1.0)));
-    gl_FragColor = vec4(col * (0.55 + 0.45 * v), 1.0);
+    // A whisper of vignette keeps the chrome legible without darkening the world.
+    float v = smoothstep(1.35, 0.4, length((uv - 0.5) * vec2(uAspect * 0.8, 1.0)));
+    gl_FragColor = vec4(col * (0.94 + 0.06 * v), 1.0);
   }
 `;
 

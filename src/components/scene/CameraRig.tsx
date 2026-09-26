@@ -28,6 +28,7 @@ export function CameraRig({
   const target = useRef(new THREE.Vector3());
   const fog = useRef(new THREE.Color());
   const tmp = useRef(new THREE.Color());
+  const white = useRef(new THREE.Color("#ffffff"));
 
   useFrame(({ camera, scene }, dt) => {
     const goal = roadPosition.get();
@@ -49,9 +50,8 @@ export function CameraRig({
     fog.current.setRGB(0, 0, 0);
     d.eraWeights.forEach((w, i) => {
       if (!w) return;
-      // Match the sky's horizon band so the ground dissolves into it.
-      fog.current.add(tmp.current.set(ERA_WORLDS[i].sky).multiplyScalar(2.2 * w));
-      fog.current.add(tmp.current.set(ERA_WORLDS[i].glow).multiplyScalar(0.05 * w));
+      // Match the sky's pale horizon band so the ground dissolves into it.
+      fog.current.add(tmp.current.set(ERA_WORLDS[i].sky).lerp(white.current, 0.45).multiplyScalar(w));
     });
     fogUniforms.uFogColor.value.copy(fog.current);
     if (scene.fog instanceof THREE.Fog) scene.fog.color.copy(fog.current);

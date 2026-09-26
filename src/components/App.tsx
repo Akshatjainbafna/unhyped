@@ -39,7 +39,7 @@ export function App({ raw, logos }: { raw: RawDataset; logos: Record<string, str
   }, []);
 
   useEffect(() => {
-    document.documentElement.dataset.theme = view === "2d" ? "game" : "";
+    document.documentElement.dataset.theme = "game";
     const url = new URL(location.href);
     if (view === "3d") url.searchParams.set("view", "3d");
     else url.searchParams.delete("view");
