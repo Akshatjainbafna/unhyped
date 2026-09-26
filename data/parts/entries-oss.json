@@ -2268,5 +2268,54 @@
         "title": "Whisper paper"
       }
     ]
+  },
+  {
+    "id": "nvidia-nooa",
+    "title": "NVIDIA NOOA (Object-Oriented Agents)",
+    "date": "2026-07-22",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "NVIDIA (NeMo labs)"
+    ],
+    "description": "A model-agnostic Python framework where an agent is a Python object: methods are its actions, fields its state, docstrings its prompts and type annotations its contracts. Methods left as '...' are filled in by an LLM at runtime; the rest stay ordinary, deterministic Python.",
+    "capabilityNote": "Research software from NVIDIA labs, not a product. The paper reports results on SWE-bench Verified, Terminal-Bench 2.0 and ARC-AGI-3, and the docs warn that generated code needs sandboxing.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "langgraph"
+      },
+      {
+        "type": "competes-with",
+        "target": "dspy"
+      },
+      {
+        "type": "uses",
+        "target": "mcp"
+      }
+    ],
+    "majorUpdates": [],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/NVIDIA-NeMo/labs-OO-Agents",
+      "stars": 2200,
+      "starsCheckedAt": "2026-09-26",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2607.20709",
+        "title": "NVIDIA-labs OO Agents: Native Python Object-Oriented Agents (arXiv, Jul 2026)"
+      },
+      {
+        "url": "https://github.com/NVIDIA-NeMo/labs-OO-Agents",
+        "title": "NVIDIA-NeMo/labs-OO-Agents on GitHub"
+      }
+    ]
   }
 ]
