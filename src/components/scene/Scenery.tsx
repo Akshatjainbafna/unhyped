@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { PANORAMAS } from "../overworld/Panoramas";
-import { PITCH } from "@/lib/road/director";
+import { CAMERA_PITCH } from "@/lib/road/director";
 import { mixHex, sceneryWeights } from "@/lib/road/scenery";
 
 /**
@@ -12,7 +12,9 @@ import { mixHex, sceneryWeights } from "@/lib/road/scenery";
 export const cameraFrame = { s: 0, boundaries: [] as number[] };
 
 // Where the horizon falls on screen for the camera's pitch and 45° field of view.
-const HORIZON = 0.5 - Math.tan(PITCH) / Math.tan((22.5 * Math.PI) / 180) / 2;
+const HORIZON = 0.5 - Math.tan(CAMERA_PITCH) / Math.tan((22.5 * Math.PI) / 180) / 2;
+// Sink landmarks slightly below the horizon so the 3D ground hides their base.
+const ROOT = 0.012;
 // Size landmarks from the viewport height so the tallest fit above the horizon.
 const ART_W = "min(104vh, 140vw)";
 
@@ -74,7 +76,7 @@ export function Scenery() {
               viewBox="0 0 1200 380"
               preserveAspectRatio="xMidYMax meet"
               className="absolute left-1/2 -translate-x-1/2"
-              style={{ width: ART_W, aspectRatio: "1200 / 380", bottom: `calc(${(1 - HORIZON) * 100}% - ${ART_W} * ${50 / 1200})` }}
+              style={{ width: ART_W, aspectRatio: "1200 / 380", bottom: `calc(${(1 - HORIZON - ROOT) * 100}% - ${ART_W} * ${50 / 1200})` }}
             >
               <Art />
             </svg>

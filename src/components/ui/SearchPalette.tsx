@@ -11,7 +11,19 @@ import { SEGMENTS } from "@/lib/taxonomy";
 
 const norm = (t: string) => t.toLowerCase().normalize("NFKD").replace(/[^a-z0-9 ]/g, " ");
 
-/** Title matches first, then creators and segments; ties go to the newer entry. */
+/** Edit distance, capped: enough to forgive a typo or two ("dypy" → "dspy"). */
+function editDistance(a: string, b: string, cap = 3): number {
+  if (Math.abs(a.length - b.length) > cap) return cap + 1;
+  let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i];
+    for (let j = 1; j <= b.length; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    prev = cur;
+  }
+  return prev[b.length];
+}
+
+/** Title matches first, then creators and segments, then near-misses; ties go to the newer entry. */
 export function rank(entries: Entry[], query: string, limit = 8): Entry[] {
   const q = norm(query).trim();
   if (!q) return [];
@@ -26,6 +38,12 @@ export function rank(entries: Entry[], query: string, limit = 8): Entry[] {
     else if (e.creators.some((c) => norm(c).includes(q))) score = 30;
     else if (norm(SEGMENTS[e.primarySegment]).includes(q)) score = 15;
     else if (e.majorUpdates.some((u) => norm(u.title).includes(q))) score = 12;
+    else if (q.length >= 3) {
+      // Typos: compare against whole title and each word.
+      const allowed = q.length <= 5 ? 1 : 2;
+      const words = [title.replace(/\s+/g, ""), ...title.split(/\s+/)].filter((w) => w.length >= 3);
+      if (words.some((w) => editDistance(q.replace(/\s+/g, ""), w) <= allowed)) score = 8;
+    }
     if (score) scored.push({ e, score });
   }
   return scored

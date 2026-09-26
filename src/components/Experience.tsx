@@ -11,7 +11,7 @@ import { focusYear, hudPosition, roadPosition, travel } from "@/lib/store";
 import { CameraRig } from "./scene/CameraRig";
 import { LabelProjector, Labels } from "./scene/Labels";
 import { Road } from "./scene/Road";
-import { Campfire, DeadEnds, FutureForks, Lanes } from "./scene/RoadFeatures";
+import { Campfire, DeadEnds, Lanes, Roadside } from "./scene/RoadFeatures";
 import { Scenery } from "./scene/Scenery";
 import { PANORAMAS } from "./overworld/Panoramas";
 import { Minimap } from "./ui/Minimap";
@@ -111,7 +111,9 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
           <CameraRig road={road} heroes={heroes} reducedMotion={reducedMotion} weightsRef={weightsRef} boundaries={boundaries} />
           <Road road={road} />
           <DeadEnds road={road} />
-          <FutureForks road={road} />
+          <Roadside road={road} />
+          <hemisphereLight args={["#ffffff", "#b9c7a8", 1.6]} />
+          <directionalLight position={[40, 60, 20]} intensity={1.4} />
           <Lanes road={road} />
           <Campfire road={road} />
           <LabelProjector />

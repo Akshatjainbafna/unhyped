@@ -248,5 +248,43 @@
         "title": "The Information: Pinecone considers sale"
       }
     ]
+  },
+  {
+    "id": "jev",
+    "title": "Jev (TypeSafe AI)",
+    "date": "2026-09-15",
+    "type": "model",
+    "era": 6,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "agent-frameworks"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "TypeSafe AI"
+    ],
+    "description": "A “System One” decision model that returns typed choices, scores and calibrated probabilities instead of free text, aimed at high-volume classification and routing. TypeSafe AI came out of stealth with a $40M seed.",
+    "capabilityNote": "Priced at $0.042 per 1M input tokens with ~100 ms typical latency. TypeSafe's “193.6x faster, 444.6x cheaper” figures are vendor-reported (it calls them the high end) and not yet independently replicated.",
+    "majorUpdates": [],
+    "edges": [
+      {
+        "type": "uses",
+        "target": "mcp"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://flaviocopes.com/jev/",
+        "title": "A deep dive into Jev, TypeSafe's System One model"
+      },
+      {
+        "url": "https://www.firecrawl.dev/blog/what-is-jev",
+        "title": "What Is Jev? Inside TypeSafe's Decision-Only AI Model"
+      },
+      {
+        "url": "https://github.com/vinilana/jev-gateway",
+        "title": "jev-gateway on GitHub"
+      }
+    ]
   }
 ]

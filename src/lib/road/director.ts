@@ -29,6 +29,8 @@ const HEIGHT = 6.5;
 export const PITCH = (5 * Math.PI) / 180;
 const LOOK_AHEAD = HEIGHT / Math.tan(PITCH);
 const BEHIND = 14;
+/** The camera's actual downward angle, which sets where the horizon falls on screen. */
+export const CAMERA_PITCH = Math.atan(HEIGHT / (LOOK_AHEAD + BEHIND));
 
 const smoothstep = (t: number) => {
   const c = Math.min(1, Math.max(0, t));

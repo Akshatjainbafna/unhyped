@@ -23,3 +23,14 @@ describe("search ranking", () => {
     expect(rank(entries, "  ")).toEqual([]);
   });
 });
+
+describe("search typos", () => {
+  const more = [...entries, entry({ id: "dspy", title: "DSPy", date: "2023-10" }), entry({ id: "jev", title: "Jev (TypeSafe AI)", date: "2026-09-15" })];
+  it("forgives a small typo", () => {
+    expect(rank(more, "dypy").map((e) => e.id)).toContain("dspy");
+    expect(rank(more, "prologe").map((e) => e.id)).toContain("prolog");
+  });
+  it("still prefers exact matches", () => {
+    expect(rank(more, "jev")[0].id).toBe("jev");
+  });
+});

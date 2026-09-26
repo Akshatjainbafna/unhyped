@@ -109,7 +109,7 @@ const roadFragment = /* glsl */ `
 `;
 
 export function Road({ road }: { road: RoadGeometry }) {
-  const { geometry, ground } = useMemo(() => {
+  const { geometry, ground, forks } = useMemo(() => {
     const step = 2;
     const points: Strip = [];
     for (let s = 0; s <= road.length; s += step) points.push({ s, x: 0 });
@@ -131,8 +131,12 @@ export function Road({ road }: { road: RoadGeometry }) {
       glow: scalar(s, (i) => ERA_EMISSIVE[i]),
       frozen: isFrozen(s) ? 1 : 0,
     }));
-    const ground = ribbon(points, () => 2400, (s) => ({ color: color(s, (w) => w.ground) }), -0.05);
-    return { geometry, ground };
+    const groundPts: Strip = [];
+    for (let s = -road.futureLength - 120; s <= road.length + 40; s += step * 2) groundPts.push({ s, x: 0 });
+    const ground = ribbon(groundPts, () => 2400, (s) => ({ color: color(s, (w) => w.ground) }), -0.05);
+    // The three future roads: same surface as today's road, fading into fog.
+    const forks = road.futureForks.map((f) => ribbon(f.points, () => 6.4, () => ({ color: hexToRgb("#5b6072"), glow: 0.4 }), 0.012));
+    return { geometry, ground, forks };
   }, [road]);
 
   const uniforms = useMemo(
@@ -153,6 +157,11 @@ export function Road({ road }: { road: RoadGeometry }) {
       <mesh geometry={ground}>
         <shaderMaterial vertexShader={roadVertex} fragmentShader={roadFragment} uniforms={groundUniforms} />
       </mesh>
+      {forks.map((g, i) => (
+        <mesh key={i} geometry={g}>
+          <shaderMaterial vertexShader={roadVertex} fragmentShader={roadFragment} uniforms={uniforms} />
+        </mesh>
+      ))}
       <mesh geometry={geometry} position={[0, 0.01, 0]}>
         <shaderMaterial ref={roadMaterialRef} vertexShader={roadVertex} fragmentShader={roadFragment} uniforms={uniforms} />
       </mesh>
