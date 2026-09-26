@@ -42,15 +42,16 @@ export function FilterBar() {
         aria-label="Close Map of AI"
         tabIndex={-1}
         onClick={() => filterOpen.set(false)}
-        className="fixed inset-0 z-[35] cursor-default bg-ink/20"
+        className="fixed inset-0 z-[35] cursor-default bg-ink/45 backdrop-blur-[2px]"
       />
     )}
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-40 flex justify-center px-4 pb-4 md:pb-6">
       <div className="pointer-events-auto w-full max-w-4xl">
         {open && (
+          <div className="mb-3 animate-[fadeUp_320ms_var(--ease-out)] rounded-[2rem] border border-white/15 bg-white/[0.06] p-1.5 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)] backdrop-blur-2xl backdrop-saturate-150">
           <section
             aria-label="Map of AI"
-            data-lenis-prevent className="overscroll-contain mb-3 max-h-[55dvh] overflow-auto rounded-[1.75rem] border border-white/10 bg-ink/80 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl md:p-7"
+            data-lenis-prevent className="overscroll-contain max-h-[55dvh] overflow-auto rounded-[calc(2rem-0.375rem)] border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.04)] p-5 md:p-7"
           >
             <div className="flex items-baseline justify-between gap-4">
               <h2 className="font-serif text-2xl text-paper md:text-3xl">Map of AI</h2>
@@ -81,6 +82,7 @@ export function FilterBar() {
               ))}
             </div>
           </section>
+          </div>
         )}
 
         <div className="mx-auto flex w-max max-w-full items-center gap-2 rounded-full border border-white/10 bg-ink/60 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl">
