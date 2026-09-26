@@ -7,7 +7,7 @@ import { renderableAsQuote, type Dataset } from "@/lib/dataset";
 import { entriesForSegments } from "@/lib/graph";
 import { SEGMENT_COLOR } from "@/lib/overworld/style";
 import type { RoadGeometry } from "@/lib/road/layout";
-import { hoveredEntry, hudPosition, openEntry, selectedSegments, useStore } from "@/lib/store";
+import { hoveredEntry, hudPosition, openClaims, openEntry, selectedSegments, useStore } from "@/lib/store";
 
 const AHEAD = 85;
 const BEHIND = 6;
@@ -37,7 +37,7 @@ export function LabelProjector() {
       const y = (-v.current.y * 0.5 + 0.5) * size.height;
       el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -100%)`;
       const depth = Math.min(1, Math.max(0, (v.current.z - 0.96) / 0.04));
-      el.style.setProperty("--depth", String(1 - depth * 0.85));
+      el.style.setProperty("--depth", String(1 - depth * 0.35));
       el.style.zIndex = String(Math.round((1 - v.current.z) * 10000));
       placed.push({ el, x, y, z: v.current.z });
     }
@@ -94,7 +94,8 @@ export function Labels({ road, dataset, logos }: { road: RoadGeometry; dataset: 
     return m;
   }, [dataset]);
 
-  const visible = road.nodes.filter((n) => n.s > s - BEHIND && n.s < s + AHEAD).slice(0, MAX);
+  // Nothing on the road while the intro holds at Today (or up in the futures).
+  const visible = s <= 0.25 ? [] : road.nodes.filter((n) => n.s > s - BEHIND && n.s < s + AHEAD).slice(0, MAX);
 
   return (
     <div className="pointer-events-none fixed inset-0 z-10 overflow-hidden">
@@ -111,7 +112,7 @@ export function Labels({ road, dataset, logos }: { road: RoadGeometry; dataset: 
                 <button
                   type="button"
                   tabIndex={-1}
-                  className={`pointer-events-auto whitespace-nowrap rounded-full border border-hairline bg-ink/80 px-3 py-1 text-left transition-opacity duration-500 ease-out-soft ${dim ? "opacity-20" : "opacity-100"}`}
+                  className={`pointer-events-auto whitespace-nowrap rounded-full border border-hairline bg-ink/90 px-3 py-1 text-left transition-opacity duration-500 ease-out-soft ${dim ? "opacity-20" : "opacity-100"}`}
                   onPointerEnter={(ev) => hoveredEntry.set({ id: n.id, x: ev.clientX, y: ev.clientY })}
                   onPointerLeave={() => hoveredEntry.set(null)}
                   onClick={() => openEntry.set(n.id)}
@@ -141,7 +142,7 @@ export function Labels({ road, dataset, logos }: { road: RoadGeometry; dataset: 
             {claim && (
               <Anchor id={`sign:${n.id}`} position={[n.x + side * 10, 5, -n.s]}>
                 {/* Phones get claims in the detail panel; floating signposts would crowd the lane. */}
-                <Signpost claim={claim} more={claims.length - 1} dim={dim} onOpen={() => openEntry.set(n.id)} />
+                <Signpost claim={claim} more={claims.length - 1} dim={dim} onOpen={() => openClaims.set(n.id)} />
               </Anchor>
             )}
           </div>
@@ -167,19 +168,19 @@ function Signpost({ claim, more, dim, onOpen }: { claim: Dataset["claims"][numbe
       type="button"
       tabIndex={-1}
       onClick={onOpen}
-      className={`pointer-events-auto hidden w-[260px] rounded-[14px] md:block border border-hairline-strong bg-ink/85 p-3 text-left shadow-[0_18px_40px_-20px_rgba(0,0,0,0.8)] transition-opacity duration-500 ${dim ? "opacity-15" : "opacity-100"}`}
+      aria-label={`Claim by ${claim.speaker}: read the claim and what happened`}
+      className={`pointer-events-auto hidden w-[210px] rounded-xl border border-hairline-strong bg-ink/90 px-3 py-2 text-left shadow-[0_12px_30px_-18px_rgba(0,0,0,0.6)] transition-[opacity,transform] duration-300 hover:-translate-y-0.5 md:block ${dim ? "opacity-15" : "opacity-100"}`}
     >
-      <span className="mb-1.5 block font-mono text-[9px] uppercase tracking-[0.2em] text-paper-faint">Claim vs. Reality</span>
-      <span className="line-clamp-4 block font-serif text-[17px] leading-snug text-paper">
+      <span className="flex items-center justify-between gap-2">
+        <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-paper-faint">Claim vs. Reality</span>
+        <span className={`rounded-full border border-current px-1.5 font-mono text-[8.5px] uppercase tracking-[0.14em] ${o.tone}`}>{o.label}</span>
+      </span>
+      <span className="mt-1 line-clamp-2 font-serif text-[13.5px] leading-snug text-paper">
         {asQuote ? `“${claim.quote}”` : claim.attribution === "community-sentiment" ? `Sentiment: ${claim.quote}` : claim.quote}
       </span>
-      <span className="mt-1 block text-[11px] text-paper-muted">
-        {claim.speaker}
-        {!asQuote && claim.attribution === "named" && " · wording unverified"}
-      </span>
-      <span className="mt-2 flex items-center justify-between gap-2">
-        <span className={`inline-block rounded-full border border-current px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.18em] ${o.tone}`}>{o.label}</span>
-        {more > 0 && <span className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-paper-faint">+{more} more claim{more > 1 ? "s" : ""}</span>}
+      <span className="mt-1 flex items-center justify-between gap-2 text-[10.5px] text-paper-muted">
+        <span className="truncate">{claim.speaker}</span>
+        <span className="shrink-0 text-paper-faint">{more > 0 ? `+${more} more · ` : ""}Read →</span>
       </span>
     </button>
   );

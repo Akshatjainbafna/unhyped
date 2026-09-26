@@ -5,6 +5,7 @@ import { useEffect, useMemo, useSyncExternalStore } from "react";
 import { Experience } from "./Experience";
 import { Overworld2D } from "./overworld/Overworld2D";
 import { QuizModal } from "./quiz/QuizModal";
+import { ClaimDrawer } from "./ui/ClaimDrawer";
 import { DetailPanel } from "./ui/DetailPanel";
 import { FilterBar } from "./ui/FilterBar";
 import { HoverCard } from "./ui/HoverCard";
@@ -55,6 +56,7 @@ export function App({ raw, logos }: { raw: RawDataset; logos: Record<string, str
       <SearchPalette dataset={dataset} />
       <HoverCard dataset={dataset} logos={logos} />
       <DetailPanel dataset={dataset} />
+      <ClaimDrawer dataset={dataset} />
       <QuizModal dataset={dataset} />
       <Legend view={view} />
       <ViewToggle view={view} onChange={setView} />

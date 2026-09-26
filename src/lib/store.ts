@@ -35,6 +35,8 @@ export const openEntry = createStore<string | null>(null);
 export const quizOpen = createStore(false);
 export const filterOpen = createStore(false);
 export const searchOpen = createStore(false);
+/** Entry whose Claim vs. Reality drawer is open. */
+export const openClaims = createStore<string | null>(null);
 /** Personalised road: entry ids the quiz shows the user knows / missed. */
 export const personalRoad = createStore<{ known: string[]; missed: string[] } | null>(null);
 

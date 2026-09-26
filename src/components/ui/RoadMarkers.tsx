@@ -3,18 +3,17 @@
 import { ArrowDown, ArrowUp } from "@phosphor-icons/react";
 import type { Dataset } from "@/lib/dataset";
 import type { RoadGeometry } from "@/lib/road/layout";
-import { ERA_WORLDS } from "@/lib/road/palette";
+import type { Track } from "@/lib/road/track";
 import { openEntry, quizOpen, travel } from "@/lib/store";
-import { ERAS, SCENARIOS } from "@/lib/taxonomy";
+import { SCENARIOS } from "@/lib/taxonomy";
 
 /**
  * Content that lives *in* the scroll track, so it travels past with the road:
  * the future fork, the arrival card at Today, era titles, and the campfire.
  * Also the keyboard / screen-reader path through every entry.
  */
-export function RoadMarkers({ road, dataset, pxPerUnit, pad }: { road: RoadGeometry; dataset: Dataset; pxPerUnit: number; pad: number }) {
-  const y = (s: number) => (s + road.futureLength) * pxPerUnit + pad;
-  const bands = road.eraBands.filter((b) => b.era !== 8);
+export function RoadMarkers({ road, dataset, track }: { road: RoadGeometry; dataset: Dataset; track: Track }) {
+  const y = track.toY;
 
   return (
     <div className="relative">
@@ -40,36 +39,25 @@ export function RoadMarkers({ road, dataset, pxPerUnit, pad }: { road: RoadGeome
         </ul>
       </section>
 
-      {/* Arrival: Today. */}
-      <section className="absolute inset-x-0 px-4 md:px-[8vw]" style={{ top: y(0) + 96 }} aria-labelledby="today">
-        <p className="inline-flex items-center gap-2 rounded-full border border-hairline px-3 py-1 font-mono text-[10px] uppercase tracking-[0.24em] text-paper-muted">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" /> Today · Sep 2026
-        </p>
-        <h2 id="today" className="mt-6 max-w-[16ch] font-serif text-5xl leading-[0.98] text-paper md:text-7xl">
-          The real history of AI, <em className="text-paper-muted">without the hype.</em>
-        </h2>
-        <p className="mt-6 max-w-[52ch] text-base leading-relaxed text-paper-muted">
-          What each technology demonstrably did, who built it, where it sits in the stack, and which claims held up.
-          Every entry is sourced. Nothing here killed anything.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center gap-6 font-mono text-[11px] uppercase tracking-[0.18em] text-paper-faint">
-          <span className="inline-flex items-center gap-2"><ArrowDown weight="light" size={16} /> Scroll to travel back in time</span>
-          <span className="inline-flex items-center gap-2"><ArrowUp weight="light" size={16} /> Up for the futures</span>
+      {/* Arrival: Today. Held in place (camera still) until it has scrolled away. */}
+      <section className="absolute inset-x-0 px-4 md:px-[8vw]" style={{ top: y(0) + 120 }} aria-labelledby="today">
+        <div className="max-w-[720px] rounded-[1.75rem] border border-white/10 bg-ink/85 p-6 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md md:p-9">
+          <p className="inline-flex items-center gap-2 rounded-full border border-hairline px-3 py-1 font-mono text-[10px] uppercase tracking-[0.24em] text-paper-muted">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" /> Today · Sep 2026
+          </p>
+          <h2 id="today" className="mt-5 max-w-[16ch] font-serif text-5xl leading-[0.98] text-paper md:text-6xl">
+            The real history of AI, <em className="text-paper-muted">without the hype.</em>
+          </h2>
+          <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-paper-muted">
+            What each technology demonstrably did, who built it, where it sits in the stack, and which claims held up.
+            Every entry is sourced. Nothing here killed anything.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-6 font-mono text-[11px] uppercase tracking-[0.18em] text-paper-faint">
+            <span className="inline-flex items-center gap-2"><ArrowDown weight="light" size={16} /> Scroll to travel back in time</span>
+            <span className="inline-flex items-center gap-2"><ArrowUp weight="light" size={16} /> Up for the futures</span>
+          </div>
         </div>
       </section>
-
-      {/* Era titles, placed where each world begins. */}
-      {bands.map((b) => (
-        <section key={b.era} className="absolute inset-x-0 px-4 md:px-[8vw]" style={{ top: y(b.sStart) + (b.sStart === 0 ? 900 : 60) }}>
-          {/* A light card keeps the title readable over the dark ground. */}
-          <div className="inline-block max-w-full rounded-2xl border border-white/10 bg-ink/80 px-5 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
-            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-paper-faint">
-              Era {b.era} · {ERA_WORLDS[b.era].motif}
-            </p>
-            <h2 className="mt-1 max-w-[20ch] font-serif text-3xl leading-tight text-paper md:text-4xl">{ERAS[b.era].name}</h2>
-          </div>
-        </section>
-      ))}
 
       {/* The campfire. */}
       <section className="absolute inset-x-0 px-4 text-center" style={{ top: y(road.length) - 520 }} aria-labelledby="start">

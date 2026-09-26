@@ -7,7 +7,10 @@ import * as THREE from "three";
 import type { Dataset } from "@/lib/dataset";
 import type { HeroMoment } from "@/lib/road/director";
 import { layoutRoad } from "@/lib/road/layout";
-import { focusYear, hudPosition, roadPosition, travel } from "@/lib/store";
+import { focusYear, hudPosition, roadPosition, travel, useStore } from "@/lib/store";
+import { makeTrack } from "@/lib/road/track";
+import { ERAS } from "@/lib/taxonomy";
+import { ERA_WORLDS } from "@/lib/road/palette";
 import { CameraRig } from "./scene/CameraRig";
 import { LabelProjector, Labels } from "./scene/Labels";
 import { Road } from "./scene/Road";
@@ -21,6 +24,8 @@ import { RoadMarkers } from "./ui/RoadMarkers";
 const PX_PER_UNIT = 5;
 /** Extra scroll above the futures so they never show on arrival, even on tall phones. */
 const FUTURE_PAD = 900;
+/** Scroll spent at Today while the intro heading moves away, before the road starts. */
+const INTRO_PAD = 850;
 
 export function useMediaQuery(query: string) {
   return useSyncExternalStore(
@@ -52,12 +57,14 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
   const weightsRef = useRef<number[]>(new Array(9).fill(0));
   // Where each era landscape takes over the horizon (road distance, newest first).
   const boundaries = useMemo(() => PANORAMAS.map((p) => road.sAt(p.at)), [road]);
-  const total = road.futureLength + road.length;
+  const track = useMemo(
+    () => makeTrack({ futureLength: road.futureLength, length: road.length, px: PX_PER_UNIT, futurePad: FUTURE_PAD, introPad: INTRO_PAD }),
+    [road],
+  );
 
   // Scroll → road distance. The page starts scrolled to "Today"; up is the future.
   useEffect(() => {
-    const toS = (y: number) => Math.max(0, y - FUTURE_PAD) / PX_PER_UNIT - road.futureLength;
-    const toY = (s: number) => (s + road.futureLength) * PX_PER_UNIT + FUTURE_PAD;
+    const { toS, toY } = track;
 
     // Arrive where the 2D view left off, or at Today.
     const start = focusYear.get();
@@ -95,7 +102,7 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
       clearInterval(hud);
       lenis?.destroy();
     };
-  }, [road, reducedMotion, dataset]);
+  }, [road, reducedMotion, dataset, track]);
 
   return (
     <>
@@ -126,12 +133,30 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
       <Labels road={road} dataset={dataset} logos={logos} />
 
       {/* The scroll track: its height is the length of the journey. */}
-      <main id="main" className="pointer-events-none relative z-20 [&_a]:pointer-events-auto [&_button]:pointer-events-auto" style={{ height: `calc(${Math.round(total * PX_PER_UNIT + FUTURE_PAD)}px + 100dvh)` }}>
+      <main id="main" className="pointer-events-none relative z-20 [&_a]:pointer-events-auto [&_button]:pointer-events-auto" style={{ height: `calc(${Math.round(track.height)}px + 100dvh)` }}>
         <h1 className="sr-only">Unhyped: the real history of AI, from today back to the first campfire</h1>
-        <RoadMarkers road={road} dataset={dataset} pxPerUnit={PX_PER_UNIT} pad={FUTURE_PAD} />
+        <RoadMarkers road={road} dataset={dataset} track={track} />
       </main>
 
       <Minimap road={road} />
+      <EraBadge road={road} />
     </>
+  );
+}
+
+
+/** Fixed top-left: the era you are in, turning like a calendar page as you cross into the next. */
+function EraBadge({ road }: { road: ReturnType<typeof layoutRoad> }) {
+  const s = useStore(hudPosition);
+  const era = s < 0 ? 8 : (road.eraBands.find((b) => s >= b.sStart && s < b.sEnd)?.era ?? road.eraBands.at(-1)!.era);
+  return (
+    <div aria-live="polite" className="pointer-events-none fixed left-4 top-24 z-30 md:left-6 md:top-28">
+      <div key={era} className="animate-[fadeUp_420ms_var(--ease-out)] rounded-2xl border border-white/10 bg-ink/85 px-4 py-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
+        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper-faint">
+          Era {era} · {ERA_WORLDS[era].motif}
+        </p>
+        <p className="font-serif text-xl leading-tight text-paper md:text-2xl">{ERAS[era].name}</p>
+      </div>
+    </div>
   );
 }
