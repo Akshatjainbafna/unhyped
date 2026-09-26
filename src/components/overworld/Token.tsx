@@ -42,7 +42,7 @@ export const Token = memo(function Token({
     <button
       type="button"
       data-entry={token.entryId}
-      aria-label={`${token.title} (${token.date})`}
+      aria-label={`${token.title} (${token.date})${token.more ? `, plus ${token.more} more update${token.more > 1 ? "s" : ""} this period` : ""}`}
       onPointerEnter={(e) => hoveredEntry.set({ id: token.entryId, x: e.clientX, y: e.clientY })}
       onPointerLeave={() => hoveredEntry.set(null)}
       onFocus={(e) => {
@@ -69,6 +69,11 @@ export const Token = memo(function Token({
           <Letter title={token.title} />
         )}
       </span>
+      {token.more > 0 && (
+        <span aria-hidden="true" className="absolute -bottom-1.5 -right-2 rounded-full border-2 border-[#26283b] bg-white px-1 font-game text-[10px] font-bold leading-[14px] text-[#26283b]">
+          ×{token.more + 1}
+        </span>
+      )}
       {update && (
         <span aria-hidden="true" className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-[#26283b] bg-[#ffd23f] text-[9px] font-black leading-none text-[#26283b]">
           ↑

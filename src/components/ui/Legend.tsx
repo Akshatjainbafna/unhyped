@@ -26,16 +26,21 @@ export function Legend({ view }: { view: "2d" | "3d" }) {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-        aria-controls="legend"
-        className="fixed bottom-20 left-3 z-40 flex min-h-11 items-center gap-2 rounded-2xl border-[3px] border-[#26283b] bg-white px-3 font-game text-[15px] font-bold text-[#26283b] shadow-[0_4px_0_#26283b] md:bottom-6 md:left-6"
-      >
-        <Info size={18} weight="bold" /> <span className="hidden sm:inline">What do colours and shapes mean?</span>
-        <span className="sm:hidden">Legend</span>
-      </button>
+      <div className="fixed bottom-4 left-3 z-40 md:bottom-6 md:left-6">
+        <div className="rounded-full border border-white/10 bg-ink/60 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl">
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            aria-expanded={open}
+            aria-controls="legend"
+            aria-label="Legend: what colours and shapes mean"
+            className="inline-flex min-h-9 items-center gap-2 rounded-full px-3 text-[13px] text-paper md:px-4"
+          >
+            <Info weight="light" size={16} />
+            <span className="hidden md:inline">Legend</span>
+          </button>
+        </div>
+      </div>
 
       {open && (
         <>
@@ -43,7 +48,7 @@ export function Legend({ view }: { view: "2d" | "3d" }) {
           <section
             id="legend"
             aria-label="Legend"
-            className="fixed bottom-36 left-3 right-3 z-[45] max-h-[68dvh] overflow-auto rounded-[22px] border-[3px] border-[#26283b] bg-white p-5 text-[#26283b] shadow-[0_6px_0_#26283b] md:bottom-24 md:left-6 md:right-auto md:w-[560px]"
+            className="fixed bottom-20 left-3 right-3 z-[45] max-h-[68dvh] overflow-auto rounded-[22px] border-[3px] border-[#26283b] bg-white p-5 text-[#26283b] shadow-[0_6px_0_#26283b] md:bottom-24 md:left-6 md:right-auto md:w-[560px]"
           >
             <div className="flex items-start justify-between gap-4">
               <h2 className="font-game text-2xl font-bold">How to read the map</h2>

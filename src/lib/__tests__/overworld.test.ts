@@ -129,3 +129,22 @@ describe("arrival at a stop", () => {
     }
   });
 });
+
+describe("one token per product per stop", () => {
+  it("folds a product's launch and its updates in the same month into one token", () => {
+    const many = buildDataset({
+      ...fixtureRaw,
+      entries: fixtureEntries.map((e) =>
+        e.id === "claude-cowork"
+          ? { ...e, date: "2026-01-12", majorUpdates: [{ date: "2026-01-16", title: "Pro", summary: "s" }, { date: "2026-01-23", title: "Team", summary: "s" }] }
+          : e,
+      ),
+    });
+    const jan = buildStops(many).find((s) => s.key === "2026-01")!;
+    const cowork = jan.tokens.filter((t) => t.entryId === "claude-cowork");
+    expect(cowork).toHaveLength(1);
+    expect(cowork[0].type).toBe("product");
+    expect(cowork[0].more).toBe(2);
+    expect(jan.events).toBe(3);
+  });
+});

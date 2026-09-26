@@ -15,6 +15,8 @@ export type Token = {
   group: number; // 0 Foundations · 1 Capabilities · 2 Modern stack · 3 Cross-cutting
   type: Entry["type"] | "update";
   date: string;
+  /** Other launches/updates of the same product in this stop, folded into this token. */
+  more: number;
 };
 
 export type Stop = {
@@ -25,7 +27,8 @@ export type Stop = {
   from: number; // fractional years, inclusive
   to: number; // exclusive
   era: EraId;
-  tokens: Token[];
+  tokens: Token[]; // one per product
+  events: number; // launches + updates, counting folded ones
 };
 
 const GROUP_KEYS = Object.keys(SEGMENT_GROUPS) as (keyof typeof SEGMENT_GROUPS)[];
@@ -54,7 +57,7 @@ export function bucketOf(date: string): string {
   return "antiquity";
 }
 
-function stopFor(key: string): Omit<Stop, "tokens" | "era"> {
+function stopFor(key: string): Omit<Stop, "tokens" | "era" | "events"> {
   if (/^\d{4}-\d{2}$/.test(key)) {
     const [y, m] = key.split("-").map(Number);
     return { key, label: `${MONTHS[m - 1]} '${String(y).slice(2)}`, long: `${MONTHS_LONG[m - 1]} ${y}`, kind: "month", from: y + (m - 1) / 12, to: y + m / 12 };
@@ -80,7 +83,7 @@ export function buildStops(ds: Dataset, now = { year: 2026, month: 9 }): Stop[] 
   keys.push("1800-1939", "1000-1799", "antiquity");
 
   const tokens = new Map<string, Token[]>(keys.map((k) => [k, []]));
-  const push = (date: string, t: Omit<Token, "date">) => tokens.get(bucketOf(date))?.push({ ...t, date });
+  const push = (date: string, t: Omit<Token, "date" | "more">) => tokens.get(bucketOf(date))?.push({ ...t, date, more: 0 });
   for (const e of ds.entries) {
     if (e.type === "person" || e.status !== "published") continue;
     const base = { segment: e.primarySegment, group: groupOf(e.primarySegment) };
@@ -92,8 +95,18 @@ export function buildStops(ds: Dataset, now = { year: 2026, month: 9 }): Stop[] 
   return keys
     .map((k) => {
       const s = stopFor(k);
-      const list = (tokens.get(k) ?? []).sort((a, b) => dateValue(b.date) - dateValue(a.date));
-      return { ...s, era: eraAt(s.from), tokens: list };
+      // One token per product: keep the launch itself if it is here, else its
+      // newest update, and fold the rest into a count.
+      const byEntry = new Map<string, Token[]>();
+      for (const t of tokens.get(k) ?? []) byEntry.set(t.entryId, [...(byEntry.get(t.entryId) ?? []), t]);
+      const list = [...byEntry.values()]
+        .map((group) => {
+          const lead = group.find((t) => t.type !== "update") ?? group.sort((a, b) => dateValue(b.date) - dateValue(a.date))[0];
+          return { ...lead, more: group.length - 1 };
+        })
+        .sort((a, b) => dateValue(b.date) - dateValue(a.date));
+      const events = list.reduce((n, t) => n + 1 + t.more, 0);
+      return { ...s, era: eraAt(s.from), tokens: list, events };
     })
     .filter((s) => s.kind === "month" || s.kind === "year" || s.tokens.length > 0);
 }

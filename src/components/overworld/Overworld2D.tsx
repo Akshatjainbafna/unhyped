@@ -14,7 +14,7 @@ import { SCENARIOS } from "@/lib/taxonomy";
 
 const DESKTOP = { width: 1200, cols: 4, sceneHeight: 480 };
 const MOBILE = { width: 440, cols: 1, sceneHeight: 330, radius: 40 };
-const FUTURES_H = 420;
+const FUTURES_H = 500;
 const FUTURES_MIST = "#f4faff";
 const CAMPFIRE_MIST = "#f3c58e";
 const CAMPFIRE_H = 520;
@@ -162,7 +162,7 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
               {here.long}
             </p>
             <p className="text-[13px] font-bold text-[#55597a]">
-              {here.tokens.length} {here.tokens.length === 1 ? "launch or update" : "launches and updates"}
+              {here.events} {here.events === 1 ? "launch or update" : "launches and updates"}
             </p>
           </div>
         </div>
@@ -194,7 +194,7 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
 
             {/* Stops: level dot, plaque, and the month's launches as logo tokens */}
             {ow.stops.map(({ stop, x, y }) => {
-              const count = stop.tokens.length;
+              const count = stop.events;
               const shown = stop.tokens.slice(0, 20);
               return (
                 <section key={stop.key} aria-label={`${stop.long}: ${count} launches and updates`} className="absolute" style={{ left: x, top: y, width: 0, height: 0 }}>
@@ -217,8 +217,8 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
                         ring={known.has(t.entryId) ? "known" : missed.has(t.entryId) ? "missed" : undefined}
                       />
                     ))}
-                    {count > shown.length && (
-                      <span className="flex h-11 w-11 items-center justify-center rounded-full border-[3px] border-dashed border-[#26283b] bg-white/70 font-game text-sm font-bold">+{count - shown.length}</span>
+                    {stop.tokens.length > shown.length && (
+                      <span className="flex h-11 w-11 items-center justify-center rounded-full border-[3px] border-dashed border-[#26283b] bg-white/70 font-game text-sm font-bold">+{stop.tokens.length - shown.length}</span>
                     )}
                   </div>
                 </section>
@@ -355,7 +355,7 @@ function Futures({ width, startX, mobile, dataset }: { width: number; startX: nu
         ))}
         <rect width={width} height={FUTURES_H * 0.7} fill="url(#fog)" />
       </svg>
-      <div className={`absolute ${mobile ? "left-4 right-4 top-6" : "left-[300px] right-8 top-10"}`}>
+      <div className={`absolute ${mobile ? "left-4 right-4 top-24" : "left-[300px] right-8 top-28"}`}>
         <p className="font-game text-sm font-semibold uppercase tracking-[0.18em] text-[#55597a]">The futures · scroll down to travel back in time</p>
         <h2 className="mt-1 max-w-[22ch] font-game text-3xl font-bold leading-tight text-[#26283b] md:text-4xl">The road forks. Nobody knows which one we are on.</h2>
         <ul className={`mt-4 grid gap-3 ${mobile ? "" : "grid-cols-3"}`}>

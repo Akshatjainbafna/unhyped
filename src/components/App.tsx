@@ -68,7 +68,7 @@ function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => voi
     { id: "3d", label: "3D road", Icon: Cube },
   ];
   return (
-    <div role="radiogroup" aria-label="View" className="fixed bottom-20 right-3 z-40 flex gap-1 rounded-2xl md:bottom-6 md:right-6 border-[3px] border-[#26283b] bg-white p-1 shadow-[0_4px_0_#26283b] md:bottom-6 md:right-6">
+    <div role="radiogroup" aria-label="View" className="fixed bottom-4 right-3 z-40 flex gap-1 rounded-full border border-white/10 bg-ink/60 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl md:bottom-6 md:right-6">
       {opts.map(({ id, label, Icon }) => {
         const on = view === id;
         return (
@@ -78,11 +78,11 @@ function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => voi
             role="radio"
             aria-checked={on}
             onClick={() => onChange(id)}
-            className={`flex min-h-11 items-center gap-2 rounded-xl px-3 font-game text-[15px] font-bold transition-colors ${on ? "bg-[#26283b] text-white" : "text-[#26283b] hover:bg-[#fff1c9]"}`}
+            className={`inline-flex min-h-9 items-center gap-2 rounded-full px-3 text-[13px] transition-colors md:px-4 ${on ? "bg-paper text-ink" : "text-paper-muted hover:text-paper"}`}
           >
-            <Icon size={18} weight="bold" />
-            <span className="hidden sm:inline">{label}</span>
-            <span className="sm:hidden">{id.toUpperCase()}</span>
+            <Icon weight="light" size={16} />
+            <span className="hidden md:inline">{label}</span>
+            <span className="md:hidden">{id.toUpperCase()}</span>
           </button>
         );
       })}
