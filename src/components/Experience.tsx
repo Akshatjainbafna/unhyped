@@ -7,10 +7,8 @@ import * as THREE from "three";
 import type { Dataset } from "@/lib/dataset";
 import type { HeroMoment } from "@/lib/road/director";
 import { layoutRoad } from "@/lib/road/layout";
-import { focusYear, hudPosition, roadPosition, travel, useStore } from "@/lib/store";
+import { focusYear, hudPosition, roadPosition, travel } from "@/lib/store";
 import { makeTrack } from "@/lib/road/track";
-import { ERAS } from "@/lib/taxonomy";
-import { ERA_WORLDS } from "@/lib/road/palette";
 import { CameraRig } from "./scene/CameraRig";
 import { LabelProjector, Labels } from "./scene/Labels";
 import { Road } from "./scene/Road";
@@ -47,12 +45,10 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
     () => layoutRoad(dataset.entries, { viewport: mobile ? "mobile" : "desktop" }),
     [dataset, mobile],
   );
+  // The camera swings only where the road crosses into a new era.
   const heroes: HeroMoment[] = useMemo(
-    () =>
-      road.nodes
-        .filter((n) => dataset.byId.get(n.id)?.heroMoment)
-        .map((n) => ({ id: n.id, s: n.s })),
-    [road, dataset],
+    () => road.eraBands.filter((b) => b.era !== 8 && b.sStart > 0 && Number.isFinite(b.sStart)).map((b) => ({ id: `era-${b.era}`, s: b.sStart })),
+    [road],
   );
   const weightsRef = useRef<number[]>(new Array(9).fill(0));
   // Where each era landscape takes over the horizon (road distance, newest first).
@@ -139,24 +135,7 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
       </main>
 
       <Minimap road={road} />
-      <EraBadge road={road} />
     </>
   );
 }
 
-
-/** Fixed top-left: the era you are in, turning like a calendar page as you cross into the next. */
-function EraBadge({ road }: { road: ReturnType<typeof layoutRoad> }) {
-  const s = useStore(hudPosition);
-  const era = s < 0 ? 8 : (road.eraBands.find((b) => s >= b.sStart && s < b.sEnd)?.era ?? road.eraBands.at(-1)!.era);
-  return (
-    <div aria-live="polite" className="pointer-events-none fixed left-4 top-24 z-30 md:left-6 md:top-28">
-      <div key={era} className="animate-[fadeUp_420ms_var(--ease-out)] rounded-2xl border border-white/10 bg-ink/85 px-4 py-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
-        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-paper-faint">
-          Era {era} · {ERA_WORLDS[era].motif}
-        </p>
-        <p className="font-serif text-xl leading-tight text-paper md:text-2xl">{ERAS[era].name}</p>
-      </div>
-    </div>
-  );
-}
