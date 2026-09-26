@@ -34,7 +34,7 @@
   },
   {
     "id": "simon-newell-chess-champion-ten-years",
-    "entryId": "dartmouth-workshop",
+    "entryId": "deep-blue-1997",
     "speaker": "Herbert A. Simon & Allen Newell",
     "speakerRole": "Carnegie Tech researchers",
     "attribution": "named",
@@ -83,7 +83,7 @@
   },
   {
     "id": "turing-machines-thinking-by-2000",
-    "entryId": "dartmouth-workshop",
+    "entryId": "turing-1950-computing-machinery",
     "speaker": "Alan Turing",
     "speakerRole": "Mathematician, University of Manchester",
     "attribution": "named",
@@ -233,7 +233,7 @@
   },
   {
     "id": "hinton-radiologists-coyote",
-    "entryId": "alphago",
+    "entryId": "radiologists",
     "speaker": "Geoffrey Hinton",
     "speakerRole": "Deep-learning pioneer, Google / University of Toronto",
     "attribution": "named",
@@ -250,7 +250,7 @@
   },
   {
     "id": "hinton-wrong-about-time-scale",
-    "entryId": "alphago",
+    "entryId": "radiologists",
     "speaker": "Geoffrey Hinton",
     "speakerRole": "Deep-learning pioneer; Turing Award laureate",
     "attribution": "named",
@@ -354,7 +354,7 @@
   },
   {
     "id": "kai-fu-lee-40-percent-jobs",
-    "entryId": "chatgpt",
+    "entryId": "white-collar-automation",
     "speaker": "Kai-Fu Lee",
     "speakerRole": "Venture capitalist; former head of Google China",
     "attribution": "named",
@@ -370,7 +370,7 @@
   },
   {
     "id": "marcus-deep-learning-hitting-a-wall",
-    "entryId": "chatgpt",
+    "entryId": "imo-gold-2025",
     "speaker": "Gary Marcus",
     "speakerRole": "Cognitive scientist, NYU emeritus",
     "attribution": "named",
@@ -404,7 +404,7 @@
   },
   {
     "id": "buchheit-google-total-disruption",
-    "entryId": "chatgpt",
+    "entryId": "ai-overviews-glue",
     "speaker": "Paul Buchheit",
     "speakerRole": "Creator of Gmail",
     "attribution": "named",
@@ -455,7 +455,7 @@
   },
   {
     "id": "ibm-krishna-30-percent-back-office",
-    "entryId": "ibm-watson-health",
+    "entryId": "white-collar-automation",
     "speaker": "Arvind Krishna",
     "speakerRole": "CEO, IBM",
     "attribution": "named",
@@ -471,7 +471,7 @@
   },
   {
     "id": "chegg-extraordinarily-overblown",
-    "entryId": "chatgpt",
+    "entryId": "chegg",
     "speaker": "Dan Rosensweig",
     "speakerRole": "CEO, Chegg",
     "attribution": "named",
@@ -488,7 +488,7 @@
   },
   {
     "id": "mostaque-no-programmers-five-years",
-    "entryId": "chatgpt",
+    "entryId": "junior-developers",
     "speaker": "Emad Mostaque",
     "speakerRole": "Founder and CEO, Stability AI",
     "attribution": "named",
@@ -521,7 +521,7 @@
   },
   {
     "id": "huang-nobody-has-to-program",
-    "entryId": "cursor",
+    "entryId": "junior-developers",
     "speaker": "Jensen Huang",
     "speakerRole": "CEO, NVIDIA",
     "attribution": "named",
@@ -589,7 +589,7 @@
   },
   {
     "id": "pichai-gemini-images-we-got-it-wrong",
-    "entryId": "gemini",
+    "entryId": "gemini-image-pause",
     "speaker": "Sundar Pichai",
     "speakerRole": "CEO, Google (staff memo)",
     "attribution": "named",
@@ -605,7 +605,7 @@
   },
   {
     "id": "google-ai-overviews-glue-pizza",
-    "entryId": "gemini",
+    "entryId": "ai-overviews-glue",
     "speaker": "Liz Reid",
     "speakerRole": "Head of Google Search",
     "attribution": "named",
@@ -622,7 +622,7 @@
   },
   {
     "id": "mcdonalds-voice-ordering-future",
-    "entryId": "ibm-watson-health",
+    "entryId": "mcdonalds-ibm-drive-thru",
     "speaker": "McDonald's",
     "speakerRole": "Company statement on the IBM drive-thru test",
     "attribution": "named",
@@ -706,7 +706,7 @@
   },
   {
     "id": "altman-reflections-know-how-to-build-agi",
-    "entryId": "chatgpt",
+    "entryId": "openai-operator",
     "speaker": "Sam Altman",
     "speakerRole": "CEO, OpenAI (blog post \"Reflections\")",
     "attribution": "named",
@@ -757,7 +757,7 @@
   },
   {
     "id": "duolingo-stop-using-contractors",
-    "entryId": "chatgpt",
+    "entryId": "white-collar-automation",
     "speaker": "Luis von Ahn",
     "speakerRole": "CEO, Duolingo (all-hands memo)",
     "attribution": "named",
@@ -774,7 +774,7 @@
   },
   {
     "id": "jassy-genai-reduce-corporate-workforce",
-    "entryId": "chatgpt",
+    "entryId": "white-collar-automation",
     "speaker": "Andy Jassy",
     "speakerRole": "CEO, Amazon (staff memo)",
     "attribution": "named",
@@ -808,7 +808,7 @@
   },
   {
     "id": "benioff-9000-to-5000-support",
-    "entryId": "klarna-ai-assistant",
+    "entryId": "salesforce-agentforce",
     "speaker": "Marc Benioff",
     "speakerRole": "CEO, Salesforce",
     "attribution": "named",
@@ -825,7 +825,7 @@
   },
   {
     "id": "altman-sora-chatgpt-for-creativity",
-    "entryId": "sora",
+    "entryId": "sora-2",
     "speaker": "Sam Altman",
     "speakerRole": "CEO, OpenAI",
     "attribution": "named",
@@ -842,7 +842,7 @@
   },
   {
     "id": "elastic-vector-dbs-never-a-business",
-    "entryId": "langchain",
+    "entryId": "vector-databases",
     "speaker": "Ash Kulkarni",
     "speakerRole": "CEO, Elastic",
     "attribution": "named",
@@ -944,7 +944,7 @@
   },
   {
     "id": "meme-rag-is-dead",
-    "entryId": "langchain",
+    "entryId": "rag",
     "speaker": "Developer community sentiment",
     "speakerRole": "Recurring meme after Gemini 1.5's 1M-token context (Feb 2024)",
     "attribution": "community-sentiment",

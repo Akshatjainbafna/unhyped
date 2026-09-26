@@ -53,7 +53,8 @@
     "sources": [
       "https://s206.q4cdn.com/479360582/files/doc_financials/2026/q2/2026q2-alphabet-earnings-release.pdf",
       "https://www.searchenginejournal.com/google-search-revenue-growth-eases-after-a-year-of-acceleration/583181/"
-    ]
+    ],
+    "entryId": "ai-overviews-glue"
   },
   {
     "id": "junior-developers",
@@ -79,7 +80,8 @@
       "https://digitaleconomy.stanford.edu/news/canariesaug26/",
       "https://www.signalfire.com/blog/signalfire-state-of-talent-report-2025",
       "https://digitaleconomy.stanford.edu/news/canaries-interest-rates-and-timinga-more-on-recent-drivers-of-employment-changes-for-young-workers/"
-    ]
+    ],
+    "entryId": "junior-developers"
   },
   {
     "id": "adobe-photoshop",
@@ -138,7 +140,8 @@
       "https://www.cnbc.com/2025/10/27/chegg-slashes-45percent-of-workforce-blames-new-realities-of-ai.html",
       "https://www.forbes.com/sites/petercohan/2025/10/29/chegg-stock-down-99-learn-whether-ai-45-layoffs-make-chgg-a-buy/",
       "https://investor.chegg.com/Press-Releases/press-release-details/2026/Chegg-Reports-2025-Fourth-Quarter-and-Full-Year-Financial-Results/default.aspx"
-    ]
+    ],
+    "entryId": "chegg"
   },
   {
     "id": "customer-support-jobs",
@@ -205,7 +208,8 @@
       "https://vectorize.io/blog/rag-is-dead-long-live-rag",
       "https://lighton.ai/lighton-blogs/rag-is-dead-long-live-rag-retrieval-in-the-age-of-agents",
       "https://akitaonrails.com/en/2026/04/06/rag-is-dead-long-context/"
-    ]
+    ],
+    "entryId": "rag"
   },
   {
     "id": "langchain",
@@ -239,7 +243,8 @@
     "sources": [
       "https://venturebeat.com/ai/from-shiny-object-to-sober-reality-the-vector-database-story-two-years-later",
       "https://www.theinformation.com/articles/top-funded-ai-database-startup-pinecone-considers-sale"
-    ]
+    ],
+    "entryId": "vector-databases"
   },
   {
     "id": "saas",
@@ -314,7 +319,8 @@
     "sources": [
       "https://www.insidehighered.com/news/tech-innovation/teaching-learning/2025/01/09/changes-boot-camp-marks-signal-shifts-workforce",
       "https://en.wikipedia.org/wiki/Codesmith"
-    ]
+    ],
+    "entryId": "junior-developers"
   },
   {
     "id": "radiologists",
@@ -343,7 +349,8 @@
     "sources": [
       "https://fortune.com/article/ai-godfather-radiologists-obsolete-salaries-up-to-571k-demand-growing/",
       "https://www.cnn.com/2026/02/09/tech/ai-replacing-jobs-concerns-radiology"
-    ]
+    ],
+    "entryId": "radiologists"
   },
   {
     "id": "duolingo",
@@ -363,6 +370,7 @@
     ],
     "sources": [
       "https://finance.yahoo.com/news/duolingo-went-ai-first-then-070000682.html"
-    ]
+    ],
+    "entryId": "white-collar-automation"
   }
 ]

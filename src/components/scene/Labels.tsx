@@ -73,6 +73,8 @@ export function Labels({ road, dataset }: { road: RoadGeometry; dataset: Dataset
   const claimsByEntry = useMemo(() => {
     const m = new Map<string, Dataset["claims"]>();
     for (const c of dataset.claims) m.set(c.entryId, [...(m.get(c.entryId) ?? []), c]);
+    // Lead with a verified quote when there is one, then the most recent.
+    for (const list of m.values()) list.sort((a, b) => Number(renderableAsQuote(b)) - Number(renderableAsQuote(a)) || b.saidAt.localeCompare(a.saidAt));
     return m;
   }, [dataset]);
 
@@ -83,7 +85,8 @@ export function Labels({ road, dataset }: { road: RoadGeometry; dataset: Dataset
       {visible.map((n) => {
         const e = dataset.byId.get(n.id)!;
         const dim = !match.has(n.id);
-        const claim = claimsByEntry.get(n.id)?.[0];
+        const claims = claimsByEntry.get(n.id) ?? [];
+        const claim = claims[0];
         const side = n.x < 0 ? -1 : 1;
         return (
           <div key={n.id}>
@@ -103,7 +106,7 @@ export function Labels({ road, dataset }: { road: RoadGeometry; dataset: Dataset
             {claim && (
               <Anchor id={`sign:${n.id}`} position={[n.x + side * 10, 5, -n.s]}>
                 {/* Phones get claims in the detail panel; floating signposts would crowd the lane. */}
-                <Signpost claim={claim} dim={dim} onOpen={() => openEntry.set(n.id)} />
+                <Signpost claim={claim} more={claims.length - 1} dim={dim} onOpen={() => openEntry.set(n.id)} />
               </Anchor>
             )}
           </div>
@@ -121,7 +124,7 @@ const OUTCOME: Record<string, { label: string; tone: string }> = {
   "too-early": { label: "Too early to tell", tone: "text-paper-muted" },
 };
 
-function Signpost({ claim, dim, onOpen }: { claim: Dataset["claims"][number]; dim: boolean; onOpen: () => void }) {
+function Signpost({ claim, more, dim, onOpen }: { claim: Dataset["claims"][number]; more: number; dim: boolean; onOpen: () => void }) {
   const asQuote = renderableAsQuote(claim);
   const o = OUTCOME[claim.outcome];
   return (
@@ -139,7 +142,10 @@ function Signpost({ claim, dim, onOpen }: { claim: Dataset["claims"][number]; di
         {claim.speaker}
         {!asQuote && claim.attribution === "named" && " · wording unverified"}
       </span>
-      <span className={`mt-2 inline-block rounded-full border border-current px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.18em] ${o.tone}`}>{o.label}</span>
+      <span className="mt-2 flex items-center justify-between gap-2">
+        <span className={`inline-block rounded-full border border-current px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.18em] ${o.tone}`}>{o.label}</span>
+        {more > 0 && <span className="font-mono text-[9.5px] uppercase tracking-[0.16em] text-paper-faint">+{more} more claim{more > 1 ? "s" : ""}</span>}
+      </span>
     </button>
   );
 }

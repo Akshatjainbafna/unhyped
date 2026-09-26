@@ -6,19 +6,49 @@
     "type": "oss-repo",
     "era": 5,
     "primarySegment": "local-runtimes",
-    "secondarySegments": ["foundation-models"],
+    "secondarySegments": [
+      "foundation-models"
+    ],
     "stackLayer": "inference",
-    "creators": ["Jeffrey Morgan", "Michael Chiang"],
+    "creators": [
+      "Jeffrey Morgan",
+      "Michael Chiang"
+    ],
     "description": "A local model runtime that downloads and runs open-weight models on a laptop behind a simple CLI and API, built on llama.cpp.",
     "capabilityNote": "Runs quantised open-weight models locally; later added a desktop app (v0.10, Jul 2025) and an MLX backend on Macs.",
     "majorUpdates": [
-      { "date": "2025-07", "title": "Desktop app (v0.10)", "summary": "A desktop app alongside the CLI." }
+      {
+        "date": "2025-07",
+        "title": "Desktop app (v0.10)",
+        "summary": "A desktop app alongside the CLI."
+      }
     ],
-    "oss": { "license": "MIT", "repoUrl": "https://github.com/ollama/ollama", "stars": 181748, "starsCheckedAt": "2026-09-26", "archived": false },
-    "edges": [{ "type": "built-on", "target": "llama-cpp" }, { "type": "competes-with", "target": "vllm" }],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/ollama/ollama",
+      "stars": 181748,
+      "starsCheckedAt": "2026-09-26",
+      "archived": false
+    },
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "llama-cpp"
+      },
+      {
+        "type": "competes-with",
+        "target": "vllm"
+      }
+    ],
     "sources": [
-      { "url": "https://github.com/ollama/ollama", "title": "ollama/ollama on GitHub" },
-      { "url": "https://en.wikipedia.org/wiki/Ollama", "title": "Ollama (Wikipedia)" }
+      {
+        "url": "https://github.com/ollama/ollama",
+        "title": "ollama/ollama on GitHub"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Ollama",
+        "title": "Ollama (Wikipedia)"
+      }
     ]
   },
   {
@@ -29,15 +59,194 @@
     "type": "event",
     "era": 5,
     "primarySegment": "coding-agents",
-    "secondarySegments": ["language"],
+    "secondarySegments": [
+      "language"
+    ],
     "stackLayer": "apps",
-    "creators": ["Stack Overflow"],
+    "creators": [
+      "Stack Overflow"
+    ],
     "description": "Public question volume on Stack Overflow fell from about 200,000 a month at its 2014 peak to 1,072 in June 2026 as developers moved to chat assistants and coding agents.",
     "capabilityNote": "The company survives in smaller form on enterprise products and AI data-licensing deals.",
-    "edges": [{ "type": "competes-with", "target": "chatgpt" }],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "chatgpt"
+      }
+    ],
     "sources": [
-      { "url": "https://www.devclass.com/ai-ml/2026/01/05/dramatic-drop-in-stack-overflow-questions-as-devs-look-elsewhere-for-help/4079575", "title": "DevClass: dramatic drop in Stack Overflow questions" },
-      { "url": "https://thenewstack.io/stack-overflows-plan-to-survive-the-age-of-ai/", "title": "The New Stack: Stack Overflow's plan to survive" }
+      {
+        "url": "https://www.devclass.com/ai-ml/2026/01/05/dramatic-drop-in-stack-overflow-questions-as-devs-look-elsewhere-for-help/4079575",
+        "title": "DevClass: dramatic drop in Stack Overflow questions"
+      },
+      {
+        "url": "https://thenewstack.io/stack-overflows-plan-to-survive-the-age-of-ai/",
+        "title": "The New Stack: Stack Overflow's plan to survive"
+      }
+    ]
+  },
+  {
+    "id": "radiologists",
+    "title": "Radiologists and AI",
+    "date": "2016",
+    "type": "event",
+    "era": 4,
+    "primarySegment": "vision",
+    "secondarySegments": [
+      "neural-deep-learning"
+    ],
+    "stackLayer": "apps",
+    "creators": [],
+    "description": "After deep learning matched specialists on some image-reading benchmarks, radiology became the standard example of a job AI would replace. Demand for radiologists kept rising instead.",
+    "capabilityNote": "Average radiologist pay reached $571K in 2025, with 7,469 active radiology job postings in May 2026 and caseload up about 25% from 2018 to early 2025.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "alexnet"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fortune.com/article/ai-godfather-radiologists-obsolete-salaries-up-to-571k-demand-growing/",
+        "title": "Fortune: radiologist salaries up to $571K, demand growing"
+      },
+      {
+        "url": "https://www.cnn.com/2026/02/09/tech/ai-replacing-jobs-concerns-radiology",
+        "title": "CNN: AI and radiology jobs (Feb 2026)"
+      }
+    ]
+  },
+  {
+    "id": "junior-developers",
+    "title": "Entry-level hiring in AI-exposed jobs",
+    "date": "2025",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "personal-agents"
+    ],
+    "stackLayer": "apps",
+    "creators": [],
+    "description": "As coding agents spread, programming did not disappear, but entry-level hiring weakened: new-grad hiring at the 15 largest tech firms fell more than 50% from 2019.",
+    "capabilityNote": "Stanford Digital Economy Lab research finds employment of young workers in the most AI-exposed occupations below trend, with no economy-wide displacement.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "claude-code"
+      },
+      {
+        "type": "uses",
+        "target": "cursor"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.signalfire.com/blog/signalfire-state-of-talent-report-2025",
+        "title": "SignalFire State of Talent Report 2025"
+      },
+      {
+        "url": "https://digitaleconomy.stanford.edu/news/canariesaug26/",
+        "title": "Stanford Digital Economy Lab: canaries in the coal mine"
+      }
+    ]
+  },
+  {
+    "id": "white-collar-automation",
+    "title": "AI and white-collar jobs",
+    "date": "2025-06",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "workflow-lowcode"
+    ],
+    "stackLayer": "apps",
+    "creators": [],
+    "description": "Large employers began citing generative AI in workforce plans. Cuts were real at some firms, but how much AI caused them is disputed, and several companies walked back AI-first staffing claims.",
+    "capabilityNote": "The 18 occupations the BLS flagged as AI-exposed fell 0.2% (May 2024–May 2025) while total US employment rose 0.8%. Amazon cut about 30,000 corporate jobs across late 2025 and early 2026.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.inc.com/soren-kaplan/the-bureau-of-labor-statistics-just-flagged-18-jobs-ai-is-already-shrinking-is-yours-on-the-list/91346529",
+        "title": "Inc.: BLS flags 18 AI-exposed occupations"
+      },
+      {
+        "url": "https://www.pbs.org/newshour/economy/amazon-to-lay-off-14000-corporate-employees-as-spending-on-artificial-intelligence-accelerates",
+        "title": "PBS: Amazon lays off 14,000 corporate employees"
+      }
+    ]
+  },
+  {
+    "id": "rag",
+    "title": "Retrieval-augmented generation (RAG)",
+    "date": "2020-05-22",
+    "type": "paper",
+    "era": 5,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [
+      "language"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Patrick Lewis",
+      "Ethan Perez",
+      "Facebook AI Research"
+    ],
+    "description": "Combined a language model with a retriever over a document index so answers can draw on, and cite, external text. It became the default pattern for grounding LLM apps in 2023.",
+    "capabilityNote": "Retrieval later moved into agentic search and tool use rather than disappearing; long context replaced the mandatory vector database for some uses.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "transformer"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2005.11401",
+        "title": "Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
+      },
+      {
+        "url": "https://lighton.ai/lighton-blogs/rag-is-dead-long-live-rag-retrieval-in-the-age-of-agents",
+        "title": "LightOn: retrieval in the age of agents"
+      }
+    ]
+  },
+  {
+    "id": "vector-databases",
+    "title": "Vector databases",
+    "date": "2021",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "data",
+    "creators": [
+      "Pinecone",
+      "Weaviate",
+      "Chroma",
+      "Qdrant",
+      "pgvector"
+    ],
+    "description": "Databases for embedding search boomed as the storage layer for RAG. The category commoditised as vector search became a feature of Postgres, Elastic, MongoDB and the cloud providers.",
+    "capabilityNote": "Pinecone explored a sale in 2025 and named a new CEO in September 2025, staying independent into 2026.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "rag"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://venturebeat.com/ai/from-shiny-object-to-sober-reality-the-vector-database-story-two-years-later",
+        "title": "VentureBeat: the vector database story two years later"
+      },
+      {
+        "url": "https://www.theinformation.com/articles/top-funded-ai-database-startup-pinecone-considers-sale",
+        "title": "The Information: Pinecone considers sale"
+      }
     ]
   }
 ]
