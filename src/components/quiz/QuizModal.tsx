@@ -160,9 +160,7 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
         {/* Liquid glass: an inner core with its own refraction edge. */}
         <div data-lenis-prevent className="glass-ink overscroll-contain relative max-h-[86dvh] overflow-y-auto rounded-[calc(2rem-0.375rem)] border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.02] px-6 pb-7 pt-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.04)] sm:px-9 sm:pb-9">
           <div className="flex items-center justify-between gap-4">
-            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-paper-muted">
-              Unhyped quiz{stage.kind !== "intro" && stage.kind !== "result" && ` · ${count + 1} of ~13`}
-            </p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-paper-muted">Unhyped quiz</p>
             <button
               type="button"
               onClick={() => quizOpen.set(false)}
@@ -172,6 +170,22 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
               <X weight="light" size={16} />
             </button>
           </div>
+          {stage.kind !== "intro" && stage.kind !== "result" && (
+            // Roughly how far through: the length adapts, so a bar rather than an exact count.
+            <div
+              role="progressbar"
+              aria-label="Quiz progress"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={Math.round(Math.min(1, count / 13) * 100)}
+              className="mt-3 h-1.5 overflow-hidden rounded-full bg-paper/10"
+            >
+              <div
+                className="h-full rounded-full bg-paper transition-[width] duration-500 ease-out-soft"
+                style={{ width: `${Math.max(4, Math.min(96, (count / 13) * 100))}%` }}
+              />
+            </div>
+          )}
 
           {stage.kind === "intro" && (
             <div className="mt-4">
@@ -276,16 +290,30 @@ function QuestionView({
           {q.options!.map((o, i) => {
             const picked = stage.picked === i;
             const reveal = stage.feedback && (i === q.answer || picked);
-            const tone = !reveal ? "" : i === q.answer ? "border-accent/70 bg-accent/10" : "border-wrong/70 bg-wrong/10";
+            const right = i === q.answer;
+            // One exclusive set of border/background classes per state, so the reveal always wins.
+            const tone = !reveal
+              ? `border-white/10 bg-white/[0.03] ${stage.feedback ? "opacity-60" : "hover:bg-white/[0.08]"}`
+              : right
+                ? "border-2 border-[#1f9d63] bg-[#1f9d63]/12"
+                : "border-2 border-wrong bg-wrong/10";
             return (
               <button
                 key={i}
                 type="button"
                 disabled={Boolean(stage.feedback)}
                 onClick={() => onPick(i)}
-                className={`min-h-12 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-left text-[14.5px] text-paper transition-all duration-300 ease-spring hover:bg-white/[0.08] active:scale-[0.99] disabled:cursor-default ${tone}`}
+                className={`flex min-h-12 items-center justify-between gap-3 rounded-2xl border px-4 py-3 text-left text-[14.5px] text-paper transition-all duration-300 ease-spring active:scale-[0.99] disabled:cursor-default ${tone}`}
               >
                 {o}
+                {reveal && (
+                  <span
+                    aria-label={right ? "Correct answer" : "Your answer"}
+                    className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[13px] font-bold text-white ${right ? "bg-[#1f9d63]" : "bg-wrong"}`}
+                  >
+                    {right ? "✓" : "✕"}
+                  </span>
+                )}
               </button>
             );
           })}
@@ -295,7 +323,7 @@ function QuestionView({
       {stage.feedback && (
         <div className="mt-5 flex flex-wrap items-center justify-between gap-4" aria-live="polite">
           <p className="max-w-[48ch] text-[13.5px] text-paper-muted">
-            <span className={stage.feedback.correct ? "text-accent" : "text-wrong"}>{stage.feedback.correct ? "Right." : "Not quite."}</span>{" "}
+            <span className={`font-semibold ${stage.feedback.correct ? "text-[#1f9d63]" : "text-wrong"}`}>{stage.feedback.correct ? "Right." : "Not quite."}</span>{" "}
             {stage.feedback.note}
           </p>
           <button type="button" onClick={onContinue} className="inline-flex items-center gap-2 rounded-full bg-paper px-5 py-2 text-sm font-medium text-ink active:scale-[0.98]">
