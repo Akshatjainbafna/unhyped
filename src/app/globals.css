@@ -36,6 +36,19 @@ html[data-theme="game"] {
   --font-geist-sans: var(--font-nunito);
   color-scheme: light;
 }
+/* Glass panels let the scene show through, so their text needs more contrast
+   than the solid cards: darker ink on the same tokens. */
+html[data-theme="game"] .glass-ink {
+  --paper: #0f1120;
+  --paper-muted: #23263b;
+  --paper-faint: #3d4160;
+  --hairline: rgb(18 20 36 / 0.22);
+  --hairline-strong: rgb(18 20 36 / 0.5);
+  /* A milkier frost under the panel's highlight gradient, so text never sits on the raw scene. */
+  background-color: rgb(255 255 255 / 0.38);
+  font-weight: 500;
+}
+
 html[data-theme="game"] .grain::after {
   display: none;
 }

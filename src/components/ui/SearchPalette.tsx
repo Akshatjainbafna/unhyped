@@ -89,7 +89,7 @@ export function SearchPalette({ dataset }: { dataset: Dataset }) {
     <div className="fixed inset-0 z-[55] flex items-start justify-center px-4 pt-[14vh]">
       <button type="button" aria-label="Close search" tabIndex={-1} className="absolute inset-0 cursor-default bg-ink/45 backdrop-blur-[2px]" onClick={() => searchOpen.set(false)} />
       <div role="dialog" aria-modal="true" aria-label="Search the road" className="relative w-full max-w-xl animate-[fadeUp_260ms_var(--ease-out)] rounded-[1.75rem] border border-white/15 bg-white/[0.06] p-1.5 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)] backdrop-blur-2xl backdrop-saturate-150">
-        <div className="overflow-hidden rounded-[calc(1.75rem-0.375rem)] border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.04)]">
+        <div className="glass-ink overflow-hidden rounded-[calc(1.75rem-0.375rem)] border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.04)]">
         <label className="flex items-center gap-3 border-b border-white/10 px-5">
           <MagnifyingGlass weight="light" size={18} className="shrink-0 text-paper-muted" />
           <span className="sr-only">Search tools, models, papers and people</span>

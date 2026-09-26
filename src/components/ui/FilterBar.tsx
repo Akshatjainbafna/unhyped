@@ -2,7 +2,7 @@
 
 import { SlidersHorizontal, X } from "@phosphor-icons/react";
 import { useEffect } from "react";
-import { SEGMENT_COLORS } from "@/lib/road/palette";
+import { SEGMENT_COLOR } from "@/lib/overworld/style";
 import { filterOpen, selectedSegments, useStore } from "@/lib/store";
 import { SEGMENT_GROUPS, SEGMENTS, type SegmentId } from "@/lib/taxonomy";
 
@@ -51,7 +51,7 @@ export function FilterBar() {
           <div className="mb-3 animate-[fadeUp_320ms_var(--ease-out)] rounded-[2rem] border border-white/15 bg-white/[0.06] p-1.5 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)] backdrop-blur-2xl backdrop-saturate-150">
           <section
             aria-label="Map of AI"
-            data-lenis-prevent className="overscroll-contain max-h-[55dvh] overflow-auto rounded-[calc(2rem-0.375rem)] border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.04)] p-5 md:p-7"
+            data-lenis-prevent className="glass-ink overscroll-contain max-h-[55dvh] overflow-auto rounded-[calc(2rem-0.375rem)] border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.02] shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.04)] p-5 md:p-7"
           >
             <div className="flex items-baseline justify-between gap-4">
               <h2 className="font-serif text-2xl text-paper md:text-3xl">Map of AI</h2>
@@ -70,9 +70,9 @@ export function FilterBar() {
                           type="button"
                           aria-pressed={on}
                           onClick={() => toggle(id)}
-                          className={`inline-flex min-h-9 items-center gap-2 rounded-full border px-3 text-[13px] transition-all duration-300 ease-spring active:scale-[0.98] ${on ? "border-paper/60 bg-paper text-ink" : "border-hairline text-paper-muted hover:border-hairline-strong hover:text-paper"}`}
+                          className={`inline-flex min-h-9 items-center gap-2 rounded-full border px-3 text-[13px] transition-all duration-300 ease-spring active:scale-[0.98] ${on ? "border-paper/60 bg-paper text-ink" : "border-hairline bg-white/40 text-paper-muted hover:border-hairline-strong hover:text-paper"}`}
                         >
-                          <span className="h-2 w-2 rounded-full" style={{ background: SEGMENT_COLORS[id] }} />
+                          <span className="h-2 w-2 rounded-full" style={{ background: SEGMENT_COLOR[id] }} />
                           {SEGMENTS[id]}
                         </button>
                       );

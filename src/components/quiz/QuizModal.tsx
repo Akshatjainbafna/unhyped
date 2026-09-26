@@ -158,7 +158,7 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
         className="relative w-full max-w-[720px] animate-[fadeUp_380ms_var(--ease-out)] rounded-[2rem] border border-white/15 bg-white/[0.06] p-1.5 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)] outline-none backdrop-blur-2xl backdrop-saturate-150"
       >
         {/* Liquid glass: an inner core with its own refraction edge. */}
-        <div data-lenis-prevent className="overscroll-contain relative max-h-[86dvh] overflow-y-auto rounded-[calc(2rem-0.375rem)] border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.02] px-6 pb-7 pt-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.04)] sm:px-9 sm:pb-9">
+        <div data-lenis-prevent className="glass-ink overscroll-contain relative max-h-[86dvh] overflow-y-auto rounded-[calc(2rem-0.375rem)] border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.02] px-6 pb-7 pt-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.04)] sm:px-9 sm:pb-9">
           <div className="flex items-center justify-between gap-4">
             <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-paper-muted">
               Unhyped quiz{stage.kind !== "intro" && stage.kind !== "result" && ` · ${count + 1} of ~13`}
