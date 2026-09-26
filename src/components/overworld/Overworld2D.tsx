@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { C, S, Traveller } from "../concepts/kit";
+import { CatDrawing } from "./Cats";
 import { PANORAMAS, type Panorama } from "./Panoramas";
 import { Token } from "./Token";
 import type { Dataset } from "@/lib/dataset";
@@ -270,20 +271,30 @@ function PanoramaView({ pano, top, width, mobile }: { pano: Panorama; top: numbe
         <path d="M-200 342 C 80 300, 260 318, 420 330 S 760 312, 900 326 S 1180 306, 1400 338 L1400 470 L-200 470 Z" fill={`url(#hill-${pano.id})`} mask={`url(#fade-${pano.id})`} />
         <Art />
       </svg>
-      <div className={`relative z-[1] mx-auto flex items-start gap-3 ${mobile ? "-mt-2 flex-col px-3" : "mt-2 w-[860px] justify-between"}`}>
-        <div className={`rounded-2xl border-[3px] border-[#26283b] bg-white px-4 py-2 shadow-[0_4px_0_#26283b] ${mobile ? "w-full" : "max-w-[300px]"}`}>
+      <div className={`relative z-[1] mx-auto flex items-start gap-3 ${mobile ? "-mt-2 flex-col px-3" : "mt-2 w-[880px] justify-between"}`}>
+        <div className={`rounded-2xl border-[3px] border-[#26283b] bg-white px-4 py-2 shadow-[0_4px_0_#26283b] ${mobile ? "w-full" : "max-w-[270px]"}`}>
           <p className="font-game text-[11px] font-semibold uppercase tracking-[0.14em] text-[#7d819c]">{pano.when}</p>
           <h2 className="font-game text-xl font-bold leading-tight text-[#26283b]">{pano.title}</h2>
           <p className="text-[13px] font-semibold leading-snug text-[#55597a]">{pano.line}</p>
         </div>
-        <ul className={`grid gap-2 ${mobile ? "w-full grid-cols-1" : "grid-cols-3"}`} aria-label="The same three requests in this era">
+        <ul className={`gap-2 ${mobile ? "grid w-full grid-cols-1" : "flex items-stretch"}`} aria-label="The same three requests in this era">
           {pano.answers.map((a, i) => (
-            <li key={ASKS[i]} className={`rounded-xl border-[3px] border-[#26283b] bg-white px-3 py-1.5 shadow-[0_3px_0_#26283b] ${mobile ? "" : "w-[172px]"}`}>
+            <li key={ASKS[i]} className={`rounded-xl border-[3px] border-[#26283b] bg-white px-3 py-1.5 shadow-[0_3px_0_#26283b] ${mobile ? "" : i === 0 ? "w-[238px]" : "w-[160px]"}`}>
               <p className="flex items-center justify-between gap-2 font-game text-[12px] font-semibold text-[#7d819c]">
                 “{ASKS[i]}”
                 <span className="h-3 w-3 shrink-0 rounded-full border-2 border-[#26283b]" style={{ background: TONE[a.ok] }} aria-label={a.ok === "yes" ? "can do" : a.ok === "meh" ? "partly" : "cannot"} />
               </p>
-              <p className="text-[12.5px] font-bold leading-snug text-[#26283b]">{a.text}</p>
+              {i === 0 ? (
+                // The "Draw a cat" strip: each era's answer, drawn, all the way down the map.
+                <div className="mt-1 flex items-center gap-2.5">
+                  <span className="h-[58px] w-[64px] shrink-0">
+                    <CatDrawing kind={pano.cat} />
+                  </span>
+                  <p className="text-[12.5px] font-bold leading-snug text-[#26283b]">{a.text}</p>
+                </div>
+              ) : (
+                <p className="text-[12.5px] font-bold leading-snug text-[#26283b]">{a.text}</p>
+              )}
             </li>
           ))}
         </ul>
