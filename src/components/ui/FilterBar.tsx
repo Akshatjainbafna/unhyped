@@ -86,13 +86,6 @@ export function FilterBar({ dataset }: { dataset: Dataset }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const summary = [
-    ...types.map((t) => TYPES.find((x) => x.id === t)?.label ?? t),
-    ...(oss ? ["Open source"] : []),
-    ...layers.map((l) => STACK_LAYERS.find((x) => x.id === l)?.name ?? l),
-    ...segments.map((s) => SEGMENTS[s]),
-  ];
-
   return (
     <>
       {open && (
@@ -104,10 +97,10 @@ export function FilterBar({ dataset }: { dataset: Dataset }) {
           className="fixed inset-0 z-[35] cursor-default bg-ink/45 backdrop-blur-[2px]"
         />
       )}
-      <div className="pointer-events-none fixed inset-x-0 bottom-0 z-40 flex justify-center px-4 pb-4 md:pb-6">
+      <div className="pointer-events-none fixed inset-x-0 bottom-[4.5rem] z-40 flex justify-center px-4 md:bottom-[5.5rem]">
         <div className="pointer-events-auto w-full max-w-4xl">
           {open && (
-            <div className="mb-3 animate-[fadeUp_320ms_var(--ease-out)] rounded-[2rem] border border-white/15 bg-white/[0.06] p-1.5 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)] backdrop-blur-2xl backdrop-saturate-150">
+            <div className="animate-[fadeUp_320ms_var(--ease-out)] rounded-[2rem] border border-white/15 bg-white/[0.06] p-1.5 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)] backdrop-blur-2xl backdrop-saturate-150">
               <section
                 aria-label="Map of AI"
                 data-lenis-prevent
@@ -202,32 +195,48 @@ export function FilterBar({ dataset }: { dataset: Dataset }) {
             </div>
           )}
 
-          <div className="mx-auto flex w-max max-w-full items-center gap-2 rounded-full border border-white/10 bg-ink/60 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl">
-            <button
-              type="button"
-              aria-expanded={open}
-              onClick={() => filterOpen.set(!open)}
-              className="inline-flex min-h-9 items-center gap-2 rounded-full px-4 text-[13px] text-paper"
-            >
-              <SlidersHorizontal weight="light" size={16} />
-              {count ? `${count} filter${count > 1 ? "s" : ""}` : "Filter"}
-            </button>
-            {count > 0 && (
-              <>
-                <span className="hidden max-w-[40vw] truncate text-[12px] text-paper-muted sm:inline">{summary.join(" · ")}</span>
-                <button
-                  type="button"
-                  onClick={clearFilters}
-                  aria-label="Clear all filters"
-                  className="flex h-9 w-9 items-center justify-center rounded-full text-paper-muted hover:text-paper"
-                >
-                  <X weight="light" size={16} />
-                </button>
-              </>
-            )}
-          </div>
         </div>
       </div>
     </>
+  );
+}
+
+/** The Filter button that opens the Map of AI; it sits beside the Legend. */
+export function FilterPill() {
+  const open = useStore(filterOpen);
+  const filters = useFilters();
+  const { segments, types, layers, oss } = filters;
+  const count = filterCount(filters);
+  const summary = [
+    ...types.map((t) => TYPES.find((x) => x.id === t)?.label ?? t),
+    ...(oss ? ["Open source"] : []),
+    ...layers.map((l) => STACK_LAYERS.find((x) => x.id === l)?.name ?? l),
+    ...segments.map((s) => SEGMENTS[s]),
+  ];
+  return (
+      <div className="mx-auto flex w-max max-w-full items-center gap-2 rounded-full border border-white/10 bg-ink/60 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl">
+        <button
+          type="button"
+          aria-expanded={open}
+          onClick={() => filterOpen.set(!open)}
+          className="inline-flex min-h-9 items-center gap-2 rounded-full px-4 text-[13px] text-paper"
+        >
+          <SlidersHorizontal weight="light" size={16} />
+          {count ? `${count} filter${count > 1 ? "s" : ""}` : "Filter"}
+        </button>
+        {count > 0 && (
+          <>
+            <span className="hidden max-w-[26vw] truncate text-[12px] text-paper-muted lg:inline">{summary.join(" · ")}</span>
+            <button
+              type="button"
+              onClick={clearFilters}
+              aria-label="Clear all filters"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-paper-muted hover:text-paper"
+            >
+              <X weight="light" size={16} />
+            </button>
+          </>
+        )}
+      </div>
   );
 }

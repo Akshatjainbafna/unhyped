@@ -26,7 +26,7 @@ export function Legend({ view }: { view: "2d" | "3d" }) {
 
   return (
     <>
-      <div className="fixed bottom-4 left-3 z-40 md:bottom-6 md:left-6">
+      <div>
         <div className="rounded-full border border-white/10 bg-ink/60 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl">
           <button
             type="button"

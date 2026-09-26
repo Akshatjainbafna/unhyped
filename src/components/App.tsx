@@ -7,7 +7,7 @@ import { Overworld2D } from "./overworld/Overworld2D";
 import { QuizModal } from "./quiz/QuizModal";
 import { ClaimDrawer } from "./ui/ClaimDrawer";
 import { DetailPanel } from "./ui/DetailPanel";
-import { FilterBar } from "./ui/FilterBar";
+import { FilterBar, FilterPill } from "./ui/FilterBar";
 import { HoverCard } from "./ui/HoverCard";
 import { Legend } from "./ui/Legend";
 import { Navbar } from "./ui/Navbar";
@@ -58,7 +58,11 @@ export function App({ raw, logos }: { raw: RawDataset; logos: Record<string, str
       <DetailPanel dataset={dataset} logos={logos} />
       <ClaimDrawer dataset={dataset} />
       <QuizModal dataset={dataset} />
-      <Legend view={view} />
+      {/* Bottom-left dock: how to read the road, and how to filter it. */}
+      <div className="fixed bottom-4 left-3 z-40 flex items-center gap-2 md:bottom-6 md:left-6">
+        <Legend view={view} />
+        <FilterPill />
+      </div>
       <ViewToggle view={view} onChange={setView} />
     </>
   );
