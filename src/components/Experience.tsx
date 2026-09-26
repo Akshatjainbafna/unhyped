@@ -58,10 +58,14 @@ export function Experience({ dataset, logos }: { dataset: Dataset; logos: Record
   useEffect(() => {
     const toS = (y: number) => Math.max(0, y - FUTURE_PAD) / PX_PER_UNIT - road.futureLength;
     const toY = (s: number) => (s + road.futureLength) * PX_PER_UNIT + FUTURE_PAD;
-    const lenis = reducedMotion ? null : new Lenis({ lerp: 0.09, wheelMultiplier: 0.9 });
+
     // Arrive where the 2D view left off, or at Today.
     const start = focusYear.get();
-    window.scrollTo({ top: toY(start === null ? 0 : Math.max(0, road.sAt(start) - 18)), behavior: "instant" as ScrollBehavior });
+    const arrive = toY(start === null ? 0 : Math.max(0, road.sAt(start) - 18));
+    window.scrollTo({ top: arrive, behavior: "instant" as ScrollBehavior });
+    // Lenis must start from the arrival point, or its first frame snaps back to the top.
+    const lenis = reducedMotion ? null : new Lenis({ lerp: 0.09, wheelMultiplier: 0.9 });
+    lenis?.scrollTo(arrive, { immediate: true, force: true });
     travel.to = (s: number) => {
       if (lenis) lenis.scrollTo(toY(s), { duration: 2.2 });
       else window.scrollTo({ top: toY(s) });

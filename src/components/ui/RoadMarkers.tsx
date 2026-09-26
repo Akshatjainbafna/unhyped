@@ -19,7 +19,7 @@ export function RoadMarkers({ road, dataset, pxPerUnit, pad }: { road: RoadGeome
   return (
     <div className="relative">
       {/* The future, above Today. */}
-      <section className="absolute inset-x-0 -translate-y-full px-4 md:px-[8vw]" style={{ top: y(0) - 160 }} aria-labelledby="futures">
+      <section className="absolute inset-x-0 px-4 md:px-[8vw]" style={{ top: 130 }} aria-labelledby="futures">
         <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-paper-faint">Era 8 · Projections</p>
         <h2 id="futures" className="mt-3 max-w-[18ch] font-serif text-4xl leading-[1.05] text-paper md:text-6xl">
           The road forks. Nobody knows which one we are on.

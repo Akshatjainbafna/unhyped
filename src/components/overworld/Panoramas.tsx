@@ -173,7 +173,7 @@ function MediaStudiosArt() {
       </g>
       {/* music booth with notes */}
       <g transform="translate(860 120)">
-        <rect width={260} height={210} rx={12} fill={C.pink} {...S} />
+        <rect width={260} height={210} rx={12} fill={C.teal} {...S} />
         <rect x={24} y={24} width={212} height={110} rx={10} fill="#fff" {...S} />
         {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
           <rect key={i} x={40 + i * 24} y={110 - ((i * 37) % 70) - 10} width={14} height={((i * 37) % 70) + 10} rx={4} fill={C.blue} stroke={C.ink} strokeWidth={2} />
@@ -564,7 +564,7 @@ export const PANORAMAS: Panorama[] = [
     answers: [y("A 10-second cat video, with sound."), y("Live, spoken, in your own voice."), y("Booked. Receipt filed.")] },
   { id: "reasoning-quarter", cat: "photo", at: 2026, title: "The reasoning quarter", when: "2025", line: "Models think before answering: olympiad maths, and agents that code for hours.", sky: ["#8fd3ff", "#d6f0ff"], ground: "#86d47a", mist: "#e0f1ff", hill: "#c4e2fa", stage: 4, Art: ReasoningArt,
     answers: [y("Photoreal images, short clips."), y("Near-human quality in most languages."), m("A browser agent books it; you confirm.")] },
-  { id: "media-studios", cat: "clip", at: 2025, title: "Media studios", when: "2024", line: "Video, music and images from a sentence. Early clips still bend physics.", sky: ["#ffc9dc", "#ffeef4"], ground: "#94d680", mist: "#ffe6ee", hill: "#f8cddc", stage: 3, Art: MediaStudiosArt,
+  { id: "media-studios", cat: "clip", at: 2025, title: "Media studios", when: "2024", line: "Video, music and images from a sentence. Early clips still bend physics.", sky: ["#bfe8df", "#e4f6f2"], ground: "#94d680", mist: "#e2f5f0", hill: "#c4e6dd", stage: 3, Art: MediaStudiosArt,
     answers: [y("A short video clip. Check the physics."), y("Real-time voice translation demos."), m("Plans the trip; you still click Buy.")] },
   { id: "chatbot-towers", cat: "paws", at: 2024, title: "Chatbot towers", when: "2023", line: "A chat assistant in every window, plus retrieval, plugins and confident mistakes.", sky: ["#a9dcff", "#e1f3ff"], ground: "#7cc96e", mist: "#e2f1ff", hill: "#c7e2fa", stage: 3, Art: ChatbotTowersArt,
     answers: [y("Good images; watch the hands."), y("Fluent text translation."), m("Suggests flights via plugins; you book.")] },

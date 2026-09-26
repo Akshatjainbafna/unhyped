@@ -34,30 +34,87 @@ export function Lanes({ road }: { road: RoadGeometry }) {
   );
 }
 
-/** Abandoned approaches peel off the road and stop at a barrier. */
+/** A yellow diamond road sign reading DEAD END, drawn once to a canvas. */
+function useDeadEndSign() {
+  return useMemo(() => {
+    if (typeof document === "undefined") return null;
+    const c = document.createElement("canvas");
+    c.width = c.height = 256;
+    const g = c.getContext("2d")!;
+    g.translate(128, 128);
+    g.rotate(Math.PI / 4);
+    g.fillStyle = "#26283b";
+    g.fillRect(-86, -86, 172, 172);
+    g.fillStyle = "#ffcf33";
+    g.fillRect(-78, -78, 156, 156);
+    g.rotate(-Math.PI / 4);
+    g.fillStyle = "#26283b";
+    g.font = "800 34px system-ui, sans-serif";
+    g.textAlign = "center";
+    g.fillText("DEAD", 0, -6);
+    g.fillText("END", 0, 30);
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  }, []);
+}
+
+/**
+ * Abandoned approaches: a short stretch of asphalt peels off the lane and
+ * stops at a striped barricade with a DEAD END sign.
+ */
 export function DeadEnds({ road }: { road: RoadGeometry }) {
+  const sign = useDeadEndSign();
   const items = useMemo(
     () =>
       road.deadEnds.map((d) => {
-        const pts = Array.from({ length: 12 }, (_, i) => {
-          const t = i / 11;
-          return { s: d.s + t * 6, x: d.x + d.dir * t * d.length };
+        const pts = Array.from({ length: 16 }, (_, i) => {
+          const t = i / 15;
+          return { s: d.s + t * 16, x: d.x + d.dir * Math.sin((t * Math.PI) / 2) * 9 };
         });
-        return { id: d.id, geometry: ribbon(pts, () => 1.6, () => ({ color: [0.25, 0.22, 0.2] }), 0.005), end: pts.at(-1)! };
+        const end = pts.at(-1)!;
+        const before = pts.at(-2)!;
+        // Barricade faces back along the spur, across its end.
+        const heading = Math.atan2(end.x - before.x, end.s - before.s);
+        return { id: d.id, geometry: ribbon(pts, () => 3.2, () => ({ color: hexToRgb("#3d4050") }), 0.02), end, heading };
       }),
     [road],
   );
+  const stripes = [0, 1, 2, 3, 4, 5];
   return (
     <group>
-      {items.map(({ id, geometry, end }) => (
+      {items.map(({ id, geometry, end, heading }) => (
         <group key={id}>
           <mesh geometry={geometry}>
-            <meshBasicMaterial vertexColors />
+            <meshLambertMaterial vertexColors />
           </mesh>
-          <mesh position={[end.x, 0.5, -end.s]}>
-            <boxGeometry args={[2, 1, 0.2]} />
-            <meshBasicMaterial color="#e0826b" />
-          </mesh>
+          <group position={[end.x, 0, -end.s]} rotation={[0, heading, 0]}>
+            {/* legs */}
+            {[-1.3, 1.3].map((x) => (
+              <mesh key={x} position={[x, 0.55, 0]}>
+                <boxGeometry args={[0.14, 1.1, 0.14]} />
+                <meshLambertMaterial color="#6b7080" />
+              </mesh>
+            ))}
+            {/* striped board */}
+            {stripes.map((i) => (
+              <mesh key={i} position={[-1.5 + 0.25 + i * 0.5, 1.05, 0]}>
+                <boxGeometry args={[0.5, 0.42, 0.1]} />
+                <meshLambertMaterial color={i % 2 ? "#ffffff" : "#e0503a"} />
+              </mesh>
+            ))}
+            {/* sign post */}
+            <mesh position={[2.2, 1.2, 0]}>
+              <cylinderGeometry args={[0.06, 0.06, 2.4, 6]} />
+              <meshLambertMaterial color="#6b7080" />
+            </mesh>
+            {sign && (
+              <mesh position={[2.2, 2.55, 0.05]}>
+                <planeGeometry args={[1.4, 1.4]} />
+                <meshBasicMaterial map={sign} transparent side={THREE.DoubleSide} toneMapped={false} />
+              </mesh>
+            )}
+          </group>
         </group>
       ))}
     </group>
