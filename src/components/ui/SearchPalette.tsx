@@ -103,7 +103,7 @@ export function SearchPalette({ dataset }: { dataset: Dataset }) {
           />
           <kbd className="hidden rounded-md border border-hairline px-1.5 py-0.5 font-mono text-[10px] text-paper-faint sm:block">esc</kbd>
         </label>
-        <ul id="search-results" role="listbox" className="max-h-[50vh] overflow-auto p-2">
+        <ul id="search-results" role="listbox" data-lenis-prevent className="overscroll-contain max-h-[50vh] overflow-auto p-2">
           {query && results.length === 0 && (
             <li className="px-3 py-6 text-center text-sm text-paper-muted">
               Not on the road yet.{" "}

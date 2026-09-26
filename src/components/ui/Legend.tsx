@@ -48,7 +48,7 @@ export function Legend({ view }: { view: "2d" | "3d" }) {
           <section
             id="legend"
             aria-label="Legend"
-            className="fixed bottom-20 left-3 right-3 z-[45] max-h-[68dvh] overflow-auto rounded-[22px] border-[3px] border-[#26283b] bg-white p-5 text-[#26283b] shadow-[0_6px_0_#26283b] md:bottom-24 md:left-6 md:right-auto md:w-[560px]"
+            data-lenis-prevent className="overscroll-contain fixed bottom-20 left-3 right-3 z-[45] max-h-[68dvh] overflow-auto rounded-[22px] border-[3px] border-[#26283b] bg-white p-5 text-[#26283b] shadow-[0_6px_0_#26283b] md:bottom-24 md:left-6 md:right-auto md:w-[560px]"
           >
             <div className="flex items-start justify-between gap-4">
               <h2 className="font-game text-2xl font-bold">How to read the map</h2>

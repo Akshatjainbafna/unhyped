@@ -50,7 +50,7 @@ export function DetailPanel({ dataset }: { dataset: Dataset }) {
       role="dialog"
       aria-modal="false"
       aria-labelledby="detail-title"
-      className="fixed inset-y-0 right-0 z-50 w-full max-w-[460px] animate-[slideIn_420ms_var(--ease-out)] overflow-y-auto border-l border-white/10 bg-ink/95 px-6 pb-16 pt-6 backdrop-blur-xl md:px-8"
+      data-lenis-prevent className="overscroll-contain fixed inset-y-0 right-0 z-50 w-full max-w-[460px] animate-[slideIn_420ms_var(--ease-out)] overflow-y-auto border-l border-white/10 bg-ink/95 px-6 pb-16 pt-6 backdrop-blur-xl md:px-8"
     >
       <div className="flex items-start justify-between gap-4">
         <p className="pt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-paper-faint">

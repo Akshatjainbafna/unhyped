@@ -90,7 +90,7 @@ export function RoadMarkers({ road, dataset, pxPerUnit, pad }: { road: RoadGeome
       </section>
 
       {/* Keyboard and screen-reader route through every entry, newest first. */}
-      <nav aria-label="Entries on the road" className="sr-only focus-within:not-sr-only focus-within:fixed focus-within:bottom-24 focus-within:left-4 focus-within:z-40 focus-within:max-h-[40vh] focus-within:overflow-auto focus-within:rounded-xl focus-within:bg-ink focus-within:p-3">
+      <nav aria-label="Entries on the road" data-lenis-prevent className="overscroll-contain sr-only focus-within:not-sr-only focus-within:fixed focus-within:bottom-24 focus-within:left-4 focus-within:z-40 focus-within:max-h-[40vh] focus-within:overflow-auto focus-within:rounded-xl focus-within:bg-ink focus-within:p-3">
         <ol>
           {road.nodes.map((n) => {
             const e = dataset.byId.get(n.id)!;

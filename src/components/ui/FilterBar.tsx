@@ -50,7 +50,7 @@ export function FilterBar() {
         {open && (
           <section
             aria-label="Map of AI"
-            className="mb-3 max-h-[55dvh] overflow-auto rounded-[1.75rem] border border-white/10 bg-ink/80 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl md:p-7"
+            data-lenis-prevent className="overscroll-contain mb-3 max-h-[55dvh] overflow-auto rounded-[1.75rem] border border-white/10 bg-ink/80 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl md:p-7"
           >
             <div className="flex items-baseline justify-between gap-4">
               <h2 className="font-serif text-2xl text-paper md:text-3xl">Map of AI</h2>
