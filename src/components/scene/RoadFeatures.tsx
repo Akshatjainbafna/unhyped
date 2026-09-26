@@ -68,25 +68,41 @@ export function DeadEnds({ road }: { road: RoadGeometry }) {
   const items = useMemo(
     () =>
       road.deadEnds.map((d) => {
-        const pts = Array.from({ length: 16 }, (_, i) => {
-          const t = i / 15;
-          return { s: d.s + t * 16, x: d.x + d.dir * Math.sin((t * Math.PI) / 2) * 9 };
+        // The entry's own lane bends off the road and runs into the barricade.
+        const lane = road.nodes.find((n) => n.id === d.id)?.lane;
+        const pts = Array.from({ length: 24 }, (_, i) => {
+          const t = i / 23;
+          return { s: d.s + t * 26, x: d.x + d.dir * (1 - Math.cos(t * Math.PI * 0.5)) * 11 };
         });
         const end = pts.at(-1)!;
         const before = pts.at(-2)!;
-        // Barricade faces back along the spur, across its end.
         const heading = Math.atan2(end.x - before.x, end.s - before.s);
-        return { id: d.id, geometry: ribbon(pts, () => 3.2, () => ({ color: hexToRgb("#3d4050") }), 0.02), end, heading };
+        const stripe = lane ? SEGMENT_COLOR[lane] : "#ffffff";
+        return {
+          id: d.id,
+          asphalt: ribbon(pts, () => 4, () => ({ color: hexToRgb("#26282f") }), 0.02),
+          line: ribbon(pts.slice(0, -1), () => 0.75, () => ({ color: hexToRgb(stripe) }), 0.04),
+          edge: ribbon(pts, () => 4.5, () => ({ color: hexToRgb("#d9d4cc") }), 0.015),
+          end,
+          heading,
+        };
       }),
     [road],
   );
   const stripes = [0, 1, 2, 3, 4, 5];
   return (
     <group>
-      {items.map(({ id, geometry, end, heading }) => (
+      {items.map(({ id, asphalt, line, edge, end, heading }) => (
         <group key={id}>
-          <mesh geometry={geometry}>
-            <meshLambertMaterial vertexColors />
+          {/* pale verge, dark asphalt, and the lane colour leading to the barricade */}
+          <mesh geometry={edge}>
+            <meshBasicMaterial vertexColors />
+          </mesh>
+          <mesh geometry={asphalt}>
+            <meshBasicMaterial vertexColors />
+          </mesh>
+          <mesh geometry={line}>
+            <meshBasicMaterial vertexColors />
           </mesh>
           <group position={[end.x, 0, -end.s]} rotation={[0, heading, 0]}>
             {/* legs */}
