@@ -107,7 +107,8 @@ export function Legend({ view }: { view: "2d" | "3d" }) {
                   ) : (
                     <>
                       <li>Signposts: a claim someone made, and what actually happened.</li>
-                      <li>A road peeling off to a red barrier: an abandoned approach (a dead end).</li>
+                      <li>A red “Discontinued” tag: that product was shut down or abandoned. Its segment carries on.</li>
+                      <li>Discs on the lanes: where each entry sits on the road.</li>
                       <li>Frosted road: an AI winter, when funding and progress stalled.</li>
                     </>
                   )}

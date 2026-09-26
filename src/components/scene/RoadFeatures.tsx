@@ -34,109 +34,6 @@ export function Lanes({ road }: { road: RoadGeometry }) {
   );
 }
 
-/** A yellow diamond road sign reading DEAD END, drawn once to a canvas. */
-function useDeadEndSign() {
-  return useMemo(() => {
-    if (typeof document === "undefined") return null;
-    const c = document.createElement("canvas");
-    c.width = c.height = 256;
-    const g = c.getContext("2d")!;
-    g.translate(128, 128);
-    g.rotate(Math.PI / 4);
-    g.fillStyle = "#26283b";
-    g.fillRect(-86, -86, 172, 172);
-    g.fillStyle = "#ffcf33";
-    g.fillRect(-78, -78, 156, 156);
-    g.rotate(-Math.PI / 4);
-    g.fillStyle = "#26283b";
-    g.font = "800 34px system-ui, sans-serif";
-    g.textAlign = "center";
-    g.fillText("DEAD", 0, -6);
-    g.fillText("END", 0, 30);
-    const t = new THREE.CanvasTexture(c);
-    t.colorSpace = THREE.SRGBColorSpace;
-    return t;
-  }, []);
-}
-
-/**
- * Abandoned approaches: a short stretch of asphalt peels off the lane and
- * stops at a striped barricade with a DEAD END sign.
- */
-export function DeadEnds({ road }: { road: RoadGeometry }) {
-  const sign = useDeadEndSign();
-  const items = useMemo(
-    () =>
-      road.deadEnds.map((d) => {
-        // The entry's own lane bends off the road and runs into the barricade.
-        const lane = road.nodes.find((n) => n.id === d.id)?.lane;
-        const pts = Array.from({ length: 24 }, (_, i) => {
-          const t = i / 23;
-          return { s: d.s + t * 26, x: d.x + d.dir * (1 - Math.cos(t * Math.PI * 0.5)) * 11 };
-        });
-        const end = pts.at(-1)!;
-        const before = pts.at(-2)!;
-        const heading = Math.atan2(end.x - before.x, end.s - before.s);
-        const stripe = lane ? SEGMENT_COLOR[lane] : "#ffffff";
-        return {
-          id: d.id,
-          asphalt: ribbon(pts, () => 4, () => ({ color: hexToRgb("#26282f") }), 0.02),
-          line: ribbon(pts.slice(0, -1), () => 0.75, () => ({ color: hexToRgb(stripe) }), 0.04),
-          edge: ribbon(pts, () => 4.5, () => ({ color: hexToRgb("#d9d4cc") }), 0.015),
-          end,
-          heading,
-        };
-      }),
-    [road],
-  );
-  const stripes = [0, 1, 2, 3, 4, 5];
-  return (
-    <group>
-      {items.map(({ id, asphalt, line, edge, end, heading }) => (
-        <group key={id}>
-          {/* pale verge, dark asphalt, and the lane colour leading to the barricade */}
-          <mesh geometry={edge}>
-            <meshBasicMaterial vertexColors />
-          </mesh>
-          <mesh geometry={asphalt}>
-            <meshBasicMaterial vertexColors />
-          </mesh>
-          <mesh geometry={line}>
-            <meshBasicMaterial vertexColors />
-          </mesh>
-          <group position={[end.x, 0, -end.s]} rotation={[0, heading, 0]}>
-            {/* legs */}
-            {[-1.3, 1.3].map((x) => (
-              <mesh key={x} position={[x, 0.55, 0]}>
-                <boxGeometry args={[0.14, 1.1, 0.14]} />
-                <meshLambertMaterial color="#6b7080" />
-              </mesh>
-            ))}
-            {/* striped board */}
-            {stripes.map((i) => (
-              <mesh key={i} position={[-1.5 + 0.25 + i * 0.5, 1.05, 0]}>
-                <boxGeometry args={[0.5, 0.42, 0.1]} />
-                <meshLambertMaterial color={i % 2 ? "#ffffff" : "#e0503a"} />
-              </mesh>
-            ))}
-            {/* sign post */}
-            <mesh position={[2.2, 1.2, 0]}>
-              <cylinderGeometry args={[0.06, 0.06, 2.4, 6]} />
-              <meshLambertMaterial color="#6b7080" />
-            </mesh>
-            {sign && (
-              <mesh position={[2.2, 2.55, 0.05]}>
-                <planeGeometry args={[1.4, 1.4]} />
-                <meshBasicMaterial map={sign} transparent side={THREE.DoubleSide} toneMapped={false} />
-              </mesh>
-            )}
-          </group>
-        </group>
-      ))}
-    </group>
-  );
-}
-
 /** Above Today the road forks into three scenario roads fading into fog. */
 export function FutureForks({ road }: { road: RoadGeometry }) {
   const forks = useMemo(
@@ -295,6 +192,51 @@ export function Roadside({ road }: { road: RoadGeometry }) {
       <instancedMesh ref={rock} args={[undefined, undefined, rocks.length]}>
         <dodecahedronGeometry args={[1, 0]} />
         <meshLambertMaterial color="#c9b8a0" flatShading />
+      </instancedMesh>
+    </group>
+  );
+}
+
+
+/** A small disc on the lane under each label: where the entry sits on the road. */
+export function PathMarkers({ road }: { road: RoadGeometry }) {
+  const rim = useRef<THREE.InstancedMesh>(null);
+  const dot = useRef<THREE.InstancedMesh>(null);
+  const selected = useStore(selectedSegments);
+  const nodes = road.nodes;
+  const flat = useMemo(() => new THREE.Quaternion().setFromEuler(new THREE.Euler(-Math.PI / 2, 0, 0)), []);
+
+  const draw = () => {
+    const m = new THREE.Matrix4();
+    const c = new THREE.Color();
+    const one = new THREE.Vector3(1, 1, 1);
+    nodes.forEach((n, i) => {
+      m.compose(new THREE.Vector3(n.x, 0.05, -n.s), flat, one);
+      rim.current?.setMatrixAt(i, m);
+      m.compose(new THREE.Vector3(n.x, 0.06, -n.s), flat, one);
+      dot.current?.setMatrixAt(i, m);
+      const on = !selected.length || selected.includes(n.lane);
+      c.set(SEGMENT_COLOR[n.lane]);
+      if (!on) c.lerp(new THREE.Color("#524c47"), 0.8);
+      dot.current?.setColorAt(i, c);
+    });
+    for (const r of [rim, dot]) {
+      if (r.current) {
+        r.current.instanceMatrix.needsUpdate = true;
+        if (r.current.instanceColor) r.current.instanceColor.needsUpdate = true;
+      }
+    }
+  };
+
+  return (
+    <group ref={() => draw()}>
+      <instancedMesh ref={rim} args={[undefined, undefined, nodes.length]}>
+        <circleGeometry args={[0.85, 20]} />
+        <meshBasicMaterial color="#f7f3e8" />
+      </instancedMesh>
+      <instancedMesh ref={dot} args={[undefined, undefined, nodes.length]}>
+        <circleGeometry args={[0.6, 20]} />
+        <meshBasicMaterial />
       </instancedMesh>
     </group>
   );
