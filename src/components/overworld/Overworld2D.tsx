@@ -13,8 +13,11 @@ import { useFilterMatch } from "@/lib/useFilters";
 import { SCENARIOS } from "@/lib/taxonomy";
 
 const DESKTOP = { width: 1200, cols: 4, sceneHeight: 480 };
-const MOBILE = { width: 440, cols: 1, sceneHeight: 330, radius: 40 };
+const MOBILE = { width: 440, cols: 1, sceneHeight: 400, radius: 40 };
 const FUTURES_H = 500;
+const FUTURES_H_DESKTOP = FUTURES_H;
+// On phones the three future cards stack, so the futures need more room above the road.
+const FUTURES_H_MOBILE = 820;
 const FUTURES_MIST = "#f4faff";
 const CAMPFIRE_MIST = "#f3c58e";
 const CAMPFIRE_H = 520;
@@ -47,7 +50,7 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
   const mobile = width > 0 && width < 720;
   const stops = useMemo(() => buildStops(dataset), [dataset]);
   const ow: Overworld = useMemo(
-    () => layoutOverworld(stops, PANORAMAS, { ...(mobile ? MOBILE : DESKTOP), top: FUTURES_H }),
+    () => layoutOverworld(stops, PANORAMAS, { ...(mobile ? MOBILE : DESKTOP), top: mobile ? FUTURES_H_MOBILE : FUTURES_H }),
     [stops, mobile],
   );
   const scale = width ? Math.min(1.15, width / ow.width) : 1;
@@ -137,7 +140,7 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
   }, [ow]);
   const atmosphere = useMemo(() => {
     const pct = (y: number) => `${((y / total) * 100).toFixed(3)}%`;
-    const stops = [`${FUTURES_MIST} 0%`, `${FUTURES_MIST} ${pct(FUTURES_H * 0.5)}`];
+    const stops = [`${FUTURES_MIST} 0%`, `${FUTURES_MIST} ${pct((mobile ? FUTURES_H_MOBILE : FUTURES_H) * 0.5)}`];
     for (const z of zones) {
       const h = z.end - z.start;
       // Night is a moment, not a year: it holds briefly, then dawn returns.
@@ -146,7 +149,7 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
     }
     stops.push(`${CAMPFIRE_MIST} ${pct(ow.height + 160)}`, `${CAMPFIRE_MIST} 100%`);
     return `linear-gradient(180deg, ${stops.join(", ")})`;
-  }, [zones, total, ow.height]);
+  }, [zones, total, ow.height, mobile]);
 
   return (
     <div className="min-h-[100dvh]" style={{ background: FUTURES_MIST }}>
@@ -154,12 +157,15 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
 
       {/* HUD: where the traveller is */}
       {here && (
-        <div className="pointer-events-none fixed left-3 top-20 z-30 md:left-6 md:top-6">
-          <div className="rounded-2xl border-[3px] border-[#26283b] bg-white px-4 py-2 shadow-[0_4px_0_#26283b]">
+        <div className="pointer-events-none fixed left-1/2 top-[70px] z-30 -translate-x-1/2 md:left-6 md:top-6 md:translate-x-0">
+          {/* Phones: one compact line under the navbar. Desktop: the full card. */}
+          <div className="flex items-baseline gap-2 whitespace-nowrap rounded-full border-[2.5px] border-[#26283b] bg-white px-3 py-1 shadow-[0_3px_0_#26283b] md:hidden">
+            <span className="font-game text-[14px] font-bold text-[#26283b]" aria-live="polite">{here.long}</span>
+            <span className="text-[12px] font-bold text-[#55597a]">· {here.events} {here.events === 1 ? "launch" : "launches"}</span>
+          </div>
+          <div className="hidden rounded-2xl border-[3px] border-[#26283b] bg-white px-4 py-2 shadow-[0_4px_0_#26283b] md:block">
             <p className="font-game text-[11px] font-semibold uppercase tracking-[0.14em] text-[#7d819c]">Now at</p>
-            <p className="font-game text-lg font-bold leading-tight text-[#26283b]" aria-live="polite">
-              {here.long}
-            </p>
+            <p className="font-game text-lg font-bold leading-tight text-[#26283b]">{here.long}</p>
             <p className="text-[13px] font-bold text-[#55597a]">
               {here.events} {here.events === 1 ? "launch or update" : "launches and updates"}
             </p>
@@ -270,15 +276,18 @@ function PanoramaView({ pano, top, width, mobile }: { pano: Panorama; top: numbe
         <path d="M-200 342 C 80 300, 260 318, 420 330 S 760 312, 900 326 S 1180 306, 1400 338 L1400 470 L-200 470 Z" fill={`url(#hill-${pano.id})`} mask={`url(#fade-${pano.id})`} />
         <Art />
       </svg>
-      <div className={`relative z-[1] mx-auto flex items-start gap-3 ${mobile ? "-mt-2 flex-col px-3" : "mt-2 w-[880px] justify-between"}`}>
+      <div className={`relative z-[12] mx-auto flex items-start gap-3 ${mobile ? "-mt-2 flex-col px-3" : "mt-2 w-[880px] justify-between"}`}>
         <div className={`rounded-2xl border-[3px] border-[#26283b] bg-white px-4 py-2 shadow-[0_4px_0_#26283b] ${mobile ? "w-full" : "max-w-[270px]"}`}>
           <p className="font-game text-[11px] font-semibold uppercase tracking-[0.14em] text-[#7d819c]">{pano.when}</p>
           <h2 className="font-game text-xl font-bold leading-tight text-[#26283b]">{pano.title}</h2>
           <p className="text-[13px] font-semibold leading-snug text-[#55597a]">{pano.line}</p>
         </div>
-        <ul className={`gap-2 ${mobile ? "grid w-full grid-cols-1" : "flex items-stretch"}`} aria-label="The same three requests in this era">
+        <ul
+          className={`gap-2 ${mobile ? "-mx-3 flex w-[calc(100%+1.5rem)] snap-x snap-mandatory items-stretch overflow-x-auto px-3 pb-2 [scrollbar-width:none]" : "flex items-stretch"}`}
+          aria-label="The same three requests in this era"
+        >
           {pano.answers.map((a, i) => (
-            <li key={ASKS[i]} className={`rounded-xl border-[3px] border-[#26283b] bg-white px-3 py-1.5 shadow-[0_3px_0_#26283b] ${mobile ? "" : i === 0 ? "w-[238px]" : "w-[160px]"}`}>
+            <li key={ASKS[i]} className={`rounded-xl border-[3px] border-[#26283b] bg-white px-3 py-1.5 shadow-[0_3px_0_#26283b] ${mobile ? "w-[78%] shrink-0 snap-start" : i === 0 ? "w-[238px]" : "w-[160px]"}`}>
               <p className="flex items-center justify-between gap-2 font-game text-[12px] font-semibold text-[#7d819c]">
                 “{ASKS[i]}”
                 <span className="h-3 w-3 shrink-0 rounded-full border-2 border-[#26283b]" style={{ background: TONE[a.ok] }} aria-label={a.ok === "yes" ? "can do" : a.ok === "meh" ? "partly" : "cannot"} />
@@ -340,6 +349,7 @@ function Ambient({ zones, total }: { zones: { pano: Panorama; start: number; end
 
 function Futures({ width, startX, mobile, dataset }: { width: number; startX: number; mobile: boolean; dataset: Dataset }) {
   const cx = startX;
+  const FUTURES_H = mobile ? FUTURES_H_MOBILE : FUTURES_H_DESKTOP;
   return (
     <div className="absolute inset-x-0 top-0" style={{ height: FUTURES_H }}>
       <svg width={width} height={FUTURES_H} className="absolute inset-0" aria-hidden="true">
@@ -354,7 +364,7 @@ function Futures({ width, startX, mobile, dataset }: { width: number; startX: nu
         ))}
         <rect width={width} height={FUTURES_H * 0.7} fill="url(#fog)" />
       </svg>
-      <div className={`absolute ${mobile ? "left-4 right-4 top-24" : "left-[300px] right-8 top-28"}`}>
+      <div className={`absolute z-[2] ${mobile ? "left-4 right-4 top-32" : "left-[300px] right-8 top-28"}`}>
         <p className="font-game text-sm font-semibold uppercase tracking-[0.18em] text-[#55597a]">The futures · scroll down to travel back in time</p>
         <h2 className="mt-1 max-w-[22ch] font-game text-3xl font-bold leading-tight text-[#26283b] md:text-4xl">The road forks. Nobody knows which one we are on.</h2>
         <ul className={`mt-4 grid gap-3 ${mobile ? "" : "grid-cols-3"}`}>

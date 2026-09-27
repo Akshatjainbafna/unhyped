@@ -21,7 +21,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0c0b0a",
+  // Matches the light sky at the top of the map, so the phone's browser bar blends in.
+  themeColor: "#f4faff",
+  // Draw under the notch/home indicator; the docks pad themselves with the safe-area insets.
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

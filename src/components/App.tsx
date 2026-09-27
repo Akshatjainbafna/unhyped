@@ -59,7 +59,7 @@ export function App({ raw, logos }: { raw: RawDataset; logos: Record<string, str
       <ClaimDrawer dataset={dataset} />
       <QuizModal dataset={dataset} />
       {/* Bottom-left dock: how to read the road, and how to filter it. */}
-      <div className="fixed bottom-4 left-3 z-40 flex items-center gap-2 md:bottom-6 md:left-6">
+      <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-3 z-40 flex items-center gap-2 md:bottom-6 md:left-6">
         <Legend view={view} />
         <FilterPill />
       </div>
@@ -74,7 +74,7 @@ function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => voi
     { id: "3d", label: "3D road", Icon: Cube },
   ];
   return (
-    <div role="radiogroup" aria-label="View" className="fixed bottom-4 right-3 z-40 flex gap-1 rounded-full border border-white/10 bg-ink/60 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl md:bottom-6 md:right-6">
+    <div role="radiogroup" aria-label="View" className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-3 z-40 flex gap-1 rounded-full border border-white/10 bg-ink/60 p-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl md:bottom-6 md:right-6">
       {opts.map(({ id, label, Icon }) => {
         const on = view === id;
         return (

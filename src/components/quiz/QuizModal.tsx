@@ -230,7 +230,7 @@ export function QuizModal({ dataset }: { dataset: Dataset }) {
                       aria-disabled={disabled}
                       disabled={disabled}
                       onClick={() => !disabled && setTrack(t.id as Exclude<Track, "researcher">)}
-                      className={`rounded-[1.25rem] border p-4 text-left transition-all duration-300 ease-spring ${on ? "border-white/40 bg-white/[0.14] shadow-[inset_0_1px_0_rgba(255,255,255,0.2)]" : "border-white/10 bg-white/[0.03] hover:bg-white/[0.07]"} ${disabled ? "cursor-not-allowed opacity-45" : "active:scale-[0.98]"}`}
+                      className={`rounded-[1.25rem] border p-4 text-left transition-all duration-300 ease-spring ${on ? "border-paper/70 bg-white/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]" : "border-hairline-strong bg-white/25 hover:bg-white/45"} ${disabled ? "cursor-not-allowed opacity-45" : "active:scale-[0.98]"}`}
                     >
                       <span className="flex items-center justify-between font-serif text-xl text-paper">
                         {t.name} {disabled && <Lock weight="light" size={14} />}
@@ -347,7 +347,7 @@ function QuestionView({
             const right = i === q.answer;
             // One exclusive set of border/background classes per state, so the reveal always wins.
             const tone = !reveal
-              ? `border-white/10 bg-white/[0.03] ${stage.feedback ? "opacity-60" : "hover:bg-white/[0.08]"}`
+              ? `border-hairline-strong bg-white/35 ${stage.feedback ? "opacity-60" : "hover:bg-white/60"}`
               : right
                 ? "border-2 border-[#1f9d63] bg-[#1f9d63]/12"
                 : "border-2 border-wrong bg-wrong/10";

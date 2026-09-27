@@ -129,8 +129,12 @@ export function Labels({ road, dataset, logos }: { road: RoadGeometry; dataset: 
                         {e.roadFeature === "dead-end" && (
                           <span className="rounded-full bg-[#e0503a] px-1.5 py-px font-sans text-[9px] font-semibold normal-case tracking-normal text-white">Discontinued</span>
                         )}
+                        {/* Phones don't get floating signposts; flag the claim on the label (it's in the drawer). */}
+                        {claim && (
+                          <span className="rounded-full border border-current px-1.5 font-sans text-[9px] font-semibold normal-case tracking-normal text-paper-muted md:hidden">Claim</span>
+                        )}
                       </span>
-                      <span className={`block text-[13px] text-paper ${e.roadFeature === "dead-end" ? "line-through decoration-[#e0503a]/70" : ""}`}>{e.title}</span>
+                      <span className={`block max-w-[62vw] truncate text-[13px] text-paper md:max-w-none ${e.roadFeature === "dead-end" ? "line-through decoration-[#e0503a]/70" : ""}`}>{e.title}</span>
                     </span>
                   </span>
                 </button>
