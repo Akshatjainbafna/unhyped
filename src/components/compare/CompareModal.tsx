@@ -50,7 +50,7 @@ export function CompareModal({ dataset, logos }: { dataset: Dataset; logos: Reco
         aria-labelledby="compare-title"
         className="relative w-full max-w-[1040px] animate-[fadeUp_380ms_var(--ease-out)] rounded-[2rem] border border-white/15 bg-white/[0.06] p-1.5 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)] outline-none backdrop-blur-2xl backdrop-saturate-150"
       >
-        <div data-lenis-prevent className="glass-ink overscroll-contain relative max-h-[88dvh] overflow-auto rounded-[calc(2rem-0.375rem)] border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.02] px-4 pb-5 pt-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.04)] sm:px-8 sm:pb-7">
+        <div data-lenis-prevent className="glass-ink overscroll-contain relative h-[88dvh] overflow-y-auto overflow-x-hidden sm:h-auto sm:max-h-[88dvh] rounded-[calc(2rem-0.375rem)] border border-white/10 bg-gradient-to-b from-white/[0.09] to-white/[0.02] px-4 pb-5 pt-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.18),inset_0_-1px_0_rgba(255,255,255,0.04)] sm:px-8 sm:pb-7">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-paper-muted">Compare · Updated <time dateTime={UPDATED_ISO}>{UPDATED_AT}</time></p>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, MagnifyingGlass, Minus, Plus, X } from "@phosphor-icons/react";
+import { ArrowDown, Check, MagnifyingGlass, Minus, Plus, X } from "@phosphor-icons/react";
 import { useMemo, useState } from "react";
 import { CompareLimit, dimensionsFor, STAR_RUBRIC, type Cell, type CompareTool, type Dimension } from "@/lib/compare";
 
@@ -41,11 +41,16 @@ export function CompareView({ tools, classes: kinds, layers, initial }: { tools:
   const [ids, setIds] = useState<string[]>(initial.filter((id) => tools.find((t) => t.entryId === id)?.layer === cls).slice(0, CompareLimit));
   const [onlyDiff, setOnlyDiff] = useState(false);
   const [query, setQuery] = useState("");
+  // Once two or more tools are picked the list folds away so the table is the first thing you see.
+  const [adding, setAdding] = useState(true);
   const picked = ids.map((id) => tools.find((t) => t.entryId === id)).filter((t): t is PickerTool => !!t);
   
+  const picker = adding || picked.length < 2;
+
   const switchClass = (id: string, keep: string[] = []) => {
     setCls(id);
     setIds(keep);
+    setAdding(true);
   };
 
   const { candidates, elsewhere } = useMemo(() => {
@@ -103,8 +108,35 @@ export function CompareView({ tools, classes: kinds, layers, initial }: { tools:
           <h2 className="font-mono text-[11px] uppercase tracking-[0.2em] text-paper-faint">
             {classes[cls]} · {ids.length}/{CompareLimit}
           </h2>
-          {ids.length > 0 && <button type="button" onClick={() => setIds([])} className="text-[13px] text-paper-muted underline underline-offset-4 hover:text-paper">Clear</button>}
+          <div className="flex items-center gap-3">
+            {ids.length > 0 && <button type="button" onClick={() => setIds([])} className="text-[13px] text-paper-muted underline underline-offset-4 hover:text-paper">Clear</button>}
+            {picker && picked.length >= 2 && (
+              <button type="button" onClick={() => { setAdding(false); setQuery(""); }} className="inline-flex min-h-11 items-center gap-1.5 rounded-full bg-paper px-4 text-[13px] font-medium text-ink active:scale-[0.98]">
+                Show comparison <ArrowDown weight="bold" size={13} />
+              </button>
+            )}
+          </div>
         </div>
+        {!picker && (
+          <ul className="mt-3 flex flex-wrap gap-2" aria-label="Selected tools">
+            {picked.map((t) => (
+              <li key={t.entryId}>
+                <button type="button" onClick={() => toggle(t.entryId)} aria-label={`Remove ${t.title}`} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-paper bg-paper px-4 text-[14px] text-ink">
+                  {t.title} <X weight="bold" size={12} />
+                </button>
+              </li>
+            ))}
+            {ids.length < CompareLimit && (
+              <li>
+                <button type="button" onClick={() => setAdding(true)} className="inline-flex min-h-11 items-center gap-2 rounded-full border border-dashed border-hairline-strong px-4 text-[14px] text-paper-muted hover:text-paper">
+                  <Plus weight="bold" size={14} /> Add another tool
+                </button>
+              </li>
+            )}
+          </ul>
+        )}
+        {picker && (
+          <>
         <label className="mt-3 flex items-center gap-3 rounded-full border border-hairline-strong px-4 focus-within:border-paper/60">
           <MagnifyingGlass weight="light" size={16} className="shrink-0 text-paper-muted" />
           <span className="sr-only">Search tools to add</span>
@@ -161,6 +193,8 @@ export function CompareView({ tools, classes: kinds, layers, initial }: { tools:
             </li>
           ))}
         </ul>
+          </>
+        )}
       </section>
 
       {picked.length === 0 ? (
@@ -171,19 +205,20 @@ export function CompareView({ tools, classes: kinds, layers, initial }: { tools:
             <input type="checkbox" checked={onlyDiff} onChange={(e) => setOnlyDiff(e.target.checked)} className="h-4 w-4 accent-[#2ec4b6]" />
             Show only rows that differ
           </label>
-          <div className="rounded-2xl border border-hairline">
-            <table className="w-full min-w-[640px] border-collapse text-left">
-              <thead className="sticky top-0 z-20 bg-ink">
+          {picked.length > 1 && <p className="mb-2 text-[12px] text-paper-faint sm:hidden">Swipe the table sideways to see every tool.</p>}
+          <div className="overflow-x-auto overscroll-x-contain rounded-2xl border border-hairline [scrollbar-width:thin]">
+            <table className="w-full border-collapse text-left" style={{ minWidth: `${96 + picked.length * 156}px` }}>
+              <thead>
                 <tr className="border-b border-hairline">
-                  <th scope="col" className="sticky left-0 z-30 w-32 bg-ink p-3 md:w-48"><span className="sr-only">Feature</span></th>
+                  <th scope="col" className="sticky left-0 z-10 w-24 min-w-24 border-r border-hairline bg-white/85 p-2 backdrop-blur-md sm:w-44 sm:p-3"><span className="sr-only">Feature</span></th>
                   {picked.map((t) => (
-                    <th key={t.entryId} scope="col" className="min-w-[150px] p-3 align-top">
-                      <div className="flex items-start justify-between gap-2">
-                        <div>
-                          <p className="font-serif text-xl leading-tight text-paper">{t.title}</p>
-                          <p className="mt-1 font-mono text-[10px] font-normal uppercase tracking-[0.14em] text-paper-faint">as of {t.asOf}</p>
+                    <th key={t.entryId} scope="col" className="min-w-[156px] p-3 align-top">
+                      <div className="flex items-start justify-between gap-1">
+                        <div className="min-w-0">
+                          <p className="font-serif text-lg leading-tight text-paper">{t.title}</p>
+                          <p className="mt-1 font-mono text-[10px] font-normal uppercase tracking-[0.12em] text-paper-faint">as of {t.asOf}</p>
                         </div>
-                        <button type="button" aria-label={`Remove ${t.title}`} onClick={() => toggle(t.entryId)} className="-m-2 flex h-10 w-10 items-center justify-center rounded-full text-paper-faint hover:text-paper">
+                        <button type="button" aria-label={`Remove ${t.title}`} onClick={() => toggle(t.entryId)} className="-mr-2 -mt-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-paper-faint hover:text-paper">
                           <X size={14} />
                         </button>
                       </div>
@@ -193,12 +228,18 @@ export function CompareView({ tools, classes: kinds, layers, initial }: { tools:
               </thead>
               {groups.map((g) => (
                 <tbody key={g.group}>
-                  <tr><th colSpan={picked.length + 1} scope="colgroup" className="sticky left-0 bg-ink-raised px-3 py-2 font-mono text-[10px] font-normal uppercase tracking-[0.2em] text-paper-faint">{g.group}</th></tr>
+                  {/* Group label, with the tool names repeated so you never lose which column is which. */}
+                  <tr className="border-t border-hairline bg-white/40">
+                    <th scope="rowgroup" className="sticky left-0 z-10 border-r border-hairline bg-white/85 px-2 py-2 text-left font-mono text-[10px] font-normal uppercase tracking-[0.14em] text-paper-muted backdrop-blur-md sm:px-3">{g.group}</th>
+                    {picked.map((t) => (
+                      <td key={t.entryId} aria-hidden="true" className="truncate px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] text-paper-faint">{t.title}</td>
+                    ))}
+                  </tr>
                   {g.rows.map((d) => (
                     <tr key={d.id} className="border-t border-hairline align-top">
-                      <th scope="row" className="sticky left-0 z-10 bg-ink p-3 text-[13px] font-normal text-paper-muted">
+                      <th scope="row" className="sticky left-0 z-10 border-r border-hairline bg-white/85 p-2 text-[12px] font-normal leading-snug text-paper-muted backdrop-blur-md sm:p-3 sm:text-[13px]">
                         {d.label}
-                        {d.kind === "stars" && <span className="mt-1 block text-[11px] leading-snug text-paper-faint">{STAR_RUBRIC[d.id]}</span>}
+                        {d.kind === "stars" && <span className="mt-1 hidden text-[11px] leading-snug text-paper-faint sm:block">{STAR_RUBRIC[d.id]}</span>}
                       </th>
                       {picked.map((t) => {
                         const cell = t.cells[d.id];
