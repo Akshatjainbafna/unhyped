@@ -1,7 +1,7 @@
 "use client";
 
-import { CaretDown, SlidersHorizontal, X } from "@phosphor-icons/react";
-import { useEffect, useState } from "react";
+import { SlidersHorizontal, X } from "@phosphor-icons/react";
+import { useEffect } from "react";
 import type { Dataset } from "@/lib/dataset";
 import { filterCount, matchFilters } from "@/lib/graph";
 import { SEGMENT_COLOR } from "@/lib/overworld/style";
@@ -55,7 +55,6 @@ export function FilterBar({ dataset }: { dataset: Dataset }) {
   const { segments, types, layers, oss } = filters;
   const count = filterCount(filters);
   const matches = count ? matchFilters(dataset, filters).size : dataset.entries.length;
-  const [layersOpen, setLayersOpen] = useState(false);
 
   // Filter state lives in the URL so a filtered road can be shared.
   useEffect(() => {
@@ -155,25 +154,15 @@ export function FilterBar({ dataset }: { dataset: Dataset }) {
                   </fieldset>
                 </div>
 
-                <fieldset className="mt-5">
-                  <button
-                    type="button"
-                    onClick={() => setLayersOpen((o) => !o)}
-                    aria-expanded={layersOpen}
-                    className="mb-2 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-paper-faint hover:text-paper"
-                  >
-                    Stack layer{layers.length ? ` · ${layers.length}` : ""}
-                    <CaretDown size={12} className={`transition-transform duration-300 ${layersOpen ? "rotate-180" : ""}`} />
-                  </button>
-                  {layersOpen && (
-                    <div className="flex flex-wrap gap-2">
-                      {LAYERS.map((l) => (
-                        <Chip key={l.id} on={layers.includes(l.id)} onClick={() => selectedLayers.set(toggleIn(layers, l.id))}>
-                          {l.name}
-                        </Chip>
-                      ))}
-                    </div>
-                  )}
+                <fieldset className="mt-5 border-t border-hairline pt-5">
+                  <Legend>Stack layer{layers.length ? ` · ${layers.length}` : ""}</Legend>
+                  <div className="flex flex-wrap gap-2">
+                    {LAYERS.map((l) => (
+                      <Chip key={l.id} on={layers.includes(l.id)} onClick={() => selectedLayers.set(toggleIn(layers, l.id))}>
+                        {l.name}
+                      </Chip>
+                    ))}
+                  </div>
                 </fieldset>
 
                 <div className="mt-5 grid gap-5 border-t border-hairline pt-5 md:grid-cols-[1fr_1.4fr]">
@@ -219,10 +208,11 @@ export function FilterPill() {
           type="button"
           aria-expanded={open}
           onClick={() => filterOpen.set(!open)}
-          className="inline-flex min-h-9 items-center gap-2 rounded-full px-4 text-[13px] text-paper"
+          aria-label={count ? `${count} filters` : "Filter"}
+          className="inline-flex min-h-9 items-center gap-2 rounded-full px-3 text-[13px] text-paper md:px-4"
         >
           <SlidersHorizontal weight="light" size={16} />
-          {count ? `${count} filter${count > 1 ? "s" : ""}` : "Filter"}
+          <span className={count ? "" : "hidden md:inline"}>{count ? `${count} filter${count > 1 ? "s" : ""}` : "Filter"}</span>
         </button>
         {count > 0 && (
           <>

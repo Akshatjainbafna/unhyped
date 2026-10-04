@@ -5,6 +5,8 @@ import { useEffect, useMemo, useSyncExternalStore } from "react";
 import { Experience } from "./Experience";
 import { Overworld2D } from "./overworld/Overworld2D";
 import { QuizModal } from "./quiz/QuizModal";
+import { MethodModal } from "./method/MethodModal";
+import { CompareModal } from "./compare/CompareModal";
 import { ClaimDrawer } from "./ui/ClaimDrawer";
 import { DetailPanel } from "./ui/DetailPanel";
 import { FilterBar, FilterPill } from "./ui/FilterBar";
@@ -58,6 +60,8 @@ export function App({ raw, logos }: { raw: RawDataset; logos: Record<string, str
       <DetailPanel dataset={dataset} logos={logos} />
       <ClaimDrawer dataset={dataset} />
       <QuizModal dataset={dataset} />
+      <CompareModal dataset={dataset} logos={logos} />
+      <MethodModal />
       {/* Bottom-left dock: how to read the road, and how to filter it. */}
       <div className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-3 z-40 flex items-center gap-2 md:bottom-6 md:left-6">
         <Legend view={view} />

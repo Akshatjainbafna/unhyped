@@ -29,11 +29,13 @@ export const Token = memo(function Token({
   logo,
   dim,
   ring,
+  selected = false,
 }: {
   token: T;
   logo?: string;
   dim: boolean;
   ring?: "known" | "missed";
+  selected?: boolean;
 }) {
   const update = token.type === "update";
   const size = update ? 34 : 44;
@@ -42,6 +44,7 @@ export const Token = memo(function Token({
     <button
       type="button"
       data-entry={token.entryId}
+      aria-pressed={selected}
       aria-label={`${token.title} (${token.date})${token.more ? `, plus ${token.more} more update${token.more > 1 ? "s" : ""} this period` : ""}`}
       onPointerEnter={(e) => hoveredEntry.set({ id: token.entryId, x: e.clientX, y: e.clientY })}
       onPointerLeave={() => hoveredEntry.set(null)}
@@ -51,13 +54,19 @@ export const Token = memo(function Token({
       }}
       onBlur={() => hoveredEntry.set(null)}
       onClick={() => openEntry.set(token.entryId)}
-      className={`group relative flex items-center justify-center transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 hover:scale-110 active:scale-95 ${dim ? "opacity-25" : "opacity-100"}`}
+      className={`group relative flex items-center justify-center transition-[transform,opacity] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-1 hover:scale-110 active:scale-95 ${dim ? "opacity-25" : "opacity-100"} ${selected ? "z-10 -translate-y-1 scale-125" : ""}`}
       style={{ width: size, height: size }}
     >
       <span
         className={`absolute inset-0 border-[3px] border-[#26283b] bg-white ${SHAPE[token.type]}`}
         style={{ boxShadow: `inset 0 0 0 3px ${color}, 0 3px 0 #26283b` }}
       />
+      {selected && (
+        <>
+          <span aria-hidden="true" className="absolute -inset-[7px] rounded-full border-[3px] border-[#26283b] bg-[#ffd23f]/60" />
+          <span aria-hidden="true" className="absolute -right-2 -top-2 z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#26283b] bg-[#2ec4b6] text-[11px] font-black leading-none text-[#26283b]">✓</span>
+        </>
+      )}
       {ring && (
         <span className={`absolute -inset-[5px] rounded-full border-[3px] ${ring === "known" ? "border-[#ffc21a]" : "border-[#ff6b5b]"}`} />
       )}

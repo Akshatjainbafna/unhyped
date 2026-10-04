@@ -8094,6 +8094,2284 @@
     ]
   },
   {
+    "id": "mem0",
+    "title": "Mem0",
+    "date": "2024-04",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "vector-rag"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Taranjeet Singh",
+      "Desmond Yadav"
+    ],
+    "description": "A memory layer for AI agents that extracts, stores, and recalls facts across sessions behind a drop-in API, evolving out of Embedchain.",
+    "capabilityNote": "Positioned as the memory layer for agents; combines an open-source core with a hosted memory graph.",
+    "edges": [],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/mem0ai/mem0",
+      "stars": 66519,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/mem0ai/mem0",
+        "title": "mem0ai/mem0 on GitHub"
+      },
+      {
+        "url": "https://mem0.ai",
+        "title": "Mem0: The Memory Layer for AI Agents"
+      }
+    ]
+  },
+  {
+    "id": "era-of-experience",
+    "title": "Welcome to the Era of Experience",
+    "date": "2025-04",
+    "type": "paper",
+    "era": 6,
+    "primarySegment": "rl-games",
+    "secondarySegments": [
+      "agent-frameworks"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "David Silver",
+      "Richard Sutton"
+    ],
+    "description": "David Silver and Richard Sutton's foundational essay arguing that frontier AI is transitioning from learning on static human data to self-improving through direct environment interaction and experience.",
+    "capabilityNote": "Framed the post-pretraining research agenda around trial-and-error experience as the path beyond human imitation.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf",
+        "title": "The Era of Experience (Silver & Sutton, 2025)"
+      }
+    ]
+  },
+  {
+    "id": "effective-context-engineering",
+    "title": "Effective context engineering for AI agents",
+    "date": "2025-09-29",
+    "type": "paper",
+    "era": 6,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "agent-frameworks"
+    ],
+    "stackLayer": "ops",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "Anthropic's engineering guide establishing context engineering as the core discipline for production agents, treating context as a scarce budget requiring active curation rather than unbounded prompt growth.",
+    "capabilityNote": "Crystallized the industry shift from prompt crafting to tool-mediated context management and sub-agent compaction.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "title": "Anthropic: Effective context engineering for AI agents",
+        "accessedAt": "2026-10-03"
+      }
+    ]
+  },
+  {
+    "id": "strix",
+    "title": "Strix",
+    "date": "2025-08-05",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "safety-alignment"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [],
+    "description": "An open-source AI penetration testing agent designed to autonomously uncover and remediate web application security vulnerabilities.",
+    "capabilityNote": "Reached over 66,000 GitHub stars, reflecting the rapid growth of autonomous offensive and defensive security harnesses.",
+    "edges": [],
+    "oss": {
+      "repoUrl": "https://github.com/usestrix/strix",
+      "stars": 66273,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/usestrix/strix",
+        "title": "usestrix/strix on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "pi",
+    "title": "Pi (pi-mono)",
+    "date": "2025-08-09",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Mario Zechner"
+    ],
+    "description": "Mario Zechner's self-extensible AI coding agent toolkit and monorepo featuring a unified LLM API, agent loop, interactive TUI, and CLI harness.",
+    "capabilityNote": "Crossed 110k stars as a hacker favorite; reached version 1.0 in October 2026 with Pi Durable for resilient multi-hour sessions.",
+    "majorUpdates": [
+      {
+        "date": "2026-10-01",
+        "title": "Pi 1.0",
+        "summary": "Full 1.0 release stabilizing the extensible agent loop and TUI.",
+        "source": "https://earendil.com/posts/pi-1-0/"
+      },
+      {
+        "date": "2026-10-01",
+        "title": "Pi Durable",
+        "summary": "Durable checkpointing and background task execution for long-running workflows.",
+        "source": "https://earendil.com/posts/pi-durable/"
+      }
+    ],
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "claude-code"
+      },
+      {
+        "type": "competes-with",
+        "target": "opencode"
+      },
+      {
+        "type": "competes-with",
+        "target": "aider"
+      }
+    ],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/earendil-works/pi",
+      "stars": 112255,
+      "starsCheckedAt": "2026-10-04",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/earendil-works/pi",
+        "title": "earendil-works/pi on GitHub"
+      },
+      {
+        "url": "https://earendil.com/posts/pi-1-0/",
+        "title": "Pi 1.0 Release Announcement"
+      }
+    ]
+  },
+  {
+    "id": "mirofish",
+    "title": "MiroFish",
+    "date": "2025-11-26",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [],
+    "description": "A swarm intelligence prediction engine using coordinated multi-agent simulation sandboxes to forecast complex events and macro scenarios.",
+    "capabilityNote": "Gained over 75,000 GitHub stars, pioneering community-driven synthetic prediction swarms and multi-agent consensus dynamics.",
+    "edges": [],
+    "oss": {
+      "repoUrl": "https://github.com/666ghj/MiroFish",
+      "stars": 75643,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/666ghj/MiroFish",
+        "title": "666ghj/MiroFish on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "edge0",
+    "title": "Edge0",
+    "date": "2025-12-29",
+    "type": "org",
+    "era": 7,
+    "primarySegment": "local-runtimes",
+    "secondarySegments": [
+      "foundation-models",
+      "speech-audio"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Edge0-AI"
+    ],
+    "description": "An edge-focused AI organization building on-device MoE language models and compact speech systems designed to run directly on consumer-tier silicon.",
+    "capabilityNote": "Developed the ARK-ASR, Audio8 TTS series, and lightweight 8B/35B-A3B edge MoE architectures to bypass reliance on cloud inference.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://huggingface.co/Edge0",
+        "title": "Edge0 on Hugging Face"
+      },
+      {
+        "url": "https://edge0.ai/aboutus",
+        "title": "About Edge0"
+      }
+    ]
+  },
+  {
+    "id": "openviking",
+    "title": "OpenViking",
+    "date": "2026-01-05",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [
+      "personal-agents"
+    ],
+    "stackLayer": "data",
+    "creators": [
+      "ByteDance Volcengine"
+    ],
+    "description": "ByteDance Volcengine's self-evolving context database for AI agents, uniting episodic agent memory, persistent RAG knowledge, and operational skills in one engine.",
+    "capabilityNote": "Quickly crossed 39,000 stars, establishing dedicated memory and state management plugins across major agent coding harnesses.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "mem0"
+      }
+    ],
+    "oss": {
+      "repoUrl": "https://github.com/volcengine/OpenViking",
+      "stars": 39156,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/volcengine/OpenViking",
+        "title": "volcengine/OpenViking on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "cmux",
+    "title": "cmux",
+    "date": "2026-01-28",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Manaflow AI"
+    ],
+    "description": "A Ghostty-based macOS terminal environment engineered specifically for multiplexing and orchestrating concurrent AI coding agent sessions with vertical tabs and status alerts.",
+    "capabilityNote": "A spiritual successor to tmux adapted for the agentic era, resolving the ergonomics of tracking multiple autonomous coding agents in parallel.",
+    "edges": [],
+    "oss": {
+      "repoUrl": "https://github.com/manaflow-ai/cmux",
+      "stars": 27586,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/manaflow-ai/cmux",
+        "title": "manaflow-ai/cmux on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "oh-my-agent",
+    "title": "Oh My Agent",
+    "date": "2026-01-30",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [],
+    "description": "A harness enhancement and skills toolkit providing mechanical verification, stop-hook gates, and guardrails for terminal coding agents.",
+    "capabilityNote": "Part of the broader 'oh-my-*' harness modularization wave alongside oh-my-codex, shifting emphasis toward deterministic runtime constraints.",
+    "edges": [],
+    "oss": {
+      "repoUrl": "https://github.com/first-fluke/oh-my-agent",
+      "stars": 1334,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/first-fluke/oh-my-agent",
+        "title": "first-fluke/oh-my-agent on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "awesome-ai-agent-papers",
+    "title": "Awesome AI Agent Papers",
+    "date": "2026-02-10",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [
+      "agent-frameworks"
+    ],
+    "stackLayer": "algorithms",
+    "creators": [
+      "VoltAgent"
+    ],
+    "description": "A community-curated collection tracking landmark research papers in agent architectures, tool use, long-horizon evaluation, and cognitive frameworks.",
+    "capabilityNote": "Serves as a canonical index filtering high-signal empirical publications amidst exponential growth in agent academic preprints.",
+    "edges": [],
+    "oss": {
+      "repoUrl": "https://github.com/VoltAgent/awesome-ai-agent-papers",
+      "stars": 1815,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/VoltAgent/awesome-ai-agent-papers",
+        "title": "VoltAgent/awesome-ai-agent-papers on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "soup",
+    "title": "Soup",
+    "date": "2026-02-20",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "local-runtimes",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [],
+    "description": "A single-YAML LLM fine-tuning framework implementing layer streaming to train 8B models on consumer hardware with as little as 4 GB of VRAM.",
+    "capabilityNote": "Demonstrated that low-resource layer-by-layer optimization can democratize model adaptation on commodity laptops.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "unsloth"
+      }
+    ],
+    "oss": {
+      "repoUrl": "https://github.com/MakazhanAlpamys/Soup",
+      "stars": 8047,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/MakazhanAlpamys/Soup",
+        "title": "MakazhanAlpamys/Soup on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "paperclip",
+    "title": "Paperclip",
+    "date": "2026-03-02",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "workflow-lowcode"
+    ],
+    "stackLayer": "apps",
+    "creators": [],
+    "description": "An open-source workspace application for managing fleets of AI agents at work, orchestrating tasks, reviews, and delegation across human and synthetic team members.",
+    "capabilityNote": "Surged past 96,000 GitHub stars within months, pioneering corporate agent orchestration and organization modeling.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "openclaw"
+      }
+    ],
+    "oss": {
+      "repoUrl": "https://github.com/paperclipai/paperclip",
+      "stars": 96549,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/paperclipai/paperclip",
+        "title": "paperclipai/paperclip on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "opencli",
+    "title": "OpenCLI",
+    "date": "2026-03-14",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "protocols"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [],
+    "description": "A developer tool that turns authenticated web sessions into CLI endpoints, enabling AI agents to drive web services directly through existing browser credentials.",
+    "capabilityNote": "Achieved nearly 30,000 GitHub stars by offering zero-config automation across dozens of web platforms without fragile API mocking.",
+    "edges": [],
+    "oss": {
+      "repoUrl": "https://github.com/jackwener/OpenCLI",
+      "stars": 29794,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/jackwener/OpenCLI",
+        "title": "jackwener/OpenCLI on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "open-design",
+    "title": "Open Design",
+    "date": "2026-04-28",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [],
+    "description": "An open-source, local-first UI design agent and harness plugin designed as an open alternative to proprietary visual coding assistants.",
+    "capabilityNote": "Reached nearly 100,000 stars on GitHub, bridging code-generation harnesses with real-time visual canvas iteration.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "deepseek-v3"
+      }
+    ],
+    "oss": {
+      "repoUrl": "https://github.com/nexu-io/open-design",
+      "stars": 99261,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/nexu-io/open-design",
+        "title": "nexu-io/open-design on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "colibri",
+    "title": "Colibri",
+    "date": "2026-07-01",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "local-runtimes",
+    "secondarySegments": [],
+    "stackLayer": "inference",
+    "creators": [],
+    "description": "A pure-C, dependency-free local inference engine designed to execute frontier Mixture-of-Experts (MoE) models on consumer hardware by streaming inactive experts directly from disk.",
+    "capabilityNote": "Gained 39,000 stars by making massive MoE architectures viable on low-RAM workstations with minimal throughput degradation.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "vllm"
+      },
+      {
+        "type": "competes-with",
+        "target": "ollama"
+      }
+    ],
+    "oss": {
+      "repoUrl": "https://github.com/JustVugg/colibri",
+      "stars": 39220,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/JustVugg/colibri",
+        "title": "JustVugg/colibri on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "google-artemis",
+    "title": "Google ARTEMIS",
+    "date": "2026-08-13",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "personal-agents"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Google"
+    ],
+    "description": "Google's open-source framework transforming natural language instructions into multi-step Android device automation, featuring MCP integration for IDEs and diagnostic logging.",
+    "capabilityNote": "Reported 99%+ completion on Google Research's AndroidWorld benchmark, bridging coding IDEs with native mobile OS execution.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "mcp"
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/google/artemis",
+      "stars": 10911,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google/artemis",
+        "title": "google/artemis on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "ox-alpha",
+    "title": "Ox Alpha model unmasking",
+    "date": "2026-08-22",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "models",
+    "creators": [],
+    "description": "Community model forensics publicly demonstrated that OpenCode's free, unbranded 'ox-alpha' provider route was backed by Z.ai's GLM-5.3-Flash weights.",
+    "capabilityNote": "High-profile case of black-box model fingerprinting in developer tooling, illustrating how labs use free proxy tiers to seed adoption.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "glm"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/LuD1161/ox-alpha-identification-public",
+        "title": "Reproducible black-box model forensics for OpenCode Ox Alpha"
+      },
+      {
+        "url": "https://github.com/theabecaster/ox",
+        "title": "Ox: Open coding agent"
+      }
+    ]
+  },
+  {
+    "id": "livenerf",
+    "title": "Livenerf",
+    "date": "2026-09-22",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [],
+    "description": "An automated evaluation harness designed to continuously detect post-launch degradation, safety-prompt regressions, and capacity nerfing in hosted frontier LLMs.",
+    "capabilityNote": "Turned persistent community speculation ('has Opus 5.5 been nerfed?') into quantifiable, continuously published benchmark charts.",
+    "edges": [],
+    "oss": {
+      "repoUrl": "https://github.com/ninjahawk/livenerf",
+      "stars": 1188,
+      "starsCheckedAt": "2026-10-03",
+      "archived": false
+    },
+    "sources": [
+      {
+        "url": "https://github.com/ninjahawk/livenerf",
+        "title": "ninjahawk/livenerf on GitHub"
+      }
+    ]
+  },
+  {
+    "id": "ember-1",
+    "title": "Ember-1",
+    "date": "2026-09-23",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Fireworks AI"
+    ],
+    "description": "Fireworks Research's specialized reasoning model distilled from Kimi K3, trained to cut unnecessary chain-of-thought tokens by 40% while preserving answer quality.",
+    "capabilityNote": "Pioneered explicit token-efficiency distillation to make agentic reasoning traces economically viable at massive scale.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "kimi"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://fireworks.ai/blog/ember-1",
+        "title": "Fireworks AI: Introducing Ember-1",
+        "accessedAt": "2026-10-03"
+      }
+    ]
+  },
+  {
+    "id": "sonnet-5-5",
+    "title": "Claude Sonnet 5.5",
+    "date": "2026-09-28",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "The second model in Anthropic's Claude 5.5 generation, offering a 30%+ speed increase and 30% lower operating cost while achieving 70.6% on Terminal-Bench 4.0.",
+    "capabilityNote": "Demonstrated dramatic improvement on long-horizon visual agent tasks, including becoming the first model to complete Pokémon Red purely from screen pixels.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "gemini-4-argon"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/claude-sonnet-5-5",
+        "title": "Anthropic: Introducing Claude Sonnet 5.5",
+        "accessedAt": "2026-10-03"
+      }
+    ]
+  },
+  {
+    "id": "gpt-6-1-sol",
+    "title": "GPT-6.1 Sol",
+    "date": "2026-09-29",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI's major efficiency upgrade to GPT-6 Sol, approaching GPT-6 Astra benchmark performance on software engineering at one-fifth the inference cost.",
+    "capabilityNote": "Aggressively dropped cached token pricing to $0.10 per million tokens, targeting high-context agent execution loops.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "gpt-6-astra"
+      },
+      {
+        "type": "competes-with",
+        "target": "gemini-4-argon"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "title": "OpenAI: Introducing GPT-6.1 Sol",
+        "accessedAt": "2026-10-03"
+      }
+    ]
+  },
+  {
+    "id": "chatgpt-dots",
+    "title": "ChatGPT Dots",
+    "date": "2026-09-29",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "Always-on proactive personal agents introduced at OpenAI DevDay 2026, running background tasks on persistent dedicated compute powered by GPT-6 Astra.",
+    "capabilityNote": "Marked OpenAI's shift from interactive conversational bots to autonomous, persistent digital workers with permissioned tool access.",
+    "heroMoment": true,
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "chatgpt-agent"
+      },
+      {
+        "type": "competes-with",
+        "target": "openclaw"
+      },
+      {
+        "type": "uses",
+        "target": "gpt-6-astra"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-dots/",
+        "title": "OpenAI: Introducing Dots"
+      },
+      {
+        "url": "https://chatgpt.com/features/dots/",
+        "title": "ChatGPT Dots: Always-on agents",
+        "accessedAt": "2026-10-03"
+      }
+    ]
+  },
+  {
+    "id": "glm-5-3-cyber-report",
+    "title": "GLM-5.3 and emergent cyber capabilities",
+    "date": "2026-09-29",
+    "type": "paper",
+    "era": 7,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Anthropic Frontier Red Team"
+    ],
+    "description": "Anthropic's red-team research demonstrating that open-weight model GLM-5.3 autonomously developed full control-flow hijacks in 4% of binary exploitation benchmarks.",
+    "capabilityNote": "Marked the first documented empirical threshold where non-frontier open weights achieved automated software exploitation capabilities previously exclusive to top-tier closed models.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "glm"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+        "title": "Anthropic: GLM-5.3 and the spread of advanced cyber capabilities"
+      }
+    ]
+  },
+  {
+    "id": "agent-worms",
+    "title": "Agent worms via shared package caches",
+    "date": "2026-09-30",
+    "type": "paper",
+    "era": 7,
+    "primarySegment": "safety-alignment",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Matthew Green"
+    ],
+    "description": "Matthew Green's analysis demonstrating that sandbox isolation fails to contain rogue agents when shared package caches and inter-agent communication channels permit persistent self-propagating payloads.",
+    "capabilityNote": "Demonstrated the theoretical and practical reality of self-replicating multi-agent malware spreading across autonomous organizational fleets.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://blog.cryptographyengineering.com/2026/09/30/is-sandboxing-sufficient-to-contain-rogue-agents/",
+        "title": "Matthew Green: Is sandboxing sufficient to contain rogue agents?"
+      }
+    ]
+  },
+  {
+    "id": "gemini-4-argon",
+    "title": "Gemini 4 Argon",
+    "date": "2026-09-30",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "safety-alignment",
+      "coding-agents"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "Google DeepMind's next-era frontier foundation model, delivering industry-leading performance across complex coding, defensive cybersecurity, and enterprise knowledge domains.",
+    "capabilityNote": "Ranked by independent benchmarks as Google's definitive return to the top three labs by intelligence achieved.",
+    "heroMoment": true,
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gemini"
+      },
+      {
+        "type": "competes-with",
+        "target": "gpt-6-astra"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "title": "Google: Gemini 4 Argon: our next era of frontier intelligence",
+        "accessedAt": "2026-10-03"
+      }
+    ]
+  },
+  {
+    "id": "clef",
+    "title": "Clef (Cloudflare)",
+    "date": "2026-10-01",
+    "type": "model",
+    "era": 6,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "agent-frameworks"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Cloudflare"
+    ],
+    "description": "Cloudflare's open-source decision models (Clef and Clef-flash) hosted on Workers AI, providing fast, deterministic, calibrated decision routing for agentic workflows.",
+    "capabilityNote": "Took top rank on the Jev Decision Index benchmark upon release, validating compact decision-specialized networks against broad generalist LLMs.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "jev"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.cloudflare.com/clef-decision-models/",
+        "title": "Cloudflare: Introducing Clef: our open-source decision models",
+        "accessedAt": "2026-10-03"
+      }
+    ]
+  },
+  {
+    "id": "micron-memory-tightness",
+    "title": "Micron AI memory supply warning",
+    "date": "2026-10-01",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "compute-hardware",
+    "secondarySegments": [],
+    "stackLayer": "compute",
+    "creators": [
+      "Micron"
+    ],
+    "description": "Micron's executive leadership warned that hyperscaler AI infrastructure demands will drive severe DRAM and HBM memory shortages across 2027 and 2028.",
+    "capabilityNote": "Highlighted memory bandwidth and supply allocation as the primary physical bottlenecks constraining frontier model scale beyond raw compute.",
+    "edges": [],
+    "sources": [
+      {
+        "url": "https://www.techpowerup.com/353296/micron-ceo-says-memory-supply-will-be-much-tighter-in-2",
+        "title": "TechPowerUp: Micron CEO Says Memory Supply Will Be Much Tighter in 2027-2028"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [
+      "PrismML"
+    ],
+    "edges": [],
+    "majorUpdates": [],
+    "id": "prismml-bonsai-27b",
+    "title": "PrismML Bonsai 27B",
+    "date": "2026-07-14",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "local-runtimes",
+    "stackLayer": "models",
+    "description": "A 27B-parameter model compressed to ternary and 1-bit weights so it runs on a laptop (5.9 GB) or phone (3.9 GB). Bonsai 2 followed in September 2026 at 1.76 effective bits per weight.",
+    "capabilityNote": "PrismML reports Bonsai 2 27B keeps 98.2% of its full-precision benchmark score at over 9x smaller; vendor figures, not independently reproduced.",
+    "sources": [
+      {
+        "url": "https://prismml.com/news/bonsai-2-27b",
+        "title": "PrismML: Bonsai 2 27B"
+      },
+      {
+        "url": "https://prismml.com/",
+        "title": "PrismML"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [
+      "Henry Farrell",
+      "Alison Gopnik",
+      "Cosma Shalizi",
+      "James Evans"
+    ],
+    "edges": [],
+    "majorUpdates": [],
+    "id": "social-cultural-technologies-science-2025",
+    "title": "Large AI models are cultural and social technologies",
+    "date": "2025-03",
+    "type": "paper",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "stackLayer": "algorithms",
+    "description": "Science essay arguing large models are best understood like markets, bureaucracies and print: systems that summarise and reorganise human knowledge, not emerging minds.",
+    "sources": [
+      {
+        "url": "https://www.science.org/doi/10.1126/science.adt9819",
+        "title": "Science: Large AI models are cultural and social technologies"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [
+      "Demis Hassabis",
+      "Google DeepMind"
+    ],
+    "edges": [],
+    "majorUpdates": [],
+    "id": "deepmind-frontier-ai-framework-2026",
+    "title": "Hassabis: A Framework for Frontier AI and the Dawning of a New Age",
+    "date": "2026-07-14",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "safety-alignment",
+    "stackLayer": "ops",
+    "description": "Hassabis proposes a US standards body, modelled on FINRA, to run voluntary pre-release tests of frontier models for cyber, bio and deception risks.",
+    "sources": [
+      {
+        "url": "https://institute.deepmind.com/essays/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age/",
+        "title": "DeepMind Institute: A Framework for Frontier AI and the Dawning of a New Age"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [
+      "Hugging Face"
+    ],
+    "edges": [],
+    "majorUpdates": [],
+    "id": "huggingface-upskill",
+    "title": "Hugging Face upskill",
+    "date": "2026-01-28",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "stackLayer": "harnesses",
+    "description": "CLI that has a large model write an agent skill, then tests whether smaller models do better with it. Demonstrated by having Claude teach open models to write CUDA kernels.",
+    "oss": {
+      "repoUrl": "https://github.com/huggingface/upskill"
+    },
+    "sources": [
+      {
+        "url": "https://huggingface.co/blog/upskill",
+        "title": "Hugging Face: We got Claude to teach open models how to write CUDA kernels"
+      },
+      {
+        "url": "https://github.com/huggingface/upskill",
+        "title": "huggingface/upskill"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [],
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "gpt-3"
+      }
+    ],
+    "majorUpdates": [],
+    "id": "prompt-engineering",
+    "title": "Prompt engineering",
+    "date": "2020-05-28",
+    "type": "event",
+    "era": 5,
+    "primarySegment": "language",
+    "stackLayer": "algorithms",
+    "description": "GPT-3 showed a model could be steered by examples written in its prompt, with no retraining. Crafting those prompts became a skill and then a job title.",
+    "sources": [
+      {
+        "url": "https://arxiv.org/abs/2005.14165",
+        "title": "Language Models are Few-Shot Learners"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [
+      "Tobi Lütke",
+      "Andrej Karpathy"
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "prompt-engineering"
+      }
+    ],
+    "majorUpdates": [],
+    "id": "context-engineering",
+    "title": "Context engineering",
+    "date": "2025-06-18",
+    "type": "event",
+    "era": 6,
+    "primarySegment": "agent-frameworks",
+    "stackLayer": "algorithms",
+    "description": "Shopify's Tobi Lütke named the shift from wording one prompt to supplying everything the model needs to solve the task. Karpathy endorsed the term a week later.",
+    "sources": [
+      {
+        "url": "https://addyo.substack.com/p/context-engineering-bringing-engineering",
+        "title": "Addy Osmani: Context Engineering, Bringing Engineering Discipline to Prompts"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [
+      "OpenAI",
+      "Ryan Lopopolo"
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "context-engineering"
+      }
+    ],
+    "majorUpdates": [],
+    "id": "harness-engineering",
+    "title": "Harness engineering",
+    "date": "2026-02-11",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "stackLayer": "harnesses",
+    "description": "OpenAI described building a product of about a million lines with Codex agents and no hand-written source, by engineering the constraints, tools and checks around the agents.",
+    "sources": [
+      {
+        "url": "https://www.infoq.com/news/2026/02/openai-harness-engineering-codex/",
+        "title": "InfoQ: OpenAI Introduces Harness Engineering"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [
+      "Addy Osmani",
+      "Boris Cherny",
+      "Peter Steinberger"
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "harness-engineering"
+      }
+    ],
+    "majorUpdates": [],
+    "id": "loop-engineering",
+    "title": "Loop engineering",
+    "date": "2026-06-07",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "stackLayer": "harnesses",
+    "description": "Osmani named the practice of designing the loop that prompts, verifies, retries and stops a coding agent, instead of typing each prompt yourself.",
+    "sources": [
+      {
+        "url": "https://www.ibm.com/think/topics/loop-engineering",
+        "title": "IBM: What Is Loop Engineering?"
+      },
+      {
+        "url": "https://adtmag.com/articles/2026/07/01/loop-engineering-emerges-as-developers-put-ai-coding-agents-on-repeat.aspx",
+        "title": "ADTmag: Loop Engineering Emerges as Developers Put AI Coding Agents on Repeat"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "loop-engineering"
+      }
+    ],
+    "majorUpdates": [],
+    "id": "graph-engineering",
+    "title": "Graph engineering",
+    "date": "2026-08",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "stackLayer": "harnesses",
+    "description": "Designing many agents as an explicit graph: nodes own a task, edges decide what runs next, shared state and verification gate the result. A move away from free-form multi-agent chat.",
+    "sources": [
+      {
+        "url": "https://www.cio.com/article/4212069/graph-engineering-is-where-ai-agents-stop-working-alone.html",
+        "title": "CIO: Graph engineering is where AI agents stop working alone"
+      },
+      {
+        "url": "https://arxiv.org/pdf/2608.21156",
+        "title": "Graph Engineering in the Era of LLM Agents"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [
+      "xAI"
+    ],
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "grok"
+      }
+    ],
+    "majorUpdates": [],
+    "id": "grok-4-7",
+    "title": "Grok 4.7",
+    "date": "2026-09-21",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "stackLayer": "models",
+    "description": "xAI's flagship model for coding and knowledge work, with a 500K-token context window, text and image input, and adjustable reasoning effort.",
+    "sources": [
+      {
+        "url": "https://docs.x.ai/developers/grok-4-7",
+        "title": "xAI docs: Grok 4.7"
+      },
+      {
+        "url": "https://www.lindy.ai/blog/grok-4-7",
+        "title": "Lindy: Grok 4.7, pricing and what changed from 4.6"
+      }
+    ]
+  },
+  {
+    "secondarySegments": [],
+    "creators": [
+      "xAI"
+    ],
+    "edges": [],
+    "majorUpdates": [
+      {
+        "date": "2026-07-12",
+        "title": "Repository upload disabled",
+        "summary": "Users found the agent uploading whole directories to xAI-run cloud servers without clear consent, exposing files such as keys and passwords. xAI disabled the upload and said it would delete the data.",
+        "source": "https://the-decoder.com/xai-open-sources-grok-build-on-github-after-massive-data-breach/"
+      },
+      {
+        "date": "2026-07-15",
+        "title": "Open-sourced under Apache 2.0",
+        "summary": "xAI published the Rust source for the agent loop, tools, terminal UI and extension system.",
+        "source": "https://github.com/xai-org/grok-build"
+      }
+    ],
+    "id": "grok-build",
+    "title": "Grok Build",
+    "date": "2026-05-14",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "stackLayer": "harnesses",
+    "description": "xAI's terminal coding agent, written in Rust. It entered beta in May 2026, became open source under Apache 2.0 in July, and calls xAI's proprietary Grok models.",
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/xai-org/grok-build"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/xai-org/grok-build",
+        "title": "xai-org/grok-build"
+      },
+      {
+        "url": "https://the-decoder.com/xai-open-sources-grok-build-on-github-after-massive-data-breach/",
+        "title": "The Decoder: xAI open-sources Grok Build"
+      },
+      {
+        "url": "https://pulse2.com/xai-grok-build-launches-early-beta-coding-agent-cli/",
+        "title": "Pulse 2: Grok Build launches early beta"
+      }
+    ]
+  },
+  {
+    "id": "grok-bot",
+    "title": "Grok Bot",
+    "date": "2026-08-11",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "xAI"
+    ],
+    "description": "xAI's agent product: each bot gets its own cloud computer, signs in to your work apps, and runs multi-step and recurring tasks, pausing for approval when judgment is needed.",
+    "capabilityNote": "It started as a beta bundled with SuperGrok Heavy and Cursor's top plans, then widened to all SuperGrok plans.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "grok-4-7"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://www.reworked.co/collaboration-productivity/xai-launches-grok-bot-ai-agents-in-beta/",
+        "title": "Reworked: xAI wants in on the enterprise with Grok Bot"
+      },
+      {
+        "url": "https://www.aibuilderclub.com/blog/grok-bot-pricing",
+        "title": "AI Builder Club: Grok Bot pricing"
+      }
+    ]
+  },
+  {
+    "id": "emergent",
+    "title": "Emergent",
+    "date": "2025-09-24",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "workflow-lowcode",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Emergent"
+    ],
+    "description": "A vibe-coding platform where autonomous agents build full-stack web and mobile apps from a description, aimed at small businesses and first-time builders.",
+    "capabilityNote": "The company claims $50 million in annual recurring revenue and over 5 million users; these are its own figures.",
+    "edges": [],
+    "majorUpdates": [
+      {
+        "date": "2026-01-20",
+        "title": "$70M raise at a $300M valuation",
+        "summary": "Led by SoftBank's Vision Fund 2 and Khosla Ventures.",
+        "source": "https://techcrunch.com/2026/01/20/indian-vibe-coding-startup-emergent-raises-70m-at-300m-valuation-from-softbank-khosla-ventures/"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.businesswire.com/news/home/20250924838488/en/Emergent-Announces-$23M-Launches-a-Vibe-Coding-Platform-for-Small-Businesses-and-Everyday-Entrepreneurs-Unlocking-Who-Can-Build-and-Sell-Software",
+        "title": "Business Wire: Emergent announces $23M and launches its vibe coding platform"
+      },
+      {
+        "url": "https://emergent.sh/",
+        "title": "Emergent"
+      }
+    ]
+  },
+  {
+    "id": "base44",
+    "title": "Base44",
+    "date": "2025-01",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "workflow-lowcode",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Base44",
+      "Wix"
+    ],
+    "description": "An AI app builder that turns a description into a working app with a managed backend, database, sign-in and hosting included. Wix bought it for about $80 million in June 2025, when it was six months old.",
+    "edges": [],
+    "majorUpdates": [
+      {
+        "date": "2025-06",
+        "title": "Acquired by Wix",
+        "summary": "About $80 million in cash up front, with earn-outs through 2029; Base44 stays a standalone product.",
+        "source": "https://theaiinsider.tech/2025/06/20/wix-acquires-six-month-old-ai-vibe-coding-startup-base44-for-80m-cash/"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://theaiinsider.tech/2025/06/20/wix-acquires-six-month-old-ai-vibe-coding-startup-base44-for-80m-cash/",
+        "title": "The AI Insider: Wix acquires six-month-old Base44 for $80M cash"
+      },
+      {
+        "url": "https://www.wix.com/press-room/home/post/wix-further-expands-into-vibe-coding-with-acquisition-of-base44-a-hyper-growth-startup-that-simplif",
+        "title": "Wix: acquisition of Base44"
+      }
+    ]
+  },
+  {
+    "id": "agent-reach",
+    "title": "Agent Reach",
+    "date": "2026-02-24",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Panniantong"
+    ],
+    "description": "A free command-line tool that gives agents read and search access to the web and to X, Reddit, YouTube, Bilibili, XiaoHongShu, Facebook, Instagram, LinkedIn, GitHub and RSS, by routing to existing CLIs such as yt-dlp. Sites that need a login need your credentials, and the README advises a small account because of blocking risk.",
+    "capabilityNote": "Reaches about ten platforms and works with Claude Code, OpenClaw, Cursor and Windsurf. Adoption evidence beyond stars is forks and issues, not independent usage reports.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "opencli"
+      }
+    ],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/Panniantong/agent-reach",
+      "stars": 90052,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/Panniantong/agent-reach",
+        "title": "Panniantong/agent-reach",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "claude-managed-agents",
+    "title": "Claude Managed Agents",
+    "date": "2026-04-08",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "A hosted agent harness behind an API. You define the model, prompt, tools, MCP servers and skills; Anthropic runs the agent in a managed cloud sandbox, or in one you host, for long-running and scheduled work.",
+    "capabilityNote": "Sessions keep their files and history server-side, which makes them ineligible for Zero Data Retention or a HIPAA BAA while in beta.",
+    "edges": [],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://platform.claude.com/docs/en/managed-agents/overview",
+        "title": "Claude docs: Managed Agents overview",
+        "accessedAt": "2026-10-04"
+      },
+      {
+        "url": "https://winbuzzer.com/2026/04/10/anthropic-launches-claude-managed-agents-enterprise-ai-xcxwbn/",
+        "title": "Winbuzzer: Anthropic launches Claude Managed Agents"
+      }
+    ]
+  },
+  {
+    "id": "swe-agent",
+    "title": "SWE-agent",
+    "date": "2024-04-02",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Princeton and Stanford researchers"
+    ],
+    "description": "A research agent that takes a GitHub issue and tries to fix it with the language model of your choice. It reports state-of-the-art SWE-bench results among open-source projects, and is now in maintenance mode; the maintainers point to mini-swe-agent.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/SWE-agent/SWE-agent",
+      "stars": 20484,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/SWE-agent/SWE-agent",
+        "title": "SWE-agent/SWE-agent",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "open-swe",
+    "title": "Open SWE",
+    "date": "2025-05-21",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "LangChain"
+    ],
+    "description": "An open-source asynchronous coding agent from LangChain. It investigates a codebase, implements changes, validates them and delivers a pull request, from GitHub, Slack or Linear, in cloud sandboxes.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/langchain-ai/open-swe",
+      "stars": 10796,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/langchain-ai/open-swe",
+        "title": "langchain-ai/open-swe",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "kilo-code",
+    "title": "Kilo Code",
+    "date": "2025-03-10",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Kilo Code"
+    ],
+    "description": "An open-source coding agent for VS Code, JetBrains and the CLI, with a cloud agent and 500+ models at provider prices with no markup.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/Kilo-Org/kilocode",
+      "stars": 27487,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/Kilo-Org/kilocode",
+        "title": "Kilo-Org/kilocode",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "qwen-code",
+    "title": "Qwen Code",
+    "date": "2025-06-26",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Alibaba Qwen"
+    ],
+    "description": "An open-source terminal coding agent from the Qwen team. It works with many model providers and local models, and runs in the terminal, desktop and web apps, IDE plugins and chat apps.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/QwenLM/qwen-code",
+      "stars": 28295,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/QwenLM/qwen-code",
+        "title": "QwenLM/qwen-code",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "gemini-cli",
+    "title": "Gemini CLI",
+    "date": "2025-04-17",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Google"
+    ],
+    "description": "Google's open-source terminal agent for Gemini models, with a free daily allowance, MCP support, headless mode and a GitHub Action.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/google-gemini/gemini-cli",
+      "stars": 107227,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/google-gemini/gemini-cli",
+        "title": "google-gemini/gemini-cli",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "plandex",
+    "title": "Plandex",
+    "date": "2023-10-24",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Plandex"
+    ],
+    "description": "An open-source coding agent built for large projects, with a diff-review sandbox and a 2M-token effective context. Its hosted cloud has been winding down since October 2025, and the last code push was the same month.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/plandex-ai/plandex",
+      "stars": 15688,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/plandex-ai/plandex",
+        "title": "plandex-ai/plandex",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "gptme",
+    "title": "gptme",
+    "date": "2023-03-24",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Erik Bjäreholt"
+    ],
+    "description": "A terminal agent with local tools (shell, files, browser, computer use) that you can build into a persistent, scheduled agent on your own machine.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/gptme/gptme",
+      "stars": 4443,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/gptme/gptme",
+        "title": "gptme/gptme",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "open-interpreter",
+    "title": "Open Interpreter",
+    "date": "2023-07-14",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Open Interpreter"
+    ],
+    "description": "Started as a way to let a model run code on your computer; now a coding agent tuned for low-cost open models such as Kimi and DeepSeek, with a terminal UI, ACP editors and desktop clients.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/openinterpreter/open-interpreter",
+      "stars": 68502,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/openinterpreter/open-interpreter",
+        "title": "openinterpreter/open-interpreter",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "stagehand",
+    "title": "Stagehand",
+    "date": "2024-03-24",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Browserbase"
+    ],
+    "description": "An SDK for browser agents, in TypeScript, Python and Go, with act, observe and extract calls, self-healing when sites change, and an MCP server.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/browserbase/stagehand",
+      "stars": 25530,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/browserbase/stagehand",
+        "title": "browserbase/stagehand",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "skyvern",
+    "title": "Skyvern",
+    "date": "2024-02-28",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Skyvern"
+    ],
+    "description": "Browser automation that uses vision models instead of brittle selectors, with workflows, 2FA and password-manager support. Self-host it or use the paid cloud.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "AGPL-3.0",
+      "repoUrl": "https://github.com/Skyvern-AI/skyvern",
+      "stars": 23132,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/Skyvern-AI/skyvern",
+        "title": "Skyvern-AI/skyvern",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "bytebot",
+    "title": "Bytebot",
+    "date": "2025-02-03",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Bytebot"
+    ],
+    "description": "A self-hosted AI desktop agent that works in a containerised Linux desktop, with a takeover mode. The repository was archived in March 2026.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/bytebot-ai/bytebot",
+      "stars": 11080,
+      "starsCheckedAt": "2026-10-04",
+      "archived": true
+    },
+    "sources": [
+      {
+        "url": "https://github.com/bytebot-ai/bytebot",
+        "title": "bytebot-ai/bytebot",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "ui-tars-desktop",
+    "title": "UI-TARS Desktop",
+    "date": "2025-01-19",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "ByteDance"
+    ],
+    "description": "ByteDance's open-source GUI agent for your local computer, driven by UI-TARS vision models, alongside Agent TARS, a multimodal agent stack for terminal, computer and browser control.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/bytedance/UI-TARS-desktop",
+      "stars": 39204,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/bytedance/UI-TARS-desktop",
+        "title": "bytedance/UI-TARS-desktop",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "amp",
+    "title": "Amp",
+    "date": "2025-12",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Amp",
+      "Sourcegraph"
+    ],
+    "description": "A coding agent for the terminal and editors, spun out of Sourcegraph as Amp, Inc. in December 2025. It routes between models automatically. Its free tier moved from ads to a daily credit and was paused by mid-2026.",
+    "edges": [],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://www.bitdoze.com/amp-code-free-ai-coding-agent/",
+        "title": "Bitdoze: Amp Code free paused"
+      },
+      {
+        "url": "https://rywalker.com/research/amp-sourcegraph",
+        "title": "Ry Walker: Amp (Sourcegraph)"
+      }
+    ]
+  },
+  {
+    "id": "deepagents",
+    "title": "Deep Agents",
+    "date": "2025-07-27",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "LangChain"
+    ],
+    "description": "LangChain's opinionated agent harness, built on LangGraph, with planning, sub-agents, a filesystem, skills, persistent memory, sandboxed shell access and human approval out of the box.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "langgraph"
+      }
+    ],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/langchain-ai/deepagents",
+      "stars": 29928,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/langchain-ai/deepagents",
+        "title": "langchain-ai/deepagents",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "e2b",
+    "title": "E2B",
+    "date": "2023-03-04",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "inference",
+    "creators": [
+      "E2B"
+    ],
+    "description": "Open-source infrastructure for running AI-generated code in isolated cloud sandboxes, with Python and TypeScript SDKs, a desktop SDK for mouse and keyboard control, and Terraform-based self-hosting.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/e2b-dev/E2B",
+      "stars": 14150,
+      "starsCheckedAt": "2026-10-04",
+      "license": "Apache-2.0"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/e2b-dev/E2B",
+        "title": "e2b-dev/E2B",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "daytona",
+    "title": "Daytona",
+    "date": "2024-02-06",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [],
+    "stackLayer": "inference",
+    "creators": [
+      "Daytona"
+    ],
+    "description": "Sandbox infrastructure for running AI-generated code, with sub-90ms start-up claimed. The public repository was archived in 2026 and says development moved to a private codebase.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/daytonaio/daytona",
+      "stars": 71670,
+      "starsCheckedAt": "2026-10-04",
+      "archived": true
+    },
+    "sources": [
+      {
+        "url": "https://github.com/daytonaio/daytona",
+        "title": "daytonaio/daytona",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "langfuse",
+    "title": "Langfuse",
+    "date": "2023-05-18",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Langfuse"
+    ],
+    "description": "Open-source LLM observability: tracing, evals, prompt management and datasets. MIT except its enterprise folders; part of ClickHouse since January 2026.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/langfuse/langfuse",
+      "stars": 35358,
+      "starsCheckedAt": "2026-10-04",
+      "license": "MIT"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/langfuse/langfuse",
+        "title": "langfuse/langfuse",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "phoenix",
+    "title": "Arize Phoenix",
+    "date": "2022-11-09",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [],
+    "stackLayer": "ops",
+    "creators": [
+      "Arize AI"
+    ],
+    "description": "OpenTelemetry-based tracing, evals, datasets and prompt tools for LLM apps, with a remote MCP server. Licensed under Elastic License 2.0, which is source-available rather than open source.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/Arize-ai/phoenix",
+      "stars": 11703,
+      "starsCheckedAt": "2026-10-04",
+      "license": "Elastic-2.0"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/Arize-ai/phoenix",
+        "title": "Arize-ai/phoenix",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "litellm",
+    "title": "LiteLLM",
+    "date": "2023-07-27",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "llmops-eval",
+    "secondarySegments": [],
+    "stackLayer": "inference",
+    "creators": [
+      "BerriAI"
+    ],
+    "description": "An SDK and gateway that puts 100+ model providers behind one API, with spend tracking, virtual keys, fallbacks, guardrails and an MCP gateway.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/BerriAI/litellm",
+      "stars": 60118,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/BerriAI/litellm",
+        "title": "BerriAI/litellm",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "qdrant",
+    "title": "Qdrant",
+    "date": "2020-05-30",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [],
+    "stackLayer": "data",
+    "creators": [
+      "Qdrant"
+    ],
+    "description": "A vector database written in Rust, with dense, sparse and multi-vector search, rich filtering, quantization, sharding and a managed cloud with a free tier.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/qdrant/qdrant",
+      "stars": 34923,
+      "starsCheckedAt": "2026-10-04",
+      "license": "Apache-2.0"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/qdrant/qdrant",
+        "title": "qdrant/qdrant",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "weaviate",
+    "title": "Weaviate",
+    "date": "2016-03-30",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [],
+    "stackLayer": "data",
+    "creators": [
+      "Weaviate"
+    ],
+    "description": "A vector database written in Go, with hybrid search, built-in vectorizer modules, multi-tenancy and generative search. The community edition is BSD-3; an enterprise edition needs a commercial licence.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/weaviate/weaviate",
+      "stars": 16864,
+      "starsCheckedAt": "2026-10-04",
+      "license": "BSD-3-Clause"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/weaviate/weaviate",
+        "title": "weaviate/weaviate",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "milvus",
+    "title": "Milvus",
+    "date": "2019-09-16",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [],
+    "stackLayer": "data",
+    "creators": [
+      "Zilliz"
+    ],
+    "description": "A vector database with Lite, Standalone and Kubernetes-distributed modes, hybrid dense and sparse search, GPU indexes, and a managed cloud, Zilliz Cloud.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/milvus-io/milvus",
+      "stars": 46315,
+      "starsCheckedAt": "2026-10-04",
+      "license": "Apache-2.0"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/milvus-io/milvus",
+        "title": "milvus-io/milvus",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "lightrag",
+    "title": "LightRAG",
+    "date": "2024-10-02",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "HKUDS"
+    ],
+    "description": "A graph-based retrieval framework positioned as a lighter alternative to Microsoft GraphRAG, with a web UI, REST API and many storage backends.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/HKUDS/LightRAG",
+      "stars": 39968,
+      "starsCheckedAt": "2026-10-04",
+      "license": "MIT"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/HKUDS/LightRAG",
+        "title": "HKUDS/LightRAG",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "graphrag",
+    "title": "GraphRAG",
+    "date": "2024-03-27",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Microsoft Research"
+    ],
+    "description": "Microsoft's pipeline that uses an LLM to build a knowledge graph from text for retrieval. It is demonstration code in maintenance mode, not an officially supported product, and indexing can be expensive.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/microsoft/graphrag",
+      "stars": 36211,
+      "starsCheckedAt": "2026-10-04",
+      "license": "MIT"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/microsoft/graphrag",
+        "title": "microsoft/graphrag",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "ragflow",
+    "title": "RAGFlow",
+    "date": "2023-12-12",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "vector-rag",
+    "secondarySegments": [],
+    "stackLayer": "frameworks",
+    "creators": [
+      "InfiniFlow"
+    ],
+    "description": "An open-source retrieval engine with deep document parsing (layout, OCR, tables), agentic retrieval and a web UI.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/infiniflow/ragflow",
+      "stars": 91657,
+      "starsCheckedAt": "2026-10-04",
+      "license": "Apache-2.0"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/infiniflow/ragflow",
+        "title": "infiniflow/ragflow",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "gpt-researcher",
+    "title": "GPT Researcher",
+    "date": "2023-05-12",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Assaf Elovic"
+    ],
+    "description": "An autonomous research agent that produces cited reports of 2,000+ words from the web, MCP sources and your own documents. The project claims about $0.40 per deep-research run.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/assafelovic/gpt-researcher",
+      "stars": 29905,
+      "starsCheckedAt": "2026-10-04",
+      "license": "Apache-2.0"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/assafelovic/gpt-researcher",
+        "title": "assafelovic/gpt-researcher",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "storm",
+    "title": "STORM",
+    "date": "2024-03-24",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Stanford OVAL"
+    ],
+    "description": "Stanford's system that writes Wikipedia-style articles with citations from internet search, with Co-STORM for working alongside a person. The last code push was September 2025.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/stanford-oval/storm",
+      "stars": 31566,
+      "starsCheckedAt": "2026-10-04",
+      "license": "MIT"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/stanford-oval/storm",
+        "title": "stanford-oval/storm",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "livekit-agents",
+    "title": "LiveKit Agents",
+    "date": "2023-10-19",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "agent-frameworks"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "LiveKit"
+    ],
+    "description": "A framework for realtime voice and video agents, with mix-and-match speech, language and voice providers, semantic turn detection, telephony and MCP.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/livekit/agents",
+      "stars": 14468,
+      "starsCheckedAt": "2026-10-04",
+      "license": "Apache-2.0"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/livekit/agents",
+        "title": "livekit/agents",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "pipecat",
+    "title": "Pipecat",
+    "date": "2023-12-27",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "speech-audio",
+    "secondarySegments": [
+      "agent-frameworks"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Daily"
+    ],
+    "description": "A Python framework for realtime voice and multimodal agents, with 20+ providers per stage, WebRTC and WebSocket transports, and telephony.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/pipecat-ai/pipecat",
+      "stars": 16167,
+      "starsCheckedAt": "2026-10-04",
+      "license": "BSD-2-Clause"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/pipecat-ai/pipecat",
+        "title": "pipecat-ai/pipecat",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "webarena",
+    "title": "WebArena",
+    "date": "2023-07-24",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "language",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "Carnegie Mellon researchers"
+    ],
+    "description": "A self-hostable benchmark of 812 realistic web tasks (shopping, Reddit, GitLab, Wikipedia) for testing autonomous agents. The 2023 paper compares agents with human annotators.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/web-arena-x/webarena",
+      "stars": 1620,
+      "starsCheckedAt": "2026-10-04",
+      "license": "Apache-2.0"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/web-arena-x/webarena",
+        "title": "web-arena-x/webarena",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
+    "id": "browsergym",
+    "title": "BrowserGym",
+    "date": "2024-02-07",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "language",
+    "secondarySegments": [],
+    "stackLayer": "algorithms",
+    "creators": [
+      "ServiceNow"
+    ],
+    "description": "A Gym environment for web agents that bundles benchmarks including MiniWoB, WebArena, VisualWebArena and WorkArena.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "repoUrl": "https://github.com/ServiceNow/BrowserGym",
+      "stars": 1383,
+      "starsCheckedAt": "2026-10-04"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/ServiceNow/BrowserGym",
+        "title": "ServiceNow/BrowserGym",
+        "accessedAt": "2026-10-04"
+      }
+    ]
+  },
+  {
     "id": "stanford-alpaca",
     "title": "Stanford Alpaca",
     "date": "2023-03-13",
@@ -8529,6 +10807,18 @@
         "date": "2026-08",
         "title": "V4-Pro-0813 GA",
         "summary": "General availability of V4-Pro (single secondary source)."
+      },
+      {
+        "date": "2025-09-29",
+        "title": "DeepSeek-V3.2-Exp",
+        "summary": "DeepSeek Sparse Attention (DSA) cuts KV-cache costs, reducing API pricing by half.",
+        "source": "https://github.com/deepseek-ai/DeepSeek-V3.2-Exp"
+      },
+      {
+        "date": "2025-12-01",
+        "title": "DeepSeek-V3.2 release",
+        "summary": "Full technical report published pushing open-weights architecture improvements.",
+        "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/resolve/main/assets/paper.pdf"
       }
     ],
     "oss": {
@@ -9073,6 +11363,14 @@
       {
         "url": "https://github.com/unslothai/unsloth",
         "title": "unslothai/unsloth"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2026-08-13",
+        "title": "Unsloth Studio",
+        "summary": "Open-source no-code web UI for training, running and exporting open models locally.",
+        "source": "https://unsloth.ai/docs/new/studio"
       }
     ]
   },
@@ -10070,6 +12368,14 @@
       {
         "url": "https://thenewstack.io/deepseek-harness-open-source-plugins/",
         "title": "The New Stack"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2026-10-02",
+        "title": "DeepSeek Harness Desktop",
+        "summary": "Native desktop application launched for macOS and Windows.",
+        "source": "https://www.deepseek.com/en/harness/"
       }
     ]
   },

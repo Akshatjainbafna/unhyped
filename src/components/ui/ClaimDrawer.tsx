@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { formatYear } from "../scene/Labels";
 import { renderableAsQuote, type Dataset } from "@/lib/dataset";
 import { openClaims, openEntry, useStore } from "@/lib/store";
+import { CompareCta } from "../compare/CompareCta";
 
 const OUTCOME: Record<string, string> = {
   "came-true": "Came true",
@@ -58,6 +59,7 @@ export function ClaimDrawer({ dataset }: { dataset: Dataset }) {
         >
           Open the full entry
         </button>
+        <CompareCta entryId={entry.id} onOpen={() => openClaims.set(null)} />
 
         <div className="mt-6 space-y-5">
           {claims.map((c) => (

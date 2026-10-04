@@ -91,4 +91,6 @@ for (const f of read("forecasts-ingested.json") as { scenario: string; forecast:
   if (sc && !sc.forecasts.some((x) => x.id === f.forecast.id)) sc.forecasts.push(f.forecast);
 }
 write("scenarios.json", scenarios);
+// When the data last changed; shown on the site.
+write("meta.json", { updatedAt: new Date().toISOString().slice(0, 10) });
 console.log(`merged ${entries.length} entries from ${entryFiles.length} files; dropped ${dropped} dangling edges`);

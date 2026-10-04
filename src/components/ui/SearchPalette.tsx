@@ -1,13 +1,16 @@
 "use client";
 
-import { MagnifyingGlass } from "@phosphor-icons/react";
+import { MagnifyingGlass, Scales } from "@phosphor-icons/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { formatYear } from "../scene/Labels";
 import { typeLabel } from "./HoverCard";
 import type { Dataset } from "@/lib/dataset";
 import type { Entry } from "@/lib/schema";
-import { openEntry, searchOpen, travel, useStore } from "@/lib/store";
+import { compareOpen, compareSeed, openEntry, searchOpen, travel, useStore } from "@/lib/store";
+import compare from "../../../data/compare.json";
 import { SEGMENTS } from "@/lib/taxonomy";
+
+const COMPARABLE = new Set(compare.tools.map((t) => t.entryId));
 
 const norm = (t: string) => t.toLowerCase().normalize("NFKD").replace(/[^a-z0-9 ]/g, " ");
 
@@ -85,6 +88,13 @@ export function SearchPalette({ dataset }: { dataset: Dataset }) {
     setQuery("");
   };
 
+  const compareWith = (e: Entry) => {
+    compareSeed.set([e.id]);
+    searchOpen.set(false);
+    compareOpen.set(true);
+    setQuery("");
+  };
+
   return (
     <div className="fixed inset-0 z-[55] flex items-start justify-center px-4 pt-[14vh]">
       <button type="button" aria-label="Close search" tabIndex={-1} className="absolute inset-0 cursor-default bg-ink/45 backdrop-blur-[2px]" onClick={() => searchOpen.set(false)} />
@@ -132,12 +142,12 @@ export function SearchPalette({ dataset }: { dataset: Dataset }) {
             </li>
           )}
           {results.map((e, i) => (
-            <li key={e.id} id={`sr-${e.id}`} role="option" aria-selected={i === active}>
+            <li key={e.id} id={`sr-${e.id}`} role="option" aria-selected={i === active} className={`flex items-center gap-1 rounded-xl pr-2 transition-colors ${i === active ? "bg-white/[0.08]" : ""}`}>
               <button
                 type="button"
                 onMouseEnter={() => setActive(i)}
                 onClick={() => go(e)}
-                className={`flex w-full items-baseline justify-between gap-4 rounded-xl px-3 py-2.5 text-left transition-colors ${i === active ? "bg-white/[0.08]" : ""}`}
+                className="flex min-w-0 flex-1 items-baseline justify-between gap-4 rounded-xl px-3 py-2.5 text-left"
               >
                 <span className="min-w-0">
                   <span className="block truncate text-[14px] text-paper">{e.title}</span>
@@ -148,6 +158,16 @@ export function SearchPalette({ dataset }: { dataset: Dataset }) {
                 </span>
                 <span className="shrink-0 font-mono text-[11px] text-paper-muted tabular">{formatYear(e.date)}</span>
               </button>
+              {COMPARABLE.has(e.id) && (
+                <button
+                  type="button"
+                  onClick={() => compareWith(e)}
+                  aria-label={`Compare ${e.title}`}
+                  className="inline-flex min-h-9 shrink-0 items-center gap-1.5 rounded-full border border-hairline-strong px-3 text-[12px] text-paper-muted hover:bg-white/10 hover:text-paper"
+                >
+                  <Scales weight="light" size={14} /> Compare
+                </button>
+              )}
             </li>
           ))}
         </ul>

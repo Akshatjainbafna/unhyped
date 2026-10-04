@@ -34,7 +34,7 @@ const TRACKS: { id: Track; name: string; blurb: string; about?: string }[] = [
   { id: "researcher", name: "AI Researcher", blurb: "Coming soon." },
 ];
 
-const NOW = 2026.74;
+const NOW = 2026.76;
 
 /** Serve options in random order so the answer position carries no signal. */
 function shuffled(q: Question): Question {

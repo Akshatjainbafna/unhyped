@@ -14,10 +14,21 @@ const instrumentSerif = Instrument_Serif({
 const fredoka = Fredoka({ variable: "--font-fredoka", subsets: ["latin"], weight: ["500", "600", "700"] });
 const nunito = Nunito({ variable: "--font-nunito", subsets: ["latin"], weight: ["400", "600", "700", "800"] });
 
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://unhyped-ai.vercel.app").replace(/\/$/, "");
+const TITLE = "Unhyped: the AI timeline, AI products and tool comparisons in one place";
+const DESCRIPTION =
+  "Travel the complete history of AI from the first tools to today: every breakthrough, model, product and open-source project, with sources, plus side-by-side comparisons of AI tools to find the one that fits.";
+
 export const metadata: Metadata = {
-  title: "Unhyped — the real history of AI",
-  description:
-    "Travel the road of AI from today back to the first campfire: what each technology demonstrably did, who built it, and which claims held up.",
+  metadataBase: new URL(SITE_URL),
+  title: { default: TITLE, template: "%s · Unhyped" },
+  description: DESCRIPTION,
+  applicationName: "Unhyped",
+  keywords: ["AI timeline", "history of AI", "AI products", "AI tools comparison", "compare AI tools", "AI coding agents compared", "AI models comparison", "AI advancements", "open-source AI tools"],
+  alternates: { canonical: "/" },
+  openGraph: { type: "website", siteName: "Unhyped", title: TITLE, description: DESCRIPTION, url: "/" },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
+  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {

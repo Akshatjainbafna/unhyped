@@ -1,7 +1,8 @@
 import { readFileSync, existsSync } from "node:fs";
 import { validateDataset } from "../src/lib/dataset";
+import { validateCompare } from "../src/lib/compare";
 
-const read = (f: string) => (existsSync(`data/${f}`) ? JSON.parse(readFileSync(`data/${f}`, "utf8")) : []);
+const read = (f: string) => (existsSync(`data/${f}`) ? JSON.parse(readFileSync(`data/${f}`, "utf8")) : f === "compare.json" ? { classes: {}, tools: [] } : []);
 const raw = {
   entries: read("entries.json"),
   claims: read("claims.json"),
@@ -16,6 +17,12 @@ console.log("by era:", byEra);
 if (errors.length) {
   console.error(`${errors.length} errors`);
   for (const e of errors.slice(0, 50)) console.error(`  ${e.path}: ${e.message}`);
+  process.exit(1);
+}
+const compareErrors = validateCompare(read("compare.json"), new Set(raw.entries.map((e: { id: string }) => e.id)));
+if (compareErrors.length) {
+  console.error(`${compareErrors.length} compare errors`);
+  for (const e of compareErrors) console.error(`  ${e}`);
   process.exit(1);
 }
 console.log("dataset OK");

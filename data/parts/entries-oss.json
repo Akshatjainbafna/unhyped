@@ -435,6 +435,18 @@
         "date": "2026-08",
         "title": "V4-Pro-0813 GA",
         "summary": "General availability of V4-Pro (single secondary source)."
+      },
+      {
+        "date": "2025-09-29",
+        "title": "DeepSeek-V3.2-Exp",
+        "summary": "DeepSeek Sparse Attention (DSA) cuts KV-cache costs, reducing API pricing by half.",
+        "source": "https://github.com/deepseek-ai/DeepSeek-V3.2-Exp"
+      },
+      {
+        "date": "2025-12-01",
+        "title": "DeepSeek-V3.2 release",
+        "summary": "Full technical report published pushing open-weights architecture improvements.",
+        "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/resolve/main/assets/paper.pdf"
       }
     ],
     "oss": {
@@ -1030,6 +1042,14 @@
       {
         "url": "https://github.com/unslothai/unsloth",
         "title": "unslothai/unsloth"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2026-08-13",
+        "title": "Unsloth Studio",
+        "summary": "Open-source no-code web UI for training, running and exporting open models locally.",
+        "source": "https://unsloth.ai/docs/new/studio"
       }
     ]
   },
@@ -2027,6 +2047,14 @@
       {
         "url": "https://thenewstack.io/deepseek-harness-open-source-plugins/",
         "title": "The New Stack"
+      }
+    ],
+    "majorUpdates": [
+      {
+        "date": "2026-10-02",
+        "title": "DeepSeek Harness Desktop",
+        "summary": "Native desktop application launched for macOS and Windows.",
+        "source": "https://www.deepseek.com/en/harness/"
       }
     ]
   },

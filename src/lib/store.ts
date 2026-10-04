@@ -37,6 +37,10 @@ export const hoveredEntry = createStore<{ id: string; x: number; y: number } | n
 export const openEntry = createStore<string | null>(null);
 export const quizOpen = createStore(false);
 export const filterOpen = createStore(false);
+export const compareOpen = createStore(false);
+export const methodOpen = createStore(false);
+/** Tool ids to pre-select when the compare modal opens. */
+export const compareSeed = createStore<string[]>([]);
 export const searchOpen = createStore(false);
 /** Entry whose Claim vs. Reality drawer is open. */
 export const openClaims = createStore<string | null>(null);

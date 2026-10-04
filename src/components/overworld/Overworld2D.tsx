@@ -5,10 +5,11 @@ import { C, S, Traveller } from "../concepts/kit";
 import { CatDrawing } from "./Cats";
 import { PANORAMAS, type Panorama } from "./Panoramas";
 import { Token } from "./Token";
+import { UPDATED_AT, UPDATED_ISO } from "@/lib/updated";
 import type { Dataset } from "@/lib/dataset";
 import { layoutOverworld, lengthAt, lengthAtPoint, pointAt, yAtLength, type Overworld } from "@/lib/overworld/layout";
 import { buildStops, type Stop } from "@/lib/overworld/stops";
-import { focusYear, personalRoad, quizOpen, travel, useStore } from "@/lib/store";
+import { focusYear, openClaims, openEntry, personalRoad, quizOpen, travel, useStore } from "@/lib/store";
 import { useFilterMatch } from "@/lib/useFilters";
 import { SCENARIOS } from "@/lib/taxonomy";
 
@@ -55,6 +56,9 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
   );
   const scale = width ? Math.min(1.15, width / ow.width) : 1;
   const personal = useStore(personalRoad);
+  const openId = useStore(openEntry);
+  const claimsId = useStore(openClaims);
+  const selectedId = openId ?? claimsId;
   const match = useFilterMatch(dataset);
   const known = useMemo(() => new Set(personal?.known ?? []), [personal]);
   const missed = useMemo(() => new Set(personal?.missed ?? []), [personal]);
@@ -157,18 +161,14 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
 
       {/* HUD: where the traveller is */}
       {here && (
-        <div className="pointer-events-none fixed left-1/2 top-[70px] z-30 -translate-x-1/2 md:left-6 md:top-6 md:translate-x-0">
-          {/* Phones: one compact line under the navbar. Desktop: the full card. */}
-          <div className="flex items-baseline gap-2 whitespace-nowrap rounded-full border-[2.5px] border-[#26283b] bg-white px-3 py-1 shadow-[0_3px_0_#26283b] md:hidden">
-            <span className="font-game text-[14px] font-bold text-[#26283b]" aria-live="polite">{here.long}</span>
-            <span className="text-[12px] font-bold text-[#55597a]">· {here.events} {here.events === 1 ? "launch" : "launches"}</span>
-          </div>
+        <div className="pointer-events-none fixed left-6 top-6 z-30 hidden md:block">
           <div className="hidden rounded-2xl border-[3px] border-[#26283b] bg-white px-4 py-2 shadow-[0_4px_0_#26283b] md:block">
             <p className="font-game text-[11px] font-semibold uppercase tracking-[0.14em] text-[#7d819c]">Now at</p>
             <p className="font-game text-lg font-bold leading-tight text-[#26283b]">{here.long}</p>
             <p className="text-[13px] font-bold text-[#55597a]">
               {here.events} {here.events === 1 ? "launch or update" : "launches and updates"}
             </p>
+            <p className="mt-1 border-t border-[#26283b]/15 pt-1 font-game text-[11px] font-semibold text-[#7d819c]">Data updated <time dateTime={UPDATED_ISO}>{UPDATED_AT}</time></p>
           </div>
         </div>
       )}
@@ -194,7 +194,7 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
 
             {/* Era panoramas where the road enters a new world */}
             {zones.map(({ block, pano }) => (
-              <PanoramaView key={pano.id} pano={pano} top={block.y} width={ow.width} mobile={mobile} />
+              <PanoramaView key={pano.id} pano={pano} top={block.y} width={ow.width} mobile={mobile} roadRight={block.kind === "scene" && block.side === "right"} />
             ))}
 
             {/* Stops: level dot, plaque, and the month's launches as logo tokens */}
@@ -219,6 +219,7 @@ export function Overworld2D({ dataset, logos }: { dataset: Dataset; logos: Recor
                         token={t}
                         logo={logos[t.key.split("#")[0]]}
                         dim={!match.has(t.entryId)}
+                        selected={t.entryId === selectedId}
                         ring={known.has(t.entryId) ? "known" : missed.has(t.entryId) ? "missed" : undefined}
                       />
                     ))}
@@ -249,7 +250,7 @@ const TONE = { yes: "#2ec4b6", meh: "#ff9f43", no: "#ff6b5b" } as const;
 const ASKS = ["Draw a cat", "Translate this sentence", "Book my flight"];
 
 /** A full-width era landscape with its title and the three recurring requests. */
-function PanoramaView({ pano, top, width, mobile }: { pano: Panorama; top: number; width: number; mobile: boolean }) {
+function PanoramaView({ pano, top, width, mobile, roadRight }: { pano: Panorama; top: number; width: number; mobile: boolean; roadRight: boolean }) {
   const { Art } = pano;
   // Desktop keeps landmarks inside the road's loop; the sky and ground run full-bleed.
   const inset = mobile ? 0 : 175;
@@ -276,18 +277,18 @@ function PanoramaView({ pano, top, width, mobile }: { pano: Panorama; top: numbe
         <path d="M-200 342 C 80 300, 260 318, 420 330 S 760 312, 900 326 S 1180 306, 1400 338 L1400 470 L-200 470 Z" fill={`url(#hill-${pano.id})`} mask={`url(#fade-${pano.id})`} />
         <Art />
       </svg>
-      <div className={`relative z-[12] mx-auto flex items-start gap-3 ${mobile ? "-mt-2 flex-col px-3" : "mt-2 w-[880px] justify-between"}`}>
+      <div className={`relative z-[12] mx-auto flex items-start gap-3 ${mobile ? `-mt-2 flex-col ${roadRight ? "pl-3 pr-[23%]" : "pl-[23%] pr-3"}` : "mt-2 w-[880px] justify-between"}`}>
         <div className={`rounded-2xl border-[3px] border-[#26283b] bg-white px-4 py-2 shadow-[0_4px_0_#26283b] ${mobile ? "w-full" : "max-w-[270px]"}`}>
           <p className="font-game text-[11px] font-semibold uppercase tracking-[0.14em] text-[#7d819c]">{pano.when}</p>
           <h2 className="font-game text-xl font-bold leading-tight text-[#26283b]">{pano.title}</h2>
           <p className="text-[13px] font-semibold leading-snug text-[#55597a]">{pano.line}</p>
         </div>
         <ul
-          className={`gap-2 ${mobile ? "-mx-3 flex w-[calc(100%+1.5rem)] snap-x snap-mandatory items-stretch overflow-x-auto px-3 pb-2 [scrollbar-width:none]" : "flex items-stretch"}`}
+          className={`gap-2 ${mobile ? "flex w-full snap-x snap-mandatory items-stretch overflow-x-auto pb-2 [scrollbar-width:none]" : "flex items-stretch"}`}
           aria-label="The same three requests in this era"
         >
           {pano.answers.map((a, i) => (
-            <li key={ASKS[i]} className={`rounded-xl border-[3px] border-[#26283b] bg-white px-3 py-1.5 shadow-[0_3px_0_#26283b] ${mobile ? "w-[78%] shrink-0 snap-start" : i === 0 ? "w-[238px]" : "w-[160px]"}`}>
+            <li key={ASKS[i]} className={`rounded-xl border-[3px] border-[#26283b] bg-white px-3 py-1.5 shadow-[0_3px_0_#26283b] ${mobile ? "w-[92%] shrink-0 snap-start" : i === 0 ? "w-[238px]" : "w-[160px]"}`}>
               <p className="flex items-center justify-between gap-2 font-game text-[12px] font-semibold text-[#7d819c]">
                 “{ASKS[i]}”
                 <span className="h-3 w-3 shrink-0 rounded-full border-2 border-[#26283b]" style={{ background: TONE[a.ok] }} aria-label={a.ok === "yes" ? "can do" : a.ok === "meh" ? "partly" : "cannot"} />

@@ -73,7 +73,7 @@ function stopFor(key: string): Omit<Stop, "tokens" | "era" | "events"> {
 }
 
 /** Every stop from `now` back to antiquity, newest first; months and years are never skipped. */
-export function buildStops(ds: Dataset, now = { year: 2026, month: 9 }): Stop[] {
+export function buildStops(ds: Dataset, now = { year: 2026, month: 10 }): Stop[] {
   const keys: string[] = [];
   for (let y = now.year; y >= 2022; y--) {
     for (let m = y === now.year ? now.month : 12; m >= 1; m--) keys.push(`${y}-${String(m).padStart(2, "0")}`);

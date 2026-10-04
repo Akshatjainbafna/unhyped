@@ -1,0 +1,888 @@
+{
+  "coding-agents": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "license",
+      "label": "License",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "openSource",
+      "label": "Open source",
+      "kind": "bool"
+    },
+    {
+      "group": "Models",
+      "id": "modelAgnostic",
+      "label": "Works with any model",
+      "kind": "bool"
+    },
+    {
+      "group": "Models",
+      "id": "localModels",
+      "label": "Local models",
+      "kind": "bool"
+    },
+    {
+      "group": "Capabilities",
+      "id": "mcp",
+      "label": "MCP support",
+      "kind": "bool"
+    },
+    {
+      "group": "Capabilities",
+      "id": "subagents",
+      "label": "Sub-agents",
+      "kind": "bool"
+    },
+    {
+      "group": "Capabilities",
+      "id": "extensible",
+      "label": "Plugins, skills or hooks",
+      "kind": "bool"
+    },
+    {
+      "group": "Capabilities",
+      "id": "memory",
+      "label": "Persistent memory",
+      "kind": "bool"
+    },
+    {
+      "group": "Capabilities",
+      "id": "sandbox",
+      "label": "Permissions or sandbox",
+      "kind": "bool"
+    },
+    {
+      "group": "Automation",
+      "id": "scheduled",
+      "label": "Scheduled or background runs",
+      "kind": "bool"
+    },
+    {
+      "group": "Where it runs",
+      "id": "terminal",
+      "label": "Terminal",
+      "kind": "bool"
+    },
+    {
+      "group": "Where it runs",
+      "id": "ide",
+      "label": "IDE",
+      "kind": "bool"
+    },
+    {
+      "group": "Where it runs",
+      "id": "messaging",
+      "label": "Chat apps",
+      "kind": "bool"
+    },
+    {
+      "group": "Where it runs",
+      "id": "web",
+      "label": "Web or desktop app",
+      "kind": "bool"
+    },
+    {
+      "group": "Ratings",
+      "id": "context",
+      "label": "Context management",
+      "kind": "stars"
+    },
+    {
+      "group": "Ratings",
+      "id": "autonomy",
+      "label": "Autonomy",
+      "kind": "stars"
+    },
+    {
+      "group": "Ratings",
+      "id": "extensibility",
+      "label": "Extensibility",
+      "kind": "stars"
+    },
+    {
+      "group": "Ratings",
+      "id": "setup",
+      "label": "Ease of setup",
+      "kind": "stars"
+    },
+    {
+      "group": "Fit",
+      "id": "speed",
+      "label": "Speed",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ],
+  "models": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "API price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "license",
+      "label": "License",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "openWeights",
+      "label": "Open weights",
+      "kind": "bool"
+    },
+    {
+      "group": "Specs",
+      "id": "context",
+      "label": "Context window",
+      "kind": "text"
+    },
+    {
+      "group": "Specs",
+      "id": "vision",
+      "label": "Image input",
+      "kind": "bool"
+    },
+    {
+      "group": "Specs",
+      "id": "reasoningMode",
+      "label": "Reasoning mode",
+      "kind": "bool"
+    },
+    {
+      "group": "Specs",
+      "id": "toolUse",
+      "label": "Tool use",
+      "kind": "bool"
+    },
+    {
+      "group": "Specs",
+      "id": "localRun",
+      "label": "Runs locally",
+      "kind": "bool"
+    },
+    {
+      "group": "Access",
+      "id": "freeAccess",
+      "label": "Free access",
+      "kind": "bool"
+    },
+    {
+      "group": "Access",
+      "id": "cloud",
+      "label": "Where to get it",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "benchmarks",
+      "label": "Reported results",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ],
+  "apps": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "freeTier",
+      "label": "Free plan",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "webSearch",
+      "label": "Web search",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "citations",
+      "label": "Cited sources",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "voice",
+      "label": "Voice",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "imageGen",
+      "label": "Image generation",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "files",
+      "label": "File upload and analysis",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "memory",
+      "label": "Memory",
+      "kind": "bool"
+    },
+    {
+      "group": "Automation",
+      "id": "agentMode",
+      "label": "Does tasks for you",
+      "kind": "bool"
+    },
+    {
+      "group": "Automation",
+      "id": "agentBuilder",
+      "label": "Build your own agents",
+      "kind": "bool"
+    },
+    {
+      "group": "Automation",
+      "id": "workApps",
+      "label": "Inside work apps",
+      "kind": "bool"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ],
+  "personal-agents": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "openSource",
+      "label": "Open source",
+      "kind": "bool"
+    },
+    {
+      "group": "What it does",
+      "id": "browser",
+      "label": "Controls a browser",
+      "kind": "bool"
+    },
+    {
+      "group": "What it does",
+      "id": "computer",
+      "label": "Works on files or a computer",
+      "kind": "bool"
+    },
+    {
+      "group": "What it does",
+      "id": "research",
+      "label": "Deep research",
+      "kind": "bool"
+    },
+    {
+      "group": "What it does",
+      "id": "connectors",
+      "label": "Connects to your apps",
+      "kind": "bool"
+    },
+    {
+      "group": "Automation",
+      "id": "scheduled",
+      "label": "Scheduled or background runs",
+      "kind": "bool"
+    },
+    {
+      "group": "Automation",
+      "id": "approval",
+      "label": "Asks before risky actions",
+      "kind": "bool"
+    },
+    {
+      "group": "Automation",
+      "id": "memory",
+      "label": "Memory",
+      "kind": "bool"
+    },
+    {
+      "group": "Fit",
+      "id": "availability",
+      "label": "Availability",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ],
+  "builders": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "openSource",
+      "label": "Open source",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "selfHost",
+      "label": "Self-host",
+      "kind": "bool"
+    },
+    {
+      "group": "Build",
+      "id": "fromPrompt",
+      "label": "Builds from a prompt",
+      "kind": "bool"
+    },
+    {
+      "group": "Build",
+      "id": "visual",
+      "label": "Visual editor or canvas",
+      "kind": "bool"
+    },
+    {
+      "group": "Build",
+      "id": "github",
+      "label": "GitHub sync",
+      "kind": "bool"
+    },
+    {
+      "group": "Ship",
+      "id": "hosting",
+      "label": "Hosting included",
+      "kind": "bool"
+    },
+    {
+      "group": "Ship",
+      "id": "database",
+      "label": "Built-in database or backend",
+      "kind": "bool"
+    },
+    {
+      "group": "Ship",
+      "id": "mcpApi",
+      "label": "MCP, API or app integrations",
+      "kind": "bool"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ],
+  "creative": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "freeTier",
+      "label": "Free plan",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "makes",
+      "label": "Makes",
+      "kind": "text"
+    },
+    {
+      "group": "Access",
+      "id": "api",
+      "label": "API",
+      "kind": "bool"
+    },
+    {
+      "group": "Access",
+      "id": "openSource",
+      "label": "Open source",
+      "kind": "bool"
+    },
+    {
+      "group": "Access",
+      "id": "runsLocally",
+      "label": "Runs locally",
+      "kind": "bool"
+    },
+    {
+      "group": "Rights",
+      "id": "commercialUse",
+      "label": "Commercial use",
+      "kind": "bool"
+    },
+    {
+      "group": "Rights",
+      "id": "licensedData",
+      "label": "Trained on licensed data",
+      "kind": "bool"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ],
+  "frameworks": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "license",
+      "label": "License",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "openSource",
+      "label": "Open source",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "languages",
+      "label": "Languages",
+      "kind": "text"
+    },
+    {
+      "group": "Models",
+      "id": "modelAgnostic",
+      "label": "Works with any model",
+      "kind": "bool"
+    },
+    {
+      "group": "Building blocks",
+      "id": "mcp",
+      "label": "MCP support",
+      "kind": "bool"
+    },
+    {
+      "group": "Building blocks",
+      "id": "multiAgent",
+      "label": "Multi-agent",
+      "kind": "bool"
+    },
+    {
+      "group": "Building blocks",
+      "id": "graph",
+      "label": "Explicit graph or workflow control",
+      "kind": "bool"
+    },
+    {
+      "group": "Building blocks",
+      "id": "memory",
+      "label": "Memory",
+      "kind": "bool"
+    },
+    {
+      "group": "Building blocks",
+      "id": "humanInLoop",
+      "label": "Human-in-the-loop",
+      "kind": "bool"
+    },
+    {
+      "group": "Production",
+      "id": "durable",
+      "label": "Pause, resume or durable runs",
+      "kind": "bool"
+    },
+    {
+      "group": "Production",
+      "id": "tracing",
+      "label": "Tracing or evals",
+      "kind": "bool"
+    },
+    {
+      "group": "Production",
+      "id": "hosted",
+      "label": "Hosted platform from the vendor",
+      "kind": "bool"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ],
+  "sandboxes": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "license",
+      "label": "License",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "openSource",
+      "label": "Open source",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "selfHost",
+      "label": "Self-host",
+      "kind": "bool"
+    },
+    {
+      "group": "Specs",
+      "id": "startup",
+      "label": "Start-up time",
+      "kind": "text"
+    },
+    {
+      "group": "Specs",
+      "id": "sdks",
+      "label": "SDK languages",
+      "kind": "text"
+    },
+    {
+      "group": "Specs",
+      "id": "desktop",
+      "label": "Desktop control",
+      "kind": "bool"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ],
+  "llmops": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "license",
+      "label": "License",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "openSource",
+      "label": "Open source",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "selfHost",
+      "label": "Self-host",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "hosted",
+      "label": "Hosted cloud",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "tracing",
+      "label": "Tracing",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "evals",
+      "label": "Evals",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "promptMgmt",
+      "label": "Prompt management",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "gateway",
+      "label": "Gateway to many models",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "costTracking",
+      "label": "Cost tracking",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "otel",
+      "label": "OpenTelemetry",
+      "kind": "bool"
+    },
+    {
+      "group": "Features",
+      "id": "mcp",
+      "label": "MCP",
+      "kind": "bool"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ],
+  "vectordb": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "license",
+      "label": "License",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "openSource",
+      "label": "Open source",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "selfHost",
+      "label": "Self-host",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "managed",
+      "label": "Managed cloud",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "language",
+      "label": "Written in",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "sdks",
+      "label": "Client SDKs",
+      "kind": "text"
+    },
+    {
+      "group": "Search",
+      "id": "hybrid",
+      "label": "Hybrid (dense + sparse) search",
+      "kind": "bool"
+    },
+    {
+      "group": "Search",
+      "id": "filtering",
+      "label": "Metadata filtering",
+      "kind": "bool"
+    },
+    {
+      "group": "Scale",
+      "id": "distributed",
+      "label": "Distributed",
+      "kind": "bool"
+    },
+    {
+      "group": "Scale",
+      "id": "quant",
+      "label": "Quantization or compression",
+      "kind": "bool"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ],
+  "rag": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "license",
+      "label": "License",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "openSource",
+      "label": "Open source",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "selfHost",
+      "label": "Self-host",
+      "kind": "bool"
+    },
+    {
+      "group": "Basics",
+      "id": "modelAgnostic",
+      "label": "Works with many models",
+      "kind": "bool"
+    },
+    {
+      "group": "Retrieval",
+      "id": "graph",
+      "label": "Knowledge-graph retrieval",
+      "kind": "bool"
+    },
+    {
+      "group": "Retrieval",
+      "id": "parsing",
+      "label": "Deep document parsing",
+      "kind": "bool"
+    },
+    {
+      "group": "Retrieval",
+      "id": "agentic",
+      "label": "Agentic multi-step retrieval",
+      "kind": "bool"
+    },
+    {
+      "group": "Interface",
+      "id": "webUI",
+      "label": "Web UI",
+      "kind": "bool"
+    },
+    {
+      "group": "Interface",
+      "id": "api",
+      "label": "API",
+      "kind": "bool"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
+  ]
+}

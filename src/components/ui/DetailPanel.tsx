@@ -9,6 +9,7 @@ import { lineage, neighborhood, peopleFor, similar } from "@/lib/graph";
 import { SEGMENT_COLOR } from "@/lib/overworld/style";
 import { openEntry, travel, useStore } from "@/lib/store";
 import { SEGMENTS, STACK_LAYERS } from "@/lib/taxonomy";
+import { CompareCta } from "../compare/CompareCta";
 
 const REPO = "https://github.com/unhyped/unhyped";
 
@@ -81,6 +82,7 @@ export function DetailPanel({ dataset, logos }: { dataset: Dataset; logos: Recor
       </div>
       {entry.creators.length > 0 && <p className="mt-2 text-sm text-paper-muted">{entry.creators.join(", ")}</p>}
       <p className="mt-5 text-[15px] leading-relaxed text-paper/90">{entry.description}</p>
+      <CompareCta entryId={entry.id} />
       {entry.capabilityNote && (
         <p className="mt-4 border-l border-accent/60 pl-3 text-[14px] leading-relaxed text-paper-muted">
           <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">What it could actually do</span>

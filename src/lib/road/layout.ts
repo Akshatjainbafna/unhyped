@@ -82,7 +82,7 @@ function timeDistance(yearsAgo: number): number {
 }
 
 export function layoutRoad(entries: Entry[], options: LayoutOptions = {}): RoadGeometry {
-  const { viewport = "desktop", now = 2026.74, minSpacing = 6, laneWidth = 2.6 } = options;
+  const { viewport = "desktop", now = 2026.76, minSpacing = 6, laneWidth = 2.6 } = options;
   const mobile = viewport === "mobile";
 
   const sorted = entries
