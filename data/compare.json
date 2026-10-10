@@ -7409,6 +7409,683 @@
           "v": "A memory layer, not a full framework"
         }
       }
+    },
+    {
+      "class": "models",
+      "entryId": "claude-haiku-5-5",
+      "asOf": "2026-10-09",
+      "sources": [
+        "https://www.anthropic.com/claude/haiku"
+      ],
+      "cells": {
+        "price": {
+          "v": "$0.10 in / $0.50 out per million tokens up to 100K prompt; $0.50 / $2.50 above",
+          "src": "https://www.anthropic.com/claude/haiku"
+        },
+        "license": {
+          "v": "Closed",
+          "src": "https://www.anthropic.com/claude/haiku"
+        },
+        "openWeights": {
+          "v": false
+        },
+        "context": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "vision": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "reasoningMode": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "toolUse": {
+          "v": true,
+          "note": "Anthropic cites gains in tool use, computer use and agents",
+          "src": "https://www.anthropic.com/claude/haiku"
+        },
+        "localRun": {
+          "v": false,
+          "note": "Closed weights"
+        },
+        "freeAccess": {
+          "v": true,
+          "note": "Free plan on claude.ai",
+          "src": "https://www.anthropic.com/claude/haiku"
+        },
+        "cloud": {
+          "v": "claude.ai, Claude Platform, AWS, Google Cloud, Microsoft Foundry, Claude Code",
+          "src": "https://www.anthropic.com/claude/haiku"
+        },
+        "benchmarks": {
+          "v": "92.8% on a HubSpot CRM task suite (Anthropic-reported)",
+          "src": "https://www.anthropic.com/claude/haiku"
+        },
+        "bestFor": {
+          "v": "Cheap, fast agent and coding work at scale"
+        },
+        "weakAt": {
+          "v": "Context window and modalities not stated on its page",
+          "src": "https://www.anthropic.com/claude/haiku"
+        }
+      }
+    },
+    {
+      "class": "models",
+      "entryId": "claude-opus-5-5",
+      "asOf": "2026-10-09",
+      "sources": [
+        "https://betanews.com/article/claude-opus-5-5-launch-price-cut/",
+        "https://datanorth.ai/news/anthropic-releases-claude-opus-5-5"
+      ],
+      "cells": {
+        "price": {
+          "v": "$4 in / $20 out per million tokens; cache reads $0.20",
+          "note": "From third-party coverage",
+          "src": "https://betanews.com/article/claude-opus-5-5-launch-price-cut/"
+        },
+        "license": {
+          "v": "Closed"
+        },
+        "openWeights": {
+          "v": false
+        },
+        "context": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "vision": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "reasoningMode": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "toolUse": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "localRun": {
+          "v": false,
+          "note": "Closed weights"
+        },
+        "freeAccess": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "cloud": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "benchmarks": {
+          "v": "Roughly 40% cheaper than Opus 5 on typical workloads and over 30% faster output (as reported)",
+          "src": "https://datanorth.ai/news/anthropic-releases-claude-opus-5-5"
+        },
+        "bestFor": {
+          "v": "Anthropic's top tier, cheaper than Opus 5"
+        },
+        "weakAt": {
+          "v": "Specs beyond price and speed not verified from Anthropic's own page"
+        }
+      }
+    },
+    {
+      "class": "models",
+      "entryId": "mistral-large-4",
+      "asOf": "2026-10-09",
+      "sources": [
+        "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/",
+        "https://byteiota.com/mistral-large-4-open-weight-model-2026/"
+      ],
+      "cells": {
+        "price": {
+          "v": "$0.68 in / $2.09 out per million tokens in preview; list $1.36 / $4.18",
+          "note": "From third-party coverage",
+          "src": "https://byteiota.com/mistral-large-4-open-weight-model-2026/"
+        },
+        "license": {
+          "v": "Custom Mistral licence, terms unpublished",
+          "src": "https://byteiota.com/mistral-large-4-open-weight-model-2026/"
+        },
+        "openWeights": {
+          "v": "partial",
+          "note": "Promised for late October; not downloadable as of 8 Oct",
+          "src": "https://byteiota.com/mistral-large-4-open-weight-model-2026/"
+        },
+        "context": {
+          "v": "1M tokens",
+          "src": "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/"
+        },
+        "vision": {
+          "v": true,
+          "note": "Image input",
+          "src": "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/"
+        },
+        "reasoningMode": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "toolUse": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "localRun": {
+          "v": null,
+          "note": "1.05T parameters (52B active); weights not yet released"
+        },
+        "freeAccess": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "cloud": {
+          "v": "Mistral API in public preview",
+          "src": "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/"
+        },
+        "benchmarks": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "bestFor": {
+          "v": "Very long context and image input, with open weights promised"
+        },
+        "weakAt": {
+          "v": "Weights and licence not out yet; every earlier Mistral model was Apache 2.0",
+          "src": "https://byteiota.com/mistral-large-4-open-weight-model-2026/"
+        }
+      }
+    },
+    {
+      "class": "coding-agents",
+      "entryId": "ibm-bob",
+      "asOf": "2026-10-09",
+      "sources": [
+        "https://newsroom.ibm.com/2026-04-28-introducing-ibm-bob-ai-development-partner-that-takes-enterprises-from-ai-assisted-coding-to-production-ready-software",
+        "https://newsroom.ibm.com/2026-10-01-ibm-introduces-self-hosted-deployment-for-ibm-bob-to-help-enterprises-advance-ai-sovereignty-and-governance"
+      ],
+      "cells": {
+        "price": {
+          "v": "30-day free trial, then individual and enterprise plans",
+          "src": "https://newsroom.ibm.com/2026-04-28-introducing-ibm-bob-ai-development-partner-that-takes-enterprises-from-ai-assisted-coding-to-production-ready-software"
+        },
+        "license": {
+          "v": "Proprietary"
+        },
+        "openSource": {
+          "v": false
+        },
+        "modelAgnostic": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "localModels": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "mcp": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "subagents": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "extensible": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "memory": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "sandbox": {
+          "v": true,
+          "note": "Self-hosted: on-premises, private or sovereign cloud, air-gapped",
+          "src": "https://newsroom.ibm.com/2026-10-01-ibm-introduces-self-hosted-deployment-for-ibm-bob-to-help-enterprises-advance-ai-sovereignty-and-governance"
+        },
+        "scheduled": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "terminal": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "ide": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "messaging": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "web": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "context": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "autonomy": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "extensibility": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "setup": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "speed": {
+          "v": "Depends on the model chosen; no harness benchmark"
+        },
+        "bestFor": {
+          "v": "Enterprises that need the agent inside their own walls, even air-gapped"
+        },
+        "weakAt": {
+          "v": "Models, MCP and scheduling not stated in IBM's announcements"
+        }
+      }
+    },
+    {
+      "class": "coding-agents",
+      "entryId": "muse-code",
+      "asOf": "2026-10-09",
+      "sources": [
+        "https://devops.com/meta-launches-ai-coding-agent-to-challenge-openai-and-anthropic/"
+      ],
+      "cells": {
+        "price": {
+          "v": "Pay as you go: $1.25 in / $4.25 out per million tokens; discounted tier if you share improvement data",
+          "src": "https://devops.com/meta-launches-ai-coding-agent-to-challenge-openai-and-anthropic/"
+        },
+        "license": {
+          "v": "Proprietary"
+        },
+        "openSource": {
+          "v": false
+        },
+        "modelAgnostic": {
+          "v": false,
+          "note": "Muse Spark 1.2",
+          "src": "https://devops.com/meta-launches-ai-coding-agent-to-challenge-openai-and-anthropic/"
+        },
+        "localModels": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "mcp": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "subagents": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "extensible": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "memory": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "sandbox": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "scheduled": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "terminal": {
+          "v": true,
+          "note": "Command-line install",
+          "src": "https://devops.com/meta-launches-ai-coding-agent-to-challenge-openai-and-anthropic/"
+        },
+        "ide": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "messaging": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "web": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "context": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "autonomy": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "extensibility": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "setup": {
+          "v": 4,
+          "note": "One-command install",
+          "src": "https://devops.com/meta-launches-ai-coding-agent-to-challenge-openai-and-anthropic/"
+        },
+        "speed": {
+          "v": "Depends on the model chosen; no harness benchmark"
+        },
+        "bestFor": {
+          "v": "End-to-end software tasks for people already on Meta's developer platform"
+        },
+        "weakAt": {
+          "v": "Preview; surfaces, MCP and permissions not stated"
+        }
+      }
+    },
+    {
+      "class": "frameworks",
+      "entryId": "claude-mem",
+      "asOf": "2026-10-09",
+      "sources": [
+        "https://github.com/thedotmack/claude-mem"
+      ],
+      "cells": {
+        "price": {
+          "v": "Free (Apache-2.0); 30-day trial of optional cloud sync at cmem.ai",
+          "src": "https://github.com/thedotmack/claude-mem"
+        },
+        "license": {
+          "v": "Apache-2.0",
+          "src": "https://github.com/thedotmack/claude-mem"
+        },
+        "openSource": {
+          "v": true,
+          "src": "https://github.com/thedotmack/claude-mem"
+        },
+        "languages": {
+          "v": "TypeScript; needs Node 20+ and Bun",
+          "src": "https://github.com/thedotmack/claude-mem"
+        },
+        "modelAgnostic": {
+          "v": true,
+          "note": "Works with Claude Code, Codex, Gemini, OpenCode, Hermes and more",
+          "src": "https://github.com/thedotmack/claude-mem"
+        },
+        "mcp": {
+          "v": true,
+          "note": "search, timeline and get_observations tools",
+          "src": "https://github.com/thedotmack/claude-mem"
+        },
+        "multiAgent": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "graph": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "memory": {
+          "v": true,
+          "note": "Compressed session memory in SQLite and Chroma",
+          "src": "https://github.com/thedotmack/claude-mem"
+        },
+        "humanInLoop": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "durable": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "tracing": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "hosted": {
+          "v": true,
+          "note": "Optional cloud sync",
+          "src": "https://github.com/thedotmack/claude-mem"
+        },
+        "bestFor": {
+          "v": "Giving any coding agent memory across sessions, kept local by default"
+        },
+        "weakAt": {
+          "v": "A memory add-on, not a framework; its compression uses your plan unless you subscribe",
+          "src": "https://github.com/thedotmack/claude-mem"
+        }
+      }
+    },
+    {
+      "class": "personal-agents",
+      "entryId": "nanobot",
+      "asOf": "2026-10-09",
+      "sources": [
+        "https://github.com/HKUDS/nanobot"
+      ],
+      "cells": {
+        "price": {
+          "v": "Free (MIT)",
+          "src": "https://github.com/HKUDS/nanobot"
+        },
+        "openSource": {
+          "v": true,
+          "note": "MIT",
+          "src": "https://github.com/HKUDS/nanobot"
+        },
+        "browser": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "computer": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "research": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "connectors": {
+          "v": true,
+          "note": "Telegram, Discord, Slack, WeChat, email, Teams and more; MCP",
+          "src": "https://github.com/HKUDS/nanobot"
+        },
+        "scheduled": {
+          "v": true,
+          "note": "Cron automation with a calendar view",
+          "src": "https://github.com/HKUDS/nanobot"
+        },
+        "approval": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "memory": {
+          "v": true,
+          "note": "Long-term memory ('Dream') and session history",
+          "src": "https://github.com/HKUDS/nanobot"
+        },
+        "availability": {
+          "v": "Self-hosted: shell installer or uv tool install; browser web UI",
+          "src": "https://github.com/HKUDS/nanobot"
+        },
+        "bestFor": {
+          "v": "A small self-hosted personal agent with MCP, memory and chat apps"
+        },
+        "weakAt": {
+          "v": "No explicit sandbox mentioned"
+        }
+      }
+    },
+    {
+      "class": "personal-agents",
+      "entryId": "cowagent",
+      "asOf": "2026-10-09",
+      "sources": [
+        "https://github.com/zhayujie/CowAgent"
+      ],
+      "cells": {
+        "price": {
+          "v": "Free (MIT)",
+          "src": "https://github.com/zhayujie/CowAgent"
+        },
+        "openSource": {
+          "v": true,
+          "note": "MIT",
+          "src": "https://github.com/zhayujie/CowAgent"
+        },
+        "browser": {
+          "v": true,
+          "note": "Built-in browser automation",
+          "src": "https://github.com/zhayujie/CowAgent"
+        },
+        "computer": {
+          "v": true,
+          "note": "Terminal tools",
+          "src": "https://github.com/zhayujie/CowAgent"
+        },
+        "research": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "connectors": {
+          "v": true,
+          "note": "WeChat, Feishu, DingTalk, WeCom, QQ, Telegram, Slack, Discord; MCP",
+          "src": "https://github.com/zhayujie/CowAgent"
+        },
+        "scheduled": {
+          "v": "partial",
+          "note": "Scheduled tasks created by hand in the web console",
+          "src": "https://github.com/zhayujie/CowAgent"
+        },
+        "approval": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "memory": {
+          "v": true,
+          "note": "Three-tier memory with hybrid retrieval",
+          "src": "https://github.com/zhayujie/CowAgent"
+        },
+        "availability": {
+          "v": "One-line installer, Docker and desktop clients",
+          "src": "https://github.com/zhayujie/CowAgent"
+        },
+        "bestFor": {
+          "v": "A multi-model assistant for Chinese chat platforms and WeChat, with agent teams"
+        },
+        "weakAt": {
+          "v": "Scheduling is manual"
+        }
+      }
+    },
+    {
+      "class": "coding-agents",
+      "entryId": "ecc",
+      "asOf": "2026-10-09",
+      "sources": [
+        "https://github.com/affaan-m/ECC"
+      ],
+      "cells": {
+        "price": {
+          "v": "Free (MIT); ECC Pro GitHub App $19 per seat per month for private repos",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "license": {
+          "v": "MIT",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "openSource": {
+          "v": true,
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "modelAgnostic": {
+          "v": "partial",
+          "note": "Primary support for Claude Code and Codex; experimental adapters for others",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "localModels": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "mcp": {
+          "v": true,
+          "note": "Configurable servers plus an optional memory MCP",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "subagents": {
+          "v": true,
+          "note": "68 agents",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "extensible": {
+          "v": true,
+          "note": "293 skills, 94 commands, hooks, rules",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "memory": {
+          "v": true,
+          "note": "Portable Markdown memory vault with learned instincts",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "sandbox": {
+          "v": "partial",
+          "note": "AgentShield scans prompts, hooks and MCP config",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "scheduled": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "terminal": {
+          "v": true,
+          "note": "Installs into Claude Code, Codex and others",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "ide": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "messaging": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "web": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "context": {
+          "v": null,
+          "note": "Not verified"
+        },
+        "autonomy": {
+          "v": null,
+          "note": "Not verified"
+        },
+        "extensibility": {
+          "v": 5,
+          "note": "Skills, hooks, commands, MCP",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "setup": {
+          "v": 3,
+          "note": "Guided npx setup; needs Node, Git and Claude Code",
+          "src": "https://github.com/affaan-m/ECC"
+        },
+        "speed": {
+          "v": "Depends on the model chosen; no harness benchmark"
+        },
+        "bestFor": {
+          "v": "A ready-made bundle of agents, skills and hooks for Claude Code or Codex"
+        },
+        "weakAt": {
+          "v": "Mostly skills and prompts layered on other agents, not its own runtime"
+        }
+      }
     }
   ]
 }

@@ -10372,6 +10372,357 @@
     ]
   },
   {
+    "id": "claude-haiku-5-5",
+    "title": "Claude Haiku 5.5",
+    "date": "2026-10-07",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "Anthropic's small, fast model, priced at $0.10 in and $0.50 out per million tokens. It is available on every Claude plan including Free, on the major clouds, and in Claude Code.",
+    "edges": [],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/claude/haiku",
+        "title": "Anthropic: Claude Haiku",
+        "accessedAt": "2026-10-09"
+      }
+    ],
+    "capabilityNote": "Anthropic says it is a significant step up from Haiku 4.5 across coding, tool use, computer use and agents, and reports 92.8% on a HubSpot CRM task suite; vendor figures."
+  },
+  {
+    "id": "claude-opus-5-5",
+    "title": "Claude Opus 5.5",
+    "date": "2026-09-22",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "Anthropic's flagship Opus model, priced at $4 in and $20 out per million tokens against $5 and $25 for Opus 5, with output more than 30% faster.",
+    "edges": [],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://betanews.com/article/claude-opus-5-5-launch-price-cut/",
+        "title": "BetaNews: Claude Opus 5.5 launch price cut",
+        "accessedAt": "2026-10-09"
+      },
+      {
+        "url": "https://datanorth.ai/news/anthropic-releases-claude-opus-5-5",
+        "title": "DataNorth: Anthropic releases Claude Opus 5.5",
+        "accessedAt": "2026-10-09"
+      }
+    ]
+  },
+  {
+    "id": "mistral-large-4",
+    "title": "Mistral Large 4",
+    "date": "2026-10-06",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Mistral AI"
+    ],
+    "description": "Mistral's 1.05-trillion-parameter mixture-of-experts model, 52B active per token, with a 1M-token context window and image input. It launched as a public preview; the weights were promised for late October under a custom licence whose terms were unpublished.",
+    "edges": [],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/",
+        "title": "MarkTechPost: Mistral Large 4 (Le Chonk)",
+        "accessedAt": "2026-10-09"
+      },
+      {
+        "url": "https://byteiota.com/mistral-large-4-open-weight-model-2026/",
+        "title": "byteiota: Mistral Large 4, open weights with a catch",
+        "accessedAt": "2026-10-09"
+      }
+    ],
+    "capabilityNote": "Mistral's docs list it as open, but as of 8 Oct the weights were not downloadable and no licence was named. Earlier Mistral models used Apache 2.0."
+  },
+  {
+    "id": "nano-banana-2-1",
+    "title": "Nano Banana 2.1",
+    "date": "2026-10-06",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Google"
+    ],
+    "description": "Google's image generation and editing model on Gemini 3.6 Flash, generally available at about half the per-image price of Nano Banana 2, across the Gemini app, Search AI Mode, AI Studio and the API. Nano Banana 2 is scheduled to shut down on 29 October 2026.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "nano-banana"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://www.unite.ai/nano-banana-2-1-debuts-at-half-the-image-cost-of-its-predecessor/",
+        "title": "Unite.AI: Nano Banana 2.1 halves the image price",
+        "accessedAt": "2026-10-09"
+      },
+      {
+        "url": "https://cellcog.ai/blog/nano-banana-2-1/",
+        "title": "CellCog: Nano Banana 2.1",
+        "accessedAt": "2026-10-09"
+      }
+    ]
+  },
+  {
+    "id": "chatgpt-intelligent-ui",
+    "title": "ChatGPT Intelligent UI and GPT-6",
+    "date": "2026-10-07",
+    "type": "major-update",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI began rolling GPT-6 into ChatGPT with Intelligent UI, which answers with interactive charts, forms, buttons and editable diagrams instead of plain text. Plus, Pro, Business and Enterprise got GPT-6 Sol first; Free and Go followed on 8 October with GPT-6 Luna.",
+    "edges": [],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://openai.com/index/gpt-6-for-everyone/",
+        "title": "OpenAI: GPT-6 and Intelligent UI for everyone",
+        "accessedAt": "2026-10-09"
+      },
+      {
+        "url": "https://www.unite.ai/openai-brings-gpt-6-with-intelligent-ui-to-all-chatgpt-tiers/",
+        "title": "Unite.AI: GPT-6 with Intelligent UI to all ChatGPT tiers",
+        "accessedAt": "2026-10-09"
+      }
+    ],
+    "parentId": "chatgpt"
+  },
+  {
+    "id": "harness-cosmos",
+    "title": "Harness acquires Augment Code's Cosmos and Auggie",
+    "date": "2026-10-08",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Harness",
+      "Augment Code"
+    ],
+    "description": "Harness bought selected Augment Code assets: Cosmos, the Auggie CLI, the Code Context Engine and the team. Cosmos becomes the Harness Cosmos Software Factory Agent, which coordinates agents from a ticket or bug through code, tests and a pull request, and keeps working when review comments or checks fail. The price was not disclosed.",
+    "edges": [],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://siliconangle.com/2026/10/08/harness-acquires-augment-code-to-bridge-software-engineering-from-idea-to-deployment/",
+        "title": "SiliconANGLE: Harness acquires Augment Code",
+        "accessedAt": "2026-10-09"
+      },
+      {
+        "url": "https://www.unite.ai/harness-augment-code-assets-acquisition/",
+        "title": "Unite.AI: Harness acquires Augment Code assets",
+        "accessedAt": "2026-10-09"
+      }
+    ]
+  },
+  {
+    "id": "ibm-bob",
+    "title": "IBM Bob",
+    "date": "2026-04-28",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "IBM"
+    ],
+    "description": "IBM's AI software-development partner for enterprises, generally available as SaaS with a 30-day trial and individual and enterprise plans. On 1 October 2026 IBM added self-hosted deployment for on-premises, private-cloud, sovereign-cloud and air-gapped environments.",
+    "edges": [],
+    "majorUpdates": [
+      {
+        "date": "2026-10-01",
+        "title": "Self-hosted deployment",
+        "summary": "Run Bob on-premises, in private or sovereign clouds, or fully air-gapped.",
+        "source": "https://newsroom.ibm.com/2026-10-01-ibm-introduces-self-hosted-deployment-for-ibm-bob-to-help-enterprises-advance-ai-sovereignty-and-governance"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://newsroom.ibm.com/2026-04-28-introducing-ibm-bob-ai-development-partner-that-takes-enterprises-from-ai-assisted-coding-to-production-ready-software",
+        "title": "IBM Newsroom: Introducing IBM Bob",
+        "accessedAt": "2026-10-09"
+      },
+      {
+        "url": "https://newsroom.ibm.com/2026-10-01-ibm-introduces-self-hosted-deployment-for-ibm-bob-to-help-enterprises-advance-ai-sovereignty-and-governance",
+        "title": "IBM Newsroom: self-hosted deployment for IBM Bob",
+        "accessedAt": "2026-10-09"
+      }
+    ]
+  },
+  {
+    "id": "muse-code",
+    "title": "Muse Code",
+    "date": "2026-08-06",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Meta"
+    ],
+    "description": "Meta's coding agent, in preview from August 2026. It plans changes, writes code and validates results end to end, powered by Muse Spark 1.2, at $1.25 in and $4.25 out per million tokens, with a discounted tier for developers who share improvement data.",
+    "edges": [],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://devops.com/meta-launches-ai-coding-agent-to-challenge-openai-and-anthropic/",
+        "title": "DevOps.com: Meta launches AI coding agent",
+        "accessedAt": "2026-10-09"
+      }
+    ]
+  },
+  {
+    "id": "claude-mem",
+    "title": "Claude-Mem",
+    "date": "2025-08-31",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [
+      "coding-agents"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "Alex Newman"
+    ],
+    "description": "A memory layer that records what your coding agent does in a session, compresses it with AI, and feeds the relevant parts back into later sessions. Local-first, with a SQLite and Chroma store and search tools over MCP; works with Claude Code, Codex, Gemini, OpenCode, Hermes and others.",
+    "capabilityNote": "Compression and recall use a model, so the memory feature draws on your existing plan unless you subscribe to its optional cloud sync.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/thedotmack/claude-mem",
+      "stars": 98927,
+      "starsCheckedAt": "2026-10-09"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/thedotmack/claude-mem",
+        "title": "thedotmack/claude-mem",
+        "accessedAt": "2026-10-09"
+      }
+    ]
+  },
+  {
+    "id": "nanobot",
+    "title": "nanobot",
+    "date": "2026-02-01",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "HKUDS"
+    ],
+    "description": "An ultra-lightweight, self-hosted personal agent framework in Python, with a web UI, MCP, long-term memory, sub-agents, cron automation and chat apps including Telegram, Discord, Slack and WeChat.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/HKUDS/nanobot",
+      "stars": 48899,
+      "starsCheckedAt": "2026-10-09"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/HKUDS/nanobot",
+        "title": "HKUDS/nanobot",
+        "accessedAt": "2026-10-09"
+      }
+    ]
+  },
+  {
+    "id": "cowagent",
+    "title": "CowAgent",
+    "date": "2022-08-07",
+    "type": "oss-repo",
+    "era": 5,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "zhayujie"
+    ],
+    "description": "An open-source personal assistant and agent harness that started as chatgpt-on-wechat. It now plans tasks, runs tools and skills, keeps a three-tier memory, and supports multi-agent teams, MCP, browser control and chat channels such as WeChat, Feishu, DingTalk, Telegram and Slack.",
+    "capabilityNote": "The 2022 date is the repository's creation as a ChatGPT-on-WeChat bot; the agent features came much later.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/zhayujie/CowAgent",
+      "stars": 47298,
+      "starsCheckedAt": "2026-10-09"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/zhayujie/CowAgent",
+        "title": "zhayujie/CowAgent",
+        "accessedAt": "2026-10-09"
+      }
+    ]
+  },
+  {
+    "id": "ecc",
+    "title": "ECC (Everything Claude Code)",
+    "date": "2026-01-18",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Affaan Mustafa"
+    ],
+    "description": "A harness-optimisation toolkit for Claude Code, Codex and other agents: 68 agents, 293 skills, 94 commands, rules, hooks, a portable memory vault and AgentShield, a scanner for prompts, hooks and MCP config. A paid ECC Pro GitHub App covers private repos.",
+    "capabilityNote": "Most of its bulk is skills and prompts rather than a new runtime; its star count measures attention, not use.",
+    "edges": [],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/affaan-m/ECC",
+      "stars": 275823,
+      "starsCheckedAt": "2026-10-09"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/affaan-m/ECC",
+        "title": "affaan-m/ECC",
+        "accessedAt": "2026-10-09"
+      }
+    ]
+  },
+  {
     "id": "stanford-alpaca",
     "title": "Stanford Alpaca",
     "date": "2023-03-13",
