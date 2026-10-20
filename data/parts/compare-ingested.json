@@ -103,5 +103,85 @@
         "src": "https://github.com/morluto/rea"
       }
     }
+  },
+  {
+    "entryId": "laya",
+    "class": "frameworks",
+    "asOf": "2026-10-20",
+    "sources": [
+      "https://github.com/NandhaKishorM/laya"
+    ],
+    "cells": {
+      "price": {
+        "v": "Free",
+        "note": "Open source under Apache-2.0",
+        "src": "https://github.com/NandhaKishorM/laya"
+      },
+      "license": {
+        "v": "Apache-2.0",
+        "note": "Apache-2.0 license",
+        "src": "https://github.com/NandhaKishorM/laya"
+      },
+      "openSource": {
+        "v": true,
+        "note": "Apache-2.0 open-source repository",
+        "src": "https://github.com/NandhaKishorM/laya"
+      },
+      "languages": {
+        "v": "Python, TypeScript, C# (.NET)",
+        "note": "Python core, laya-ts for Node/browser, and .NET SDK",
+        "src": "https://github.com/NandhaKishorM/laya"
+      },
+      "modelAgnostic": {
+        "v": false,
+        "note": "Runs dedicated non-autoregressive encoder checkpoints (laya, laya-multilingual, laya-typed-decisions)",
+        "src": "https://github.com/NandhaKishorM/laya"
+      },
+      "mcp": {
+        "v": true,
+        "note": "Provides laya[mcp] optional server extra",
+        "src": "https://github.com/NandhaKishorM/laya"
+      },
+      "multiAgent": {
+        "v": "partial",
+        "note": "Integrates into CrewAI and LangGraph as a routing and decision mechanism",
+        "src": "https://github.com/NandhaKishorM/laya"
+      },
+      "graph": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "memory": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "humanInLoop": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "durable": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "tracing": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "hosted": {
+        "v": false,
+        "note": "Self-hosted library, Docker, and ONNX/PyTorch runtimes",
+        "src": "https://github.com/NandhaKishorM/laya"
+      },
+      "bestFor": {
+        "v": "Fast, deterministic System 1 routing and typed classification",
+        "note": "Evaluates decisions in a single forward pass without autoregressive generation",
+        "src": "https://github.com/NandhaKishorM/laya"
+      },
+      "weakAt": {
+        "v": "Open-ended generation or creative text output",
+        "note": "Non-autoregressive architecture produces typed answers (choice, score, noul) without text generation",
+        "src": "https://github.com/NandhaKishorM/laya"
+      }
+    }
   }
 ]
