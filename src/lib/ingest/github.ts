@@ -7,6 +7,10 @@ import type { Candidates } from "./candidates";
  */
 const API = "https://api.github.com";
 
+/** Accepts "owner/repo" or a pasted GitHub URL. */
+const repoSlug = () =>
+  (process.env.GITHUB_REPO ?? "").trim().replace(/^https?:\/\/github\.com\//, "").replace(/\.git$/, "").replace(/\/+$/, "");
+
 async function gh<T>(path: string, init: RequestInit = {}): Promise<T> {
   const res = await fetch(`${API}${path}`, {
     ...init,
@@ -49,7 +53,7 @@ export async function openDraftPR({
   meta: { kind: string; criterion: string; confidence: string; reasoning: string };
   sourceUrl?: string;
 }): Promise<string> {
-  const repo = process.env.GITHUB_REPO!;
+  const repo = repoSlug();
   const base = process.env.GITHUB_BASE_BRANCH ?? "main";
   const ref = await gh<{ object: { sha: string } }>(`/repos/${repo}/git/ref/heads/${base}`);
   const branch = `ingest/${new Date().toISOString().slice(0, 10)}-${Math.random().toString(36).slice(2, 8)}`;
@@ -91,7 +95,7 @@ export async function openResearchPR({
   compareTool?: import("../compare").CompareTool;
   summary: string;
 }): Promise<string> {
-  const repo = process.env.GITHUB_REPO!;
+  const repo = repoSlug();
   const base = process.env.GITHUB_BASE_BRANCH ?? "main";
   const ref = await gh<{ object: { sha: string } }>(`/repos/${repo}/git/ref/heads/${base}`);
   const branch = `ingest/${entry.id}-${Math.random().toString(36).slice(2, 6)}`;
