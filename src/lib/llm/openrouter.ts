@@ -45,10 +45,20 @@ export async function chatJSON<T>(
         }),
         signal: AbortSignal.timeout(timeoutMs),
       });
-      if (!res.ok) throw new Error(`${model}: HTTP ${res.status}`);
+      if (!res.ok) {
+        const detail = await res.json().then((j) => j?.error?.message as string | undefined).catch(() => undefined);
+        throw new Error(`${model}: HTTP ${res.status}${detail ? `: ${detail}` : ""}`);
+      }
       const data = await res.json();
-      const text: string = data.choices?.[0]?.message?.content ?? "";
-      return parseJSON<T>(text);
+      const choice = data.choices?.[0];
+      const raw = choice?.message?.content;
+      const text: string = Array.isArray(raw) ? raw.map((p: { text?: string }) => p.text ?? "").join("") : (raw ?? "");
+      try {
+        return parseJSON<T>(text);
+      } catch {
+        // Say why: a cut-off answer (finish_reason "length") needs a bigger cap, not a retry.
+        throw new Error(`${model}: no JSON in the reply (finish_reason ${choice?.finish_reason ?? "unknown"}, ${text.length} chars): ${text.slice(0, 160).replace(/\s+/g, " ")}`);
+      }
     } catch (e) {
       lastError = e;
     }

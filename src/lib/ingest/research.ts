@@ -144,7 +144,7 @@ export async function research(
       { role: "system", content: draftPrompt([...existing.ids], today) },
       { role: "user", content: `TOOL: ${input.query}${input.note ? `\nEDITOR NOTE: ${input.note}` : ""}\n\n<<<EVIDENCE\n${evidence.join("\n\n---\n\n")}\nEVIDENCE>>>` },
     ],
-    { models, maxTokens: 4000, timeoutMs: 120_000 },
+    { models, maxTokens: 10_000, timeoutMs: 150_000 },
   );
   const draft = ResearchDraftSchema.parse(raw);
   const base = { verdict: draft.verdict, criterion: draft.criterion, reasoning: draft.reasoning, sourcesRead };
