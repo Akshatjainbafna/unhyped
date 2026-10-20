@@ -80,3 +80,33 @@ export async function openDraftPR({
   });
   return pr.html_url;
 }
+
+/** Opens a ready-for-review PR for one researched tool: its entry and, if it fits a class, its compare cells. */
+export async function openResearchPR({
+  entry,
+  compareTool,
+  summary,
+}: {
+  entry: import("../schema").Entry;
+  compareTool?: import("../compare").CompareTool;
+  summary: string;
+}): Promise<string> {
+  const repo = process.env.GITHUB_REPO!;
+  const base = process.env.GITHUB_BASE_BRANCH ?? "main";
+  const ref = await gh<{ object: { sha: string } }>(`/repos/${repo}/git/ref/heads/${base}`);
+  const branch = `ingest/${entry.id}-${Math.random().toString(36).slice(2, 6)}`;
+  await gh(`/repos/${repo}/git/refs`, { method: "POST", body: JSON.stringify({ ref: `refs/heads/${branch}`, sha: ref.object.sha }) });
+  const msg = `research: add ${entry.title}`;
+  await appendJson(repo, branch, "data/parts/entries-ingested.json", [entry], msg);
+  if (compareTool) await appendJson(repo, branch, "data/parts/compare-ingested.json", [compareTool], msg);
+  const pr = await gh<{ html_url: string }>(`/repos/${repo}/pulls`, {
+    method: "POST",
+    body: JSON.stringify({
+      title: `Add ${entry.title}`,
+      head: branch,
+      base,
+      body: `${summary}\n\nA workflow regenerates \`data/*.json\` and validates them on this branch. Check every date and cell against the sources, then merge.`,
+    }),
+  });
+  return pr.html_url;
+}

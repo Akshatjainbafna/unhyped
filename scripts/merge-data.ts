@@ -91,6 +91,16 @@ for (const f of read("forecasts-ingested.json") as { scenario: string; forecast:
   if (sc && !sc.forecasts.some((x) => x.id === f.forecast.id)) sc.forecasts.push(f.forecast);
 }
 write("scenarios.json", scenarios);
+// Researched tools bring their Compare cells; add any whose entry exists and that are not already listed.
+const compare = JSON.parse(readFileSync("data/compare.json", "utf8")) as { tools: { entryId: string }[] };
+let addedCompare = 0;
+for (const t of read("compare-ingested.json") as { entryId: string }[]) {
+  if (ids.has(t.entryId) && !compare.tools.some((x) => x.entryId === t.entryId)) {
+    compare.tools.push(t);
+    addedCompare++;
+  }
+}
+if (addedCompare) write("compare.json", compare);
 // When the data last changed; shown on the site.
 write("meta.json", { updatedAt: new Date().toISOString().slice(0, 10) });
 console.log(`merged ${entries.length} entries from ${entryFiles.length} files; dropped ${dropped} dangling edges`);

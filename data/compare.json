@@ -8086,6 +8086,112 @@
           "v": "Mostly skills and prompts layered on other agents, not its own runtime"
         }
       }
+    },
+    {
+      "class": "coding-agents",
+      "entryId": "ruflo",
+      "asOf": "2026-10-20",
+      "sources": [
+        "https://github.com/ruvnet/ruflo"
+      ],
+      "cells": {
+        "price": {
+          "v": "Free (MIT)",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "license": {
+          "v": "MIT",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "openSource": {
+          "v": true,
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "modelAgnostic": {
+          "v": "partial",
+          "note": "Built around Claude Code and Codex; adds a Grok Build host and Ollama routing",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "localModels": {
+          "v": "partial",
+          "note": "Optional ruflo-ruvllm plugin routes to local models such as Ollama",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "mcp": {
+          "v": true,
+          "note": "Ships an MCP server (314 tools by its own count)",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "subagents": {
+          "v": true,
+          "note": "98 agents on the full install",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "extensible": {
+          "v": true,
+          "note": "35 plugins, 30 skills, hooks",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "memory": {
+          "v": true,
+          "note": "Vector memory and cross-session recall",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "sandbox": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "scheduled": {
+          "v": true,
+          "note": "Background workers on a timer; a daemon on the full install",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "terminal": {
+          "v": true,
+          "note": "Runs inside Claude Code or Codex; also a standalone terminal UI",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "ide": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "messaging": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "web": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "context": {
+          "v": null,
+          "note": "Not verified"
+        },
+        "autonomy": {
+          "v": null,
+          "note": "Not verified"
+        },
+        "extensibility": {
+          "v": null,
+          "note": "Not verified"
+        },
+        "setup": {
+          "v": null,
+          "note": "Not verified"
+        },
+        "speed": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "bestFor": {
+          "v": "Adding swarms, memory and a console on top of Claude Code or Codex",
+          "src": "https://github.com/ruvnet/ruflo"
+        },
+        "weakAt": {
+          "v": "Large surface area; usage figures in the README are self-reported",
+          "src": "https://github.com/ruvnet/ruflo"
+        }
+      }
     }
   ]
 }

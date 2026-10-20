@@ -2915,5 +2915,196 @@
         "accessedAt": "2026-10-09"
       }
     ]
+  },
+  {
+    "id": "ruflo",
+    "title": "Ruflo",
+    "date": "2025-06-02",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "agent-frameworks"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Reuven Cohen"
+    ],
+    "description": "An orchestration layer for Claude Code and Codex that adds swarms of specialised agents, vector memory, hooks, an MCP server and a terminal console. It began as Claude Flow and was renamed Ruflo.",
+    "capabilityNote": "The README counts 98 agents, 30 skills and 35 plugins on the full install. Its own download counter is labelled illustrative, so treat usage figures as the author's, not independent.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "claude-code"
+      },
+      {
+        "type": "uses",
+        "target": "mcp"
+      }
+    ],
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/ruvnet/ruflo",
+      "stars": 77646,
+      "starsCheckedAt": "2026-10-20"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/ruvnet/ruflo",
+        "title": "ruvnet/ruflo on GitHub (README, API)",
+        "accessedAt": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "lm-studio",
+    "title": "LM Studio",
+    "date": "2023-05",
+    "type": "product",
+    "era": 5,
+    "primarySegment": "local-runtimes",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "inference",
+    "creators": [
+      "Element Labs"
+    ],
+    "description": "A desktop app for downloading and running open-weight models on your own machine, with a chat window and an OpenAI-compatible local server. Closed source, free to use.",
+    "capabilityNote": "Added Apple MLX support in Oct 2024 and later headless operation. Its 0.4.x line shipped through 2026. Third-party sources date the first release to May 2023.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "ollama"
+      },
+      {
+        "type": "built-on",
+        "target": "llama-cpp"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/LM_Studio",
+        "title": "LM Studio (Wikipedia)",
+        "accessedAt": "2026-10-20"
+      },
+      {
+        "url": "https://lmstudio.ai/changelog",
+        "title": "LM Studio changelog",
+        "accessedAt": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "lm-studio-bionic",
+    "title": "LM Studio Bionic",
+    "date": "2026-07-16",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [
+      "coding-agents",
+      "local-runtimes"
+    ],
+    "stackLayer": "apps",
+    "creators": [
+      "Element Labs"
+    ],
+    "parentId": "lm-studio",
+    "description": "A separate agent app from the LM Studio team for coding, research and work on documents and files, running open models locally or on LM Studio's hosted cloud.",
+    "capabilityNote": "Launched for Mac and Windows; its changelog later lists Linux builds (1.1.2, Sep 2026). Cloud models bill pay-as-you-go credits; running local models is free.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "lm-studio"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://9to5mac.com/2026/07/16/lm-studio-expands-beyond-chat-with-bionic-a-new-ai-agent-app-for-open-models/",
+        "title": "9to5Mac: LM Studio launches Bionic",
+        "accessedAt": "2026-10-20"
+      },
+      {
+        "url": "https://lmstudio.ai/changelog",
+        "title": "LM Studio changelog (Bionic releases)",
+        "accessedAt": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "claude-code-mods",
+    "title": "Claude Code mods",
+    "date": "2026-10-01",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [],
+    "stackLayer": "harnesses",
+    "creators": [
+      "Anthropic"
+    ],
+    "parentId": "claude-code",
+    "description": "A kind of Claude Code plugin whose JavaScript or TypeScript event handlers run inside Claude Code itself, so they can draw panes, add commands and intercept tool calls and prompts.",
+    "capabilityNote": "Not sandboxed: a mod runs with your account's permissions and can read files and secrets. Needs Claude Code 2.1.287 or later; admins can restrict them through managed settings.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "claude-code"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.287",
+        "title": "Claude Code v2.1.287 release notes",
+        "accessedAt": "2026-10-20"
+      },
+      {
+        "url": "https://code.claude.com/docs/en/plugins/mods/overview",
+        "title": "Claude Code docs: Mods overview",
+        "accessedAt": "2026-10-20"
+      }
+    ]
+  },
+  {
+    "id": "deepinfer",
+    "title": "DeepInfer",
+    "date": "2026-10-16",
+    "type": "oss-repo",
+    "era": 7,
+    "primarySegment": "local-runtimes",
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "stackLayer": "inference",
+    "creators": [
+      "DeepSeek"
+    ],
+    "description": "DeepSeek's inference engine, open-sourced for offline inference of DeepSeek-V4.1-Flash on NVIDIA SM100 GPUs and Huawei Ascend 950 NPUs. It includes speculative decoding, batch-invariant inference, deterministic sampling and structured outputs.",
+    "capabilityNote": "A partial release: the README says the KV cache system, which a complete serving stack needs, is not included.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "vllm"
+      }
+    ],
+    "majorUpdates": [],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/deepseek-ai/DeepInfer",
+      "stars": 10296,
+      "starsCheckedAt": "2026-10-20"
+    },
+    "sources": [
+      {
+        "url": "https://github.com/deepseek-ai/DeepInfer",
+        "title": "deepseek-ai/DeepInfer on GitHub (README, API)",
+        "accessedAt": "2026-10-20"
+      }
+    ]
   }
 ]

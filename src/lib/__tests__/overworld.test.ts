@@ -4,6 +4,8 @@ import { layoutOverworld, lengthAt, pointAt } from "../overworld/layout";
 import { bucketOf, buildStops } from "../overworld/stops";
 import { entry, fixtureEntries, fixtureRaw } from "./fixtures";
 
+// Pinned so the expectations do not move when the site's "now" does.
+const NOW = { year: 2026, month: 9 };
 const ds = buildDataset({
   ...fixtureRaw,
   entries: [...fixtureEntries.map((e) => (e.id === "claude" ? { ...e, majorUpdates: [{ date: "2026-08-20", title: "Update", summary: "s" }] } : e))],
@@ -20,7 +22,7 @@ describe("overworld stops", () => {
   });
 
   it("lists every month since 2022 and every year 2012–2021, newest first, even when empty", () => {
-    const stops = buildStops(ds);
+    const stops = buildStops(ds, NOW);
     expect(stops[0].key).toBe("2026-09");
     const months = stops.filter((s) => s.kind === "month");
     expect(months).toHaveLength(12 * 4 + 9);
@@ -29,14 +31,14 @@ describe("overworld stops", () => {
   });
 
   it("drops empty decades and periods but keeps their populated ones", () => {
-    const keys = buildStops(ds).map((s) => s.key);
+    const keys = buildStops(ds, NOW).map((s) => s.key);
     expect(keys).toContain("1980s");
     expect(keys).toContain("1970s");
     expect(keys).not.toContain("1950s");
   });
 
   it("counts major updates as tokens that open their parent", () => {
-    const aug = buildStops(ds).find((s) => s.key === "2026-08")!;
+    const aug = buildStops(ds, NOW).find((s) => s.key === "2026-08")!;
     const update = aug.tokens.find((t) => t.type === "update")!;
     expect(update.entryId).toBe("claude");
     expect(aug.tokens.map((t) => t.entryId)).toContain("claude-cowork");
@@ -44,7 +46,7 @@ describe("overworld stops", () => {
 });
 
 describe("overworld layout", () => {
-  const stops = buildStops(ds);
+  const stops = buildStops(ds, NOW);
   const ow = layoutOverworld(stops, [{ id: "agent-city", at: 2026.8 }, { id: "launch-night", at: 2022.92 }]);
   const rows = ow.blocks.filter((b) => b.kind === "row") as Extract<(typeof ow.blocks)[number], { kind: "row" }>[];
 
@@ -108,7 +110,7 @@ describe("overworld layout", () => {
 describe("storyboard placement", () => {
   it("starts each era's scene exactly at its boundary stop", async () => {
     const { PANORAMAS } = await import("../../components/overworld/Panoramas");
-    const real = buildStops(ds);
+    const real = buildStops(ds, NOW);
     const ow = layoutOverworld(real, PANORAMAS);
     const order = ow.blocks.map((b) => (b.kind === "scene" ? `#${b.id}` : b.stops.map((p) => p.stop.key).join(",")));
     const firstAfter = (id: string) => order[order.indexOf(`#${id}`) + 1]?.split(",")[0];
@@ -122,7 +124,7 @@ describe("storyboard placement", () => {
 describe("arrival at a stop", () => {
   it("scrolls so the traveller stands on the chosen stop", async () => {
     const { lengthAtPoint, yAtLength } = await import("../overworld/layout");
-    const ow = layoutOverworld(buildStops(ds), []);
+    const ow = layoutOverworld(buildStops(ds, NOW), []);
     for (const p of [ow.stops[0], ow.stops[5], ow.stops[20]]) {
       const at = pointAt(ow, lengthAt(ow, yAtLength(ow, lengthAtPoint(ow, p.x, p.y))));
       expect(Math.hypot(at.x - p.x, at.y - p.y)).toBeLessThan(1);

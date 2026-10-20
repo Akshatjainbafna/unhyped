@@ -10,11 +10,21 @@ export function llmConfigured() {
   return Boolean(process.env.OPENROUTER_API_KEY && process.env.UNHYPED_GRADER_MODEL);
 }
 
+/** Research uses a stronger model than quiz grading when one is set. */
+export function researchModels() {
+  return [process.env.UNHYPED_RESEARCH_MODEL, process.env.UNHYPED_GRADER_MODEL, process.env.UNHYPED_GRADER_FALLBACK].filter(Boolean) as string[];
+}
+
 export async function chatJSON<T>(
   messages: ChatMessage[],
-  { temperature = 0, maxTokens = 600 }: { temperature?: number; maxTokens?: number } = {},
+  {
+    temperature = 0,
+    maxTokens = 600,
+    models = [process.env.UNHYPED_GRADER_MODEL, process.env.UNHYPED_GRADER_FALLBACK].filter(Boolean) as string[],
+    timeoutMs = 30_000,
+    webSearch = false,
+  }: { temperature?: number; maxTokens?: number; models?: string[]; timeoutMs?: number; webSearch?: boolean } = {},
 ): Promise<T> {
-  const models = [process.env.UNHYPED_GRADER_MODEL, process.env.UNHYPED_GRADER_FALLBACK].filter(Boolean) as string[];
   let lastError: unknown;
   for (const model of models) {
     try {
@@ -31,8 +41,9 @@ export async function chatJSON<T>(
           temperature,
           max_tokens: maxTokens,
           response_format: { type: "json_object" },
+          ...(webSearch ? { plugins: [{ id: "web", max_results: 6 }] } : {}),
         }),
-        signal: AbortSignal.timeout(30_000),
+        signal: AbortSignal.timeout(timeoutMs),
       });
       if (!res.ok) throw new Error(`${model}: HTTP ${res.status}`);
       const data = await res.json();
