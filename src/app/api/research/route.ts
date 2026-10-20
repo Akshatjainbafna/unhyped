@@ -2,7 +2,7 @@ import { z } from "zod";
 import entries from "../../../../data/entries.json";
 import { isAuthed, sameOrigin } from "@/lib/admin/session";
 import { research } from "@/lib/ingest/research";
-import { researchModels } from "@/lib/llm/openrouter";
+import { researchKey, researchModels } from "@/lib/llm/openrouter";
 import { EntrySchema } from "@/lib/schema";
 
 export const maxDuration = 300;
@@ -22,7 +22,7 @@ const Body = z.object({
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return Response.json({ error: "Forbidden" }, { status: 403 });
   if (!isAuthed(req)) return Response.json({ error: "Unauthorised" }, { status: 401 });
-  if (!process.env.OPENROUTER_API_KEY || !researchModels().length) return Response.json({ error: "LLM not configured (OPENROUTER_API_KEY and a model)" }, { status: 503 });
+  if (!researchKey() || !researchModels().length) return Response.json({ error: "LLM not configured (a research API key and UNHYPED_RESEARCH_MODEL)" }, { status: 503 });
   const parsed = Body.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return Response.json({ error: parsed.error.issues[0]?.message ?? "Bad request" }, { status: 400 });
   // Research takes a minute or two. Stream newline-delimited JSON (progress, heartbeats, then the

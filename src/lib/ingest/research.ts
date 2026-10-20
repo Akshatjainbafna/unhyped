@@ -1,6 +1,6 @@
 import "server-only";
 import compareJson from "../../../data/compare.json";
-import { chatJSON, researchModels } from "../llm/openrouter";
+import { canSearchWeb, chatJSON, researchModels } from "../llm/openrouter";
 import { CompareDataSchema, dimensionsFor } from "../compare";
 import type { CompareTool } from "../compare";
 import type { Entry } from "../schema";
@@ -98,14 +98,17 @@ export async function research(
   // 1. Find the official pages. A given URL is trusted as a seed; otherwise ask a web-enabled model.
   const seeds = new Set<string>();
   if (input.url) seeds.add(input.url);
-  if (!input.url || parseGithubRepo(input.url) === null) {
+  if (!input.url && !canSearchWeb()) {
+    return { verdict: "needs-review", criterion: "", reasoning: "This research provider cannot search the web, so give an official URL or GitHub repo.", problems: [], sourcesRead: [], dryRun: true };
+  }
+  if (canSearchWeb() && (!input.url || parseGithubRepo(input.url) === null)) {
     try {
       const found = await chatJSON<{ urls?: string[] }>(
         [
           { role: "system", content: 'Find the OFFICIAL pages for the AI tool the user names: homepage, GitHub repo, docs, pricing, launch announcement. Reply with JSON only: {"urls":["https://..."]} (max 6, no aggregators or reviews).' },
           { role: "user", content: `${input.query}${input.url ? ` (${input.url})` : ""}` },
         ],
-        { models, maxTokens: 500, timeoutMs: 40_000, webSearch: true },
+        { models, maxTokens: 500, timeoutMs: 40_000, webSearch: true, research: true },
       );
       for (const u of found.urls ?? []) if (typeof u === "string") seeds.add(u);
     } catch {
@@ -148,7 +151,7 @@ export async function research(
       { role: "system", content: draftPrompt([...existing.ids], today) },
       { role: "user", content: `TOOL: ${input.query}${input.note ? `\nEDITOR NOTE: ${input.note}` : ""}\n\n<<<EVIDENCE\n${evidence.join("\n\n---\n\n")}\nEVIDENCE>>>` },
     ],
-    { models, maxTokens: 10_000, timeoutMs: 150_000 },
+    { models, maxTokens: 10_000, timeoutMs: 150_000, research: true },
   );
   const draft = ResearchDraftSchema.parse(raw);
   const base = { verdict: draft.verdict, criterion: draft.criterion, reasoning: draft.reasoning, sourcesRead };

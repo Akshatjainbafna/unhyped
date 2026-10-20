@@ -10,10 +10,22 @@ export function llmConfigured() {
   return Boolean(process.env.OPENROUTER_API_KEY && process.env.UNHYPED_GRADER_MODEL);
 }
 
-/** Research uses a stronger model than quiz grading when one is set. */
+/**
+ * Research can use its own provider: set UNHYPED_RESEARCH_BASE_URL (any OpenAI-compatible
+ * chat completions URL, e.g. Google's) with UNHYPED_RESEARCH_API_KEY. Otherwise it goes
+ * through OpenRouter, with the grader models as fallbacks.
+ */
+export const ownResearchProvider = () => Boolean(process.env.UNHYPED_RESEARCH_BASE_URL);
+
 export function researchModels() {
+  if (ownResearchProvider()) return [process.env.UNHYPED_RESEARCH_MODEL].filter(Boolean) as string[];
   return [process.env.UNHYPED_RESEARCH_MODEL, process.env.UNHYPED_GRADER_MODEL, process.env.UNHYPED_GRADER_FALLBACK].filter(Boolean) as string[];
 }
+
+export const researchKey = () => (ownResearchProvider() ? process.env.UNHYPED_RESEARCH_API_KEY : process.env.OPENROUTER_API_KEY);
+
+/** Only OpenRouter has the web-search plugin. */
+export const canSearchWeb = () => !ownResearchProvider();
 
 export async function chatJSON<T>(
   messages: ChatMessage[],
@@ -23,15 +35,19 @@ export async function chatJSON<T>(
     models = [process.env.UNHYPED_GRADER_MODEL, process.env.UNHYPED_GRADER_FALLBACK].filter(Boolean) as string[],
     timeoutMs = 30_000,
     webSearch = false,
-  }: { temperature?: number; maxTokens?: number; models?: string[]; timeoutMs?: number; webSearch?: boolean } = {},
+    research = false,
+  }: { temperature?: number; maxTokens?: number; models?: string[]; timeoutMs?: number; webSearch?: boolean; research?: boolean } = {},
 ): Promise<T> {
   let lastError: unknown;
   for (const model of models) {
     try {
-      const res = await fetch(process.env.OPENROUTER_BASE_URL ?? "https://openrouter.ai/api/v1/chat/completions", {
+      const url = research && ownResearchProvider() ? process.env.UNHYPED_RESEARCH_BASE_URL! : (process.env.OPENROUTER_BASE_URL ?? "https://openrouter.ai/api/v1/chat/completions");
+      const key = research ? researchKey() : process.env.OPENROUTER_API_KEY;
+      const effort = research ? process.env.UNHYPED_RESEARCH_REASONING : undefined; // low | medium | high | none
+      const res = await fetch(url, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+          Authorization: `Bearer ${key}`,
           "Content-Type": "application/json",
           "X-Title": "Unhyped",
         },
@@ -41,7 +57,8 @@ export async function chatJSON<T>(
           temperature,
           max_tokens: maxTokens,
           response_format: { type: "json_object" },
-          ...(webSearch ? { plugins: [{ id: "web", max_results: 6 }] } : {}),
+          ...(webSearch && canSearchWeb() ? { plugins: [{ id: "web", max_results: 6 }] } : {}),
+          ...(effort ? { reasoning_effort: effort } : {}),
         }),
         signal: AbortSignal.timeout(timeoutMs),
       });
