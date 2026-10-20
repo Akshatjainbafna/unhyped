@@ -3,7 +3,7 @@
 name: Ingest merge
 on:
   pull_request:
-    branches: [main]
+    branches: [main, feat/unhyped-v2-2d]
     paths: ["data/parts/**"]
 permissions:
   contents: write
