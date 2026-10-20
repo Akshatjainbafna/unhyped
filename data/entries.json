@@ -10914,6 +10914,44 @@
     ]
   },
   {
+    "id": "rea",
+    "title": "REA: Reverse Engineer Anything",
+    "date": "2026-04-14",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "protocols"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "morluto"
+    ],
+    "description": "REA is an MIT-licensed MCP server and CLI that connects coding agents to locally run tools for inspecting native binaries, JavaScript/Electron applications, .NET assemblies, websites, Android artifacts, firmware, and runtime behavior. It returns findings with supporting evidence and limitations, and the same workflows are available from a terminal.",
+    "capabilityNote": "Setup registers REA with Claude Code, Codex, Cursor, Gemini CLI, Grok Build, and other agents. Support for a target can require Hopper, Ghidra, IDA, JADX, a browser, or other host tools, and REA requires specified Node.js versions.",
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/morluto/rea",
+      "stars": 346424,
+      "starsCheckedAt": "2026-10-20"
+    },
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "mcp"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/morluto/rea",
+        "title": "REA: Reverse Engineer Anything",
+        "accessedAt": "2026-10-20"
+      }
+    ],
+    "status": "published"
+  },
+  {
     "id": "stanford-alpaca",
     "title": "Stanford Alpaca",
     "date": "2023-03-13",

@@ -8192,6 +8192,111 @@
           "src": "https://github.com/ruvnet/ruflo"
         }
       }
+    },
+    {
+      "entryId": "rea",
+      "class": "coding-agents",
+      "asOf": "2026-10-20",
+      "sources": [
+        "https://github.com/morluto/rea"
+      ],
+      "cells": {
+        "price": {
+          "v": null,
+          "note": "Not verified"
+        },
+        "license": {
+          "v": "MIT",
+          "note": "The repository metadata and README identify the license as MIT.",
+          "src": "https://github.com/morluto/rea"
+        },
+        "openSource": {
+          "v": true,
+          "note": "The public repository is MIT licensed.",
+          "src": "https://github.com/morluto/rea"
+        },
+        "modelAgnostic": {
+          "v": "partial",
+          "note": "It supports Claude Code, Codex, Cursor, Gemini CLI, and Grok Build, but model-level requirements are not stated.",
+          "src": "https://github.com/morluto/rea"
+        },
+        "localModels": {
+          "v": null,
+          "note": "Local-model support is not stated."
+        },
+        "mcp": {
+          "v": true,
+          "note": "REA is an MCP server that registers with supported agents.",
+          "src": "https://github.com/morluto/rea"
+        },
+        "subagents": {
+          "v": null,
+          "note": "Subagent support is not stated."
+        },
+        "extensible": {
+          "v": null,
+          "note": "Extension points are not stated."
+        },
+        "memory": {
+          "v": null,
+          "note": "Memory support is not stated."
+        },
+        "sandbox": {
+          "v": null,
+          "note": "Sandboxing is not stated."
+        },
+        "scheduled": {
+          "v": null,
+          "note": "Scheduled operation is not stated."
+        },
+        "terminal": {
+          "v": true,
+          "note": "REA exposes the same analysis workflows through a CLI.",
+          "src": "https://github.com/morluto/rea"
+        },
+        "ide": {
+          "v": "partial",
+          "note": "Setup supports Cursor; support for other IDEs is not stated.",
+          "src": "https://github.com/morluto/rea"
+        },
+        "messaging": {
+          "v": null,
+          "note": "Messaging integration is not stated."
+        },
+        "web": {
+          "v": true,
+          "note": "REA can inspect websites through browser analysis.",
+          "src": "https://github.com/morluto/rea"
+        },
+        "context": {
+          "v": null,
+          "note": "No context-handling rating is stated."
+        },
+        "autonomy": {
+          "v": null,
+          "note": "The documented workflow can inspect, explain, implement, and test a similar feature."
+        },
+        "extensibility": {
+          "v": null,
+          "note": "Several agent hosts and target types are documented; no extensibility rating is stated."
+        },
+        "setup": {
+          "v": null,
+          "note": "Setup uses `npx rea-agents setup`; no setup rating is stated."
+        },
+        "speed": {
+          "v": null,
+          "note": "Not verified"
+        },
+        "bestFor": {
+          "v": "Source-free reverse engineering of binaries, applications, websites, mobile artifacts, firmware, and runtime behavior.",
+          "src": "https://github.com/morluto/rea"
+        },
+        "weakAt": {
+          "v": "Some target types require Hopper, Ghidra, IDA, JADX, a browser, or caller-supplied tools.",
+          "src": "https://github.com/morluto/rea"
+        }
+      }
     }
   ]
 }
