@@ -36,5 +36,52 @@
       }
     ],
     "status": "published"
+  },
+  {
+    "id": "laya",
+    "title": "Laya",
+    "date": "2026-09-18",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "agent-frameworks",
+    "secondarySegments": [
+      "foundation-models",
+      "local-runtimes"
+    ],
+    "stackLayer": "frameworks",
+    "creators": [
+      "NandhaKishorM"
+    ],
+    "description": "Laya is an open-source non-autoregressive decision engine that answers typed classification, scoring, and boolean questions over text states in a single forward pass without generating text. It uses encoder checkpoints (ModernBERT and mmBERT) trained with reinforcement learning via strictly proper scoring rules (RLCD) to provide fast, hallucination-free routing and triage.",
+    "capabilityNote": "Executes typed decisions in approximately 33 ms per single question (7.2 ms batched on a T4 GPU) across 100+ languages, supporting context lengths up to 8,192 tokens.",
+    "majorUpdates": [],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://github.com/NandhaKishorM/laya",
+      "stars": 33688,
+      "starsCheckedAt": "2026-10-20"
+    },
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "jev"
+      },
+      {
+        "type": "built-on",
+        "target": "pytorch"
+      },
+      {
+        "type": "built-on",
+        "target": "hf-transformers"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/NandhaKishorM/laya",
+        "title": "GitHub - NandhaKishorM/laya: Multilingual, non-autoregressive System 1 decision engine",
+        "accessedAt": "2026-10-20"
+      }
+    ],
+    "status": "published"
   }
 ]
