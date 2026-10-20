@@ -1,0 +1,41 @@
+[
+  {
+    "id": "rea",
+    "title": "REA",
+    "date": "2026-04-14",
+    "type": "oss-repo",
+    "era": 6,
+    "primarySegment": "coding-agents",
+    "secondarySegments": [
+      "protocols",
+      "agent-frameworks"
+    ],
+    "stackLayer": "harnesses",
+    "creators": [
+      "morluto"
+    ],
+    "description": "REA is an MIT-licensed MCP server and CLI that gives coding agents local reverse-engineering workflows for binaries, applications, websites, mobile artifacts, and runtime behavior. It returns findings with supporting evidence and limitations, and setup can register its tools and workflow instructions with several coding agents.",
+    "capabilityNote": "The README states that analysis runs locally. Native analysis can use Hopper, Ghidra, or IDA; JavaScript and Electron analysis is static, while other targets may require JADX, adb, a Chrome-family browser, or caller-supplied utilities.",
+    "majorUpdates": [],
+    "oss": {
+      "license": "MIT",
+      "repoUrl": "https://github.com/morluto/rea",
+      "stars": 346430,
+      "starsCheckedAt": "2026-10-20"
+    },
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "mcp"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/morluto/rea",
+        "title": "REA: Reverse Engineer Anything",
+        "accessedAt": "2026-10-20"
+      }
+    ],
+    "status": "published"
+  }
+]
