@@ -25,9 +25,33 @@ export async function POST(req: Request) {
   if (!process.env.OPENROUTER_API_KEY || !researchModels().length) return Response.json({ error: "LLM not configured (OPENROUTER_API_KEY and a model)" }, { status: 503 });
   const parsed = Body.safeParse(await req.json().catch(() => null));
   if (!parsed.success) return Response.json({ error: parsed.error.issues[0]?.message ?? "Bad request" }, { status: 400 });
-  try {
-    return Response.json(await research(parsed.data, EntrySchema.array().parse(entries)));
-  } catch (e) {
-    return Response.json({ error: e instanceof Error ? e.message : "Research failed" }, { status: 502 });
-  }
+  // Research takes a minute or two. Stream newline-delimited JSON (progress, heartbeats, then the
+  // result) so the connection never sits idle long enough for a browser or proxy to drop it.
+  const enc = new TextEncoder();
+  const stream = new ReadableStream({
+    async start(controller) {
+      const send = (o: object) => {
+        try {
+          controller.enqueue(enc.encode(JSON.stringify(o) + "\n"));
+        } catch {
+          /* client went away; the work still finishes */
+        }
+      };
+      const beat = setInterval(() => send({ type: "ping" }), 8_000);
+      try {
+        const data = await research(parsed.data, EntrySchema.array().parse(entries), (message) => send({ type: "progress", message }));
+        send({ type: "result", data });
+      } catch (e) {
+        send({ type: "error", error: e instanceof Error ? e.message : "Research failed" });
+      } finally {
+        clearInterval(beat);
+        try {
+          controller.close();
+        } catch {
+          /* already closed */
+        }
+      }
+    },
+  });
+  return new Response(stream, { headers: { "Content-Type": "application/x-ndjson; charset=utf-8", "Cache-Control": "no-store, no-transform", "X-Accel-Buffering": "no" } });
 }

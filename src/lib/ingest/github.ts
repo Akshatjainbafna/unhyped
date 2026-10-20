@@ -114,3 +114,10 @@ export async function openResearchPR({
   });
   return pr.html_url;
 }
+
+/** An open PR already proposing this tool, so a retry does not open a duplicate. */
+export async function findOpenResearchPR(entryId: string, title: string): Promise<string | null> {
+  const prs = await gh<{ html_url: string; title: string; head: { ref: string } }[]>(`/repos/${repoSlug()}/pulls?state=open&per_page=100`);
+  const hit = prs.find((p) => p.head.ref.startsWith(`ingest/${entryId}-`) || p.title === `Add ${title}`);
+  return hit?.html_url ?? null;
+}

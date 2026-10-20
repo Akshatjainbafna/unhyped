@@ -6,7 +6,7 @@ import type { CompareTool } from "../compare";
 import type { Entry } from "../schema";
 import { EDGE_TYPES, ENTRY_TYPES, ERAS, SEGMENT_IDS, STACK_LAYER_IDS } from "../taxonomy";
 import { existingFrom } from "./candidates";
-import { openResearchPR } from "./github";
+import { findOpenResearchPR, openResearchPR } from "./github";
 import { buildCompareTool, finishEntry, isSafeUrl, parseGithubRepo, ResearchDraftSchema, type GithubFacts } from "./research-core";
 
 const classes = CompareDataSchema.shape.classes.parse((compareJson as { classes: unknown }).classes);
@@ -88,11 +88,13 @@ Omit entry unless verdict is "qualifies"; omit compare when no class fits.`;
 export async function research(
   input: { query: string; url?: string; note?: string },
   entries: Entry[],
+  progress: (message: string) => void = () => {},
 ): Promise<ResearchResult> {
   const today = new Date().toISOString().slice(0, 10);
   const existing = existingFrom(entries);
   const models = researchModels();
 
+  progress("Looking for the official pages");
   // 1. Find the official pages. A given URL is trusted as a seed; otherwise ask a web-enabled model.
   const seeds = new Set<string>();
   if (input.url) seeds.add(input.url);
@@ -111,6 +113,7 @@ export async function research(
     }
   }
 
+  progress(`Reading ${Math.min(seeds.size, MAX_PAGES)} page(s)`);
   // 2. Fetch them ourselves so every fact traces to a page we read.
   const urls = [...seeds].filter(isSafeUrl).slice(0, MAX_PAGES);
   const fetched = new Set<string>();
@@ -138,6 +141,7 @@ export async function research(
     return { verdict: "needs-review", criterion: "", reasoning: "No official page could be read. Paste a homepage or GitHub URL.", problems: [], sourcesRead, dryRun: true };
   }
 
+  progress("Drafting the entry and checking it against the inclusion rules");
   // 3. Draft.
   const raw = await chatJSON<unknown>(
     [
@@ -150,6 +154,7 @@ export async function research(
   const base = { verdict: draft.verdict, criterion: draft.criterion, reasoning: draft.reasoning, sourcesRead };
   if (draft.verdict !== "qualifies" || !draft.entry) return { ...base, problems: [], dryRun: true };
 
+  progress("Checking every fact against the pages that were read");
   // 4. Check what the model wrote against what we fetched.
   const done = finishEntry(draft.entry, fetched, gh, existing, today);
   if (!done.entry) return { ...base, verdict: "needs-review", problems: done.problems, dryRun: true };
@@ -164,6 +169,9 @@ export async function research(
 
   const canOpen = Boolean(process.env.GITHUB_TOKEN && process.env.GITHUB_REPO);
   if (!canOpen) return { ...base, entry: done.entry, compareTool, problems, dryRun: true };
+  progress("Opening the pull request");
+  const already = await findOpenResearchPR(done.entry.id, done.entry.title);
+  if (already) return { ...base, entry: done.entry, compareTool, problems: [...problems, "An open pull request for this tool already exists, so no second one was opened."], prUrl: already, dryRun: false };
   const prUrl = await openResearchPR({
     entry: done.entry,
     compareTool,

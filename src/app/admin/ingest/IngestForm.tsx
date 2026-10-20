@@ -81,23 +81,51 @@ export function IngestForm() {
 }
 
 function ToolForm() {
-  const post = usePost();
   const [name, setName] = useState("");
   const [url, setUrl] = useState("");
   const [note, setNote] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [r, setR] = useState<ToolResult | null>(null);
+  const [steps, setSteps] = useState<string[]>([]);
+  const router = useRouter();
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setBusy(true);
     setError(null);
     setR(null);
+    setSteps([]);
+    let finished = false;
     try {
-      setR(await post<ToolResult>("/api/research", { query: name, url: url || undefined, note: note || undefined }));
+      const res = await fetch("/api/research", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ query: name, url: url || undefined, note: note || undefined }) });
+      if (res.status === 401) return void router.replace("/admin/login");
+      if (!res.ok || !res.body) throw new Error((await res.json().catch(() => ({}))).error ?? `HTTP ${res.status}`);
+      const reader = res.body.getReader();
+      const dec = new TextDecoder();
+      let buf = "";
+      for (;;) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buf += dec.decode(value, { stream: true });
+        const lines = buf.split("\n");
+        buf = lines.pop() ?? "";
+        for (const line of lines) {
+          if (!line.trim()) continue;
+          const m = JSON.parse(line) as { type: string; message?: string; data?: ToolResult; error?: string };
+          if (m.type === "progress" && m.message) setSteps((s) => [...s, m.message!]);
+          else if (m.type === "result" && m.data) {
+            finished = true;
+            setR(m.data);
+          } else if (m.type === "error") {
+            finished = true;
+            throw new Error(m.error ?? "Research failed");
+          }
+        }
+      }
+      if (!finished) throw new Error("The connection dropped before the result arrived. The run may still have opened a pull request, so check GitHub before trying again.");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed");
+      setError(err instanceof Error && err.message !== "Failed to fetch" ? err.message : "The connection dropped. The run may still have opened a pull request, so check GitHub before trying again.");
     } finally {
       setBusy(false);
     }
@@ -122,6 +150,11 @@ function ToolForm() {
           <label htmlFor="tnote" className={label}>Note for the reviewer (optional)</label>
           <input id="tnote" value={note} onChange={(e) => setNote(e.target.value)} className={field} />
         </div>
+        {busy && steps.length > 0 && (
+          <ol aria-live="polite" className="space-y-1 font-mono text-[12px] text-paper-faint">
+            {steps.map((t, i) => <li key={i}>{i === steps.length - 1 ? "→" : "✓"} {t}</li>)}
+          </ol>
+        )}
         {error && <p role="alert" className="text-sm text-wrong">{error}</p>}
         <button type="submit" disabled={busy || name.trim().length < 2} className="w-max rounded-full bg-paper px-6 py-2.5 text-sm font-medium text-ink active:scale-[0.98] disabled:opacity-50">
           {busy ? "Researching… this can take a minute" : "Research and add if it qualifies"}
