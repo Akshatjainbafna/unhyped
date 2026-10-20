@@ -8192,6 +8192,114 @@
           "src": "https://github.com/ruvnet/ruflo"
         }
       }
+    },
+    {
+      "entryId": "rea",
+      "class": "coding-agents",
+      "asOf": "2026-10-20",
+      "sources": [
+        "https://github.com/morluto/rea"
+      ],
+      "cells": {
+        "price": {
+          "v": null,
+          "note": "not stated"
+        },
+        "license": {
+          "v": "MIT",
+          "note": "Repository license",
+          "src": "https://github.com/morluto/rea"
+        },
+        "openSource": {
+          "v": true,
+          "note": "Public MIT-licensed repository",
+          "src": "https://github.com/morluto/rea"
+        },
+        "modelAgnostic": {
+          "v": true,
+          "note": "Setup supports clients from several model providers",
+          "src": "https://github.com/morluto/rea"
+        },
+        "localModels": {
+          "v": null,
+          "note": "not stated"
+        },
+        "mcp": {
+          "v": true,
+          "note": "Provides and registers an MCP server",
+          "src": "https://github.com/morluto/rea"
+        },
+        "subagents": {
+          "v": null,
+          "note": "not stated"
+        },
+        "extensible": {
+          "v": true,
+          "note": "MCP catalog, provider selection, and scripting are documented",
+          "src": "https://github.com/morluto/rea"
+        },
+        "memory": {
+          "v": null,
+          "note": "not stated"
+        },
+        "sandbox": {
+          "v": null,
+          "note": "not stated"
+        },
+        "scheduled": {
+          "v": null,
+          "note": "not stated"
+        },
+        "terminal": {
+          "v": true,
+          "note": "CLI commands can run the same analysis workflows",
+          "src": "https://github.com/morluto/rea"
+        },
+        "ide": {
+          "v": true,
+          "note": "Setup supports Cursor",
+          "src": "https://github.com/morluto/rea"
+        },
+        "messaging": {
+          "v": null,
+          "note": "not stated"
+        },
+        "web": {
+          "v": true,
+          "note": "Can inspect websites, observe network traffic, and take screenshots",
+          "src": "https://github.com/morluto/rea"
+        },
+        "context": {
+          "v": null,
+          "note": "not stated"
+        },
+        "autonomy": {
+          "v": null,
+          "note": "not stated"
+        },
+        "extensibility": {
+          "v": null,
+          "note": "not stated"
+        },
+        "setup": {
+          "v": null,
+          "note": "not stated"
+        },
+        "speed": {
+          "v": null,
+          "note": "not stated"
+        },
+        "bestFor": {
+          "v": "Reverse-engineering binaries, applications, websites, and mobile artifacts from a coding-agent workflow",
+          "note": "Core stated purpose",
+          "src": "https://github.com/morluto/rea"
+        },
+        "weakAt": {
+          "v": "Coverage depends on the target and external tools; native analysis requires Hopper, Ghidra, or IDA, and other target types require additional local dependencies",
+          "note": "Target-specific requirements",
+          "src": "https://github.com/morluto/rea"
+        }
+      }
     }
   ]
 }
