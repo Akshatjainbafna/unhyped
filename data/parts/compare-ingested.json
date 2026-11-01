@@ -183,5 +183,196 @@
         "src": "https://github.com/NandhaKishorM/laya"
       }
     }
+  },
+  {
+    "class": "models",
+    "entryId": "reflection-beam",
+    "asOf": "2026-10-26",
+    "sources": [
+      "https://reflection.ai/beam-model-card",
+      "https://reflection.ai/blog/introducing-beam",
+      "https://huggingface.co/reflection/Beam-1.0-501B-A23B"
+    ],
+    "cells": {
+      "price": {
+        "v": null,
+        "note": "Not verified: API is on a waitlist and pricing was not found"
+      },
+      "license": {
+        "v": "Apache 2.0",
+        "src": "https://huggingface.co/reflection/Beam-1.0-501B-A23B"
+      },
+      "openWeights": {
+        "v": true,
+        "note": "BF16, FP8 and NVFP4 on Hugging Face",
+        "src": "https://huggingface.co/reflection/Beam-1.0-501B-A23B"
+      },
+      "context": {
+        "v": "1M tokens",
+        "src": "https://reflection.ai/beam-model-card"
+      },
+      "vision": {
+        "v": false,
+        "note": "Text input and output only",
+        "src": "https://reflection.ai/beam-model-card"
+      },
+      "reasoningMode": {
+        "v": null,
+        "note": "Not stated"
+      },
+      "toolUse": {
+        "v": true,
+        "note": "MCP-based tool integration and browsing (vendor-described)",
+        "src": "https://reflection.ai/beam-model-card"
+      },
+      "localRun": {
+        "v": null,
+        "note": "Weights are ~1 TB in BF16; local-run support not stated"
+      },
+      "freeAccess": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "cloud": {
+        "v": "Reflection API platform (early access)",
+        "src": "https://reflection.ai/blog/introducing-beam"
+      },
+      "benchmarks": {
+        "v": "SWE-bench Verified 81.6%; Terminal-Bench 2.1 80.1%; GPQA Diamond 90.6% (BF16, Reflection-reported)",
+        "src": "https://reflection.ai/beam-model-card"
+      },
+      "bestFor": {
+        "v": "Open-weight agentic coding with lower reasoning-token use"
+      },
+      "weakAt": {
+        "v": "Text only; trails Kimi K3 on raw capability by Reflection's own account; figures not independently verified"
+      }
+    }
+  },
+  {
+    "class": "models",
+    "entryId": "nemotron-3-5-super-vl",
+    "asOf": "2026-10-26",
+    "sources": [
+      "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+    ],
+    "cells": {
+      "price": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "license": {
+        "v": "OpenMDW-1.1",
+        "src": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+      },
+      "openWeights": {
+        "v": true,
+        "note": "BF16 weights on Hugging Face; an NVFP4 release is linked",
+        "src": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+      },
+      "context": {
+        "v": "Up to 1M tokens",
+        "src": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+      },
+      "vision": {
+        "v": true,
+        "note": "Images and video in, text out",
+        "src": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+      },
+      "reasoningMode": {
+        "v": true,
+        "note": "Configurable through the chat template (enable_thinking)",
+        "src": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+      },
+      "toolUse": {
+        "v": true,
+        "note": "Tool-call parser in the serving recipe",
+        "src": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+      },
+      "localRun": {
+        "v": "partial",
+        "note": "BF16 needs 4x H100 or 2x GB200; the NVFP4 card targets DGX Spark",
+        "src": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+      },
+      "freeAccess": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "cloud": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "benchmarks": {
+        "v": "GPQA-Diamond 89.52; SWE-bench Verified 71.10; Terminal-Bench 2.1 60.67 (NVIDIA-reported)",
+        "src": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+      },
+      "bestFor": {
+        "v": "Open multimodal reasoning with video and document understanding"
+      },
+      "weakAt": {
+        "v": "Behind rivals on agentic coding in NVIDIA's own table; needs multi-GPU hardware"
+      }
+    }
+  },
+  {
+    "class": "models",
+    "entryId": "gemini-4-carbon",
+    "asOf": "2026-11-01",
+    "sources": [
+      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+    ],
+    "cells": {
+      "price": {
+        "v": "$2 in / $10 out per million tokens introductory; $4 / $20 afterwards",
+        "note": "Cached input tokens 95% cheaper",
+        "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      "license": {
+        "v": "Closed",
+        "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      "openWeights": {
+        "v": false,
+        "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      "context": {
+        "v": null,
+        "note": "Not stated"
+      },
+      "vision": {
+        "v": null,
+        "note": "Not stated"
+      },
+      "reasoningMode": {
+        "v": null,
+        "note": "Not stated"
+      },
+      "toolUse": {
+        "v": null,
+        "note": "Not stated"
+      },
+      "localRun": {
+        "v": false,
+        "note": "Closed weights"
+      },
+      "freeAccess": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "cloud": {
+        "v": "Cyber defenders first via the Fairwind Program; developers and consumers later",
+        "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      "benchmarks": {
+        "v": "AA Intelligence Index v5.0 59 (#1); SEC-bench Pro 88.2%; ExploitGym 54.8%; CWE-bench 71.0% (Google-reported)",
+        "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      "bestFor": {
+        "v": "Vulnerability finding, exploitation and patching research for vetted defenders"
+      },
+      "weakAt": {
+        "v": "Not generally available; every figure is Google's own"
+      }
+    }
   }
 ]

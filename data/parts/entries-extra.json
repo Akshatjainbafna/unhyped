@@ -2629,10 +2629,15 @@
     "creators": [
       "Mistral AI"
     ],
-    "description": "Mistral's 1.05-trillion-parameter mixture-of-experts model, 52B active per token, with a 1M-token context window and image input. It launched as a public preview; the weights were promised for late October under a custom licence whose terms were unpublished.",
+    "description": "Mistral's 1.05-trillion-parameter mixture-of-experts model, 52B active per token, with a 1M-token context window and image input. It launched as a public preview on 6 October; open weights followed on Hugging Face under the Mistral Ecosystem Open-Weight License.",
     "edges": [],
     "majorUpdates": [],
     "sources": [
+      {
+        "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+        "title": "mistralai/Mistral-Large-4-1T-A52B on Hugging Face (model card, licence)",
+        "accessedAt": "2026-11-01"
+      },
       {
         "url": "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/",
         "title": "MarkTechPost: Mistral Large 4 (Le Chonk)",
@@ -2644,7 +2649,10 @@
         "accessedAt": "2026-10-09"
       }
     ],
-    "capabilityNote": "Mistral's docs list it as open, but as of 8 Oct the weights were not downloadable and no licence was named. Earlier Mistral models used Apache 2.0."
+    "capabilityNote": "The licence is a modified MIT: commercial and non-commercial use are allowed, but running a Model-as-a-Service business needs a separate commercial licence from Mistral. Earlier Mistral flagships used Apache 2.0.",
+    "oss": {
+      "license": "Mistral Ecosystem Open-Weight License (modified MIT)"
+    }
   },
   {
     "id": "nano-banana-2-1",

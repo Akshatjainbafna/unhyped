@@ -10435,10 +10435,15 @@
     "creators": [
       "Mistral AI"
     ],
-    "description": "Mistral's 1.05-trillion-parameter mixture-of-experts model, 52B active per token, with a 1M-token context window and image input. It launched as a public preview; the weights were promised for late October under a custom licence whose terms were unpublished.",
+    "description": "Mistral's 1.05-trillion-parameter mixture-of-experts model, 52B active per token, with a 1M-token context window and image input. It launched as a public preview on 6 October; open weights followed on Hugging Face under the Mistral Ecosystem Open-Weight License.",
     "edges": [],
     "majorUpdates": [],
     "sources": [
+      {
+        "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+        "title": "mistralai/Mistral-Large-4-1T-A52B on Hugging Face (model card, licence)",
+        "accessedAt": "2026-11-01"
+      },
       {
         "url": "https://www.marktechpost.com/2026/10/06/mistral-ai-releases-mistral-large-4-le-chonk-a-1-05t-parameter-open-weight-multimodal-moe/",
         "title": "MarkTechPost: Mistral Large 4 (Le Chonk)",
@@ -10450,7 +10455,10 @@
         "accessedAt": "2026-10-09"
       }
     ],
-    "capabilityNote": "Mistral's docs list it as open, but as of 8 Oct the weights were not downloadable and no licence was named. Earlier Mistral models used Apache 2.0."
+    "capabilityNote": "The licence is a modified MIT: commercial and non-commercial use are allowed, but running a Model-as-a-Service business needs a separate commercial licence from Mistral. Earlier Mistral flagships used Apache 2.0.",
+    "oss": {
+      "license": "Mistral Ecosystem Open-Weight License (modified MIT)"
+    }
   },
   {
     "id": "nano-banana-2-1",
@@ -10994,6 +11002,175 @@
         "url": "https://github.com/NandhaKishorM/laya",
         "title": "GitHub - NandhaKishorM/laya: Multilingual, non-autoregressive System 1 decision engine",
         "accessedAt": "2026-10-20"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "reflection-beam",
+    "title": "Beam (Reflection AI)",
+    "date": "2026-10-05",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Reflection AI"
+    ],
+    "description": "Reflection AI's first open-weight model: a text-only sparse mixture-of-experts with 501B total and 23B active parameters, a 1M-token context window and Apache 2.0 weights on Hugging Face in BF16, FP8 and NVFP4. It targets coding, reasoning and agentic work.",
+    "capabilityNote": "All benchmark and efficiency figures are Reflection's own. The post says Beam is comparable to GLM-5.2 with 3-4x less inference compute (an estimate that excludes prefill and serving), and concedes Kimi K3 still leads on raw capability.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "kimi"
+      },
+      {
+        "type": "competes-with",
+        "target": "glm"
+      }
+    ],
+    "majorUpdates": [],
+    "oss": {
+      "license": "Apache-2.0"
+    },
+    "sources": [
+      {
+        "url": "https://reflection.ai/blog/introducing-beam",
+        "title": "Reflection: Introducing Beam",
+        "accessedAt": "2026-10-26"
+      },
+      {
+        "url": "https://reflection.ai/beam-model-card",
+        "title": "Reflection: Beam model card",
+        "accessedAt": "2026-10-26"
+      },
+      {
+        "url": "https://huggingface.co/reflection/Beam-1.0-501B-A23B",
+        "title": "reflection/Beam-1.0-501B-A23B on Hugging Face",
+        "accessedAt": "2026-10-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "nemotron-3-5-super-vl",
+    "title": "Nemotron 3.5 Super VL",
+    "date": "2026-10-12",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "NVIDIA"
+    ],
+    "description": "NVIDIA's open-weight vision-language model: a Mamba-2/Transformer hybrid mixture-of-experts with 120B total and 12B active parameters, text, image and video input, text output, up to 1M tokens of context and native multi-token prediction. Weights ship under the OpenMDW-1.1 licence.",
+    "capabilityNote": "NVIDIA's own table shows it behind several rivals on agentic coding (Terminal-Bench 2.1 60.67 against up to 85.80 for others in the same table). The model card lists 4x H100 or 2x GB200 for BF16 serving.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "qwen"
+      }
+    ],
+    "majorUpdates": [],
+    "oss": {
+      "license": "OpenMDW-1.1"
+    },
+    "sources": [
+      {
+        "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16",
+        "title": "NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16 model card (Hugging Face)",
+        "accessedAt": "2026-10-26"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "gemini-4-carbon",
+    "title": "Gemini 4 Carbon",
+    "date": "2026-10-28",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [
+      "safety-alignment"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "Google's cybersecurity-focused frontier model, released two weeks after Gemini 4 Argon. Access starts with a subset of cyber defenders and widens to trusted partners through the Fairwind Program; developer and consumer availability is promised later.",
+    "capabilityNote": "Every figure is Google's own: 59 and first place on Artificial Analysis Intelligence Index v5.0, 88.2% on SEC-bench Pro, 54.8% on ExploitGym, 71.0% on CWE-bench. Google says it is joining the US government's voluntary pre-release testing. Not generally available at announcement.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "gemini-4-argon"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+        "title": "Google: Introducing Gemini 4 Carbon",
+        "accessedAt": "2026-11-01"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "genie-4",
+    "title": "Genie 4",
+    "date": "2026-10-27",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "generative-media",
+    "secondarySegments": [
+      "robotics-embodied"
+    ],
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "DeepMind's real-time interactive world model, with native generated audio. Users change weather, camera and objects by text while the simulation runs, and Gemini provides the reasoning that keeps scenes coherent. DeepMind names robotics simulation and agent training (SIMA) as uses.",
+    "capabilityNote": "A research preview for trusted testers; Google AI Ultra and Gemini API early-access partners are \"coming soon\". Google's own limits: details and object permanence drift, sessions last a few minutes, and text is rarely legible. The page gives no date, so 27 October comes from press coverage.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "genie-3"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://deepmind.google/models/genie/",
+        "title": "Google DeepMind: Genie",
+        "accessedAt": "2026-11-01"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "anthropic-s1-filing",
+    "title": "Anthropic files for an IPO",
+    "date": "2026-10-26",
+    "type": "event",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "Anthropic, PBC filed a Form S-1 with the SEC for an initial public offering of Class A common stock, planned for the Nasdaq Global Select Market under the symbol ANT.",
+    "capabilityNote": "The registration statement is not yet effective, and the share count and price range are undetermined. Anthropic's announcement gives no financials; press figures conflict, so none are used here.",
+    "edges": [],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/news/s1-sec",
+        "title": "Anthropic: files S-1 with the SEC for proposed IPO",
+        "accessedAt": "2026-11-01"
       }
     ],
     "status": "published"
