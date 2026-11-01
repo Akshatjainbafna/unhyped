@@ -374,5 +374,131 @@
         "v": "Not generally available; every figure is Google's own"
       }
     }
+  },
+  {
+    "class": "models",
+    "entryId": "gpt-6-1-terra",
+    "asOf": "2026-11-01",
+    "sources": [
+      "https://openai.com/index/introducing-gpt-6-1-terra/"
+    ],
+    "cells": {
+      "price": {
+        "v": "$1 in / $5 out per million tokens; cached input $0.05",
+        "src": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "license": {
+        "v": "Closed",
+        "src": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "openWeights": {
+        "v": false,
+        "src": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "context": {
+        "v": null,
+        "note": "Not stated"
+      },
+      "vision": {
+        "v": true,
+        "note": "Visual reasoning (MMMU-Pro) and technical drawings",
+        "src": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "reasoningMode": {
+        "v": true,
+        "note": "Selectable reasoning effort, low to max",
+        "src": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "toolUse": {
+        "v": true,
+        "note": "Computer use (OSWorld 2.1, Agents' Last Exam)",
+        "src": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "localRun": {
+        "v": false,
+        "note": "Closed weights"
+      },
+      "freeAccess": {
+        "v": false,
+        "note": "Plus, Pro, Enterprise and Edu plans in ChatGPT Work and Codex",
+        "src": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "cloud": {
+        "v": "OpenAI API (gpt-6.1-terra), ChatGPT Work, Codex",
+        "src": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "benchmarks": {
+        "v": "Terminal-Bench 4.0 50.3% at max effort (GPT-5.6 Terra 21.5%); error rate 4.3% at max effort on OpenAI's internal test (OpenAI-reported)",
+        "src": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "bestFor": {
+        "v": "High-volume computer-use and office work at low cost"
+      },
+      "weakAt": {
+        "v": "OpenAI says Sol and Astra remain better for the most complex coding"
+      }
+    }
+  },
+  {
+    "class": "models",
+    "entryId": "kimi-k3-1-pro",
+    "asOf": "2026-11-01",
+    "sources": [
+      "https://www.kimi.ai/blog/kimi-k3-1-pro"
+    ],
+    "cells": {
+      "price": {
+        "v": null,
+        "note": "Not verified: not on the announcement page"
+      },
+      "license": {
+        "v": null,
+        "note": "Not stated until the weights are released"
+      },
+      "openWeights": {
+        "v": "partial",
+        "note": "Promised by 4 Nov; not yet on Hugging Face as of 1 Nov",
+        "src": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+      },
+      "context": {
+        "v": "1M tokens",
+        "src": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+      },
+      "vision": {
+        "v": null,
+        "note": "Not stated"
+      },
+      "reasoningMode": {
+        "v": null,
+        "note": "Not stated"
+      },
+      "toolUse": {
+        "v": true,
+        "note": "Agentic coding and scripting of Blender and CAD tools",
+        "src": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+      },
+      "localRun": {
+        "v": null,
+        "note": "3T-class model; weights not yet released"
+      },
+      "freeAccess": {
+        "v": null,
+        "note": "Not verified"
+      },
+      "cloud": {
+        "v": "Kimi.ai, Kimi Work, Kimi Code, Kimi API",
+        "src": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+      },
+      "benchmarks": {
+        "v": "Terminal-Bench 4.0 65.7%; BenchCAD 92.7% with tools; OfficeQA Pro v2 64.4 (Moonshot-reported)",
+        "src": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+      },
+      "bestFor": {
+        "v": "Agentic coding, 3D/CAD generation and financial workflows with open weights promised"
+      },
+      "weakAt": {
+        "v": "Weights not out yet; all figures are Moonshot's own"
+      }
+    }
   }
 ]

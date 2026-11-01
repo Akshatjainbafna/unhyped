@@ -11176,6 +11176,101 @@
     "status": "published"
   },
   {
+    "id": "gpt-6-1-terra",
+    "title": "GPT-6.1 Terra",
+    "date": "2026-10-26",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI's fast, cheaper model for computer use and everyday work tasks. Standard API prices are 50% below GPT-5.6 Terra and GPT-6.1 Sol: $1 per million input tokens and $5 per million output. It is available to Plus, Pro, Enterprise and Edu users in ChatGPT Work and Codex, and in the API as gpt-6.1-terra.",
+    "capabilityNote": "All figures are OpenAI's own. At max reasoning it solves 50.3% of Terminal-Bench 4.0 tasks (GPT-5.6 Terra: 21.5%), and OpenAI says it matches GPT-6 Astra on Agents' Last Exam at one-tenth the per-token price. It meets the Critical cybersecurity threshold under OpenAI's Preparedness Framework. OpenAI says Sol and Astra remain better for the hardest coding tasks.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "claude-opus-5-5"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+        "title": "OpenAI: Introducing GPT-6.1 Terra",
+        "accessedAt": "2026-11-01"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "kimi-k3-1-pro",
+    "title": "Kimi K3.1 Pro",
+    "date": "2026-10-24",
+    "type": "model",
+    "era": 7,
+    "primarySegment": "foundation-models",
+    "secondarySegments": [],
+    "stackLayer": "models",
+    "creators": [
+      "Moonshot AI"
+    ],
+    "description": "Moonshot's post-trained upgrade of Kimi K3: a 3T-class model with a 1M-token context window, plus a Highspeed variant that Moonshot says is 2-3x faster. It is live on Kimi.ai, Kimi Work, Kimi Code and the API.",
+    "capabilityNote": "Moonshot says full open weights will be released by 4 November; they were not on Hugging Face as of 1 November. All figures are Moonshot's own: Terminal-Bench 4.0 65.7% (GPT-6 Astra 58.2%, Claude Opus 5.5 66.4%). Moonshot says it removed cyber-related data from training to limit misuse.",
+    "edges": [
+      {
+        "type": "successor-of",
+        "target": "kimi"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
+        "title": "Kimi: Introducing Kimi K3.1 Pro",
+        "accessedAt": "2026-11-01"
+      }
+    ],
+    "status": "published"
+  },
+  {
+    "id": "claude-duet",
+    "title": "Claude Duet",
+    "date": "2026-10-21",
+    "type": "product",
+    "era": 7,
+    "primarySegment": "personal-agents",
+    "secondarySegments": [],
+    "stackLayer": "apps",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "A separate Anthropic app where Claude works as a proactive agent: it sends a morning brief, takes tasks by message, works on its own cloud computer with connected apps, and asks for approval before acting on your behalf. Anthropic says it is powered by Opus 5.5.",
+    "capabilityNote": "A research preview on a waitlist for US Pro, Max and Ultra subscribers; Team and Enterprise are not included. Anthropic warns it may misread a thread, miscalibrate urgency or miss something that arrives between check-ins.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "claude-opus-5-5"
+      }
+    ],
+    "majorUpdates": [],
+    "sources": [
+      {
+        "url": "https://claude.com/product/claude-duet",
+        "title": "Claude: Claude Duet",
+        "accessedAt": "2026-11-01"
+      },
+      {
+        "url": "https://claude.com/resources/articles/claude-duet",
+        "title": "Claude: Introducing Claude Duet",
+        "accessedAt": "2026-11-01"
+      }
+    ],
+    "status": "published"
+  },
+  {
     "id": "stanford-alpaca",
     "title": "Stanford Alpaca",
     "date": "2023-03-13",
