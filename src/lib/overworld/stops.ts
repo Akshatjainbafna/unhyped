@@ -72,8 +72,23 @@ function stopFor(key: string): Omit<Stop, "tokens" | "era" | "events"> {
   return { key, label: "Antiquity", long: "Antiquity", kind: "period", from: -4000, to: 1000 };
 }
 
+/** The newest month any entry or update falls in, so a new month's stop exists as soon as the data does (never earlier than Oct 2026). */
+export function latestMonth(ds: Dataset): { year: number; month: number } {
+  let best = 2026 * 12 + 9;
+  const see = (date: string) => {
+    const [y, m] = date.split("-");
+    const v = Number(y) * 12 + (Number(m ?? "1") - 1);
+    if (!date.startsWith("-") && v > best) best = v;
+  };
+  for (const e of ds.entries) {
+    see(e.date);
+    e.majorUpdates.forEach((u) => see(u.date));
+  }
+  return { year: Math.floor(best / 12), month: (best % 12) + 1 };
+}
+
 /** Every stop from `now` back to antiquity, newest first; months and years are never skipped. */
-export function buildStops(ds: Dataset, now = { year: 2026, month: 10 }): Stop[] {
+export function buildStops(ds: Dataset, now = latestMonth(ds)): Stop[] {
   const keys: string[] = [];
   for (let y = now.year; y >= 2022; y--) {
     for (let m = y === now.year ? now.month : 12; m >= 1; m--) keys.push(`${y}-${String(m).padStart(2, "0")}`);

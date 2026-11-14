@@ -6,6 +6,7 @@ import type { RoadGeometry } from "@/lib/road/layout";
 import type { Track } from "@/lib/road/track";
 import { openEntry, quizOpen, travel } from "@/lib/store";
 import { SCENARIOS } from "@/lib/taxonomy";
+import { UPDATED_AT } from "@/lib/updated";
 
 /**
  * Content that lives *in* the scroll track, so it travels past with the road:
@@ -43,7 +44,7 @@ export function RoadMarkers({ road, dataset, track }: { road: RoadGeometry; data
       <section className="absolute inset-x-0 px-4 md:px-[8vw]" style={{ top: y(0) + 120 }} aria-labelledby="today">
         <div className="max-w-[720px] rounded-[1.75rem] border border-white/10 bg-ink/85 p-6 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md md:p-9">
           <p className="inline-flex items-center gap-2 rounded-full border border-hairline px-3 py-1 font-mono text-[10px] uppercase tracking-[0.24em] text-paper-muted">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" /> Today · Oct 2026
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" /> Today · {UPDATED_AT}
           </p>
           <h2 id="today" className="mt-5 max-w-[16ch] font-serif text-5xl leading-[0.98] text-paper md:text-6xl">
             The real history of AI, <em className="text-paper-muted">without the hype.</em>

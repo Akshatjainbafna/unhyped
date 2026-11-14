@@ -9,6 +9,7 @@ import { answer, injectFollowUp, next, result, skip, start, type QuizResult, typ
 import { generateQuestions } from "@/lib/quiz/generator";
 import { DIMENSIONS, PLANS, type Question, type Track } from "@/lib/quiz/types";
 import { personalRoad, quizOpen, useStore } from "@/lib/store";
+import { UPDATED_ISO } from "@/lib/updated";
 
 type Stage =
   | { kind: "intro" }
@@ -34,7 +35,8 @@ const TRACKS: { id: Track; name: string; blurb: string; about?: string }[] = [
   { id: "researcher", name: "AI Researcher", blurb: "Coming soon." },
 ];
 
-const NOW = 2026.76;
+const [NOW_Y, NOW_M, NOW_D] = UPDATED_ISO.split("-").map(Number);
+const NOW = NOW_Y + (NOW_M - 1 + NOW_D / 31) / 12;
 
 /** Serve options in random order so the answer position carries no signal. */
 function shuffled(q: Question): Question {

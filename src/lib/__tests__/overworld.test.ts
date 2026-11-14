@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildDataset } from "../dataset";
 import { layoutOverworld, lengthAt, pointAt } from "../overworld/layout";
-import { bucketOf, buildStops } from "../overworld/stops";
+import { bucketOf, buildStops, latestMonth } from "../overworld/stops";
 import { entry, fixtureEntries, fixtureRaw } from "./fixtures";
 
 // Pinned so the expectations do not move when the site's "now" does.
@@ -148,5 +148,17 @@ describe("one token per product per stop", () => {
     expect(cowork[0].type).toBe("product");
     expect(cowork[0].more).toBe(2);
     expect(jan.events).toBe(3);
+  });
+});
+
+describe("latestMonth", () => {
+  it("never goes earlier than Oct 2026", () => {
+    expect(latestMonth(ds)).toEqual({ year: 2026, month: 10 });
+  });
+
+  it("extends the road to a newer month so its entries are not dropped", () => {
+    const nov = buildDataset({ ...fixtureRaw, entries: [...fixtureEntries, entry({ id: "nov-x", date: "2026-11-05" })] });
+    expect(latestMonth(nov)).toEqual({ year: 2026, month: 11 });
+    expect(buildStops(nov).find((s) => s.key === "2026-11")?.tokens.map((t) => t.entryId)).toContain("nov-x");
   });
 });
