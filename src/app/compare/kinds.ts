@@ -6,6 +6,7 @@ export const kindBlurb: Record<string, string> = {
   builders: "Lovable, Bolt, Base44, Emergent, v0, n8n, Dify and other tools that turn a prompt or a canvas into an app or workflow.",
   creative: "ElevenLabs, Adobe Firefly, Luma, ComfyUI, Suno and other tools that make audio, images and video: pricing, rights and licensing.",
   models: "Claude Sonnet 5.5, GPT-6.1 Sol, Gemini 4 Argon, Grok 4.7, Kimi and Qwen: API price, context window, open weights and tool use.",
+  "task-models": "Jev and ScaleDown CDMs: small models that return a typed decision, label probabilities or extracted fields instead of free text, with price, context and confidence scores.",
   frameworks: "LangGraph, CrewAI, OpenAI Agents SDK, Google ADK, PydanticAI, Mastra and others for building your own agents.",
   sandboxes: "E2B and Daytona: isolated places for agents to run code.",
   llmops: "Langfuse, Phoenix and LiteLLM: tracing, evals and gateways for LLM apps.",

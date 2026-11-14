@@ -10,7 +10,8 @@
     "sandboxes": "Code sandboxes",
     "llmops": "LLM observability and gateways",
     "vectordb": "Vector databases",
-    "rag": "RAG engines"
+    "rag": "RAG engines",
+    "task-models": "Task-specific models"
   },
   "tools": [
     {
@@ -9009,6 +9010,134 @@
         },
         "weakAt": {
           "v": "Behind the frontier by its own Artificial Analysis score; days old"
+        }
+      }
+    },
+    {
+      "class": "task-models",
+      "entryId": "jev",
+      "asOf": "2026-11-14",
+      "sources": [
+        "https://typesafe.ai/",
+        "https://docs.typesafe.ai/models"
+      ],
+      "cells": {
+        "price": {
+          "v": "$0.042 per million input tokens; output tokens free",
+          "src": "https://docs.typesafe.ai/models"
+        },
+        "license": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "openWeights": {
+          "v": null,
+          "note": "Not stated; served through TypeSafe's API"
+        },
+        "tasks": {
+          "v": "Choice, Score, Noul and Box questions (Box needs Jev 1.14)",
+          "src": "https://docs.typesafe.ai/models"
+        },
+        "output": {
+          "v": "Typed decisions with calibrated probabilities, not free text",
+          "src": "https://typesafe.ai/"
+        },
+        "confidence": {
+          "v": true,
+          "note": "Every decision includes a confidence estimate",
+          "src": "https://typesafe.ai/"
+        },
+        "vision": {
+          "v": true,
+          "note": "PNG and JPEG images; no audio or video yet",
+          "src": "https://docs.typesafe.ai/models"
+        },
+        "context": {
+          "v": "64k per request, 32k per question; 262k with a long-context header",
+          "src": "https://docs.typesafe.ai/models"
+        },
+        "selfHost": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "cloud": {
+          "v": "TypeSafe API (POST /v1/systemone); an OpenRouter tutorial exists",
+          "src": "https://docs.typesafe.ai/models"
+        },
+        "benchmarks": {
+          "v": "193.6x faster and 444.6x cheaper than LLMs on System One workflows; about 68% accuracy on its workflow evaluation (TypeSafe-reported)",
+          "src": "https://typesafe.ai/"
+        },
+        "bestFor": {
+          "v": "Routing, triage and yes/no decisions where software acts on a calibrated probability"
+        },
+        "weakAt": {
+          "v": "Decisions only, not generated text; small default context; speed and cost multiples are TypeSafe's own and not independently replicated"
+        }
+      }
+    },
+    {
+      "class": "task-models",
+      "entryId": "scaledown-cdm",
+      "asOf": "2026-11-14",
+      "sources": [
+        "https://www.scaledown.ai/",
+        "https://www.scaledown.ai/models/classify",
+        "https://mahmadmanzoor.com/blog/llms-vs-jev-vs-cdms"
+      ],
+      "cells": {
+        "price": {
+          "v": "$0.05 per million text input tokens, $0.15 per million image input; output free; 1M tokens free for new accounts",
+          "src": "https://www.scaledown.ai/"
+        },
+        "license": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "openWeights": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "tasks": {
+          "v": "Classify, Extract and Summarize, plus the older Compress",
+          "src": "https://www.scaledown.ai/"
+        },
+        "output": {
+          "v": "Label probabilities, structured JSON fields or summaries",
+          "src": "https://www.scaledown.ai/"
+        },
+        "confidence": {
+          "v": true,
+          "note": "Classify returns calibrated label probabilities",
+          "src": "https://www.scaledown.ai/"
+        },
+        "vision": {
+          "v": true,
+          "note": "Text and images",
+          "src": "https://www.scaledown.ai/"
+        },
+        "context": {
+          "v": "Up to 1M tokens",
+          "src": "https://www.scaledown.ai/"
+        },
+        "selfHost": {
+          "v": true,
+          "note": "Self-hosted deployment offered for enterprise",
+          "src": "https://www.scaledown.ai/"
+        },
+        "cloud": {
+          "v": "ScaleDown API and OpenRouter (ScaleDown advertises 20% off there)",
+          "src": "https://www.scaledown.ai/"
+        },
+        "benchmarks": {
+          "v": "200x faster and 467x cheaper than frontier LLMs; Classify 90.53% accuracy (ScaleDown-reported). A third-party test found 96.7% on a CLINC150 slice, but higher billed input tokens than the raw prompt",
+          "src": "https://mahmadmanzoor.com/blog/llms-vs-jev-vs-cdms"
+        },
+        "bestFor": {
+          "v": "High-volume tagging, field extraction and long-document summaries on a small budget"
+        },
+        "weakAt": {
+          "v": "Speed and cost multiples have no published method; a third-party test saw Extract pick the buyer instead of the seller on one receipt"
         }
       }
     }

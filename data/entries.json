@@ -8070,7 +8070,7 @@
       "TypeSafe AI"
     ],
     "description": "A “System One” decision model that returns typed choices, scores and calibrated probabilities instead of free text, aimed at high-volume classification and routing. TypeSafe AI came out of stealth with a $40M seed.",
-    "capabilityNote": "Priced at $0.042 per 1M input tokens with ~100 ms typical latency. TypeSafe's “193.6x faster, 444.6x cheaper” figures are vendor-reported (it calls them the high end) and not yet independently replicated.",
+    "capabilityNote": "Priced at $0.042 per 1M input tokens with output free (TypeSafe docs). TypeSafe's \"193.6x faster, 444.6x cheaper\" figures are vendor-reported and not independently replicated. Jev 1.14 (14 October) added Box questions.",
     "majorUpdates": [],
     "edges": [
       {
@@ -8079,6 +8079,16 @@
       }
     ],
     "sources": [
+      {
+        "url": "https://typesafe.ai/",
+        "title": "TypeSafe AI: Jev",
+        "accessedAt": "2026-11-14"
+      },
+      {
+        "url": "https://docs.typesafe.ai/models",
+        "title": "TypeSafe docs: Models",
+        "accessedAt": "2026-11-14"
+      },
       {
         "url": "https://flaviocopes.com/jev/",
         "title": "A deep dive into Jev, TypeSafe's System One model"

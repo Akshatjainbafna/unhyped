@@ -884,5 +884,85 @@
       "label": "Weak at",
       "kind": "text"
     }
+  ],
+  "task-models": [
+    {
+      "group": "Basics",
+      "id": "price",
+      "label": "Price",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "license",
+      "label": "License",
+      "kind": "text"
+    },
+    {
+      "group": "Basics",
+      "id": "openWeights",
+      "label": "Open weights",
+      "kind": "bool"
+    },
+    {
+      "group": "What it does",
+      "id": "tasks",
+      "label": "Tasks",
+      "kind": "text"
+    },
+    {
+      "group": "What it does",
+      "id": "output",
+      "label": "What it returns",
+      "kind": "text"
+    },
+    {
+      "group": "What it does",
+      "id": "confidence",
+      "label": "Calibrated confidence",
+      "kind": "bool"
+    },
+    {
+      "group": "What it does",
+      "id": "vision",
+      "label": "Image input",
+      "kind": "bool"
+    },
+    {
+      "group": "What it does",
+      "id": "context",
+      "label": "Context window",
+      "kind": "text"
+    },
+    {
+      "group": "Access",
+      "id": "selfHost",
+      "label": "Self-hosted option",
+      "kind": "bool"
+    },
+    {
+      "group": "Access",
+      "id": "cloud",
+      "label": "Where to get it",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "benchmarks",
+      "label": "Reported results",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "bestFor",
+      "label": "Best for",
+      "kind": "text"
+    },
+    {
+      "group": "Fit",
+      "id": "weakAt",
+      "label": "Weak at",
+      "kind": "text"
+    }
   ]
 }
