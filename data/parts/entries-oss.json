@@ -873,13 +873,19 @@
         "date": "2024",
         "title": "llama-server and more backends",
         "summary": "OpenAI-compatible server, multimodal support, Vulkan/SYCL/Metal backends (2024–25)."
+      },
+      {
+        "date": "2026-11-13",
+        "title": "llama.cpp and ggml v1.0.0",
+        "summary": "First stable-API release. API and ABI incompatibilities now bump the major version under semantic versioning.",
+        "source": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
       }
     ],
     "oss": {
       "license": "MIT",
       "repoUrl": "https://github.com/ggml-org/llama.cpp",
-      "stars": 129549,
-      "starsCheckedAt": "2026-09-26",
+      "stars": 135029,
+      "starsCheckedAt": "2026-11-14",
       "archived": false
     },
     "sources": [

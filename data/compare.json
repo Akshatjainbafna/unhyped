@@ -8697,6 +8697,320 @@
           "v": "Weights not out yet; all figures are Moonshot's own"
         }
       }
+    },
+    {
+      "class": "models",
+      "entryId": "gpt-6-cyber",
+      "asOf": "2026-11-14",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-cyber/"
+      ],
+      "cells": {
+        "price": {
+          "v": null,
+          "note": "Not verified"
+        },
+        "license": {
+          "v": "Closed",
+          "src": "https://openai.com/index/introducing-gpt-6-cyber/"
+        },
+        "openWeights": {
+          "v": false,
+          "src": "https://openai.com/index/introducing-gpt-6-cyber/"
+        },
+        "context": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "vision": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "reasoningMode": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "toolUse": {
+          "v": true,
+          "note": "Exploit development and testing against remote targets",
+          "src": "https://openai.com/index/introducing-gpt-6-cyber/"
+        },
+        "localRun": {
+          "v": false,
+          "note": "Closed weights"
+        },
+        "freeAccess": {
+          "v": false,
+          "note": "Verified defenders and approved programmes",
+          "src": "https://openai.com/index/introducing-gpt-6-cyber/"
+        },
+        "cloud": {
+          "v": "Restricted: Daybreak Blue and Daybreak Red",
+          "src": "https://openai.com/index/introducing-gpt-6-cyber/"
+        },
+        "benchmarks": {
+          "v": "ExploitGym 48.5% (GPT-5.6 Cyber 32.1%); web pen-testing recall 40.3% vs 32.0% for GPT-6 Astra (OpenAI-reported)",
+          "src": "https://openai.com/index/introducing-gpt-6-cyber/"
+        },
+        "bestFor": {
+          "v": "Vulnerability research and authorised exploit development for vetted teams"
+        },
+        "weakAt": {
+          "v": "Restricted access; all figures are OpenAI's own"
+        }
+      }
+    },
+    {
+      "class": "models",
+      "entryId": "claude-fable-5-2",
+      "asOf": "2026-11-14",
+      "sources": [
+        "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+      ],
+      "cells": {
+        "price": {
+          "v": "$8 in / $40 out per million tokens; fast mode $16 / $80",
+          "src": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        "license": {
+          "v": "Closed",
+          "src": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        "openWeights": {
+          "v": false,
+          "src": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        "context": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "vision": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "reasoningMode": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "toolUse": {
+          "v": true,
+          "note": "Agentic coding; can act as Advisor or Orchestrator for smaller models",
+          "src": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        "localRun": {
+          "v": false,
+          "note": "Closed weights"
+        },
+        "freeAccess": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "cloud": {
+          "v": "Anthropic API and apps; Mythos via verification programmes",
+          "src": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        "benchmarks": {
+          "v": "FrontierCode 2.0 49.1% at xhigh effort; FrontierSWE v2 69.9% (Anthropic-reported)",
+          "src": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        "bestFor": {
+          "v": "The most ambitious open-ended technical work"
+        },
+        "weakAt": {
+          "v": "Anthropic recommends Opus 5.5 for most daily coding and knowledge tasks"
+        }
+      }
+    },
+    {
+      "class": "models",
+      "entryId": "gemini-4-hydrogen",
+      "asOf": "2026-11-14",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+      ],
+      "cells": {
+        "price": {
+          "v": "$1.50 in / $7.50 out per million tokens, flat across 1M context",
+          "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        "license": {
+          "v": "Closed",
+          "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        "openWeights": {
+          "v": false,
+          "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        "context": {
+          "v": "1M tokens",
+          "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        "vision": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "reasoningMode": {
+          "v": true,
+          "note": "Adjustable thinking levels up to xhigh",
+          "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        "toolUse": {
+          "v": true,
+          "note": "Agentic coding and workflows; tool-call failure recovery",
+          "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        "localRun": {
+          "v": false,
+          "note": "Closed weights"
+        },
+        "freeAccess": {
+          "v": null,
+          "note": "Available in every tier of AI Studio, the Gemini API and the Gemini app; free quotas not verified",
+          "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        "cloud": {
+          "v": "AI Studio, Gemini API, Gemini for business, Gemini app, Search, Antigravity",
+          "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        "benchmarks": {
+          "v": "Artificial Analysis index 51 (54 at xhigh); Terminal-Bench 4.1 57% (Google-reported)",
+          "src": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+        },
+        "bestFor": {
+          "v": "Fast, cheap agentic execution next to Carbon or Argon"
+        },
+        "weakAt": {
+          "v": "Below Carbon and Argon on the hardest long-horizon work, by Google's own framing"
+        }
+      }
+    },
+    {
+      "class": "models",
+      "entryId": "muse-ember",
+      "asOf": "2026-11-14",
+      "sources": [
+        "https://research.meta.ai/blog/muse-ember"
+      ],
+      "cells": {
+        "price": {
+          "v": "$0.10 in / $0.50 out per million tokens",
+          "src": "https://research.meta.ai/blog/muse-ember"
+        },
+        "license": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "openWeights": {
+          "v": null,
+          "note": "Not stated; offered through the Meta Model API"
+        },
+        "context": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "vision": {
+          "v": true,
+          "note": "OSWorld 2.1 and PerceptionBench results listed",
+          "src": "https://research.meta.ai/blog/muse-ember"
+        },
+        "reasoningMode": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "toolUse": {
+          "v": true,
+          "note": "Built for repeated tool calls and agent subtasks",
+          "src": "https://research.meta.ai/blog/muse-ember"
+        },
+        "localRun": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "freeAccess": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "cloud": {
+          "v": "Meta Model API",
+          "src": "https://research.meta.ai/blog/muse-ember"
+        },
+        "benchmarks": {
+          "v": "Terminal-Bench 4.0 40.9%; Agents' Last Exam 61.6; FrontierCode 2.0 27.2 (Meta-reported, Artificial Analysis runs)",
+          "src": "https://research.meta.ai/blog/muse-ember"
+        },
+        "bestFor": {
+          "v": "High-volume agent steps where cost per task matters"
+        },
+        "weakAt": {
+          "v": "Behind Haiku 5.5 on FrontierCode 2.0; Meta's composite index is Meta's own"
+        }
+      }
+    },
+    {
+      "class": "models",
+      "entryId": "inkling-2-small",
+      "asOf": "2026-11-14",
+      "sources": [
+        "https://thinkingmachines.ai/news/inkling-2-small/",
+        "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+      ],
+      "cells": {
+        "price": {
+          "v": null,
+          "note": "Not verified"
+        },
+        "license": {
+          "v": "Apache 2.0",
+          "src": "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+        },
+        "openWeights": {
+          "v": true,
+          "note": "On Hugging Face since 12 Nov",
+          "src": "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+        },
+        "context": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "vision": {
+          "v": true,
+          "note": "Image input",
+          "src": "https://thinkingmachines.ai/news/inkling-2-small/"
+        },
+        "reasoningMode": {
+          "v": true,
+          "note": "Variable effort",
+          "src": "https://thinkingmachines.ai/news/inkling-2-small/"
+        },
+        "toolUse": {
+          "v": true,
+          "note": "Trained with RL on long-horizon coding across agent harnesses",
+          "src": "https://thinkingmachines.ai/news/inkling-2-small/"
+        },
+        "localRun": {
+          "v": "partial",
+          "note": "594B total / 17B active; vLLM, SGLang and Unsloth supported",
+          "src": "https://thinkingmachines.ai/news/inkling-2-small/"
+        },
+        "freeAccess": {
+          "v": null,
+          "note": "Not stated"
+        },
+        "cloud": {
+          "v": "Tinker, NVIDIA, Fireworks, Together, Baseten, Nebius, Modal, Cloudflare",
+          "src": "https://thinkingmachines.ai/news/inkling-2-small/"
+        },
+        "benchmarks": {
+          "v": "Artificial Analysis index 31; FrontierCode v2.0 25.4% (Thinking Machines-reported)",
+          "src": "https://thinkingmachines.ai/news/inkling-2-small/"
+        },
+        "bestFor": {
+          "v": "Open-weight agentic coding with image input"
+        },
+        "weakAt": {
+          "v": "Behind the frontier by its own Artificial Analysis score; days old"
+        }
+      }
     }
   ]
 }

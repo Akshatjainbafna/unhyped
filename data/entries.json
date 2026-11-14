@@ -11163,9 +11163,16 @@
       "Anthropic"
     ],
     "description": "Anthropic, PBC filed a Form S-1 with the SEC for an initial public offering of Class A common stock, planned for the Nasdaq Global Select Market under the symbol ANT.",
-    "capabilityNote": "The registration statement is not yet effective, and the share count and price range are undetermined. Anthropic's announcement gives no financials; press figures conflict, so none are used here.",
+    "capabilityNote": "The registration statement was not yet effective as of the 10 November roadshow launch, and Anthropic's announcements give no financials; press figures conflict, so none are used here.",
     "edges": [],
-    "majorUpdates": [],
+    "majorUpdates": [
+      {
+        "date": "2026-11-10",
+        "title": "Roadshow launched",
+        "summary": "Anthropic proposed 825,000,000 Class A shares at an expected $70.00-$78.00, applying to list on Nasdaq as ANT. The registration statement was still not effective.",
+        "source": "https://www.anthropic.com/news/roadshow-launch"
+      }
+    ],
     "sources": [
       {
         "url": "https://www.anthropic.com/news/s1-sec",
@@ -11217,8 +11224,8 @@
     "creators": [
       "Moonshot AI"
     ],
-    "description": "Moonshot's post-trained upgrade of Kimi K3: a 3T-class model with a 1M-token context window, plus a Highspeed variant that Moonshot says is 2-3x faster. It is live on Kimi.ai, Kimi Work, Kimi Code and the API.",
-    "capabilityNote": "Moonshot says full open weights will be released by 4 November; they were not on Hugging Face as of 1 November. All figures are Moonshot's own: Terminal-Bench 4.0 65.7% (GPT-6 Astra 58.2%, Claude Opus 5.5 66.4%). Moonshot says it removed cyber-related data from training to limit misuse.",
+    "description": "Moonshot's post-trained upgrade of Kimi K3: an open-weight, natively multimodal model with 2.8T total and 104B active parameters and a 1M-token context window, plus a Highspeed API variant that Moonshot says is 2-3x faster. Weights are on Hugging Face under the Kimi K3.1 Pro licence; it is also live on Kimi.ai, Kimi Work, Kimi Code and the API.",
+    "capabilityNote": "The licence is a custom MIT-style one: free to use, modify and sell, but a Model-as-a-Service business earning over $20M in any 12 months needs a separate agreement with Moonshot, and products above 100M monthly users or $20M monthly revenue must display \"Kimi K3.1-Pro\". Internal use is exempt. All benchmark figures are Moonshot's own: Terminal-Bench 4.0 65.7% (GPT-6 Astra 58.2%, Claude Opus 5.5 66.4%). Moonshot says it removed cyber-related data from training to limit misuse.",
     "edges": [
       {
         "type": "successor-of",
@@ -11231,9 +11238,17 @@
         "url": "https://www.kimi.ai/blog/kimi-k3-1-pro",
         "title": "Kimi: Introducing Kimi K3.1 Pro",
         "accessedAt": "2026-11-01"
+      },
+      {
+        "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+        "title": "moonshotai/Kimi-K3.1-Pro on Hugging Face (model card, licence)",
+        "accessedAt": "2026-11-14"
       }
     ],
-    "status": "published"
+    "status": "published",
+    "oss": {
+      "license": "Kimi K3.1 Pro License (modified MIT)"
+    }
   },
   {
     "id": "claude-duet",
@@ -11269,6 +11284,291 @@
       }
     ],
     "status": "published"
+  },
+  {
+    "era": 7,
+    "secondarySegments": [
+      "protocols"
+    ],
+    "majorUpdates": [],
+    "status": "published",
+    "id": "chatgpt-wallet",
+    "title": "ChatGPT Wallet",
+    "date": "2026-11-13",
+    "type": "product",
+    "primarySegment": "personal-agents",
+    "stackLayer": "apps",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI's payments product for agents, delivered through dots. The agent pays with a payment-network token instead of the user's real card details, and every purchase needs a security check such as Face ID. It was built with American Express, Mastercard and Visa and keeps card rewards and dispute protections for eligible disputes.",
+    "capabilityNote": "Limited availability: ChatGPT Pro subscribers in the US at first. OpenAI warns some sites may block agent purchases and published a Commerce Partner Playbook for businesses. The \"1.2B people use ChatGPT each week\" figure is OpenAI's own.",
+    "edges": [
+      {
+        "type": "built-on",
+        "target": "chatgpt-dots"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+        "title": "OpenAI: Introducing ChatGPT Wallet",
+        "accessedAt": "2026-11-14"
+      }
+    ]
+  },
+  {
+    "era": 7,
+    "secondarySegments": [
+      "safety-alignment"
+    ],
+    "majorUpdates": [],
+    "status": "published",
+    "id": "gpt-6-cyber",
+    "title": "GPT-6 Cyber",
+    "date": "2026-11-05",
+    "type": "model",
+    "primarySegment": "foundation-models",
+    "stackLayer": "models",
+    "creators": [
+      "OpenAI"
+    ],
+    "description": "OpenAI's cybersecurity-specialised model, offered through Daybreak: Daybreak Blue for verified defenders and Daybreak Red for exploit development and authorised testing. OpenAI classifies it as Critical in cybersecurity under its Preparedness Framework, up from High for GPT-5.6 Cyber.",
+    "capabilityNote": "All figures are OpenAI's own: ExploitGym 48.5% (GPT-5.6 Cyber 32.1%), 99.93% out-of-scope avoidance without a deployment prompt, 948 Linux privilege-escalation exploits and 81 previously unknown high-severity Firefox vulnerabilities. Access is restricted rather than general.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "claude-mythos"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+        "title": "OpenAI: GPT-6 Cyber",
+        "accessedAt": "2026-11-14"
+      }
+    ]
+  },
+  {
+    "era": 7,
+    "secondarySegments": [],
+    "majorUpdates": [],
+    "status": "published",
+    "id": "claude-fable-5-2",
+    "title": "Claude Fable 5.2 and Mythos 5.2",
+    "date": "2026-11-09",
+    "type": "model",
+    "primarySegment": "foundation-models",
+    "stackLayer": "models",
+    "creators": [
+      "Anthropic"
+    ],
+    "description": "Anthropic's upgrade of its top model tier. Fable and Mythos are the same underlying model: Fable has cyber and biology safeguards and is open to all users, while Mythos goes to verified cyber and life-sciences programmes. Fable 5.2 costs $8 per million input and $40 per million output tokens, with an optional fast mode at $16/$80.",
+    "capabilityNote": "Anthropic's own claims: FrontierCode 2.0 49.1% (Opus 5.5 45.5%, GPT-6 Astra 42.8%, Gemini 4 Carbon 41.1%), up to 30% faster than 5.1, and a Fermat's Last Theorem formalisation in 30 hours during prerelease testing. Anthropic still recommends Opus 5.5 as the daily driver.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "gemini-4-carbon"
+      },
+      {
+        "type": "competes-with",
+        "target": "gpt-6-astra"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+        "title": "Anthropic: Claude Fable 5.2 and Mythos 5.2",
+        "accessedAt": "2026-11-14"
+      }
+    ]
+  },
+  {
+    "era": 7,
+    "secondarySegments": [],
+    "majorUpdates": [],
+    "status": "published",
+    "id": "gemini-4-hydrogen",
+    "title": "Gemini 4 Hydrogen",
+    "date": "2026-11-12",
+    "type": "model",
+    "primarySegment": "foundation-models",
+    "stackLayer": "models",
+    "creators": [
+      "Google DeepMind"
+    ],
+    "description": "Google's fast, efficient Gemini 4 tier, priced at $1.50 per million input and $7.50 per million output tokens, flat across a 1M-token context. It brings Gemini 4 to every tier of AI Studio, the Gemini API, the Gemini app and Search, and ships with Orchestrator in Antigravity, which switches between Carbon and Hydrogen within one session.",
+    "capabilityNote": "Google's own figures: Artificial Analysis index 51 at default high thinking (Argon 50), 54 at xhigh; Terminal-Bench 4.1 57% against 18.2% for Gemini 3.8 Flash; Orchestrator reached near-Carbon success on Terminal-Bench 4.0 with 24% less quota and 19% faster.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "claude-haiku-5-5"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+        "title": "Google: Introducing Gemini 4 Hydrogen",
+        "accessedAt": "2026-11-14"
+      }
+    ]
+  },
+  {
+    "era": 7,
+    "secondarySegments": [],
+    "majorUpdates": [],
+    "status": "published",
+    "id": "muse-ember",
+    "title": "Muse Ember",
+    "date": "2026-11-09",
+    "type": "model",
+    "primarySegment": "foundation-models",
+    "stackLayer": "models",
+    "creators": [
+      "Meta"
+    ],
+    "description": "Meta's smallest and cheapest Muse model, built for work agents repeat: tool calls, coding subtasks, routing, extraction and long-document parsing. It is on the Meta Model API at $0.10 per million input and $0.50 per million output tokens.",
+    "capabilityNote": "Meta's claims rest on Artificial Analysis runs plus a Meta-built composite: it matches Haiku 5.5's best score at about a third of the cost, with Terminal-Bench 4.0 40.9% (Haiku 5.5 39.2%) and Agents' Last Exam 61.6 (57.0). It trails Haiku 5.5 on FrontierCode 2.0 (27.2 vs 34.9). The Personal Superintelligence Index is Meta's own, and the cost figures use proposed pricing.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "claude-haiku-5-5"
+      },
+      {
+        "type": "built-on",
+        "target": "muse-spark"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://research.meta.ai/blog/muse-ember",
+        "title": "Meta: Introducing Muse Ember",
+        "accessedAt": "2026-11-14"
+      }
+    ]
+  },
+  {
+    "era": 7,
+    "secondarySegments": [],
+    "majorUpdates": [],
+    "status": "published",
+    "id": "inkling-2-small",
+    "title": "Inkling 2 Small",
+    "date": "2026-11-12",
+    "type": "model",
+    "primarySegment": "foundation-models",
+    "stackLayer": "models",
+    "creators": [
+      "Thinking Machines Lab"
+    ],
+    "description": "Thinking Machines Lab's second-generation model: a mixture-of-experts with 594B total and 17B active parameters, image input and variable effort. It launched on the Tinker platform with closed weights; Apache 2.0 weights followed on Hugging Face on 12 November after external safety testing.",
+    "capabilityNote": "Its Artificial Analysis Intelligence Index score is 31, an improvement on the lab's earlier models rather than a lead over frontier models. The lab reports FrontierCode v2.0 25.4%, second-highest in its comparison row. It is available through NVIDIA, Fireworks, Together, Baseten, Nebius, Modal and Cloudflare, and runs on vLLM, SGLang and Unsloth.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "kimi"
+      }
+    ],
+    "oss": {
+      "license": "Apache-2.0",
+      "repoUrl": "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+    },
+    "sources": [
+      {
+        "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+        "title": "Thinking Machines: Introducing Inkling 2 Small",
+        "accessedAt": "2026-11-14"
+      },
+      {
+        "url": "https://huggingface.co/thinkingmachines/Inkling-2-Small",
+        "title": "thinkingmachines/Inkling-2-Small on Hugging Face",
+        "accessedAt": "2026-11-14"
+      }
+    ]
+  },
+  {
+    "era": 7,
+    "secondarySegments": [
+      "language"
+    ],
+    "majorUpdates": [],
+    "status": "published",
+    "id": "scaledown-cdm",
+    "title": "ScaleDown Constrained Decoding Models",
+    "date": "2026-10-13",
+    "type": "product",
+    "primarySegment": "foundation-models",
+    "stackLayer": "models",
+    "creators": [
+      "ScaleDown"
+    ],
+    "description": "Task-specific models from ScaleDown that each do one job: Classify scores user-defined labels, Extract pulls schema fields out of text, images or documents, and Summarize condenses long inputs. They accept up to 1M tokens and, ScaleDown says, skip token-by-token generation. Compress is an older separate model.",
+    "capabilityNote": "The headline claims of 200x faster, 467x cheaper and SOTA accuracy are ScaleDown's own and come with no published method; one independent write-up reports ScaleDown's own benchmark page shows 2.2-13.9x faster, and a hands-on test found billed input tokens above the raw prompt, so short classifications cost about twice gpt-5-nano. \"Constrained decoding\" is also an existing technique. Summarize is described as abstractive, which is generation.",
+    "edges": [
+      {
+        "type": "competes-with",
+        "target": "jev"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.scaledown.ai/",
+        "title": "ScaleDown: Constrained decoding models",
+        "accessedAt": "2026-11-14"
+      },
+      {
+        "url": "https://www.scaledown.ai/benchmarks",
+        "title": "ScaleDown: Benchmarks",
+        "accessedAt": "2026-11-14"
+      },
+      {
+        "url": "https://mahmadmanzoor.com/blog/llms-vs-jev-vs-cdms",
+        "title": "Blog comparison of LLMs, Jev and CDMs (third-party)",
+        "accessedAt": "2026-11-14"
+      }
+    ]
+  },
+  {
+    "era": 7,
+    "secondarySegments": [
+      "foundation-models"
+    ],
+    "majorUpdates": [],
+    "status": "published",
+    "id": "weight-space-programming",
+    "title": "Weight-Space Programming",
+    "date": "2026-11-02",
+    "type": "paper",
+    "primarySegment": "neural-deep-learning",
+    "stackLayer": "algorithms",
+    "creators": [
+      "Takehi, Teoh, Zhang and Khattab (MIT CSAIL, per Snowflake's write-up)"
+    ],
+    "description": "A concept and early results showing that a frontier LLM can read and write a neural network's weights directly, without gradient descent: GPT-6 Astra identified what a small network was trained for from raw weights, and edited 0.016% of Qwen3.5-0.8B's weights, lifting MATH-500 from 7.9% to 48.1%.",
+    "capabilityNote": "The 48.1% and the 0%-to-100% game-control fix are the authors' own early results. An independent follow-up (arXiv 2611.09382) on Qwen3.5-0.8B and 9B found gains of up to 29.45 points on MATH-500 from 1,023 changed parameters, but uneven transfer, and six of 16 editing trajectories kept the original weights because candidate edits could not be validated.",
+    "edges": [
+      {
+        "type": "uses",
+        "target": "gpt-6-astra"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+        "title": "Sparks of Weight-Space Programming (authors' blog)",
+        "accessedAt": "2026-11-14"
+      },
+      {
+        "url": "https://arxiv.org/abs/2611.09382",
+        "title": "Exploring Weight-Space Programming: Capabilities, Generalization, and Limitations (arXiv 2611.09382)",
+        "accessedAt": "2026-11-14"
+      },
+      {
+        "url": "https://www.snowflake.com/en/developers/blog/editing-neural-network-weights-with-an-llm/",
+        "title": "Snowflake: reproducing weight-space programming on Cortex",
+        "accessedAt": "2026-11-14"
+      }
+    ]
   },
   {
     "id": "stanford-alpaca",
@@ -12093,13 +12393,19 @@
         "date": "2024",
         "title": "llama-server and more backends",
         "summary": "OpenAI-compatible server, multimodal support, Vulkan/SYCL/Metal backends (2024–25)."
+      },
+      {
+        "date": "2026-11-13",
+        "title": "llama.cpp and ggml v1.0.0",
+        "summary": "First stable-API release. API and ABI incompatibilities now bump the major version under semantic versioning.",
+        "source": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
       }
     ],
     "oss": {
       "license": "MIT",
       "repoUrl": "https://github.com/ggml-org/llama.cpp",
-      "stars": 129549,
-      "starsCheckedAt": "2026-09-26",
+      "stars": 135029,
+      "starsCheckedAt": "2026-11-14",
       "archived": false
     },
     "sources": [
