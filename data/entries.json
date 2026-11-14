@@ -11494,7 +11494,7 @@
     "majorUpdates": [],
     "status": "published",
     "id": "scaledown-cdm",
-    "title": "ScaleDown Constrained Decoding Models",
+    "title": "ScaleDown CDMs (Constrained Decoding Models)",
     "date": "2026-10-13",
     "type": "product",
     "primarySegment": "foundation-models",
@@ -11502,7 +11502,7 @@
     "creators": [
       "ScaleDown"
     ],
-    "description": "Task-specific models from ScaleDown that each do one job: Classify scores user-defined labels, Extract pulls schema fields out of text, images or documents, and Summarize condenses long inputs. They accept up to 1M tokens and, ScaleDown says, skip token-by-token generation. Compress is an older separate model.",
+    "description": "ScaleDown's CDMs (Constrained Decoding Models) are task-specific models that each do one job: Classify scores user-defined labels, Extract pulls schema fields out of text, images or documents, and Summarize condenses long inputs. They accept up to 1M tokens and, ScaleDown says, skip token-by-token generation. Compress is an older separate model.",
     "capabilityNote": "The headline claims of 200x faster, 467x cheaper and SOTA accuracy are ScaleDown's own and come with no published method; one independent write-up reports ScaleDown's own benchmark page shows 2.2-13.9x faster, and a hands-on test found billed input tokens above the raw prompt, so short classifications cost about twice gpt-5-nano. \"Constrained decoding\" is also an existing technique. Summarize is described as abstractive, which is generation.",
     "edges": [
       {
